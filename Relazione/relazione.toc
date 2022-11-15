@@ -1,0 +1,11 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}%
+\contentsline {section}{\numberline {2}Analisi}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Studio dell'utenza finale}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Progettazione}{2}{section.3}%
+\contentsline {section}{\numberline {4}Presentazione}{2}{section.4}%
+\contentsline {section}{\numberline {5}Implementazione}{2}{section.5}%
+\contentsline {section}{\numberline {6}Validazione}{2}{section.6}%
+\contentsline {section}{\numberline {7}Fase di Test e Strumenti}{2}{section.7}%
+\contentsline {section}{\numberline {8}Suddivisione del lavoro}{2}{section.8}%

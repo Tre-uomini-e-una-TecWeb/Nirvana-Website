@@ -1,0 +1,174 @@
+\documentclass[]{article}
+
+%opening
+\usepackage{graphbox}	% permette di modificare i margini
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newcommand{\copertina}{
+	\begin{titlepage}
+		\begin{center}
+			
+			\vspace{1cm}
+			
+			\begin{Huge}
+				\textbf{Centro Estetico Nirvana} \\
+			\end{Huge}
+			
+			\vspace{9pt}  
+			
+			\begin{large}
+				\textbf{Progetto per il corso di Tecnologie Web\\}
+				\textbf{A.A.} 2022/2023\\
+				\vspace{3pt}
+			\end{large}	  
+			
+			\vspace{24pt}
+			
+			\begin{large}
+				\textbf{Indirizzo sito web:} \emph{todo}\\
+			\end{large} 
+			
+			\vspace{10pt} 
+			
+			\bgroup
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{r|L{5cm}}
+				\multicolumn{2}{c}{\textbf{Informazioni sul gruppo} } \\ \hline
+				\textbf{Membri} &  Nicola Baesso - 2011877 \newline Matteo Cuisi - XXXXXXX \newline Annalisa Egidi - XXXXXXX \newline Lisien Skenderi - XXXXXXX\\
+			\end{tabular}
+			\egroup
+			
+			\vspace*{\fill}
+			
+			\begin{center}
+				\textbf{Referente\\}
+				todo - todo@studenti.unipd.it\\
+				\textbf{Utente\\}
+				\textit{Amministratore:} admin - admin\\
+				\textit{Cliente:} user - user\\
+			\end{center}
+			
+		\end{center}
+	\end{titlepage}
+}	%FINE NEW COMMAND COPERTINA
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+	% cancella tutti i campi di intestazione e piè di pagina
+	\fancyhf{}
+	
+	\lhead{
+		Pasticceria Padovana
+	}
+	
+	\rhead{
+		\leftmark
+	}
+	
+	\lfoot{ %piè di pagina a sx
+		Relazione Progetto Tecnologie Web
+	}
+	\rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
+	
+	%linea orizzontale alle posizioni top e bottom della pagina (se è 0, non c'è la linea)
+	\renewcommand{\headrulewidth}{0.3pt}  
+	\renewcommand{\footrulewidth}{0.3pt}
+}
+\pagestyle{plain}
+
+%\usepackage{calc} %introduce la notazione infissa per le op. aritmetiche interne a LaTeX
+
+\usepackage[utf8]{inputenc}
+%\usepackage{cm-super}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel} %il documento è in italiano
+%\usepackage{textcomp} %The pack­age sup­ports the Text Com­pan­ion fonts, which pro­vide many text sym­bols
+%(such as baht, bul­let, copy­right, mu­si­cal­note, onequar­ter, sec­tion, and yen), in the TS1 en­cod­ing.
+
+\usepackage{graphicx}       %permette di inserire delle immagini
+\usepackage{caption}        %numerazione figure e loro descrizione testuale
+\usepackage{subcaption}     %sottofigure numerabili
+\usepackage{float}  %permette di inserire un # qualsiasi di figure fluttuanti
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{rotating} %permette di ruotare le immagini
+%\usepackage{changepage} %utile se c'è bisogno di aggiustare margini per centrare figure
+
+\usepackage{listings} %permette di inserire degli spezzoni di codice
+
+\usepackage{tikz} %disegno di immagini vettoriali a schermo. Utile per grafi
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows}
+%\usepackage{tikz-uml} %serve per disgnare l'UML, fantastica guida:
+%https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/doc/tikzumlmanual.pdf
+%download package: http://perso.ensta-paristech.fr/~kielbasi/tikzuml/
+
+%package per le tabelle
+\usepackage{booktabs} %permette di poter usare delle liste nelle tabelle
+\usepackage{tabularx} 
+\usepackage{longtable} %una tabella può continuare su più pagine
+\usepackage{multirow} %utile per visualizzare una cella su più righe
+%\usepackage{multicolumn} %cella su più colonne
+%\usepackage[table]{xcolor} %rende disponibile l'utilizzo di un colore per lo sfondo
+%delle celle di una tabella
+
+%crea una cella per le tabelle in grado di andare a capo con \newline
+%https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+%indice con i puntini
+\usepackage{tocloft}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+
+%http://ctan.mirror.garr.it/mirrors/CTAN/macros/latex/contrib/appendix/appendix.pdf
+\usepackage{appendix} %aggiunge dei comandi per l'appendice
+\usepackage{parskip} %aiuta LaTeX a trovare il miglior stile per i page break
+\setcounter{secnumdepth}{5} % numera i sottoparagrafi
+\setcounter{tocdepth}{5} %aggiunge all'indice i sottoparagrafi
+%\usepackage{titlesec} %\begin{paragraph} si può usare come subsubsubsection!
+
+\usepackage{breakurl}%\url{...} può continare alla linea successiva. (si può andare a capo)
+
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black, % colore dei link interni
+	urlcolor=Maroon  % colore dei link interniesterni
+}
+
+%per alcune liste, permette di usare 'alligator' nei labeling 
+\usepackage{blindtext} 
+\usepackage{scrextend} 
+\addtokomafont{labelinglabel} 
+{\sffamily}
+\begin{document}
+
+\copertina
+\tableofcontents
+\newpage
+\section{Introduzione}
+\section{Analisi}
+\subsection{Studio dell'utenza finale}
+\section{Progettazione}
+\section{Presentazione}
+\section{Implementazione}
+\section{Validazione}
+\section{Fase di Test e Strumenti}
+\section{Suddivisione del lavoro}
+
+\end{document}
