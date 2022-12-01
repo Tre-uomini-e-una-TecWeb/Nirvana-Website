@@ -9,44 +9,63 @@
     <meta name="author" content="Lisien Skenderi, Nicola Baesso, Matteo Cuisi, Annalisa Egidi">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Nirvana</h1>
+        <img  alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
+        <h1>Centro Estetico Nirvana</h1>
     </header>
-    <!-- La prima navigazione e' quella che si trova in metta a sinistra -->
-    <nav id="menu">
-        <ul>
-            <li>Area Prenotazione</li>
-            <li>Trattamenti Viso</li>
-            <li>Trattamenti Corpo
-                <ul>
-                    <li>Massaggi</li>
-                    <li>Depilazione</li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- La seconda navigazione e' quella della breadcrumb-->
-    <nav id="breadcrumb">
-        <p><span lang="en">Home</span></p> <!--Usare come riferimento sito Mediaworld-->
-    </nav>
-    <!-- La seconda navigazione e' quella che si trova in alto a destra -->
+        <!-- La prima navigazione e' quella della breadcrumb -->
     <nav id="top-left">
         <ul>
-            <li><span lang="en">Home</span></li>
-            <li><span lang="en">Log In</span></li>
-            <li>Area Personale</li>
+            <li><span lang="en">Account</span></li>
+            <li>Area Prenotazione</li>
+            <li id="LogIn"><span lang="en">Log In</span></li>
+            <li id="LogOut"><span lang="en">Log Out</span></li>
         </ul>
     </nav>
-    <main>
+    
+        <!-- La seconda navigazione e' quella che si trova in metta a sinistra-->
+    <nav id="breadcrumb">
+        <p>Ti trovi in: <span lang="en">Home</span></p> 
+    </nav>
+    <nav id="menu">
+        <ul>
+            <li>Trattamenti & Macchinari</li>
+            <li>Consuleze</li>
+            <li>Prenotazione</li>
+        </ul>
+    </nav>
+        <!-- La seconda navigazione e' quella che si trova in metta a sinistra -->
+    
+    <!-- Qui e' la fine di header -->
 
+    <main>
+        <h2>Chi Siamo </h2>
+        <p>Nirvana è un centro estetico operativo nel veneziano. Il centro offre molteplici trattamenti, con determinate caratteristiche. Inoltre, il centro propone delle consulenze, con il fine di soddisfare al meglio i bisogni della zona interessata al trattamento.</p>
+        <h2>I nostri Servizi</h2>
+        <dl>
+            <dt>TRATTAMENTI e MACCHINARI</dt>
+            <dd><img alt=""></dd>
+            <dt>CONSULENZE</dt>
+            <dd><img alt=""></dd>
+            <dt>PRENOTAZIONE</dt>
+            <dd><img alt=""></dd>
+        </dl>
     </main>
+
+    <!--    Footer-->
     <footer>
-        <h6>Indirizzo:</h6>
+        <p>Indirizzo</p>
         <p>Via Roma, 1</p>
-        <h6>Telefono:</h6>
+        <p>Telefono:</p>
         <p>123456789</p>
-        <h6>Email:</h6>
+        <p>Email:</p>
         <p>example@ovunque.com</p>
+        <p>Orari</p>
+        <p>Martedi-Venerdi: 9:00-19:00</p>
+        <p>Sabato-Domenica: 9:00-15:00</p>
+        <p>Lunedi: CHIUSO</p>
     </footer>
+    <!--    Fine Footer-->
 </body>
 </html>
