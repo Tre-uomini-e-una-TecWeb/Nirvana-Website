@@ -2,3 +2,55 @@
     --color1: #ffcc99;
     --color2: #b32821;
 }
+:root{
+    --color1: #ffcc99;
+    --color2: #b32821;
+}
+
+/*
+/////==============\\\\\
+|||||==============|||||  
+|||||      CSS     |||||
+|||||==============|||||
+\\\\\==============/////  
+*/
+* {
+    padding: 0em;
+    margin: 0em;
+}
+header{
+    background-color: var(--color1);
+    padding-bottom: 1.5em
+}
+
+header > h1 {
+    font-size: 2.5em;
+    padding-top: 0.5em;
+}
+header > img {
+    width: 10em;
+    height: auto;
+    padding: 0em;
+    margin: 0em;
+    float: left;
+}
+
+nav > ul{
+    list-style-type: none;
+}
+
+#top-right {
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    float: right;
+    width: 50%;
+    padding: 0em;
+    margin: 0em;
+}
+#breadcrumb {
+    background-color: var(--color2);
+    color: var(--color1);
+    /*float: left;*/    
+    font-size: 1.1em;
+    padding: 0.5em 0em 0.5em 1.0em;
+}
