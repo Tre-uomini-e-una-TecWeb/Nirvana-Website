@@ -1,6 +1,8 @@
 :root{
     --color1: #ffcc99;
     --color2: #b32821;
+    --color1Alpha: rgba(255, 204, 153, 0.54);
+    --color2Alpha: rgba(179, 40, 33, 0.54);
 }
 :root{
     --color1: #ffcc99;
