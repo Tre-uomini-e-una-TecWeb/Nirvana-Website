@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestione Prenotazioni-Centro Estetico Nirvana</title>
+    <link rel="shortcut icon" type="image/icon" href="/HTML/INDEX/icon.png">
+    <meta name="description" content="Questa pagina e' dedicata alla gestione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
+    <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
+    <meta name="author" content="Nicola Baesso">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="/HTML/INDEX/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
+        <h1>Centro Estetico Nirvana</h1>
+        <span id="areaPersonale">Area personale</span>
+        <nav id="top-right">
+            <ul>
+                <li><span lang="en">Account</span></li>
+                <li>Area Prenotazione</li>
+                <li id="LogIn"><span lang="en">Log In</span></li>
+                <li id="LogOut"><span lang="en">Log Out</span></li>
+            </ul>
+        </nav>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62; &#62; <span lang="en">Prenotazione</span></p> 
+        </nav>
+        <nav id="menu">
+            <ul>
+                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti & Macchinari </a></li>
+                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                <li><a href="../PRENOTAZIONI/prenotazione.html"> Prenotazione</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gestionePrenotazione">
+            <h2>Richiesta Prenotazione</h2>
+            <form id="insertRes">
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date"><br>
+                <label for="hour"> Ora:</label>
+                <input type="time" id="hour" name="hour"><br>
+                <label for="service">Trattamento:</label>
+                <select id="service" name="service">
+                    <option value="puliziaViso">Pulizia viso</option>
+                    <option value="idratante">Trattamento viso idratante</option>
+                    <option value="antiAge">Trattamento viso anti-age</option>
+                    <option value="effettoLifting">Trattamento viso effetto lifting</option>
+                    <option value="rimpolpante">Trattamento viso rimpolpante</option>
+                    <option value="seboRegolatore">Trattamento viso sebo-regolatore</option>
+                    <option value="desensibilizzante">Trattamento viso desensibilizzante</option>
+                    <option value="ceretta">Epilazione con ceretta</option>
+                    <option value="brasiliana">Epilazione con brasiliana</option>
+                    <option value="pastaZucchero">Epilazione con pasta di zucchero</option>
+                    <option value="rilassanteBase">Massaggio rilassante base</option>
+                    <option value="thailandese">Massaggio rilassante thailandese</option>
+                    <option value="hawaiano">Massaggio rilassante hawaiano</option>
+                    <option value="californiano">Massaggio rilassante californiano</option>
+                    <option value="ayurvedico">Massaggio olistico ayurvedico</option>
+                    <option value="chakra">Massaggio olistico <span lang="in">chakra</span></option>
+                    <option value="riflessologiaPlantare">Massaggio olistico per riflessologia plantare</option>
+                    <option value="decontratturante">Massaggio decontratturante</option>
+                    <option value="tonificante">Massaggio tonificante</option>
+                    <option value="linfodrenanteEmolinfatico">Massaggio linfodrenante e emolinfatico</option>
+                    <option value="lipolitico">Massaggio modellante lipolitico</option>
+                    <option value="anticellulitico">Massaggio modellante anticellulitico</option>
+                    <option value="manicurePosaSmalto">Manicure con posa smalto</option>
+                    <option value="manicureSemipermanente">Manicure con semipermanente</option>
+                    <option value="manicureGelCartine">Manicure con gel tramite cartine</option>
+                    <option value="manicureGelTip">Manicure con gel tramite tip</option>
+                    <option value="pedicurePosaSmalto">Pedicure con posa smalto</option>
+                    <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
+                    <option value="pedicureCurativa">Pedicure curativa</option>
+                    <option value="consulenzaViso">Consulenza viso</option>
+                    <option value="consulenzaCorpo">Consulenza corpo</option>
+                </select><br>
+                <input type="submit" value="Conferma dati">
+            </form>
+        </section>
+        <section id="visualizzazionePrenotazione">
+            <h2>Gestisci prenotazioni</h2>
+            <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni fatto e le loro stati, in attesa, accettato o rifiutato</p>
+            <table aria-describedby="descrTabPrenAmm">
+                <tr>
+                    <th scope="col">Data</th>
+                    <th scope="col">Ora</th>
+                    <th scope="col">Richiesta</th>
+                    <th scope="col">Stato</th>
+                </tr>
+                <!-- Qui sotto sara la parte che prende i dati dal database con PHP!!! -->
+            </table>
+        </section>
+    </main>
+
+    <!--    Footer-->
+    <footer>
+        <p>Indirizzo</p>
+        <p>Via Roma, 1</p>
+        <p>Telefono:</p>
+        <p>123456789</p>
+        <p>Email:</p>
+        <p>example@ovunque.com</p>
+        <p>Orari</p>
+        <p>Martedi-Venerdi: 9:00-19:00</p>
+        <p>Sabato-Domenica: 9:00-15:00</p>
+        <p>Lunedi: CHIUSO</p>
+    </footer>
+    <!--    Fine Footer-->
+</body>
+</html>
