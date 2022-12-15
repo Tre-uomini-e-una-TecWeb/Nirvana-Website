@@ -37,8 +37,37 @@ header > img {
     float: left;
 }
 
+#top-right > button{
+    background-image: url(/HTML/INDEX/user.png);
+    background-size: 2em;
+    background-repeat: no-repeat;
+    padding: 1em;
+    text-align: right;
+    /* border:none; */
+    border-radius: 1.1em;
+}
+
 nav > ul{
     list-style-type: none;
+    display:none
+}
+
+.buttonMenu {
+    background-color: var(--color1);
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 1em;
+}
+
+
+.menuCont {
+    background-color: var(--color1);
+    position: absolute;
+}
+
+.show{
+    display: block ;
 }
 
 #top-right {
@@ -55,4 +84,8 @@ nav > ul{
     /*float: left;*/    
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
+}
+
+main {
+    padding-top: 5em;
 }
