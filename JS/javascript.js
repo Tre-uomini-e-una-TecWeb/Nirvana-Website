@@ -1,9 +1,5 @@
 function menuButton() {
-  console.log(document.getElementById("menuList"));
   document.getElementById("menuList").classList.toggle("show");
-  var dropD = document.getElementById("menuList");
-  console.log(dropD);
-  console.log('Hi');
 }
 
 function userMenu() {
@@ -11,7 +7,6 @@ function userMenu() {
 }
 
 document.addEventListener("click", function(event){
-  //console.log(event.target);
   if (!event.target.matches('.buttonMenu')) {
     var dropdowns = document.getElementsByClassName("menuCont");
     var i;
@@ -24,8 +19,6 @@ document.addEventListener("click", function(event){
   }
   if(!event.target.matches('.userMenu')){
     var menu = document.getElementsByClassName("userLinks");
-    console.log(menu);
-    console.log(menu.length);
     var i;
     for(i = 0; i < menu.length; i++){
       var openMenu = menu[i];
