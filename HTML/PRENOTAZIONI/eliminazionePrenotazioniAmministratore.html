@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminazione Prenotazioni-Centro Estetico Nirvana</title>
+    <link rel="shortcut icon" type="image/icon" href="../INDEX/icon.png">
+    <meta name="description" content="Questa pagina è dedicata all'eliminazione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
+    <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
+    <meta name="author" content="Matteo Cusin">
+    <link rel="stylesheet" href="../../CSS/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="../INDEX/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
+        <h1>Centro Estetico Nirvana</h1>
+        <span id="areaPersonale">Area personale</span>
+        <nav id="top-right">
+            <ul>
+                <li><span lang="en">Account</span></li>
+                <li>Area Prenotazione</li>
+                <li id="LogIn"><span lang="en">Log In</span></li>
+                <li id="LogOut"><span lang="en">Log Out</span></li>
+            </ul>
+        </nav>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62; &#62; <span lang="en">Log in</span></p> 
+        </nav>
+        <nav id="menu">
+            <ul>
+                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti & Macchinari </a></li>
+                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                <li><a href="../PRENOTAZIONI/prenotazione.html"> Prenotazione</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Elimina prenotazioni</h2>
+            <form>
+                <fieldset>
+                    <legend> Riepilogo prenotazione </legend>
+                    <label for="reservation"> <strong> Prenotazione: </strong> </label><br/>
+                    <listaPrenotazioni />           <!-- Placeholder per <select> generata da PHP -->
+                </fieldset>
+            </form>
+    </main>
+
+    <!--    Footer-->
+    <footer>
+        <p>Indirizzo</p>
+        <p>Via Roma, 1</p>
+        <p>Telefono:</p>
+        <p>123456789</p>
+        <p>Email:</p>
+        <p>example@ovunque.com</p>
+        <p>Orari</p>
+        <p>Martedi-Venerdi: 9:00-19:00</p>
+        <p>Sabato-Domenica: 9:00-15:00</p>
+        <p>Lunedi: CHIUSO</p>
+    </footer>
+    <!--    Fine Footer-->
+</body>
+</html>
