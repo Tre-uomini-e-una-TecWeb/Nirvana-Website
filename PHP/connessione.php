@@ -3,12 +3,12 @@ namespace DB;
 class DBAccess{
     private const HOST_DB="127.0.0.1";
     private const DATABASE_NAME="Nirvana";
-    private const USERNAME="";
+    private const USERNAME="root";
     private const PASSWORD="";
     private $connection;
     public function openDBConnection(){
-        mysqli_report(MSQLI_REPORT_ERROR);
-        $this->connection=mysqli_connection(HOST_DB,USERNAME,PASSWORD,DATABASE_NAME);
+        mysqli_report(MYSQLI_REPORT_ERROR);
+        $this->connection=mysqli_connect(self::HOST_DB,self::USERNAME,self::PASSWORD,self::DATABASE_NAME);
         if(mysqli_connect_errno()){
             return false;
         }
@@ -16,8 +16,8 @@ class DBAccess{
             return true;
         }
     }
-    public function getList(){
-        $query="SELECT * FROM giocatori ORDER BY ID ASC";
+    public function getUtenti(){
+        $query="SELECT * FROM Utenti ORDER BY Username ASC";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
