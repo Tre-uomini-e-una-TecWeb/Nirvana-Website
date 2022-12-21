@@ -99,11 +99,30 @@ main {
 }
 
 /*AGGIUNTE*/
+
+.carte{
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.carte li,.carte dt{
+    border: 1px solid black;
+    margin: 0 10px 20px 10px;
+    padding: 10px;
+    border-radius: 15px;
+    flex: 1 1 0;
+}
+
 .card{
-    background-color: red;
-    margin-top: 1px;
+    background-image: url("../IMG/fotoPiedi.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 5em; /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    
+    margin-top: 2em;
     border-radius: 10vw;
-    width: 30%;
+    max-width: 100%;
 }
 
 footer{
