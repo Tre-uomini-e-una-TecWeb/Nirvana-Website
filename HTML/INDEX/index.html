@@ -41,7 +41,7 @@
         <ul id="menuList" class="menuCont">
             <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti & Macchinari </a></li>
             <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
-            <li><a href="../PRENOTAZIONI/prenotazione.html"> Prenotazione</a></li>
+            <li><a href="../PRENOTAZIONI/gestionePrenotazioniUtente.html"> Prenotazione</a></li>
         </ul>
     </nav>
 
@@ -54,26 +54,39 @@
             della zona interessata al trattamento.</p>
         <h2>I nostri Servizi</h2>
         <ul>
-            <li id="Trattamenti">TRATTAMENTI e MACCHINARI</li>
-            <li id="Consulenze">CONSULENZE</li>
-            <li id="Prenotzione">PRENOTAZIONE</li>
+            <li id="Trattamenti"><a href="/HTML/TRATTAMENTI/trattamentiMacchinari.html">TRATTAMENTI e MACCHINARI
+                <div class="card">//trattamenti&MacchinariCard</div></a></li>
+            <li id="Consulenze"><a href="/HTML/CONSULENZE/consulenze.html">CONSULENZE
+                <div class="card">//consulenzeCard</div></a></li>
+            <li id="Prenotzione"><a href="/HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html">PRENOTAZIONE
+                <div class="card">//prenotazioneCard</div></a></li>
         </ul>
     </main>
 
     <!--    Footer-->
     <footer>
-        <p>Indirizzo</p>
-        <p>Via Roma, 1</p>
-        <p>Telefono:</p>
-        <p>123456789</p>
-        <p>Email:</p>
-        <p>example@ovunque.com</p>
-        <p>Orari</p>
-        <p>Martedi-Venerdi: 9:00-19:00</p>
-        <p>Sabato-Domenica: 9:00-15:00</p>
-        <p>Lunedi: CHIUSO</p>
+        <dl>
+            <dt>Indirizzo:</dt>
+            <dd>Via Roma, 1</dd>
+
+            <dt>Telefono:</dt>
+            <dd>123456789</dd>
+            
+            <dt>Email:</dt>
+            <dd>example@ovunque.com</dd>
+            
+            <dt>Orari</dt>
+            <dd>
+                <ul>
+                    <li>Martedi-Venerdi: 9:00-19:00</li>
+                    <li>Sabato-Domenica: 9:00-15:00</li>
+                    <li>Lunedi: CHIUSO</li>
+                </ul>
+            </dd>
+
+        </dl>
     </footer>
-    <!--    Fine Footer-->
+<!--    Fine Footer-->
 </body>
 
 </html>

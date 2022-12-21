@@ -92,8 +92,24 @@ nav > ul{
 }
 #breadcrumb a:visited{
     color: #fff;
-} 
+}
 
 main {
     padding-top: 5em;
+}
+
+/*AGGIUNTE*/
+.card{
+    background-color: red;
+    margin-top: 1px;
+    border-radius: 10vw;
+    width: 30%;
+}
+
+footer{
+    /*position: absolute;*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffcc99;
 }
