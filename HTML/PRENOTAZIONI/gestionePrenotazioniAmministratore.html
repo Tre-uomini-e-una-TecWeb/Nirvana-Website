@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione Prenotazioni-Centro Estetico Nirvana</title>
-    <link rel="shortcut icon" type="image/icon" href="/HTML/INDEX/icon.png">
+    <link rel="shortcut icon" type="image/icon" href="../HTML/INDEX/icon.png">
     <meta name="description" content="Questa pagina e' dedicata alla gestione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
     <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
     <meta name="author" content="Nicola Baesso">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="/HTML/INDEX/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
+        <img src="../HTML/INDEX/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
         <h1>Centro Estetico Nirvana</h1>
         <span id="areaPersonale">Area personale</span>
         <nav id="top-right">
@@ -39,12 +39,8 @@
         <section id="gestionePrenotazione">
             <h2>Inserisci Prenotazione</h2>
             <form id="insertRes" action="updatePrenotazioni.php" method="post">
-                <label for="name"> Nome: </label>
-                <input type="text" id="name" name="name"><br>
-                <label for="surname"> Cognome: </label>
-                <input type="text" id="surname" name="surname"><br>
-                <label for="birth">Data di nascita:</label>
-                <input type="date" id="birth" name="birth"><br>
+                <label for="customers">Cliente:</label>
+                <elencoClienti /><br>
                 <label for="date">Data:</label>
                 <input type="date" id="date" name="date"><br>
                 <label for="hour"> Ora:</label>
@@ -85,6 +81,7 @@
                 </select><br>
                 <input type="submit" value="Conferma dati">
             </form>
+            <esitoForm />
         </section>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>

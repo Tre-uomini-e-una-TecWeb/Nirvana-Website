@@ -31,6 +31,21 @@ class DBAccess{
             return $result;
         }
     }
+    public function insertNewReservation($cliente,$data,$ora,$trattamento){
+        $query="INSERT INTO Prenotazioni VALUES (\"$cliente\",$data $ora,\"$trattamento\",\'A\'";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
     public function closeConnection(){
         mysqli_close($this->connection);
     }

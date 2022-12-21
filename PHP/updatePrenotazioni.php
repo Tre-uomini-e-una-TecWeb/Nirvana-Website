@@ -1,31 +1,43 @@
 <?php
+function pulisciInput($value){
+    $value=trim($value);
+    $value=strip_tags($value);
+    $value=htmlentities($value);
+    return $value;
+}
 require_once "connessione.php";
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniAmministratore.html");
-$connessione=new DBAccess();
-$connOk=$connessione->openDBConnection();
-$stringReplace="";
-if($connOk){
-    $query_result = $connessione->getUtenti();
-    if($query_result != null){
-        foreach($query_result as $utente){
-            $stringReplace = "<h1>".$utente['Username']."</h1>";
-            $stringReplace .= "<h1>".$utente['Nome']."</h1>";
-            $stringReplace .= "<h1>".$utente['Cognome']."</h1>";
-            $stringReplace .= "<h1>".$utente['DataNascita']."</h1>";
-            $stringReplace .= "<h1>".$utente['Email']."</h1>";
-            $stringReplace .= "<h1>".$utente['Telefono']."</h1>";
-            $stringReplace .= "<h1>".$utente['Password']."</h1>";
-            $stringReplace .= "<h1>".$utente['Privilegi']."</h1>";
+$esitoInserimento="";
+
+if(isset($_POST['submit'])){
+    $messaggiPerForm="";
+    $cliente=pulisciInput($_POST['customers']);
+    $data=pulisciInput($_POST['date']);
+    $ora=pulisciInput($_POST['hour']);
+    $trattamento=pulisciInput($_POST['service']);
+    
+    /*Inserisco i dati nel DB, se non ci sono errori*/
+    if($messaggiPerForm == ""){
+        $connessione=new DBAccess;
+        $connOk=$connessione->openDBConnection();
+        if($connOk){
+            $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
+            if($queryOk){
+                $messaggiPerForm="<div id=\"greetings\"><p>Inserimento avvenuto con successo!</p></div>";
+            }
+            else{
+                $messaggiPerForm="<div id=\"messageErrors\"><p>Problemi nell\'inserimento dei dati, controlla se hai usato caratteri speciali</p></div>";
+            }
+        }
+        else{
+            $messaggiPerForm="<div id=\"messageErrors\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio</p></div>";
         }
     }
     else{
-        $stringReplace = "<h1>Non ci sono utenti iscritti.</h1>";
+        $messaggiPerForm="<div id=\"messageErrors\"><ul>".$messaggiPerForm."</ul></div>";
     }
-} 
-else {
-    $stringReplace = "<p>Error</p>";
 }
-$pagina_HTML=str_replace("<numeroUtenti />", $stringReplace, $pagina_HTML);
+$pagina_HTML=str_replace("<esitoForm />", $messaggiPerForm, $pagina_HTML);
 echo $pagina_HTML;
 ?>
