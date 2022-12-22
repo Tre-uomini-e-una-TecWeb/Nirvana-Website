@@ -7,16 +7,17 @@ $connOk=$connessione->openDBConnection();
 $clienti="";
 if($connOk){
     $query_result = $connessione->getUtenti();
+    $clienti="<select id=\"customers\" name=\"customers\">";
+    $clienti.="<option value=\"Nope\" disabled selected>Selezionare un cliente</option>";
     if($query_result != null){
-        $clienti="<select id=\"customers\" name=\"customers\">";
         foreach($query_result as $cliente){
-            $clienti.="<option value=\"".$cliente['Username']."\">".$cliente['Nome']." ".$cliente['Cognome']."</option>";
+            $clienti.="<option value=\"".$cliente['Username']."\">".$cliente['Nome']." ".$cliente['Cognome']." ".$cliente['DataNascita']."</option>";
         }
-        $clienti.="</select>";
     }
-    else{
+    /*else{
         $clienti="<p>Non ci sono clienti iscritti</p>";
-    }
+    }*/
+    $clienti.="</select>";
 } 
 else {
     $clienti = "<p>Errore: impossibile contattare il server</p>";

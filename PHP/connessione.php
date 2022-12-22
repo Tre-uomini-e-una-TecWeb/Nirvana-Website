@@ -17,7 +17,7 @@ class DBAccess{
         }
     }
     public function getUtenti(){
-        $query="SELECT * FROM Utenti ORDER BY Username ASC";
+        $query="SELECT * FROM Utenti WHERE Privilegi=false ORDER BY Username ASC";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
