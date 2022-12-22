@@ -11,31 +11,28 @@ $pagina_HTML=file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniAmminis
 $esitoInserimento="";
 
 if(isset($_POST['submit'])){
-    $messaggiPerForm="";
+    $feedbackForm="";
     $cliente=pulisciInput($_POST['customers']);
     $data=pulisciInput($_POST['date']);
     $ora=pulisciInput($_POST['hour']);
     $trattamento=pulisciInput($_POST['service']);
     
     /*Inserisco i dati nel DB, se non ci sono errori*/
-    if($messaggiPerForm == ""){
+    if($feedbackForm == ""){
         $connessione=new DBAccess;
         $connOk=$connessione->openDBConnection();
         if($connOk){
             $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
             if($queryOk){
-                $messaggiPerForm="<div id=\"greetings\"><p>Inserimento avvenuto con successo!</p></div>";
+                $feedbackForm="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
             }
             else{
-                $messaggiPerForm="<div id=\"messageErrors\"><p>Problemi nell\'inserimento dei dati, controlla se hai usato caratteri speciali</p></div>";
+                $feedbackForm="<div id=\"erroreInserimento\"><p>Problemi nell\'inserimento dei dati, controlla se hai usato caratteri speciali</p></div>";
             }
         }
         else{
-            $messaggiPerForm="<div id=\"messageErrors\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio</p></div>";
+            $feedbackForm="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio</p></div>";
         }
-    }
-    else{
-        $messaggiPerForm="<div id=\"messageErrors\"><ul>".$messaggiPerForm."</ul></div>";
     }
 }
 $pagina_HTML=str_replace("<esitoForm />", $messaggiPerForm, $pagina_HTML);

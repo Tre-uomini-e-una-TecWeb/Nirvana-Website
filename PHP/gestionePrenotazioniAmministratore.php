@@ -5,6 +5,7 @@ $pagina_HTML=file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniAmminis
 $connessione=new DBAccess();
 $connOk=$connessione->openDBConnection();
 $clienti="";
+$esitoInserimento="";
 if($connOk){
     $query_result = $connessione->getUtenti();
     $clienti="<select id=\"customers\" name=\"customers\">";
@@ -22,6 +23,31 @@ if($connOk){
 else {
     $clienti = "<p>Errore: impossibile contattare il server</p>";
 }
+
+if(isset($_POST['submit'])){
+    $esitoInserimento="";
+    $cliente=pulisciInput($_POST['customers']);
+    $data=pulisciInput($_POST['date']);
+    $ora=pulisciInput($_POST['hour']);
+    $trattamento=pulisciInput($_POST['service']);
+    
+    /*Inserisco i dati nel DB, se non ci sono errori*/
+    $connessione=new DBAccess;
+    $connOk=$connessione->openDBConnection();
+    if($connOk){
+        $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
+        if($queryOk){
+            $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
+        }
+        else{
+            $esitoInserimento="<div id=\"erroreInserimento\"><p>Problemi nell\'inserimento dei dati, controlla se hai usato caratteri speciali</p></div>";
+        }
+    }
+    else{
+        $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio</p></div>";
+    }
+}
+$pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
 $pagina_HTML=str_replace("<elencoClienti />", $clienti, $pagina_HTML);
 echo $pagina_HTML;
 ?>
