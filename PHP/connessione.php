@@ -37,18 +37,13 @@ class DBAccess{
         $dataOraStringa=$year."-".$month."-".$day." ";
         $dataOraStringa.=$hour.":".$min;
         $dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
-        $query="INSERT INTO 'Prenotazioni' ('Utente', 'DataOra', 'Trattamento', 'Stato') VALUES (\'$cliente\',\'$dataora\',\'$trattamento\',\'A\')";
+        $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','A')";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
-        if(mysqli_num_rows($query_result)==0){
-            return null;
+        if($query_result){
+            return true;
         }
         else{
-            $result=array();
-            while($row=mysqli_fetch_assoc($query_result)){
-                array_push($result,$row);
-            }
-            $query_result->free();
-            return $result;
+            return false;
         }
     }
     public function closeConnection(){
