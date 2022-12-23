@@ -32,7 +32,12 @@ class DBAccess{
         }
     }
     public function insertNewReservation($cliente,$data,$ora,$trattamento){
-        $query="INSERT INTO Prenotazioni VALUES (\"$cliente\",$data $ora,\"$trattamento\",\'A\')";
+        list($year, $month, $day) = explode("-", $data);
+        list($hour, $min) = explode(":", $ora);
+        $dataOraStringa=$year."-".$month."-".$day." ";
+        $dataOraStringa.=$hour.":".$min;
+        $dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
+        $query="INSERT INTO 'Prenotazioni' ('Utente', 'DataOra', 'Trattamento', 'Stato') VALUES (\'$cliente\',\'$dataora\',\'$trattamento\',\'A\')";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
