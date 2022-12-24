@@ -102,7 +102,8 @@ main {
 
 .carte{
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    justify-content: space-around;  
 }
 
 .carte > li,.carte > div{
