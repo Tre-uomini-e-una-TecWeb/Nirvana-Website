@@ -36,9 +36,9 @@ class DBAccess{
         list($hour, $min) = explode(":", $ora);
         $dataOraStringa=$year."-".$month."-".$day." ";
         $dataOraStringa.=$hour.":".$min;
-        $dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
+        //$dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
         $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','A')";
-        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        $query_result=mysqli_query($this->connection,$query);
         if($query_result){
             return true;
         }
@@ -46,6 +46,24 @@ class DBAccess{
             return false;
         }
     }
+
+    public function getPrenotazioni(){
+        $dataOggi = date("Y-m-d");
+        $query="SELECT * FROM Prenotazioni WHERE DataOra=$dataOggi ORDER BY DataOra ASC";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
+
     public function closeConnection(){
         mysqli_close($this->connection);
     }
