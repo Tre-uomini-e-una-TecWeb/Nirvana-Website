@@ -100,6 +100,10 @@ main {
     padding-top: 5em;
 }
 
+ul{
+    margin-left: 2em;
+}
+
 /*AGGIUNTE*/
 
 .carte{
@@ -108,11 +112,11 @@ main {
 }
 
 .carte > li,.carte > div{
-    border: 1px solid black;
-    margin: 0 10px 20px 10px;
+    margin: 0 1em 2em 1em;
     padding: 10px;
     border-radius: 15px;
     flex: 1 1 20em;
+    max-width: 53em;
 }
 
 .card{
@@ -120,10 +124,11 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    min-height: 5em; /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    border: 1px solid black;
+    min-height: 10em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
     
-    /*margin-top: 2em;*/
-    border-radius: 10vw;
+    padding: 1em 1em 0em 1em;
+    /*border-radius: 10vw;*/
     max-width: 100%;
     height: 100%;
 }
