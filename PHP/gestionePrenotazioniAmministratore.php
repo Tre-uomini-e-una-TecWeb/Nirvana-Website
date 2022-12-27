@@ -28,8 +28,45 @@ if($connOk){
     $clienti.="</select>";
     $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
+        $dataOggi = new DateTime(date("Y-m-d"));
         foreach($query_result as $prenotazione){
-            //stuff
+            $prenotazioni.="<tr>";
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Nome']."</td>";
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Cognome']."</td>";
+            $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
+            $prenotazioni .= "<td scope=\"row\">".$eta->y."</td>";
+            list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
+            switch ($prenotazione['Stato']){
+                case 'A':
+                    $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+                    break;
+                case 'R':
+                    $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+                    break;
+                default:
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" id=\"date\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" id=\"time\"></td>";
+            }
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Trattamento']."</td>";
+            $prenotazioni .= "<td scope=\"row\">";
+            switch ($prenotazione['Stato']){
+                case 'A':
+                    $prenotazioni .= "Accettata";
+                    break;
+                case 'R':
+                    $prenotazioni .= "Rifiutata";
+                    break;
+                default:
+                    $prenotazioni .= "<select id=\"stato\">";
+                    $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
+                    $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
+                    $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
+                    $prenotazioni .= "</select>";
+            }
+            $prenotazioni .= "</td>";
+            $prenotazioni .= "</tr>";
         }
     }
 } 
@@ -37,25 +74,6 @@ else {
     $clienti = "<p>Non è possbile caricare la lista dei clienti.</p>";
     $prenotazioni = "<tr><td scope=\"row\">Non è possbile caricare la lista delle prenotazioni.</td></tr>";
 }
-/*
-<tr>
-    <form class="reservations">
-    <td scope="row">Maria</td>
-    <td scope="row">Giacomelli</td>
-    <td scope="row">43</td>
-    <td scope="row"><input placeholder="12/03/2023" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></td>
-    <td scope="row"><input placeholder="09:25" class="textbox-n" type="text" onfocus="(this.type='time')" id="time"></td>
-    <td scope="row">Epilazione con ceretta</td>
-    <td scope="row">
-        <select>
-            <option value="" disabled selected>Da confermare</option>
-            <option value="accepted">Accettato</option>
-            <option value="refused">Rifiutato</option>
-        </select>
-    </td>
-    </form>
-</tr>
-*/
 
 if(isset($_POST['submit'])){
     $cliente=pulisciInput($_POST['customers']);
@@ -80,6 +98,6 @@ if(isset($_POST['submit'])){
 }
 $pagina_HTML = str_replace("<elencoClienti />", $clienti, $pagina_HTML);
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
-$pagina_HTML=str_replace("<prenotazioniEsistenti />", $esitoInserimento, $pagina_HTML);
+$pagina_HTML=str_replace("<prenotazioniEsistenti />", $prenotazioni, $pagina_HTML);
 echo $pagina_HTML;
 ?>

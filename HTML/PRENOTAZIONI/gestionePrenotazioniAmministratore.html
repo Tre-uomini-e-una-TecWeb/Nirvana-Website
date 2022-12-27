@@ -86,7 +86,7 @@
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
-            <table aria-describedby="descrTabPrenAmm">
+            <table aria-describedby="descrTabPrenAmm" id="tabPrenAmm">
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
@@ -97,26 +97,11 @@
                     <th scope="col">Stato</th>
                 </tr>
                 <!-- Dati di esempio, quelli reali vengono inseriti dal PHP!!! -->
-                <prenotazioniEsistenti />
-                <tr>
-                    <form class="reservations">
-                    <td scope="row">Maria</td>
-                    <td scope="row">Giacomelli</td>
-                    <td scope="row">43</td>
-                    <td scope="row"><input placeholder="12/03/2023" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></td>
-                    <td scope="row"><input placeholder="09:25" class="textbox-n" type="text" onfocus="(this.type='time')" id="time"></td>
-                    <td scope="row">Epilazione con ceretta</td>
-                    <td scope="row">
-                        <select>
-                            <option value="" disabled selected>Da confermare</option>
-                            <option value="accepted">Accettato</option>
-                            <option value="refused">Rifiutato</option>
-                        </select>
-                    </td>
-                    </form>
-                </tr>
+                <form class="reservations">
+                    <prenotazioniEsistenti />
+                </form>
             </table>
-            <button type="submit" id="submit" name="submit" form="reservations">Applica modifiche</button>
+            <button type="submit" id="modificaPrenotazioni" name="submit" form="reservations">Applica modifiche</button>
         </section>
         <numeroUtenti />
     </main>
