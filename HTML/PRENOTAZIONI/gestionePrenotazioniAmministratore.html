@@ -97,11 +97,12 @@
                     <th scope="col">Stato</th>
                 </tr>
                 <!-- Dati di esempio, quelli reali vengono inseriti dal PHP!!! -->
-                <form class="reservations">
+                <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
                     <prenotazioniEsistenti />
                 </form>
             </table>
-            <button type="submit" id="modificaPrenotazioni" name="submit" form="reservations">Applica modifiche</button>
+            <button type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
+            <esitoModifiche />
         </section>
         <numeroUtenti />
     </main>

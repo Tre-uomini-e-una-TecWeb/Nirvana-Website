@@ -49,7 +49,7 @@ class DBAccess{
 
     public function getPrenotazioni(){
         $dataOggi = date("Y-m-d");
-        $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>$dataOggi ORDER BY DataOra ASC";
+        $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' ORDER BY DataOra ASC";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
