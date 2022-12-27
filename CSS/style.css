@@ -43,7 +43,7 @@ header > img {
 }
 
 #top-right > button{
-    background-image: url(/HTML/INDEX/user.png);
+    background-image: url("../HTML/INDEX/user.png");
     background-size: 2em;
     background-repeat: no-repeat;
     padding: 1em;
@@ -92,6 +92,11 @@ nav > ul{
 }
 #breadcrumb a:visited{
     color: #fff;
+}
+
+table,th,td{
+    border:1px solid #000;
+    border-collapse: collapse;
 }
 
 main {
