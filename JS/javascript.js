@@ -6,6 +6,11 @@ function userMenu() {
   document.getElementById("contentUser").classList.toggle("show");
 }
 
+function PageLoad() {
+  userMenu();
+  menuButton();
+}
+
 document.addEventListener("click", function(event){
   if (!event.target.matches('.buttonMenu')) {
     var dropdowns = document.getElementsByClassName("menuCont");
