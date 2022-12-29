@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione Prenotazioni-Centro Estetico Nirvana</title>
-    <link rel="shortcut icon" type="image/icon" href="/IMG/icon.png">
+    <link rel="shortcut icon" type="image/icon" href="../HTML/INDEX/icon.png">
     <meta name="description" content="Questa pagina e' dedicata alla gestione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
     <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
     <meta name="author" content="Nicola Baesso">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
-<body>
+<body onload="PageLoad()">
     <!-- Header -->
     <header>
         <img src="../../IMG/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
         <h1>Centro Estetico Nirvana</h1>
-        <span id="areaPersonale">Area personale</span>
         <nav id="top-right">
-            <ul>
+            <ul id="contentUser" class="userLinks show">
                 <li><span lang="en">Account</span></li>
                 <li>Area Prenotazione</li>
                 <li id="LogIn"><span lang="en">Log In</span></li>
                 <li id="LogOut"><span lang="en">Log Out</span></li>
             </ul>
-        </nav>
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62; &#62; <span lang="en">Log in</span></p> 
-        </nav>
-        <nav id="menu">
-            <ul>
-                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti & Macchinari </a></li>
-                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
-                <li><a href="../PRENOTAZIONI/prenotazione.html"> Prenotazione</a></li>
-            </ul>
+            <button onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
+    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
+
+    <!-- La seconda navigazione e' quella della breadcrumb-->
+    <nav>
+        <div id="breadcrumb">
+            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62; &#62; <span lang="en">Log in</span></p> 
+        </div>
+        <div id="menu">
+            <button onclick="menuButton()" class="buttonMenu">Menu</button>
+            <ul id="menuList" class="menuCont show">
+                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
+                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main>
         <section id="gestionePrenotazione">
             <h2>Inserisci Prenotazione</h2>
-            <form id="insertRes">
-                <label for="name"> Nome: </label>
-                <input type="text" id="name" name="name"><br>
-                <label for="surname"> Cognome: </label>
-                <input type="text" id="surname" name="surname"><br>
-                <label for="birth">Data di nascita:</label>
-                <input type="date" id="birth" name="birth"><br>
+            <form id="insertRes" action="gestionePrenotazioniAmministratore.php" method="post">
+                <label for="customers">Cliente:</label>
+                <elencoClienti /><br>
                 <label for="date">Data:</label>
                 <input type="date" id="date" name="date"><br>
                 <label for="hour"> Ora:</label>
@@ -83,13 +86,14 @@
                     <option value="consulenzaViso">Consulenza viso</option>
                     <option value="consulenzaCorpo">Consulenza corpo</option>
                 </select><br>
-                <input type="submit" value="Conferma dati">
+                <input type="submit" id="submit" name="submit" value="Conferma dati">
             </form>
+            <esitoForm />
         </section>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
-            <table aria-describedby="descrTabPrenAmm">
+            <table aria-describedby="descrTabPrenAmm" id="tabPrenAmm">
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
@@ -100,26 +104,14 @@
                     <th scope="col">Stato</th>
                 </tr>
                 <!-- Dati di esempio, quelli reali vengono inseriti dal PHP!!! -->
-                <tr>
-                    <form class="reservations">
-                    <td scope="row">Maria</td>
-                    <td scope="row">Giacomelli</td>
-                    <td scope="row">43</td>
-                    <td scope="row"><input placeholder="12/03/2023" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"></td>
-                    <td scope="row"><input placeholder="09:25" class="textbox-n" type="text" onfocus="(this.type='time')" id="time"></td>
-                    <td scope="row">Epilazione con ceretta</td>
-                    <td scope="row">
-                        <select>
-                            <option value="" disabled selected>Da confermare</option>
-                            <option value="accepted">Accettato</option>
-                            <option value="refused">Rifiutato</option>
-                        </select>
-                    </td>
-                    </form>
-                </tr>
+                <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
+                    <prenotazioniEsistenti />
+                </form>
             </table>
-            <button type="submit" form="reservations">Applica modifiche</button>
+            <button type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
+            <esitoModifiche />
         </section>
+        <numeroUtenti />
     </main>
 
     <!--    Footer-->

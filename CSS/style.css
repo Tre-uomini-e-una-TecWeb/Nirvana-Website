@@ -1,12 +1,9 @@
 :root{
     --color1: #ffcc99;
-    --color2: #b32821;
+    /*--color2: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+    --color2: #800000;
     --color1Alpha: rgba(255, 204, 153, 0.54);
     --color2Alpha: rgba(179, 40, 33, 0.54);
-}
-:root{
-    --color1: #ffcc99;
-    --color2: #b32821;
 }
 
 /*
@@ -21,18 +18,15 @@
     margin: 0em;
 }
 header{
+    display: flex;
     background-color: var(--color1);
-    padding-bottom: 1.5em;
+    padding-bottom: 0.2em;
+    align-items: center;
 }
 
 header > h1 {
     font-size: 3em;
-    padding-top: 0.5em;
-    /*background-image: url("../HTML/INDEX/header.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    text-indent: -9999px;*/
+    flex:auto;
 }
 header > img {
     width: 10em;
@@ -42,62 +36,97 @@ header > img {
     float: left;
 }
 
-#top-right > button{
-    background-image: url(/IMG/user.png);
-    background-size: 2em;
-    background-repeat: no-repeat;
-    padding: 1em;
-    text-align: right;
-    /* border:none; */
-    border-radius: 1.1em;
+#top-right {
+    display: flex;
+    padding: 1em 1em 0em 0em;
+    margin: 0em;
+    float: right;
+    align-items: center;
 }
 
-nav > ul{
+#top-right > button{
+    background-image: url("../IMG/user.png");
+    background-size: 2em;
+    background-color: var(--color1);
+    background-repeat: no-repeat;
+    padding: 1em;
+    border:none;
+    border-radius: 1.1em;
+    cursor:pointer;
+    float: right;
+}
+
+#contentUser{
+    background-color: var(--color1);
+    min-width: 8em;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 20%);
+    top: 2.5em;
+    border-radius: 0.5em;
+    padding: 0em;
+    flex: 1;
+}
+
+nav  ul{
     list-style-type: none;
-    display:none
+    display:none;
+}
+nav {
+    display: flex;
+}
+
+
+#menu {
+    background-color: var(--color1);
+    font-size: 1.1em;
+    flex: auto;
+    float: left;
 }
 
 .buttonMenu {
     background-color: var(--color1);
+    align-items: center;
     position: relative;
     cursor: pointer;
     border: none;
-    padding: 1em;
+    padding: 0.9em 1em 0.9em 1em;
 }
 
 
 .menuCont {
     background-color: var(--color1);
     position: absolute;
+    margin: auto;
 }
 
-.show{
-    display: block ;
-}
-
-#top-right {
-    background-size: 1.5em;
-    background-repeat: no-repeat;
-    float: right;
-    width: 50%;
-    padding: 0em;
-    margin: 0em;
-}
 #breadcrumb {
+    display: block;
     background-color: var(--color2);
     color: var(--color1);
-    /*float: left;*/    
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
+    flex: auto;
+    float: left;
 }
 #breadcrumb a:visited{
     color: #fff;
+}
+
+table,th,td{
+    border:1px solid #000;
+    border-collapse: collapse;
 }
 
 main {
     padding-top: 5em;
 }
 
+ul{
+    margin-left: 2em;
+}
+
+.show{
+    display: block ;
+}
 /*AGGIUNTE*/
 
 .carte{
@@ -107,11 +136,11 @@ main {
 }
 
 .carte > li,.carte > div{
-    border: 1px solid black;
-    margin: 0 10px 20px 10px;
+    margin: 0 1em 2em 1em;
     padding: 10px;
     border-radius: 15px;
     flex: 1 1 20em;
+    max-width: 53em;
 }
 
 .card{
@@ -119,10 +148,11 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    min-height: 5em; /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    border: 1px solid black;
+    min-height: 10em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
     
-    /*margin-top: 2em;*/
-    border-radius: 10vw;
+    padding: 1em 1em 0em 1em;
+    /*border-radius: 10vw;*/
     max-width: 100%;
     height: 100%;
 }

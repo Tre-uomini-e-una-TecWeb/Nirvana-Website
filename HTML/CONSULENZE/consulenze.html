@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Centro Estetico Nirvana</title>
-    <link rel="shortcut icon" type="image/icon" href="/IMG/icon.png">
+    <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
     <meta name="description" content="Questa pagina e' dedicata al centro estetico Nirvana. Nel sito sono descritti i trattamenti per il viso e per il corpo, le consulenze offerte nonché la possibilitá di prenotare un trattamento o una consulenza." />
     <meta name="keyword" content="nirvana, centro estetico, trattamenti viso, trattamenti corpo, massaggi, depilazioni, consulenze estetiche" />
     <meta name="author" content="Lisien Skenderi, Nicola Baesso, Matteo Cuisi, Annalisa Egidi">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
-<body>
+<body onload="PageLoad()">
     <!-- Header -->
     <header>
         <img src="../../IMG/header.png" alt="Logo del Centro Estetico Nirvana, un tramonto con nome Nirvana sopra" id="logo">
         <h1>Centro Estetico Nirvana</h1>
+        <nav id="top-right">
+            <ul id="contentUser" class="userLinks show">
+                <li><span lang="en">Account</span></li>
+                <li>Area Prenotazione</li>
+                <li id="LogIn"><span lang="en">Log In</span></li>
+                <li id="LogOut"><span lang="en">Log Out</span></li>
+            </ul>
+            <button onclick="userMenu()" class="userMenu"></button>
+        </nav>
     </header>
-        <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-    <nav id="top-right">
-        <ul>
-            <li><span lang="en">Account</span></li>
-            <li>Area Prenotazione</li>
-            <li id="LogIn"><span lang="en">Log In</span></li>
-            <li id="LogOut"><span lang="en">Log Out</span></li>
-        </ul>
-    </nav>
-    
-        <!-- La seconda navigazione e' quella della breadcrumb-->
-    <nav id="breadcrumb">
-        <p>Ti trovi in:<a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt; &gt; Consulenze</p> 
-    </nav>
-    <nav id="menu">
-        <ul>
-            <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti & Macchinari </a></li>
-            <li>Consulenze</li>
-            <li><a href="../PRENOTAZIONI/prenotazione.html"> Prenotazione</a></li>
-        </ul>
+    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
+
+    <!-- La seconda navigazione e' quella della breadcrumb-->
+    <nav>
+        <div id="breadcrumb">
+            <p>Ti trovi in:<a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt; &gt; Consulenze</p> 
+        </div>
+        <div id="menu">
+            <button onclick="menuButton()" class="buttonMenu">Menu</button>
+            <ul id="menuList" class="menuCont show">
+                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
+                <li>Consulenze</li>
+                <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+            </ul>
+        </div>
     </nav>
     
     <!-- Qui e' la fine di header -->
