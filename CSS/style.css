@@ -131,7 +131,8 @@ ul{
 
 .carte{
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    justify-content: space-around;  
 }
 
 .carte > li,.carte > div{
@@ -157,7 +158,7 @@ ul{
 }
 
 footer{
-    /*position: absolute;*/
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
