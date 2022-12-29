@@ -13,6 +13,8 @@ $connOk=$connessione->openDBConnection();
 $clienti="";
 $esitoInserimento="";
 $prenotazioni = "";
+$numDaConfermare = 0;
+$esitoModifica = "";
 if($connOk){
     $query_result = $connessione->getUtenti();
     $clienti="<select id=\"customers\" name=\"customers\">";
@@ -36,6 +38,7 @@ if($connOk){
             $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
             $prenotazioni .= "<td scope=\"row\">".$eta->y."</td>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
+            $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
             switch ($prenotazione['Stato']){
                 case 'A':
                     $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
@@ -46,8 +49,8 @@ if($connOk){
                     $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" id=\"date\"></td>";
-                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" id=\"time\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[date]\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[time]\"></td>";
             }
             $prenotazioni .= "<td scope=\"row\">".$prenotazione['Trattamento']."</td>";
             $prenotazioni .= "<td scope=\"row\">";
@@ -59,7 +62,7 @@ if($connOk){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\">";
+                    $prenotazioni .= "<select id=\"stato\" name=\"state".$idPrenotazione."\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
@@ -96,8 +99,65 @@ if(isset($_POST['submit'])){
     }
     
 }
+
+if(isset($_POST['modificaPrenotazioni'])){
+    $query_result = $connessione->getPrenotazioniDaConfermare();
+    if($query_result != null){
+        foreach($query_result as $prenotazione){
+            list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
+            $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
+            $prenotazioneModificata = $_POST[$idPrenotazione];
+            $nuovaData=pulisciInput($_POST['date'.$idPrenotazione.'']);
+            $nuovoOrario=pulisciInput($_POST['date']);
+            $nuovoStato=pulisciInput($_POST['hour']);
+            $esitoModifica=$prenotazioneModificata;
+            /*$prenotazioni.="<tr>";
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Nome']."</td>";
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Cognome']."</td>";
+            $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
+            $prenotazioni .= "<td scope=\"row\">".$eta->y."</td>";
+            list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
+            switch ($prenotazione['Stato']){
+                case 'A':
+                    $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+                    break;
+                case 'R':
+                    $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+                    break;
+                default:
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" id=\"date\" name=\"date".$idPrenotazione."\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" id=\"time\" name=\"time".$idPrenotazione."\"></td>";
+            }
+            $prenotazioni .= "<td scope=\"row\">".$prenotazione['Trattamento']."</td>";
+            $prenotazioni .= "<td scope=\"row\">";
+            switch ($prenotazione['Stato']){
+                case 'A':
+                    $prenotazioni .= "Accettata";
+                    break;
+                case 'R':
+                    $prenotazioni .= "Rifiutata";
+                    break;
+                default:
+                    $prenotazioni .= "<select id=\"stato\" name=\"state".$idPrenotazione."\">";
+                    $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
+                    $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
+                    $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
+                    $prenotazioni .= "</select>";
+            }
+            $prenotazioni .= "</td>";
+            $prenotazioni .= "</tr>";*/
+        }
+    }
+    /*else {
+        $clienti = "<p>Non è possbile caricare la lista dei clienti.</p>";
+        $prenotazioni = "<tr><td scope=\"row\">Non è possbile caricare la lista delle prenotazioni.</td></tr>";
+    }*/
+}
 $pagina_HTML = str_replace("<elencoClienti />", $clienti, $pagina_HTML);
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
 $pagina_HTML=str_replace("<prenotazioniEsistenti />", $prenotazioni, $pagina_HTML);
+$pagina_HTML=str_replace("<esitoModifiche />", $esitoModifica, $pagina_HTML);
 echo $pagina_HTML;
 ?>
