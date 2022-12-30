@@ -82,6 +82,162 @@ nav {
     float: left;
 }
 
+#trattamenti{
+    background-image:url("../IMG/INDEX/trattamentiMacchinari.jpeg") ;
+}
+
+#consulenze{
+    background-image:url("../IMG/INDEX/consulenze.jpeg") ;
+}
+
+#prenotazione{
+    background-image:url("../IMG/INDEX/calendario2.jpeg") ;
+}
+
+#viso{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso.jpeg") ;
+}
+
+#corpo{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo1.jpeg") ;
+}
+
+#macchinari{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari.jpeg") ;
+}
+
+#puliziaViso{
+    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso1.jpeg");
+}
+
+#idratazione{
+    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti1.jpeg") ;
+}
+
+#antiage{
+    background-image:url("../IMG/VISO/ANTI-AGE/antiage1.jpeg") ;
+}
+
+#effettoLifting{
+    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect1.jpeg") ;
+}
+
+#rimpolpanti{
+    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti1.png") ;
+}
+
+#sebo-regolatori{
+    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori3.jpeg") ;
+}
+
+#desensibilizzanti{
+    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante2.jpeg") ;
+}
+
+#epilazione{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione3.jpeg") ;
+}
+
+#massaggio{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio1.jpeg") ;
+}
+
+#manicurePedicure{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure3.jpeg") ;
+}
+
+#lucePulsata{
+    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata2.jpeg");
+}
+
+#radiofrequenza{
+    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza3.jpeg") ;
+}
+
+#ultrasuoni{
+    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni1.jpeg") ;
+}
+
+#elettrocoagulatore{
+    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore1.jpeg") ;
+}
+
+#elettroscultore{
+    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore1.jpeg") ;
+}
+
+#elettroporatore{
+    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore1.jpeg") ;
+}
+
+#pressoterapia{
+    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia2.jpeg") ;
+}
+
+#brush{
+    background-image:url("../IMG/MACCHINARI/BRUSH/brush.jpeg") ;
+}
+
+#massaggioEndodermico{
+    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico1.jpeg") ;
+}
+
+#termofrequenza{
+    background-image:url("../IMG/MACCHINARI/TERMOFREQUENZA/termofrequenza.jpg") ;
+}
+
+#ceretta{
+    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta3.jpeg") ;
+}
+
+#brasiliana{
+    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana3.jpeg") ;
+}
+
+#pastaZucchero{
+    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero3.jpeg") ;
+}
+
+#rilassante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante1.jpeg");
+}
+
+#olistico{
+    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico2.jpeg");
+}
+
+#decontratturante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante2.jpeg");
+}
+
+#tonificante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante1.jpeg");
+}
+
+#linfodrenante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo2.jpeg");
+}
+
+#modellante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante2.jpeg");
+}
+
+#posa{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto1.jpeg");
+}
+
+#semipermanente{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente2.jpeg");
+}
+
+#gel{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel.jpeg");
+}
+
+#curativa{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa2.jpeg");
+}
+
 .buttonMenu {
     background-color: var(--color1);
     align-items: center;
@@ -144,7 +300,6 @@ ul{
 }
 
 .card{
-    background-image: url("../IMG/fotoPiedi.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
