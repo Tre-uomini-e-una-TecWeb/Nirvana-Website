@@ -78,8 +78,13 @@ nav {
 h2 {
     color: var(--color2);
     text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
 }
 
+main {
+    margin: 3em 3em 3em 3em;
+}
 
 #menu {
     background-color: var(--color1);
@@ -270,8 +275,8 @@ h2 {
     float: left;
 }
 
-#breadcrumb a{
-    color: #FFE9AD;
+#breadcrumb a:link{
+    color: yellow;
 }
 
 #breadcrumb a:visited{
@@ -283,12 +288,10 @@ table,th,td{
     border-collapse: collapse;
 }
 
-main {
-    padding-top: 5em;
-}
-
-ul{
-    margin-left: 2em;
+.carte>li, .carte>div>dt{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
 }
 
 .show{
@@ -304,14 +307,14 @@ ul{
 }
 
 .carte > li,.carte > div{
-    margin: 0 1em 2em 1em;
+    margin: 1em 1em 4em 1em;
     padding: 10px;
     border-radius: 15px;
     flex: 1 1 20em;
     max-width: 53em;
 }
 
-.carte a{
+.carte a:link{
     color:var(--color2);
 }
 
