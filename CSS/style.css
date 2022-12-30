@@ -70,8 +70,14 @@ nav  ul{
     list-style-type: none;
     display:none;
 }
+
 nav {
     display: flex;
+}
+
+h2 {
+    color: var(--color2);
+    text-align: center;
 }
 
 
@@ -263,6 +269,11 @@ nav {
     flex: auto;
     float: left;
 }
+
+#breadcrumb a{
+    color: #FFE9AD;
+}
+
 #breadcrumb a:visited{
     color: #fff;
 }
@@ -298,6 +309,14 @@ ul{
     border-radius: 15px;
     flex: 1 1 20em;
     max-width: 53em;
+}
+
+.carte a{
+    color:var(--color2);
+}
+
+.carte a:visited{
+    color:#A83B00;
 }
 
 .card{
