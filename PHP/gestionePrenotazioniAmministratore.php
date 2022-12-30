@@ -5,6 +5,7 @@ function pulisciInput($value){
     $value=htmlentities($value);
     return $value;
 }
+ini_set('display_errors', 1);
 require_once "connessione.php";
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniAmministratore.html");
@@ -13,7 +14,8 @@ $connOk=$connessione->openDBConnection();
 $clienti="";
 $esitoInserimento="";
 $prenotazioni = "";
-$numDaConfermare = 0;
+$prenotazioniDaVerificare = [];
+$numPrenotazioniDaVerificare = 0;
 $esitoModifica = "";
 if($connOk){
     $query_result = $connessione->getUtenti();
@@ -49,8 +51,8 @@ if($connOk){
                     $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[date]\"></td>";
-                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[time]\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td scope=\"row\">".$prenotazione['Trattamento']."</td>";
             $prenotazioni .= "<td scope=\"row\">";
@@ -62,11 +64,13 @@ if($connOk){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"state".$idPrenotazione."\">";
+                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
                     $prenotazioni .= "</select>";
+                    $prenotazioniDaVerificare[$numPrenotazioniDaVerificare] = $idPrenotazione;
+                    $numPrenotazioniDaVerificare++;
             }
             $prenotazioni .= "</td>";
             $prenotazioni .= "</tr>";
@@ -101,16 +105,10 @@ if(isset($_POST['submit'])){
 }
 
 if(isset($_POST['modificaPrenotazioni'])){
+    /* Qua leggo dal DB le prenotazioni che possono essere modificate */
     $query_result = $connessione->getPrenotazioniDaConfermare();
     if($query_result != null){
         foreach($query_result as $prenotazione){
-            list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
-            $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
-            $prenotazioneModificata = $_POST[$idPrenotazione];
-            $nuovaData=pulisciInput($_POST['date'.$idPrenotazione.'']);
-            $nuovoOrario=pulisciInput($_POST['date']);
-            $nuovoStato=pulisciInput($_POST['hour']);
-            $esitoModifica=$prenotazioneModificata;
             /*$prenotazioni.="<tr>";
             $prenotazioni .= "<td scope=\"row\">".$prenotazione['Nome']."</td>";
             $prenotazioni .= "<td scope=\"row\">".$prenotazione['Cognome']."</td>";
@@ -150,10 +148,57 @@ if(isset($_POST['modificaPrenotazioni'])){
             $prenotazioni .= "</tr>";*/
         }
     }
-    /*else {
-        $clienti = "<p>Non è possbile caricare la lista dei clienti.</p>";
-        $prenotazioni = "<tr><td scope=\"row\">Non è possbile caricare la lista delle prenotazioni.</td></tr>";
-    }*/
+    /* Qua elaborazione dati */
+    $prenotazioniVerificate = 0;
+    while ($prenotazioniVerificate < $numPrenotazioniDaVerificare){
+        $idPrenotazione = $prenotazioniDaVerificare[$prenotazioniVerificate];
+        $prenotazioneModificata = $_POST[$idPrenotazione];
+        $modifiche = "";
+        foreach($prenotazioneModificata as $key => $value){
+            $modifiche .= $value."?";
+        }
+        list($nuovaData, $nuovoOrario, $nuovoStato) = explode("?", $modifiche);
+        $esitoModifica.=$nuovaData." ".$nuovoOrario." ".$nuovoStato;
+        $nuovaData = $nuovaData or false;
+        $prenotazioniVerificate++;
+    }
+    /*$prenotazioni.="<tr>";
+    $prenotazioni .= "<td scope=\"row\">".$prenotazione['Nome']."</td>";
+    $prenotazioni .= "<td scope=\"row\">".$prenotazione['Cognome']."</td>";
+    $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
+    $prenotazioni .= "<td scope=\"row\">".$eta->y."</td>";
+    list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
+    switch ($prenotazione['Stato']){
+        case 'A':
+            $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+            $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+            break;
+        case 'R':
+            $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>";
+            $prenotazioni .= "<td scope=\"row\">".$oraPrenotazione."</td>";
+            break;
+        default:
+        $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" id=\"date\" name=\"date".$idPrenotazione."\"></td>";
+        $prenotazioni .= "<td scope=\"row\"><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" id=\"time\" name=\"time".$idPrenotazione."\"></td>";
+    }
+    $prenotazioni .= "<td scope=\"row\">".$prenotazione['Trattamento']."</td>";
+    $prenotazioni .= "<td scope=\"row\">";
+    switch ($prenotazione['Stato']){
+        case 'A':
+            $prenotazioni .= "Accettata";
+            break;
+        case 'R':
+            $prenotazioni .= "Rifiutata";
+            break;
+        default:
+            $prenotazioni .= "<select id=\"stato\" name=\"state".$idPrenotazione."\">";
+            $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
+            $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
+            $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
+            $prenotazioni .= "</select>";
+    }
+    $prenotazioni .= "</td>";
+    $prenotazioni .= "</tr>";*/
 }
 $pagina_HTML = str_replace("<elencoClienti />", $clienti, $pagina_HTML);
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
