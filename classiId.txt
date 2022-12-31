@@ -1,0 +1,15 @@
+ID:
+    contentUser
+    password
+
+CLASSI:
+    userLinks 
+    show
+    userMenu
+    buttonMenu
+    menuCont
+    sezionePUtente
+    datiPUtente
+    bottonePUtente
+    carte
+    card
