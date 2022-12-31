@@ -285,13 +285,13 @@ ul{
 }
 /*AGGIUNTE*/
 
-.carte{
+.contenitore_carte{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;  
 }
 
-.carte > li,.carte > div{
+.contenitore_carte > li, .contenitore_carte > div{
     margin: 0 1em 2em 1em;
     padding: 10px;
     border-radius: 15px;
@@ -299,7 +299,7 @@ ul{
     max-width: 53em;
 }
 
-.card{
+.carta{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;

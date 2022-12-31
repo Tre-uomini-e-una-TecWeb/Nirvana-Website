@@ -11,5 +11,6 @@ CLASSI:
     sezionePUtente
     datiPUtente
     bottonePUtente
-    carte
-    card
+    aiuti
+    carte -> contenitore_carte
+    card -> carta
