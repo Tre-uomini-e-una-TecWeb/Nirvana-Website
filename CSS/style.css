@@ -299,14 +299,14 @@ table,th,td{
 }
 /*AGGIUNTE*/
 
-.carte{
+.contenitore_carte{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;  
     list-style-type: none;
 }
 
-.carte > li,.carte > div{
+.contenitore_carte > li, .contenitore_carte > div{
     margin: 1em 1em 4em 1em;
     padding: 10px;
     border-radius: 15px;
@@ -314,15 +314,15 @@ table,th,td{
     max-width: 53em;
 }
 
-.carte a:link{
+.contenitore_carte a:link{
     color:var(--color2);
 }
 
-.carte a:visited{
+.contenitore_carte a:visited{
     color:#A83B00;
 }
 
-.card{
+.carta{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
