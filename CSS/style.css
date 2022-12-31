@@ -288,7 +288,7 @@ table,th,td{
     border-collapse: collapse;
 }
 
-.carte>li, .carte>div>dt{
+.contenitore_carte>li, .contenitore_carte>div>dt{
     font-size: large;
     font-weight: bold;
     text-align: center;
