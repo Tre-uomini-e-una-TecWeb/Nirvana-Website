@@ -70,10 +70,21 @@ nav  ul{
     list-style-type: none;
     display:none;
 }
+
 nav {
     display: flex;
 }
 
+h2 {
+    color: var(--color2);
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+main {
+    margin: 3em 3em 3em 3em;
+}
 
 #menu {
     background-color: var(--color1);
@@ -263,6 +274,11 @@ nav {
     flex: auto;
     float: left;
 }
+
+#breadcrumb a:link{
+    color: yellow;
+}
+
 #breadcrumb a:visited{
     color: #fff;
 }
@@ -272,12 +288,10 @@ table,th,td{
     border-collapse: collapse;
 }
 
-main {
-    padding-top: 5em;
-}
-
-ul{
-    margin-left: 2em;
+.contenitore_carte>li, .contenitore_carte>div>dt{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
 }
 
 .show{
@@ -285,21 +299,30 @@ ul{
 }
 /*AGGIUNTE*/
 
-.carte{
+.contenitore_carte{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;  
+    list-style-type: none;
 }
 
-.carte > li,.carte > div{
-    margin: 0 1em 2em 1em;
+.contenitore_carte > li, .contenitore_carte > div{
+    margin: 1em 1em 4em 1em;
     padding: 10px;
     border-radius: 15px;
     flex: 1 1 20em;
     max-width: 53em;
 }
 
-.card{
+.contenitore_carte a:link{
+    color:var(--color2);
+}
+
+.contenitore_carte a:visited{
+    color:#A83B00;
+}
+
+.carta{
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
