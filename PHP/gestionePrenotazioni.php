@@ -8,7 +8,7 @@ if($_SESSION["username"] != ""){//l'utente ha effettuato l'autenticazione
     }
 }
 else{//l'utente deve effettuare l'autenticazione
-    header("Location: ../HTML/AREA PERSONALE/login.html");
+    header("Location: login.php");
 }
 die();
 ?>
