@@ -93,6 +93,14 @@ main {
     float: left;
 }
 
+#menu a:link{
+    color: #000;
+}
+
+#menu a:visited{
+    color: var(--color2);
+}
+
 #trattamenti{
     background-image:url("../IMG/INDEX/trattamentiMacchinari.jpeg") ;
 }
