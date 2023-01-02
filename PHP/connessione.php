@@ -47,9 +47,62 @@ class DBAccess{
         }
     }
 
+    public function modificaPrenotazione($nD,$nO,$nS,$user,$vD,$vO){
+        if($nS!=""){
+            if($nD=="" || $nS=="R"){//non é stata modificata la data della prenotazione
+                $nD = $vD;
+            }
+            if($nO==""||$nS=="R"){//non é stata modificata l'ora della prenotazione
+                $nO = $vO;
+            }
+            list($year, $month, $day) = explode("-", $nD);
+            list($hour, $min) = explode(":", $nO);
+            $daInserire=$year."-".$month."-".$day." ";
+            $daInserire.=$hour.":".$min;
+            list($year, $month, $day) = explode("-", $vD);
+            list($hour, $min) = explode(":", $vO);
+            $giaEsistente=$year."-".$month."-".$day." ";
+            $giaEsistente.=$hour.":".$min;
+            if($daInserire != $giaEsistente){
+                $query="UPDATE `Prenotazioni` SET `DataOra` = '".$daInserire."', `Stato` = '".$nS."' WHERE `Prenotazioni`.`Utente` = '".$user."' AND `Prenotazioni`.`DataOra` = '".$giaEsistente."'";
+            }
+            else{
+                $query="UPDATE `Prenotazioni` SET `Stato` = '".$nS."' WHERE `Prenotazioni`.`Utente` = '".$user."' AND `Prenotazioni`.`DataOra` = '".$giaEsistente."'";
+            }
+            $query_result=mysqli_query($this->connection,$query);
+            if($query_result){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{//stato non modificato, non é possibile fare l'update
+            return false;
+        }
+        
+    }
+
     public function getPrenotazioni(){
         $dataOggi = date("Y-m-d");
         $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' ORDER BY DataOra ASC";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
+
+    public function getPrenotazioniDaConfermare(){
+        $dataOggi = date("Y-m-d");
+        $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' AND Stato='P' ORDER BY DataOra ASC";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
