@@ -47,6 +47,42 @@ class DBAccess{
         }
     }
 
+    public function modificaPrenotazione($nD,$nO,$nS,$user,$vD,$vO){
+        if($nS!=""){
+            if($nD=="" || $nS=="R"){//non é stata modificata la data della prenotazione
+                $nD = $vD;
+            }
+            if($nO==""||$nS=="R"){//non é stata modificata l'ora della prenotazione
+                $nO = $vO;
+            }
+            list($year, $month, $day) = explode("-", $nD);
+            list($hour, $min) = explode(":", $nO);
+            $daInserire=$year."-".$month."-".$day." ";
+            $daInserire.=$hour.":".$min;
+            list($year, $month, $day) = explode("-", $vD);
+            list($hour, $min) = explode(":", $vO);
+            $giaEsistente=$year."-".$month."-".$day." ";
+            $giaEsistente.=$hour.":".$min;
+            if($daInserire != $giaEsistente){
+                $query="UPDATE `Prenotazioni` SET `DataOra` = '".$daInserire."', `Stato` = '".$nS."' WHERE `Prenotazioni`.`Utente` = '".$user."' AND `Prenotazioni`.`DataOra` = '".$giaEsistente."'";
+            }
+            else{
+                $query="UPDATE `Prenotazioni` SET `Stato` = '".$nS."' WHERE `Prenotazioni`.`Utente` = '".$user."' AND `Prenotazioni`.`DataOra` = '".$giaEsistente."'";
+            }
+            $query_result=mysqli_query($this->connection,$query);
+            if($query_result){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{//stato non modificato, non é possibile fare l'update
+            return false;
+        }
+        
+    }
+
     public function getPrenotazioni(){
         $dataOggi = date("Y-m-d");
         $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' ORDER BY DataOra ASC";
