@@ -34,7 +34,7 @@ class DBAccess{
 
     public function checkUtente($user){
         $user = mysqli_real_escape_string($this->connection, $user);
-        $query="SELECT * FROM Utenti WHERE Privilegi=false AND Username='".$user."' ORDER BY Username ASC";
+        $query="SELECT * FROM Utenti WHERE Username='".$user."'";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
         if(mysqli_num_rows($query_result)==0){
             return null;
