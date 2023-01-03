@@ -1,4 +1,5 @@
 <?php
+session_start();
 if($_SESSION["username"] != ""){//l'utente ha effettuato l'autenticazione
     if($_SESSION["privilegi"]=="admin"){
         header("Location: gestionePrenotazioniAmministratore.php");
