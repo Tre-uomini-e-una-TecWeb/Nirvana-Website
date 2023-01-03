@@ -10,7 +10,6 @@ function pulisciInput($value){
     $value=htmlentities($value);
     return $value;
 }
-ini_set('display_errors', 1);
 require_once "connessione.php";
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../HTML/AREA PERSONALE/login.html");
