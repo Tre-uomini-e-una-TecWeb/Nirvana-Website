@@ -1,4 +1,9 @@
 <?php
+session_start();
+if($_SESSION["privilegi"]!="admin"){
+    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    die();
+}
 function pulisciInput($value){
     $value=trim($value);
     $value=strip_tags($value);

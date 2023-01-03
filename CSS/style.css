@@ -353,6 +353,10 @@ table,th,td{
     height: 100%;
 }
 
+.error{
+    text-align: center;
+}
+
 footer{
     position: relative;
     bottom: 0;
