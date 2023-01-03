@@ -55,8 +55,8 @@
                 <input type="date" id="birth" name="birth" required aria-required="true"><br>
                 <label lang="en" for="email">Email:</label>
                 <input type="email" id="email" name="email" required aria-required="true"><br>
-                <label for="phone"> Numero di telefono:</label>
-                <input type="tel" id="phone" name="phone" required aria-required="true"><br>
+                <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true"><br>
                 <label lang="en" for="username">Utente:</label>
                 <input type="text" id="username" name="username" required aria-required="true"><br>
                 <label lang="en" for="password">Password:</label>
@@ -70,13 +70,14 @@
         <section>       
             <h2>Accesso</h2>
             <form id="login" method="post" action="login.php">
-                <label> Utente: </label>
-                <input type="text" id="username" name="Nome utente" required aria-required="true"><br>
+                <label lang="en"> Username: </label>
+                <input type="text" id="username" name="Username" required aria-required="true"><br>
                 <label lang="en"> Password: </label>
                 <input type="password" id="password" name="Password" required aria-required="true"><!--<br>-->
                 <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
                 <input type="submit" name="accesso" value="Invia">
             </form>
+            <avvisoLogin />
         </section>
 
         <section>

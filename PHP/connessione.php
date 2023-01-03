@@ -31,6 +31,24 @@ class DBAccess{
             return $result;
         }
     }
+
+    public function checkUtente($user){
+        $user = mysqli_real_escape_string($this->connection, $user);
+        $query="SELECT * FROM Utenti WHERE Privilegi=false AND Username='".$user."' ORDER BY Username ASC";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
+
     public function insertNewReservation($cliente,$data,$ora,$trattamento){
         list($year, $month, $day) = explode("-", $data);
         list($hour, $min) = explode(":", $ora);
@@ -114,6 +132,17 @@ class DBAccess{
             }
             $query_result->free();
             return $result;
+        }
+    }
+
+    public function insertUtente($user,$name,$surname,$birth,$email,$tel,$passwd,$isAdmin){
+        $query="INSERT INTO `Utenti` (`Username`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Telefono`, `Password`, `Privilegi`) VALUES ('".$user."', '".$name."', '".$surname."', '".$birth."', '".$email."', '".$tel."', '".$passwd."', '".$isAdmin."')";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
