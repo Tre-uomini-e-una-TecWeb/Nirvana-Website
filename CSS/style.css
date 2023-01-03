@@ -306,7 +306,9 @@ table,th,td{
     border-collapse: collapse;
 }
 
-.contenitore_carte>li, .contenitore_carte>div>dt{
+.contenitore_carte>li,
+.contenitore_carte>div>dt,
+.item-footer>dt{
     font-size: large;
     font-weight: bold;
     text-align: center;
@@ -363,4 +365,26 @@ footer{
     left: 0;
     width: 100%;
     background-color: #ffcc99;
+}
+
+.contenitore-footer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+.item-footer {
+    flex: 1 1 10em;
+    margin: 1em 1em ;
+    /* border: 1px solid black; */
+}
+
+.item-footer>dd{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.item-footer table{
+    margin: 0 auto;
 }

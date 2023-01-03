@@ -68,6 +68,7 @@ ID:
     viso
     visualizzazionePrenotazione
 
+
 CLASSI:
     aiuti
     bottonePUtente
@@ -80,3 +81,5 @@ CLASSI:
     show
     userLinks 
     userMenu
+    contenitore-footer
+    item-footer
