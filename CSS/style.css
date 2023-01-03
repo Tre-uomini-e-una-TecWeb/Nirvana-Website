@@ -57,10 +57,11 @@ header > img {
 }
 
 #contentUser{
-    background-color: var(--color1);
+    background-color: var(--color2);
+    color: var(--color1);
     min-width: 8em;
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 20%);
-    top: 2.5em;
+    border: 1px solid white;
     border-radius: 0.5em;
     padding: 0em;
     flex: 1;
@@ -89,6 +90,7 @@ main {
 #menu {
     background-color: var(--color1);
     font-size: 1.1em;
+    width: 50%;
     flex: auto;
     float: left;
 }
@@ -270,7 +272,10 @@ main {
 .menuCont {
     background-color: var(--color1);
     position: absolute;
+    width: 50%;
     margin: auto;
+    padding: 0.4em 0em 0.4em 0.4em;
+    border: 1px solid var(--color2);
 }
 
 #breadcrumb {
@@ -279,8 +284,13 @@ main {
     color: var(--color1);
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
+    width: 50%;
     flex: auto;
     float: left;
+}
+
+#bredcrumb > p {
+    margin-top:auto;
 }
 
 #breadcrumb a:link{
