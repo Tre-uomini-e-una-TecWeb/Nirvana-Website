@@ -378,6 +378,8 @@ footer{
     flex: 1 1 10em;
     margin: 1em 1em ;
     /* border: 1px solid black; */
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 .item-footer>dd{
