@@ -26,7 +26,7 @@
                 <li id="LogIn"><span lang="en">Log In</span></li>
                 <li id="LogOut"><span lang="en">Log Out</span></li>
             </ul>
-            <button onclick="userMenu()" class="userMenu"></button>
+            <button aria-haspopup="menu" aria-label="Buttone di Utente" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
     <!-- La prima navigazione e' quella sopra a destra per l'utente -->
@@ -37,7 +37,7 @@
             <p>Ti trovi in: <span lang="en">Home</span></p>
         </div>
         <div id="menu">
-            <button onclick="menuButton()" class="buttonMenu">Menu</button>
+            <button aria-haspopup="menu" aria-label="Buttone di Menu Principale" onclick="menuButton()" class="buttonMenu">Menu</button>
             <ul id="menuList" class="menuCont show">
                 <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
                 <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
