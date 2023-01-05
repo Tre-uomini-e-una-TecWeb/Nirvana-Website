@@ -1,0 +1,237 @@
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* PRINT */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+:root{
+    --color1: #ffcc99;
+    /*--color2: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+    --color2: #800000;
+    --color1Alpha: rgba(255, 204, 153, 0.54);
+    --color2Alpha: rgba(179, 40, 33, 0.54);
+}
+
+* {
+    padding: 0em;
+    margin: 0em;
+}
+
+header{
+    display: flex;
+    background-color: var(--color1);
+    padding-bottom: 0.2em;
+    align-items: center;
+}
+
+header > h1 {
+    font-size: 3em;
+    flex:auto;
+}
+header > img {
+    width: 10em;
+    height: auto;
+    padding: 0em;
+    margin: 0em;
+    float: left;
+}
+
+#top-right {
+    display: none;
+}
+
+#menu{
+    display: none;
+}
+
+#breadcrumb {
+    display: none;
+}
+
+h2 {
+    color: var(--color2);
+    text-align: left;
+    margin-top: 1em;
+    /* margin-bottom: 1em; */
+}
+
+.error{
+    text-align: center;
+}
+
+/* main{
+    margin-top: -4em;
+} */
+
+table,th,td{
+    border:1px solid #000;
+    border-collapse: collapse;
+}
+
+.contenitore_carte>li,
+.contenitore_carte>div>dt {
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+}
+
+footer{
+    position:static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffcc99;
+}
+
+.contenitore-footer {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 50em; */
+    margin: 0 auto;
+}
+
+.item-footer {
+    flex: 1 1em;
+    margin: 1em 1em ;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.item-footer>dd{
+    text-align: center;
+}
+
+.item-footer table{
+    margin: 0 auto;
+}
+
+.item-footer>dt{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* TUTTO CIO CHE NON C'E' */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* #contentUser{
+    background-color: var(--color2);
+    color: var(--color1);
+    min-width: 8em;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 20%);
+    border: 1px solid white;
+    border-radius: 0.5em;
+    padding: 0em;
+    flex: 1;
+} */
+
+/* nav  ul{
+    list-style-type: none;
+    display:none;
+} */
+
+/* nav {
+    display: flex;
+} */
+
+/* main {
+    margin: 3em 3em 3em 3em;
+} */
+
+/* #menu {
+    background-color: var(--color1);
+    font-size: 1.1em;
+    width: 50%;
+    flex: auto;
+    float: left;
+} */
+
+/* #menu a:link{
+    color: #000;
+} */
+
+/* #menu a:visited{
+    color: var(--color2);
+} */
+
+/* .buttonMenu {
+    background-color: var(--color1);
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 0.9em 1em 0.9em 1em;
+} */
+
+/* .menuCont {
+    background-color: var(--color1);
+    position: absolute;
+    width: 50%;
+    margin: auto;
+    padding: 0.4em 0em 0.4em 0.4em;
+    border: 1px solid var(--color2);
+} */
+
+/* #bredcrumb > p {
+    margin-top:auto;
+} */
+
+/* #breadcrumb a:link{
+    color: yellow;
+} */
+
+/* #breadcrumb a:visited{
+    color: #fff;
+} */
+
+/* .show{
+    display: block ;
+} */
+
+/* .contenitore_carte{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+} */
+
+/* .contenitore_carte > li, .contenitore_carte > div{
+    margin: 1em 1em 4em 1em;
+    padding: 10px;
+    border-radius: 15px;
+    flex: 1 1 20em;
+    max-width: 53em;
+} */
+
+/* .contenitore_carte a:link{
+    color:var(--color2);
+} */
+
+/* .contenitore_carte a:visited{
+    color:#A83B00;
+} */
+
+/* .carta{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border: 1px solid black;
+    min-height: 10em; 
+    
+    padding: 1em 1em 0em 1em;
+    max-width: 100%;
+    height: 100%;
+} */
+
+
+
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+
+
