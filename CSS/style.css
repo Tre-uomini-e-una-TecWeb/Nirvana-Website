@@ -31,12 +31,15 @@ header > h1 {
     font-size: 3em;
     flex:auto;
 }
-header > img {
-    width: 10em;
-    height: auto;
-    padding: 0em;
-    margin: 0em;
-    float: left;
+
+header h1{
+    background-image: url(../IMG/header.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: calc(50vw - 80px);
+    text-indent: -9999px;
+    line-height: 1.5em;
+    font-size: 6em;
 }
 
 #top-right {
