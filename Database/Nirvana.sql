@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Gen 02, 2023 alle 18:02
+-- Creato il: Gen 05, 2023 alle 10:18
 -- Versione del server: 10.4.25-MariaDB
 -- Versione PHP: 8.1.10
 
@@ -62,7 +62,7 @@ CREATE TABLE `Utenti` (
   `DataNascita` date NOT NULL,
   `Email` varchar(254) NOT NULL,
   `Telefono` char(10) NOT NULL,
-  `Password` binary(64) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Privilegi` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -71,7 +71,9 @@ CREATE TABLE `Utenti` (
 --
 
 INSERT INTO `Utenti` (`Username`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Telefono`, `Password`, `Privilegi`) VALUES
-('user', 'Utente', 'Utente', '1981-07-12', 'user@gmail.com', '1234567890', 0xee11cbb19052e40b07aac0ca060c23ee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 0);
+('admin', 'Admin', 'Admin', '2002-08-14', 'admin@gmail.com', '9876543210', '$2y$10$mkDiN5m/hHVA/WiXFw.yN.8Mr/B0MNkPlo6AbMOukMdKL6/fFuuNG', 1),
+('bnaesso', 'Bicola', 'Naesso', '2001-07-24', 'bicolanaesso@protonmail.com', '1234567890', '$2y$10$syk1tyhAQUx9TL1xiKER4e5H/9irMHWk51s6MPA9zP770.MZ4fkcS', 0),
+('user', 'Utente', 'Utente', '1981-07-12', 'user@gmail.com', '1234567890', '$2y$10$dKDd2pMBtmzMl4KsNqZ9HuLezOOMzzyEs6LNH6Gskx0AJZijZl7DW', 0);
 
 --
 -- Indici per le tabelle scaricate
