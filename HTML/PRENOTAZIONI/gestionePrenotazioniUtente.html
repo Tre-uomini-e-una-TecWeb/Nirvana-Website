@@ -47,7 +47,7 @@
     <main>
         <section id="gestionePrenotazione">
             <h2>Richiesta Prenotazione</h2>
-            <form id="insertRes" method="post">
+            <form id="insertRes" action="gestionePrenotazioniUtente.php" method="post">
                 <label for="date">Data:</label>
                 <input type="date" id="date" name="date"><br>
                 <label for="hour"> Ora:</label>
@@ -88,6 +88,7 @@
                 </select><br>
                 <input type="submit" value="Conferma dati">
             </form>
+            <esitoForm />
         </section>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
@@ -99,7 +100,7 @@
                     <th scope="col">Richiesta</th>
                     <th scope="col">Stato</th>
                 </tr>
-                <!-- Qui sotto sara la parte che prende i dati dal database con PHP!!! -->
+                <prenotazioniEsistenti />
             </table>
         </section>
     </main>
