@@ -1,9 +1,12 @@
 :root{
-    --color1: #ffcc99;
-    /*--color2: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
-    --color2: #800000;
-    --color1Alpha: rgba(255, 204, 153, 0.54);
-    --color2Alpha: rgba(179, 40, 33, 0.54);
+    --mainColor: #ffcc99;
+    /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+    --secondaryColor: #800000;
+    --mainColorAlpha: #d17e7a;
+    --cardVisitedLink: #C64600;
+    --linkClearBackground: #00166b;
+    --breadcrumbVisitedLink: #241F31;
+    --linkDarkBackground: white;
 }
 
 /*
@@ -19,7 +22,7 @@
 }
 header{
     display: flex;
-    background-color: var(--color1);
+    background-color: var(--mainColor);
     padding-bottom: 0.2em;
     align-items: center;
 }
@@ -47,7 +50,7 @@ header > img {
 #top-right > button{
     background-image: url("../IMG/user.png");
     background-size: 2em;
-    background-color: var(--color1);
+    background-color: var(--mainColor);
     background-repeat: no-repeat;
     padding: 1em;
     border:none;
@@ -57,8 +60,8 @@ header > img {
 }
 
 #contentUser{
-    background-color: var(--color2);
-    color: var(--color1);
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
     min-width: 8em;
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 20%);
     border: 1px solid white;
@@ -77,7 +80,7 @@ nav {
 }
 
 h2 {
-    color: var(--color2);
+    color: var(--secondaryColor);
     text-align: center;
     margin-top: 3em;
     margin-bottom: 1em;
@@ -88,7 +91,7 @@ main {
 }
 
 #menu {
-    background-color: var(--color1);
+    background-color: var(--secondaryColor);
     font-size: 1.1em;
     width: 50%;
     flex: auto;
@@ -96,11 +99,146 @@ main {
 }
 
 #menu a:link{
-    color: #000;
+    color: var(--linkDarkBackground);
 }
 
 #menu a:visited{
-    color: var(--color2);
+    color: var(--mainColor);
+}
+
+.buttonMenu {
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    font-weight: bold;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding: 0.9em 1em 0.9em 1em;
+}
+
+
+.menuCont {
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    position: absolute;
+    width: 50%;
+    margin: auto;
+    padding: 0.4em 0em 0.4em 0.4em;
+    border: 1px solid var(--mainColorAlpha);
+}
+
+#breadcrumb {
+    display: block;
+    background-color: var(--mainColorAlpha);
+    color: black;
+    font-size: 1.1em;
+    padding: 0.5em 0em 0.5em 1.0em;
+    width: 50%;
+    flex: auto;
+    float: left;
+}
+
+#bredcrumb > p {
+    margin-top:auto;
+}
+
+#breadcrumb a:link{
+    color:var(--linkClearBackground);
+}
+
+#breadcrumb a:visited{
+    color: var(--breadcrumbVisitedLink);
+}
+
+table,th,td{
+    border:1px solid #000;
+    border-collapse: collapse;
+}
+
+.contenitore_carte>li,
+.contenitore_carte>div>dt,
+.item-footer>dt{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.show{
+    display: block ;
+}
+/*AGGIUNTE*/
+
+.contenitore_carte{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+    list-style-type: none;
+}
+
+.contenitore_carte > li, .contenitore_carte > div{
+    margin: 1em 1em 4em 1em;
+    padding: 10px;
+    border-radius: 15px;
+    flex: 1 1 20em;
+    max-width: 53em;
+}
+
+.contenitore_carte a:link{
+    color:var(--linkClearBackground);
+}
+
+.contenitore_carte a:visited{
+    color: var(--cardVisitedLink);
+}
+
+.carta{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    border: 1px solid black;
+    min-height: 10em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    
+    padding: 1em 1em 0em 1em;
+    /*border-radius: 10vw;*/
+    max-width: 100%;
+    height: 100%;
+}
+
+.error{
+    text-align: center;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffcc99;
+}
+
+.contenitore-footer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+.item-footer {
+    flex: 1 1 10em;
+    margin: 1em 1em ;
+    /* border: 1px solid black; */
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.item-footer>dd{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.item-footer table{
+    margin: 0 auto;
 }
 
 #trattamenti{
@@ -253,136 +391,4 @@ main {
 
 #curativa{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa2.jpeg");
-}
-
-.buttonMenu {
-    background-color: var(--color1);
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    border: none;
-    padding: 0.9em 1em 0.9em 1em;
-}
-
-
-.menuCont {
-    background-color: var(--color1);
-    position: absolute;
-    width: 50%;
-    margin: auto;
-    padding: 0.4em 0em 0.4em 0.4em;
-    border: 1px solid var(--color2);
-}
-
-#breadcrumb {
-    display: block;
-    background-color: var(--color2);
-    color: var(--color1);
-    font-size: 1.1em;
-    padding: 0.5em 0em 0.5em 1.0em;
-    width: 50%;
-    flex: auto;
-    float: left;
-}
-
-#bredcrumb > p {
-    margin-top:auto;
-}
-
-#breadcrumb a:link{
-    color: yellow;
-}
-
-#breadcrumb a:visited{
-    color: #fff;
-}
-
-table,th,td{
-    border:1px solid #000;
-    border-collapse: collapse;
-}
-
-.contenitore_carte>li,
-.contenitore_carte>div>dt,
-.item-footer>dt{
-    font-size: large;
-    font-weight: bold;
-    text-align: center;
-}
-
-.show{
-    display: block ;
-}
-/*AGGIUNTE*/
-
-.contenitore_carte{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;  
-    list-style-type: none;
-}
-
-.contenitore_carte > li, .contenitore_carte > div{
-    margin: 1em 1em 4em 1em;
-    padding: 10px;
-    border-radius: 15px;
-    flex: 1 1 20em;
-    max-width: 53em;
-}
-
-.contenitore_carte a:link{
-    color:var(--color2);
-}
-
-.contenitore_carte a:visited{
-    color:#A83B00;
-}
-
-.carta{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    border: 1px solid black;
-    min-height: 10em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
-    
-    padding: 1em 1em 0em 1em;
-    /*border-radius: 10vw;*/
-    max-width: 100%;
-    height: 100%;
-}
-
-.error{
-    text-align: center;
-}
-
-footer{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffcc99;
-}
-
-.contenitore-footer {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 50em;
-    margin: 0 auto;
-}
-
-.item-footer {
-    flex: 1 1 10em;
-    margin: 1em 1em ;
-    /* border: 1px solid black; */
-    white-space: nowrap;
-    max-width: 100%;
-}
-
-.item-footer>dd{
-    text-align: center;
-    /* border: 1px solid black; */
-}
-
-.item-footer table{
-    margin: 0 auto;
 }
