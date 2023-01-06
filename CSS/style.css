@@ -253,7 +253,7 @@ footer{
 }
 
 #prenotazione{
-    background-image:url("../IMG/INDEX/calendario2.jpeg") ;
+    background-image:url("../IMG/INDEX/calendario.jpeg") ;
 }
 
 #viso{
@@ -261,7 +261,7 @@ footer{
 }
 
 #corpo{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo1.jpeg") ;
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo.jpeg") ;
 }
 
 #macchinari{
@@ -269,71 +269,71 @@ footer{
 }
 
 #puliziaViso{
-    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso1.jpeg");
+    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso.jpeg");
 }
 
 #idratazione{
-    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti1.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti.jpeg") ;
 }
 
 #antiage{
-    background-image:url("../IMG/VISO/ANTI-AGE/antiage1.jpeg") ;
+    background-image:url("../IMG/VISO/ANTI-AGE/antiage.jpeg") ;
 }
 
 #effettoLifting{
-    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect1.jpeg") ;
+    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect.jpeg") ;
 }
 
 #rimpolpanti{
-    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti1.png") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti.png") ;
 }
 
 #sebo-regolatori{
-    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori3.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori.jpeg") ;
 }
 
 #desensibilizzanti{
-    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante2.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante.jpeg") ;
 }
 
 #epilazione{
-    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione3.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione.jpeg") ;
 }
 
 #massaggio{
-    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio1.jpeg") ;
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio.jpeg") ;
 }
 
 #manicurePedicure{
-    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure3.jpeg") ;
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure.jpeg") ;
 }
 
 #lucePulsata{
-    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata2.jpeg");
+    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata.jpeg");
 }
 
 #radiofrequenza{
-    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza3.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza.jpeg") ;
 }
 
 #ultrasuoni{
-    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni1.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni.jpeg") ;
 }
 
 #elettrocoagulatore{
-    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore1.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore.jpeg") ;
 }
 
 #elettroscultore{
-    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore1.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore.jpeg") ;
 }
 
 #elettroporatore{
-    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore1.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore.jpeg") ;
 }
 
 #pressoterapia{
-    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia2.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia.jpeg") ;
 }
 
 #brush{
@@ -341,51 +341,51 @@ footer{
 }
 
 #massaggioEndodermico{
-    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico1.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico.jpeg") ;
 }
 
 #ceretta{
-    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta3.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta.jpeg") ;
 }
 
 #brasiliana{
-    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana3.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana.jpeg") ;
 }
 
 #pastaZucchero{
-    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero3.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero.jpeg") ;
 }
 
 #rilassante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante1.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante.jpeg");
 }
 
 #olistico{
-    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico2.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico.jpeg");
 }
 
 #decontratturante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante2.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante.jpeg");
 }
 
 #tonificante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante1.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante.jpeg");
 }
 
 #linfodrenante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo2.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo.jpeg");
 }
 
 #modellante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante2.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante.jpeg");
 }
 
 #posa{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto1.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto.jpeg");
 }
 
 #semipermanente{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente2.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente.jpeg");
 }
 
 #gel{
@@ -393,5 +393,5 @@ footer{
 }
 
 #curativa{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa2.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
