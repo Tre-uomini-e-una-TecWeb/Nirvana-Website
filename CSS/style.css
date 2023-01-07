@@ -1,9 +1,12 @@
 :root{
-    --color1: #ffcc99;
-    /*--color2: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
-    --color2: #800000;
-    --color1Alpha: rgba(255, 204, 153, 0.54);
-    --color2Alpha: rgba(179, 40, 33, 0.54);
+    --mainColor: #ffcc99;
+    /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+    --secondaryColor: #800000;
+    --mainColorAlpha: #d17e7a;
+    --cardVisitedLink: #C64600;
+    --linkClearBackground: #00166b;
+    --breadcrumbVisitedLink: #241F31;
+    --linkDarkBackground: white;
 }
 
 * {
@@ -13,7 +16,7 @@
 
 header{
     display: flex;
-    background-color: var(--color1);
+    background-color: var(--mainColor);
     padding-bottom: 0.2em;
     align-items: center;
 }
@@ -22,12 +25,15 @@ header > h1 {
     font-size: 3em;
     flex:auto;
 }
-header > img {
-    width: 10em;
-    height: auto;
-    padding: 0em;
-    margin: 0em;
-    float: left;
+
+header h1{
+    background-image: url(../IMG/header.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: calc(50vw - 80px);
+    text-indent: -9999px;
+    line-height: 1.5em;
+    font-size: 6em;
 }
 
 #top-right {
@@ -41,7 +47,7 @@ header > img {
 #top-right > button{
     background-image: url("../IMG/user.png");
     background-size: 2em;
-    background-color: var(--color1);
+    background-color: var(--mainColor);
     background-repeat: no-repeat;
     padding: 1em;
     border:none;
@@ -51,8 +57,8 @@ header > img {
 }
 
 #contentUser{
-    background-color: var(--color2);
-    color: var(--color1);
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
     min-width: 8em;
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 20%);
     border: 1px solid white;
@@ -71,7 +77,7 @@ nav {
 }
 
 h2 {
-    color: var(--color2);
+    color: var(--secondaryColor);
     text-align: center;
     margin-top: 3em;
     margin-bottom: 1em;
@@ -82,7 +88,7 @@ main {
 }
 
 #menu {
-    background-color: var(--color1);
+    background-color: var(--secondaryColor);
     font-size: 1.1em;
     width: 50%;
     flex: auto;
@@ -90,171 +96,17 @@ main {
 }
 
 #menu a:link{
-    color: #000;
+    color: var(--linkDarkBackground);
 }
 
 #menu a:visited{
-    color: var(--color2);
-}
-
-#trattamenti{
-    background-image:url("../IMG/INDEX/trattamentiMacchinari.jpeg") ;
-}
-
-#consulenze{
-    background-image:url("../IMG/INDEX/consulenze.jpeg") ;
-}
-
-#prenotazione{
-    background-image:url("../IMG/INDEX/calendario2.jpeg") ;
-}
-
-#viso{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso.jpeg") ;
-}
-
-#corpo{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo1.jpeg") ;
-}
-
-#macchinari{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari.jpeg") ;
-}
-
-#puliziaViso{
-    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso1.jpeg");
-}
-
-#idratazione{
-    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti1.jpeg") ;
-}
-
-#antiage{
-    background-image:url("../IMG/VISO/ANTI-AGE/antiage1.jpeg") ;
-}
-
-#effettoLifting{
-    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect1.jpeg") ;
-}
-
-#rimpolpanti{
-    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti1.png") ;
-}
-
-#sebo-regolatori{
-    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori3.jpeg") ;
-}
-
-#desensibilizzanti{
-    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante2.jpeg") ;
-}
-
-#epilazione{
-    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione3.jpeg") ;
-}
-
-#massaggio{
-    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio1.jpeg") ;
-}
-
-#manicurePedicure{
-    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure3.jpeg") ;
-}
-
-#lucePulsata{
-    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata2.jpeg");
-}
-
-#radiofrequenza{
-    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza3.jpeg") ;
-}
-
-#ultrasuoni{
-    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni1.jpeg") ;
-}
-
-#elettrocoagulatore{
-    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore1.jpeg") ;
-}
-
-#elettroscultore{
-    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore1.jpeg") ;
-}
-
-#elettroporatore{
-    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore1.jpeg") ;
-}
-
-#pressoterapia{
-    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia2.jpeg") ;
-}
-
-#brush{
-    background-image:url("../IMG/MACCHINARI/BRUSH/brush.jpeg") ;
-}
-
-#massaggioEndodermico{
-    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico1.jpeg") ;
-}
-
-#termofrequenza{
-    background-image:url("../IMG/MACCHINARI/TERMOFREQUENZA/termofrequenza.jpg") ;
-}
-
-#ceretta{
-    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta3.jpeg") ;
-}
-
-#brasiliana{
-    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana3.jpeg") ;
-}
-
-#pastaZucchero{
-    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero3.jpeg") ;
-}
-
-#rilassante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante1.jpeg");
-}
-
-#olistico{
-    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico2.jpeg");
-}
-
-#decontratturante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante2.jpeg");
-}
-
-#tonificante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante1.jpeg");
-}
-
-#linfodrenante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo2.jpeg");
-}
-
-#modellante{
-    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante2.jpeg");
-}
-
-#posa{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto1.jpeg");
-}
-
-#semipermanente{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente2.jpeg");
-}
-
-#gel{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel.jpeg");
-}
-
-#curativa{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa2.jpeg");
+    color: var(--mainColor);
 }
 
 .buttonMenu {
-    background-color: var(--color1);
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    font-weight: bold;
     align-items: center;
     position: relative;
     cursor: pointer;
@@ -264,18 +116,19 @@ main {
 
 
 .menuCont {
-    background-color: var(--color1);
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
     position: absolute;
     width: 50%;
     margin: auto;
     padding: 0.4em 0em 0.4em 0.4em;
-    border: 1px solid var(--color2);
+    border: 1px solid var(--mainColorAlpha);
 }
 
 #breadcrumb {
     display: block;
-    background-color: var(--color2);
-    color: var(--color1);
+    background-color: var(--mainColorAlpha);
+    color: black;
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
     width: 50%;
@@ -288,11 +141,11 @@ main {
 }
 
 #breadcrumb a:link{
-    color: yellow;
+    color:var(--linkClearBackground);
 }
 
 #breadcrumb a:visited{
-    color: #fff;
+    color: var(--breadcrumbVisitedLink);
 }
 
 table,th,td{
@@ -329,11 +182,11 @@ table,th,td{
 }
 
 .contenitore_carte a:link{
-    color:var(--color2);
+    color:var(--linkClearBackground);
 }
 
 .contenitore_carte a:visited{
-    color:#A83B00;
+    color: var(--cardVisitedLink);
 }
 
 .carta{
@@ -383,4 +236,156 @@ footer{
 
 .item-footer table{
     margin: 0 auto;
+}
+
+#trattamenti{
+    background-image:url("../IMG/INDEX/trattamentiMacchinari.jpeg") ;
+}
+
+#consulenze{
+    background-image:url("../IMG/INDEX/consulenze.jpeg") ;
+}
+
+#prenotazione{
+    background-image:url("../IMG/INDEX/calendario.jpeg") ;
+}
+
+#viso{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso.jpeg") ;
+}
+
+#corpo{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo.jpeg") ;
+}
+
+#macchinari{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari.jpeg") ;
+}
+
+#puliziaViso{
+    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso.jpeg");
+}
+
+#idratazione{
+    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti.jpeg") ;
+}
+
+#antiage{
+    background-image:url("../IMG/VISO/ANTI-AGE/antiage.jpeg") ;
+}
+
+#effettoLifting{
+    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect.jpeg") ;
+}
+
+#rimpolpanti{
+    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti.png") ;
+}
+
+#sebo-regolatori{
+    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori.jpeg") ;
+}
+
+#desensibilizzanti{
+    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante.jpeg") ;
+}
+
+#epilazione{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione.jpeg") ;
+}
+
+#massaggio{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio.jpeg") ;
+}
+
+#manicurePedicure{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure.jpeg") ;
+}
+
+#lucePulsata{
+    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata.jpeg");
+}
+
+#radiofrequenza{
+    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza.jpeg") ;
+}
+
+#ultrasuoni{
+    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni.jpeg") ;
+}
+
+#elettrocoagulatore{
+    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore.jpeg") ;
+}
+
+#elettroscultore{
+    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore.jpeg") ;
+}
+
+#elettroporatore{
+    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore.jpeg") ;
+}
+
+#pressoterapia{
+    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia.jpeg") ;
+}
+
+#brush{
+    background-image:url("../IMG/MACCHINARI/BRUSH/brush.jpeg") ;
+}
+
+#massaggioEndodermico{
+    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico.jpeg") ;
+}
+
+#ceretta{
+    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta.jpeg") ;
+}
+
+#brasiliana{
+    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana.jpeg") ;
+}
+
+#pastaZucchero{
+    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero.jpeg") ;
+}
+
+#rilassante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante.jpeg");
+}
+
+#olistico{
+    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico.jpeg");
+}
+
+#decontratturante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante.jpeg");
+}
+
+#tonificante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante.jpeg");
+}
+
+#linfodrenante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo.jpeg");
+}
+
+#modellante{
+    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante.jpeg");
+}
+
+#posa{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto.jpeg");
+}
+
+#semipermanente{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente.jpeg");
+}
+
+#gel{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel.jpeg");
+}
+
+#curativa{
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
