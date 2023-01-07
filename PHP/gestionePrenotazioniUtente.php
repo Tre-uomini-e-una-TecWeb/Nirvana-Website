@@ -1,15 +1,15 @@
 <?php
 
 session_start();
-if($_SESSION["privilegi"] != 1){
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+if($_SESSION["privilegi"] != "cliente"){
+    header("Location: test.php");
     die();
 }
-
-$pagina_HTML = file_get_contents("../HTML/AMMINISTRAZIONE/gestionePrenotazioniUtente.html");
-
 require_once "connessione.php";
 use DB\DBAccess;
+
+$pagina_HTML = file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html");
+
 $connessione = new DBAccess();
 $connOk = $connessione->openDBConnection();
 
@@ -24,10 +24,8 @@ function pulisciInput($value){
 }
 
 if($connOk){
-    $prenotazioni = "";
     $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
-        $dataOggi = new DateTime(date("Y-m-d"));
         foreach($query_result as $prenotazione){
             $prenotazioni .= "<tr>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
@@ -35,7 +33,7 @@ if($connOk){
                           .  "<td scope=\"row\">".$oraPrenotazione."</td>"
                           .  "<td scope=\"row\">".$prenotazione['Trattamento']."</td>"
                           .  "<td scope=\"row\">".$prenotazione['Stato']."</td>";
-            $prenotazione .= "</tr>";
+            $prenotazioni .= "</tr>";
         }
     }
     else{
@@ -46,10 +44,10 @@ if($connOk){
 }
 
 if(isset($_POST['submit'])){
-    $clinente = $_SESSION["username"];
-    $data = pulisciInput($_POST['data']);
-    $ora = pulisciInput($_POST['ora']);
-    $servizio = pulisciInput($_POST['servizio']);
+    $cliente = $_SESSION["username"];
+    $data = pulisciInput($_POST['date']);
+    $ora = pulisciInput($_POST['hour']);
+    $servizio = pulisciInput($_POST['service']);
 
     if($connOk){
         $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$servizio);
@@ -63,9 +61,10 @@ if(isset($_POST['submit'])){
     } else {
         $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
     }
-    
+
+    $prenotazioni = "";
+    $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
-        $dataOggi = new DateTime(date("Y-m-d"));
         foreach($query_result as $prenotazione){
             $prenotazioni .= "<tr>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
@@ -73,13 +72,12 @@ if(isset($_POST['submit'])){
                           .  "<td scope=\"row\">".$oraPrenotazione."</td>"
                           .  "<td scope=\"row\">".$prenotazione['Trattamento']."</td>"
                           .  "<td scope=\"row\">".$prenotazione['Stato']."</td>";
-            $prenotazione .= "</tr>";
+            $prenotazioni .= "</tr>";
         }
     }
     else{
         $prenotazioni .= "<tr><td scope=\"row\">Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
-
 }
 
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
