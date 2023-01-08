@@ -44,12 +44,10 @@
 			\end{tabular}
 			\egroup
 			
-			\vspace*{\fill}
-			
 			\begin{center}
 				\textbf{Referente\\}
 				Nicola Baesso - nicola.baesso@studenti.unipd.it\\
-				\textbf{Utente\\}
+				\textbf{Utenti (credenziali username-password):\\}
 				\textit{Amministratore:} admin - admin\\
 				\textit{Cliente:} user - user\\
 			\end{center}
@@ -186,7 +184,6 @@ Dispone quindi dei seguenti casi d'uso:
 	\item Visualizzazione pagina "Consulenze";
 \end{itemize}
 \paragraph{Visualizzazione pagina "Home"}\mbox{}\\
-\label{par:VisHome}
 L'utente generico può entrare nella pagina \textit{Home} in diversi modi:
 \begin{itemize}
 	\item se è appena entrato nel sito, è la prima pagina che viene visualizzata;
@@ -194,6 +191,15 @@ L'utente generico può entrare nella pagina \textit{Home} in diversi modi:
 	%\item se si trova in un'altra pagina, può raggiungere la homepage cliccando sul logo presente nell'header;
 \end{itemize}
 All'interno di questa pagina l'utente può visualizzare una breve presentazione del centro estetico, oltre ad aver subito un piccolo menú dei servizi offerti.\\
+\paragraph{Visualizzazione pagina "Trattamenti e Macchinari"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Trattamenti e Macchinari} attraverso le apposite voci presenti sia nel menú sia nella pagina home.\\
+In questa pagina si ha un altro sottomenú, che conduce alle pagine relative ai trattamneti viso e corpo, e ai macchinari utilizzati dal centro.\\
+\paragraph{Visualizzazione pagina "Trattamenti Viso"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Trattamenti Viso} attraverso le apposite voci presenti sia nel menú sia nella pagina Trattamenti e Macchinari.\\
+All'interno della pagina si hanno tutti i trattamenti dedicati al viso che il centro offre. Ogni trattamento é accompagnato da una breve descrizione, visualizzabile dopo una foto dimostrativa.\\
+\paragraph{Visualizzazione pagina "Trattamenti Corpo"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Trattamenti Corpo} attraverso le apposite voci presenti sia nel menú sia nella pagina Trattamenti e Macchinari.\\
+Essendo i trattamenti corpo molteplici e volendo tenere una struttura ordinata, questa pagina contiene un altro sottomenú, che conduce alle pagine relative alle macro-categorie di trattamenti per il corpo, ovvero i massaggi, l'epilazione e la manicure/pedicure.\\
 \subsubsection{Cliente}
 Un utente é identificato come \textit{cliente} quando é autenticato al sito e ha privilegi di utente, e pertanto puó accedere alla sua area personale ed effettuare delle richieste di prenotazione per i servizi offerti dal centro.\\
 Per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{user}.\\
@@ -222,7 +228,10 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 \section{Presentazione}
 \section{Implementazione}
 \section{Validazione}
-\section{Fase di Test e Strumenti}
+\section{Fase di Test}
+\section{Strumenti}
+\subsection{Strumenti di sviluppo}
+\subsection{Strumenti di test}
 \section{Suddivisione del lavoro}
 Per garantire una buona suddivisione del carico di lavoro che il progetto ha inevitabilmente richiesto, si é suddiviso il lavoro tra i membri del gruppo in questo modo:
 \begin{itemize}
@@ -241,13 +250,13 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item CSS: Implementazioni sui fogli relativi alla visualizzazione desktop e mobile
 		\item Javascript:
 		\item PHP:
-		\item Immagini:
+		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate
 		\item Relazione:
 	\end{itemize} ;
 	\item Annalisa Egidi:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: ;
-		\item CSS:
+		\item CSS: Implementazioni sui fogli relativi alla visualizzazione desktop e mobile, oltre alle modifiche sul foglio per la stampa
 		\item Javascript:
 		\item PHP:
 		\item Immagini:
@@ -258,7 +267,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item HTML: Sviluppo delle seguenti pagine: ;
 		\item CSS:
 		\item Javascript:
-		\item PHP:
+		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente
 		\item Immagini:
 		\item Relazione:
 	\end{itemize} ;
