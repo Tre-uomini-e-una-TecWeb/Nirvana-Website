@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION["privilegi"]!="admin"){
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: 403.php");
     die();
 }
 require_once "connessione.php";
