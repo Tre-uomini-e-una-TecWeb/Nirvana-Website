@@ -2,7 +2,7 @@
 
 session_start();
 if($_SESSION["privilegi"] != "cliente"){
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: 403.php");
     die();
 }
 require_once "connessione.php";
