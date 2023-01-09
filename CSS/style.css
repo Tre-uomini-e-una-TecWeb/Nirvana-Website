@@ -93,6 +93,7 @@ main {
     width: 50%;
     flex: auto;
     float: left;
+    text-align: center;
 }
 
 #menu a:link{
@@ -119,7 +120,7 @@ main {
     background-color: var(--secondaryColor);
     color: var(--mainColor);
     position: absolute;
-    width: 50%;
+    width: -webkit-fill-available;
     margin: auto;
     padding: 0.4em 0em 0.4em 0.4em;
     border: 1px solid var(--mainColorAlpha);
