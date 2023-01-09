@@ -165,8 +165,8 @@ Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evita
 \subsection{Studio dell'utenza finale}
 Il sito vuole fornire informazioni riguardanti i possibili trattamenti che il centro estetico Nirvana offre, garantendo una navigazione fluida e con il minor numero di operazioni possibili.\\
 Pertanto gli utilizzatori del sito sono visitatori casuali, clienti da breve o lungo tempo del centro e la responsabile del centro assieme ai propri dipendenti.
-Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente e i gestori del centro.\\
-I clienti hanno il diritto di accedere ad aree riservate del sito, mentre i gestori possono anche accedere alle funzionalitá avanzate del sito. Entrambe le categorie possono essere definite come utenti interni.\\
+Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
+I clienti hanno il diritto di accedere ad aree riservate del sito, mentre gli amministratori possono anche accedere alle funzionalitá avanzate del sito. Entrambe le categorie possono essere definite come utenti interni.\\
 L'utente finale é principalmente un utente posto tra l'utente generico e il cliente, ovvero un utente che a prescindere non conosce il linguaggio tecnico utilizzato, é dunque necessario che il sito abbia un linguaggio informale e semplice, in modo tale che sia comprensibile dalla maggior parte delle persone.
 \subsection{Casi d'uso}
 \subsubsection{Utente generico}
@@ -175,13 +175,13 @@ Dispone quindi dei seguenti casi d'uso:
 \begin{itemize}
 	\item Visualizzazione pagina "Home";
 	\item Visualizzazione pagina "Trattamenti e Macchinari";
+	\item Visualizzazione pagina "Consulenze";
 	\item Visualizzazione pagina "Trattamenti Viso";
 	\item Visualizzazione pagina "Trattamenti Corpo";
+	\item Visualizzazione pagina "Macchinari";
 	\item Visualizzazione pagina "Epilazione";
 	\item Visualizzazione pagina "Massaggi";
 	\item Visualizzazione pagina "Manicure \& Pedicure";
-	\item Visualizzazione pagina "Macchinari";
-	\item Visualizzazione pagina "Consulenze";
 \end{itemize}
 \paragraph{Visualizzazione pagina "Home"}\mbox{}\\
 L'utente generico può entrare nella pagina \textit{Home} in diversi modi:
@@ -191,15 +191,39 @@ L'utente generico può entrare nella pagina \textit{Home} in diversi modi:
 	%\item se si trova in un'altra pagina, può raggiungere la homepage cliccando sul logo presente nell'header;
 \end{itemize}
 All'interno di questa pagina l'utente può visualizzare una breve presentazione del centro estetico, oltre ad aver subito un piccolo menú dei servizi offerti.\\
+
 \paragraph{Visualizzazione pagina "Trattamenti e Macchinari"}\mbox{}\\
 L'utente generico può entrare nella pagina \textit{Trattamenti e Macchinari} attraverso le apposite voci presenti sia nel menú sia nella pagina home.\\
 In questa pagina si ha un altro sottomenú, che conduce alle pagine relative ai trattamneti viso e corpo, e ai macchinari utilizzati dal centro.\\
+
+\paragraph{Visualizzazione pagina "Consulenze"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Consulenze} attraverso le apposite voci presenti sia nel menú sia nella pagina home.\\
+In questa pagina si ha una breve descrizione riguardante il servizio di consulenza, che indica i passaggi seguiti.\\
+
 \paragraph{Visualizzazione pagina "Trattamenti Viso"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Trattamenti Viso} attraverso le apposite voci presenti sia nel menú sia nella pagina Trattamenti e Macchinari.\\
+L'utente generico può entrare nella pagina \textit{Trattamenti Viso} attraverso la pagina Trattamenti e Macchinari.\\
 All'interno della pagina si hanno tutti i trattamenti dedicati al viso che il centro offre. Ogni trattamento é accompagnato da una breve descrizione, visualizzabile dopo una foto dimostrativa.\\
+
 \paragraph{Visualizzazione pagina "Trattamenti Corpo"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Trattamenti Corpo} attraverso le apposite voci presenti sia nel menú sia nella pagina Trattamenti e Macchinari.\\
+L'utente generico può entrare nella pagina \textit{Trattamenti Corpo} tramite la pagina Trattamenti e Macchinari.\\
 Essendo i trattamenti corpo molteplici e volendo tenere una struttura ordinata, questa pagina contiene un altro sottomenú, che conduce alle pagine relative alle macro-categorie di trattamenti per il corpo, ovvero i massaggi, l'epilazione e la manicure/pedicure.\\
+
+\paragraph{Visualizzazione pagina "Macchinari"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Consulenze} attraverso la pagina Trattamenti e Macchinari.\\
+In questa pagina si trovano tutti i tipi di macchinari che il centro utilizza per i servizi offerti, accompagnati da un'immagine che nasconde una piccola descrizione del macchinario stesso.\\
+
+\paragraph{Visualizzazione pagina "Epilazione"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Epilazione} dalla pagina Trattamenti Corpo.\\
+In questa pagina si trovano tutti i tipi di epilazione che il centro offre, accompagnati da un'immagine che nasconde una piccola descrizione del trattamento stesso.\\
+
+\paragraph{Visualizzazione pagina "Massaggi"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Massaggi} dalla pagina Trattamenti Corpo.\\
+All'interno di questa pagina si trovano tutti i tipi di massaggi offerti dal centro, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singola categoria di massaggio.\\
+
+\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
 \subsubsection{Cliente}
 Un utente é identificato come \textit{cliente} quando é autenticato al sito e ha privilegi di utente, e pertanto puó accedere alla sua area personale ed effettuare delle richieste di prenotazione per i servizi offerti dal centro.\\
 Per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{user}.\\
@@ -230,6 +254,8 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 \section{Validazione}
 \section{Fase di Test}
 \section{Strumenti}
+A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
+Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo.
 \subsection{Strumenti di sviluppo}
 \subsection{Strumenti di test}
 \section{Suddivisione del lavoro}
