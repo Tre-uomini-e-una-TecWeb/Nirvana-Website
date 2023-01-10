@@ -67,47 +67,48 @@
     
                 <div class="item-footer">
                     <dt>Indirizzo</dt>
-                    <dd>Via Roma, 1</dd>
+                    <dd><address>Via Roma, 1</address></dd>
                 </div>
     
                 <div class="item-footer">
                     <dt>Telefono</dt>
-                    <dd>123456789</dd>
+                    <dd><a href="tel:123456789">123456789</a></dd>
                 </div>
     
                 <div class="item-footer">
                     <dt>Email</dt>
-                    <dd>example@ovunque.com</dd>
+                    <dd> <a href="mailto:example@ovunque.com">example@ovunque.com</a> </dd>
                 </div>
     
                 <div class="item-footer">
-                    <dt>Orari</dt>
+                    <dt></dt>
                     <dd>
-                        <table>
+                        <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                            <caption>Orari</caption>
                             <tr>
-                                <th>Giorno</th>
-                                <th>dalle ore</th>
-                                <th>alle ore</th>
+                                <th scope="col">Giorno</th>
+                                <th scope="col">Apertura</th>
+                                <th scope="col">Chiusura</th>
                             </tr>
                             <tr>
-                                <td>Lunedi</td>
-                                <td>chiuso</td>
-                                <td>chiuso</td>
+                                <td>Lunedì</td>
+                                <td>Chiuso</td>
+                                <td>Chiuso</td>
                             </tr>
                             <tr>
-                                <td>Martedi-Venerdi</td>
-                                <td>09.00</td>
-                                <td>19.00</td> 
+                                <td>da Martedì a Venerdì</td>
+                                <td><time datetime="09:00">09:00</time></td>
+                                <td><time datetime="19:00">19:00</time></td> 
                             </tr>
                             <tr>
                                 <td>Sabato e Domenica</td>
-                                <td>09.00</td>
-                                <td>15.00</td> 
+                                <td><time datetime="09:00">09:00</time></td>
+                                <td><time datetime="15:00">15:00</time></td> 
                             </tr>
                         </table>
                     </dd>
                 </div>
             </dl>
         </footer>
-        </body>
+    </body>
 </html>
