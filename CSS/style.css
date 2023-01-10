@@ -3,7 +3,7 @@
     /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
     --secondaryColor: #800000;
     --mainColorAlpha: #d17e7a;
-    --cardVisitedLink: #C64600;
+    --visitedLinkClearBackground: #C64600;
     --linkClearBackground: #00166b;
     --breadcrumbVisitedLink: #241F31;
     --linkDarkBackground: white;
@@ -154,6 +154,10 @@ table,th,td{
     border-collapse: collapse;
 }
 
+th, td{
+    padding: 0.5em;
+}
+
 .contenitore_carte>li,
 .contenitore_carte>div>dt,
 .item-footer>dt{
@@ -187,7 +191,7 @@ table,th,td{
 }
 
 .contenitore_carte a:visited{
-    color: var(--cardVisitedLink);
+    color: var(--visitedLinkClearBackground);
 }
 
 .carta{
@@ -215,6 +219,14 @@ footer{
     background-color: #ffcc99;
 }
 
+footer a:link{
+    color: var(--linkClearBackground);
+}
+
+footer a:visited{
+    color: var(--visitedLinkClearBackground);
+}
+
 .contenitore-footer {
     display: flex;
     flex-wrap: wrap;
@@ -237,6 +249,11 @@ footer{
 
 .item-footer table{
     margin: 0 auto;
+}
+
+.item-footer table>caption{
+    font-weight: bold;
+    font-size: large;
 }
 
 #trattamenti{
