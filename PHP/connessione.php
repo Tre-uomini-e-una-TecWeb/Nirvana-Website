@@ -134,6 +134,23 @@ class DBAccess{
         }
     }
 
+    public function getPrenotazioniUtente($user){
+        $dataOggi = date("Y-m-d");
+        $query="SELECT * FROM Prenotazioni WHERE DataOra>'$dataOggi' AND Utente='".$user."' ORDER BY DataOra ASC";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
+
     public function getPrenotazioniDaConfermare(){
         $dataOggi = date("Y-m-d");
         $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' AND Stato='P' ORDER BY DataOra ASC";

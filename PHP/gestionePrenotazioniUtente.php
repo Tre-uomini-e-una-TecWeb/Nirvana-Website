@@ -45,7 +45,8 @@ if($connOk){
         }
     }
 
-    $query_result = $connessione->getPrenotazioni();
+
+    $query_result = $connessione->getPrenotazioniUtente($_SESSION["username"]);
     if($query_result != null){
         foreach($query_result as $prenotazione){
             $prenotazioni .= "<tr>";
