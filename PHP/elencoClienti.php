@@ -1,7 +1,8 @@
 <?php
 session_start();
 if($_SESSION["privilegi"]!="admin"){
-    header("Location: 403.php");
+    header("HTTP/1.1 403 Unauthorized");
+    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
 require_once "connessione.php";
@@ -15,11 +16,12 @@ if($connOk){
     if($query_result != null){
         foreach($query_result as $cliente){
             $clienti.="<tr>";
-            $clienti .= "<td scope=\"row\">".$cliente['Nome']."</td>";
-            $clienti .= "<td scope=\"row\">".$cliente['Cognome']."</td>";
-            $clienti .= "<td scope=\"row\">".$cliente['DataNascita']."</td>";
-            $clienti .= "<td scope=\"row\">".$cliente['Email']."</td>";
-            $clienti .= "<td scope=\"row\">".$cliente['Telefono']."</td>";
+            $clienti .= "<td>".$cliente['Nome']."</td>";
+            $clienti .= "<td>".$cliente['Cognome']."</td>";
+            $clienti .= "<td>".$cliente['DataNascita']."</td>";
+            $clienti .= "<td><a href=\"mailto:".$cliente['Email']."\">".$cliente['Email']."</a></td>";
+            $clienti .= "<td><a href=\"tel:".$cliente['Telefono']."\">".$cliente['Telefono']."</a></td>";
+            $clienti .= "</tr>";
         }
     }
     else{

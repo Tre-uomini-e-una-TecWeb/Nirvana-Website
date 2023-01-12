@@ -2,7 +2,8 @@
 
 session_start();
 if($_SESSION["privilegi"] != "cliente"){
-    header("Location: 403.php");
+    header("HTTP/1.1 403 Unauthorized");
+    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
 require_once "connessione.php";
