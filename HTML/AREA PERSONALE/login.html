@@ -37,13 +37,14 @@
             <ul id="menuList" class="menuCont">
                 <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
                 <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
-                <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+                <li><a href="../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <section>
+        <div id="contain">
+        <section id="registrazione" >
             <h2>Registrazione</h2>
             <form id="signup" method="post" action="login.php">
                 <label for="name"> Nome: </label>
@@ -66,7 +67,7 @@
             <esitoRegistrazione />
         </section>
 
-        <section>       
+        <section id="accesso" >       
             <h2>Accesso</h2>
             <form id="login" method="post" action="login.php">
                 <label lang="en"> Username: </label>
@@ -78,7 +79,7 @@
             </form>
             <avvisoLogin />
         </section>
-
+        </div>
         <section>
             <div id="help"> Se non ti ricordi la password, contatta il centro estetico</div>
         </section>
