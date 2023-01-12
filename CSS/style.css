@@ -12,6 +12,7 @@
 * {
     padding: 0em;
     margin: 0em;
+    font-family: "Arial" , sans-serif;
 }
 
 header{
@@ -112,7 +113,7 @@ main {
     position: relative;
     cursor: pointer;
     border: none;
-    padding: 0.9em 1em 0.9em 1em;
+    padding: 0.9em 15em 0.9em 15em;
 }
 
 
@@ -122,8 +123,18 @@ main {
     position: absolute;
     width: -webkit-fill-available;
     margin: auto;
-    padding: 0.4em 0em 0.4em 0.4em;
+    
     border: 1px solid var(--mainColorAlpha);
+}
+
+.menuCont li{
+    padding: 0.2em 0em 0.2em 0em;
+    border: 1px solid var(--mainColorAlpha);
+}
+
+.menuCont li a{
+    display: block;
+    width: 100%;
 }
 
 #breadcrumb {
@@ -258,6 +269,19 @@ footer a:visited{
 
 .item-footer table{
     margin: 0 auto;
+    border-bottom: hidden;
+    border-left:hidden;
+    border-right: hidden;
+}
+
+.item-footer table tr th{
+    border: 2px black solid;
+}
+
+.item-footer tr:nth-child(even) {background-color: #ffe0c1}
+
+.item-footer table th, td{
+    padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
 .item-footer table>caption{
