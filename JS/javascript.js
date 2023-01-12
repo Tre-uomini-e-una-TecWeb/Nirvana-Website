@@ -1,5 +1,5 @@
 function menuButton() {
-  document.getElementById("menuList").classList.toggle("show");
+  document.getElementById("menuList").classList.toggle("show")
 }
 
 function userMenu() {
@@ -7,9 +7,25 @@ function userMenu() {
 }
 
 function PageLoad() {
-  userMenu();
-  menuButton();
+  if(document.getElementById("areaPersonale") != null){
+    sessionStorage.setItem('loggedIn', 'true');
+    console.log('H1');
+  }
+
+  if(sessionStorage.getItem('loggedIn') == 'true'){
+    document.getElementById("LogIn").style.display = "none";
+    document.getElementById("LogOut").style.display = "block";
+  } else {
+    document.getElementById("LogIn").style.display = "block";
+    document.getElementById("LogOut").style.display = "none";
+  }
+  
 }
+
+function LogOut() {
+  sessionStorage.setItem('loggedIn', 'false');
+}
+  
 
 document.addEventListener("click", function(event){
   if (!event.target.matches('.buttonMenu')) {
