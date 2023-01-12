@@ -1,7 +1,8 @@
 <?php
 session_start();
 if($_SESSION["privilegi"]!="admin"){
-    header("Location: 403.php");
+    header("HTTP/1.1 403 Unauthorized");
+    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
 require_once "connessione.php";
