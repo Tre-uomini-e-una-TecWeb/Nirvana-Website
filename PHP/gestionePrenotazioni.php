@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["username"] != ""){//l'utente ha effettuato l'autenticazione
+if(array_key_exists("username", $_SESSION) && $_SESSION["username"] != ""){//l'utente ha effettuato l'autenticazione
     echo $_SESSION["privilegi"];
     if($_SESSION["privilegi"]=="admin"){
         header("Location: gestionePrenotazioniAmministratore.php");
