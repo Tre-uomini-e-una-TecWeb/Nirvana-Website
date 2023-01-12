@@ -444,3 +444,22 @@ footer a:visited{
 #curativa{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
+
+#contain {
+    display: flex;
+    /* text-align: center; */
+}
+
+#contain input {
+    padding: 0.2em;
+    margin: 0.2em;
+}
+
+
+#registrazione {
+    flex: auto;
+}
+
+#accesso {
+    flex: auto;
+}

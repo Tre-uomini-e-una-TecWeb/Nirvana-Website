@@ -32,7 +32,7 @@ if($connOk){
         $servizio = pulisciInput($_POST['service']);
     
         if($connOk){
-            $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$servizio);
+            $queryOk=$connessione->insertNewReservationUser($cliente,$data,$ora,$servizio);
             if($queryOk){
                 // Prenotazione inserita!
                 $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
