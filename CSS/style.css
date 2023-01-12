@@ -103,7 +103,7 @@ main {
 #menu {
     background-color: var(--secondaryColor);
     font-size: 1.1em;
-    width: 40%;
+    width: 35%;
     flex: auto;
     float: left;
     text-align: center;
@@ -156,7 +156,7 @@ main {
     color: black;
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
-    width: 60%;
+    width: 65%;
     flex: auto;
     float: left;
 }
@@ -303,27 +303,43 @@ footer a:visited{
 }
 
 #trattamenti{
-    background-image:url("../IMG/INDEX/trattamentiMacchinari.jpeg") ;
+    background-image:url("../IMG/INDEX/TRATTAMENTIMACCHINARI/trattamentiMacchinari.jpeg") ;
+}
+
+#trattamenti:hover, #trattamenti:active{
+    background-image:url("../IMG/INDEX/TRATTAMENTIMACCHINARI/trattamentiMacchinari-zoom.jpeg") ;
 }
 
 #consulenze{
-    background-image:url("../IMG/INDEX/consulenze.jpeg") ;
+    background-image:url("../IMG/INDEX/CONSULENZE/consulenze.jpeg") ;
+}
+
+#consulenze:hover, #consulenze:active{
+    background-image:url("../IMG/INDEX/CONSULENZE/consulenze-zoom.jpeg") ;
 }
 
 #prenotazione{
-    background-image:url("../IMG/INDEX/calendario.jpeg") ;
+    background-image:url("../IMG/INDEX/CALENDARIO/calendario.jpeg") ;
+}
+
+#prenotazione:hover, #prenotazione:active{
+    background-image:url("../IMG/INDEX/CALENDARIO/calendario-zoom.jpeg") ;
 }
 
 #viso{
     background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso.jpeg") ;
 }
 
+#viso:hover, #viso:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso-zoom.jpeg") ;
+}
+
 #corpo{
     background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo.jpeg") ;
 }
 
-#corpo:hover{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-opaco.jpeg") ;
+#corpo:hover, #corpo:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-zoom.jpeg") ;
 }
 
 #corpo:active{
@@ -332,6 +348,10 @@ footer a:visited{
 
 #macchinari{
     background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari.jpeg") ;
+}
+
+#macchinari:hover, #macchinari:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari-zoom.jpeg") ;
 }
 
 #puliziaViso{
@@ -370,12 +390,24 @@ footer a:visited{
     background-image:url("../IMG/CORPO/EPILAZIONE/epilazione.jpeg") ;
 }
 
+#epilazione:hover, #epilazione:active{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione-zoom.jpeg") ;
+}
+
 #massaggio{
     background-image:url("../IMG/CORPO/MASSAGGIO/massaggio.jpeg") ;
 }
 
+#massaggio:hover, #messaggio:active{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio-zoom.jpeg") ;
+}
+
 #manicurePedicure{
     background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure.jpeg") ;
+}
+
+#manicurePedicure:hover, #manicurePedicure:active{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure-zoom.jpeg") ;
 }
 
 #lucePulsata{
