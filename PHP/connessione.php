@@ -65,6 +65,22 @@ class DBAccess{
         }
     }
 
+    public function insertNewReservationUser($cliente,$data,$ora,$trattamento){
+        list($year, $month, $day) = explode("-", $data);
+        list($hour, $min) = explode(":", $ora);
+        $dataOraStringa=$year."-".$month."-".$day." ";
+        $dataOraStringa.=$hour.":".$min;
+        //$dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
+        $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','P')";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function modificaPrenotazione($nD,$nO,$nS,$user,$vD,$vO){
         if($nS!=""){
             if($nD=="" || $nS=="R"){//non é stata modificata la data della prenotazione
