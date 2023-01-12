@@ -17,11 +17,10 @@
     <header>
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right">
-            <ul id="contentUser" class="userLinks show">
-                <li><span lang="en">Account</span></li>
-                <li>Area Prenotazione</li>
-                <li id="LogIn"><span lang="en">Log In</span></li>
-                <li id="LogOut"><span lang="en">Log Out</span></li>
+            <ul id="contentUser" class="userLinks">
+                <li><a href="../../PHP/areaPersonale.php">Area Personale</a></li>
+                <li id="LogIn"><span lang="en"><a href="../../PHP/login.php">Log In</a></span></li>
+                <li id="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
             </ul>
             <button onclick="userMenu()" class="userMenu"></button>
         </nav>
@@ -35,7 +34,7 @@
         </div>
         <div id="menu">
             <button onclick="menuButton()" class="buttonMenu">Menu</button>
-            <ul id="menuList" class="menuCont show">
+            <ul id="menuList" class="menuCont">
                 <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
                 <li>Consulenze</li>
                 <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
