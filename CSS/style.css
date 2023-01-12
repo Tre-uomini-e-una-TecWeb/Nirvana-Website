@@ -303,11 +303,11 @@ footer a:visited{
 }
 
 #trattamenti{
-    background-image:url("../IMG/INDEX/TRATTAMENTIMACCHINARI/trattamentiMacchinari.jpeg") ;
+    background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari.jpeg") ;
 }
 
 #trattamenti:hover, #trattamenti:active{
-    background-image:url("../IMG/INDEX/TRATTAMENTIMACCHINARI/trattamentiMacchinari-zoom.jpeg") ;
+    background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari-zoom.jpeg") ;
 }
 
 #consulenze{
