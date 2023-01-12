@@ -1,1 +1,2 @@
-ErrorDocument 403 /PHP/403.php
+ErrorDocument 401 /HTML/AMMINISTRAZIONE/401.html
+ErrorDocument 403 /HTML/AMMINISTRAZIONE/403.html
