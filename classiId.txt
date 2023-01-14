@@ -83,3 +83,10 @@ CLASSI:
     userMenu
     contenitore-footer
     item-footer
+
+
+ANOTAZIONI:
+    login.html = checkbox mostra password non funzionante
+    login.html = <div id="help"> Se non ti ricordi la password... non in colonna con Accesso
+    id="help" non in uso in css
+    eliminazionePrenotazioniAmministratore.html = perche' il logo e' enorme
