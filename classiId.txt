@@ -92,3 +92,4 @@ ANOTAZIONI:
     eliminazionePrenotazioniAmministratore.html = perche' il logo e' enorme
     consulenze.html= perche vedo i cazzo di puntini su style.css e non su print.css nononstante non ci sia una classe dicitura
     perche le linee 11: <link rel="stylesheet" media="screen" href="../../CSS/style.css"> non hanno la barretta finale (/>)
+    trattamentiViso.html= perche  linea12  <link rel="stylesheet" href="../../CSS/mini.css" media="handheld, screen and (max-width:600px), only screen and (max-device-width:600px)"/>
