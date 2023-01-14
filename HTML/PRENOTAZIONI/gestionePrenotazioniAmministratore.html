@@ -87,14 +87,14 @@
                     <option value="consulenzaViso">Consulenza viso</option>
                     <option value="consulenzaCorpo">Consulenza corpo</option>
                 </select><br>
-                <input type="submit" id="submit" name="submit" value="Conferma dati" aria-label="Conferma dati">
+                <input class="print-invisible" type="submit" id="submit" name="submit" value="Conferma dati" aria-label="Conferma dati">
             </form>
             <esitoForm />
         </section>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
-            <p>Ricordati di <a href="../PHP/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+            <p>Ricordati di <a href="../../PHP/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
             <table aria-describedby="descrTabPrenAmm" id="tabPrenAmm">
                 <tr>
                     <th scope="col">Nome</th>
@@ -110,7 +110,7 @@
                     <prenotazioniEsistenti />
                 </form>
             </table>
-            <button type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
+            <button class="print-invisible" type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
             <esitoModifiche />
         </section>
     </main>
