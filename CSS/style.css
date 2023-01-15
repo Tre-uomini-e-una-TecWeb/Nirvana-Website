@@ -231,7 +231,7 @@ th, td{
     color: rgba(0,0,0,0);
 }
 
-.carta li{
+.carta li, .bulletNone{
     margin-left: 1em;
 }
 
