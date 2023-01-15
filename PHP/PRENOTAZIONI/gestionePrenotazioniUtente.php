@@ -3,13 +3,13 @@
 session_start();
 if($_SESSION["privilegi"] != "cliente"){
     header("HTTP/1.1 403 Unauthorized");
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: ../../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
-require_once "connessione.php";
+require_once "../connessione.php";
 use DB\DBAccess;
 
-$pagina_HTML = file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html");
+$pagina_HTML = file_get_contents("../../HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html");
 
 $connessione = new DBAccess();
 $connOk = $connessione->openDBConnection();

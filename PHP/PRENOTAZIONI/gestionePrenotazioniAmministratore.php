@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION["privilegi"]!="admin"){
     header("HTTP/1.1 403 Unauthorized");
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: ../../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
 function pulisciInput($value){
@@ -12,9 +12,9 @@ function pulisciInput($value){
     return $value;
 }
 //ini_set('display_errors', 1);
-require_once "connessione.php";
+require_once "../connessione.php";
 use DB\DBAccess;
-$pagina_HTML=file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniAmministratore.html");
+$pagina_HTML=file_get_contents("../../HTML/PRENOTAZIONI/gestionePrenotazioniAmministratore.html");
 $connessione=new DBAccess();
 $connOk=$connessione->openDBConnection();
 $clienti="";
