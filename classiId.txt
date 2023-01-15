@@ -83,17 +83,3 @@ CLASSI:
     userMenu
     contenitore-footer
     item-footer
-
-
-ANOTAZIONI:
-   - login.html = checkbox mostra password non funzionante
-   - login.html = <div id="help"> Se non ti ricordi la password... non in colonna con Accesso
-boh-  id="help" non in uso in css
-   - perche le linee 11: <link rel="stylesheet" media="screen" href="../../CSS/style.css"> non hanno la barretta finale (/>)
-    eliminare mini.css
-    @media tabella, bread, login icona
-
-NELLA RELAZIONE PRINT:
-- motivare bottoni
-- motivare link
-- motivare presenza colori
