@@ -357,7 +357,7 @@ footer a:visited{
     background-image: url("../IMG/VISO/PULIZIA_VISO/Viso.jpeg");
 }
 
-/* aggiungere */
+
 #puliziaViso:hover{
     background-image: url("../IMG/VISO/PULIZIA_VISO/Viso-opaco40.jpeg");
 }
@@ -366,7 +366,7 @@ footer a:visited{
     background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti.jpeg") ;
 }
 
-/* aggiungere */
+
 #idratazione:hover{
     background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti-opaco40.jpeg") ;
 }
@@ -375,7 +375,7 @@ footer a:visited{
     background-image:url("../IMG/VISO/ANTI-AGE/antiage.jpeg") ;
 }
 
-/* aggiungere */
+
 #antiage:hover{
     background-image:url("../IMG/VISO/ANTI-AGE/antiage-opaco40.jpeg") ;
 }
@@ -384,7 +384,6 @@ footer a:visited{
     background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect.jpeg") ;
 }
 
-/* aggiungere */
 #effettoLifting:hover{
     background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect-opaco40.jpeg") ;
 }
@@ -393,7 +392,6 @@ footer a:visited{
     background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti.png") ;
 }
 
-/* aggiungere */
 #rimpolpanti:hover{
     background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti-opaco40.png") ;
 }
@@ -402,7 +400,7 @@ footer a:visited{
     background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori.jpeg") ;
 }
 
-/* aggiungere */
+
 #sebo-regolatori:hover{
     background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori-opaco40.jpeg") ;
 }
@@ -443,7 +441,6 @@ footer a:visited{
     background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata.jpeg");
 }
 
-/* aggiungere */
 #lucePulsata:hover{
     background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata-opaco40.jpeg");
 }
@@ -452,7 +449,6 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza.jpeg") ;
 }
 
-/* aggiungere */
 #radiofrequenza:hover{
     background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza-opaco40.jpeg") ;
 }
@@ -461,7 +457,6 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni.jpeg") ;
 }
 
-/* aggiungere */
 #ultrasuoni:hover{
     background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni-opaco40.jpeg") ;
 }
@@ -470,7 +465,6 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore.jpeg") ;
 }
 
-/* aggiungere */
 #elettrocoagulatore:hover{
     background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore-opaco40.jpeg") ;
 }
@@ -479,7 +473,6 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore.jpeg") ;
 }
 
-/* aggiungere */
 #elettroscultore:hover{
     background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore-opaco40.jpeg") ;
 }
@@ -488,7 +481,7 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore.jpeg") ;
 }
 
-/* aggiungere */
+
 #elettroporatore:hover{
     background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore-opaco40.jpeg") ;
 }
@@ -497,7 +490,7 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia.jpeg") ;
 }
 
-/* aggiungere */
+
 #pressoterapia:hover{
     background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia-opaco40.jpeg") ;
 }
@@ -506,7 +499,7 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/BRUSH/brush.jpeg") ;
 }
 
-/* aggiungere */
+
 #brush:hover{
     background-image:url("../IMG/MACCHINARI/BRUSH/brush-opaco40.jpeg") ;
 }
@@ -515,7 +508,7 @@ footer a:visited{
     background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico.jpeg") ;
 }
 
-/* aggiungere */
+
 #massaggioEndodermico:hover{
     background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico-opaco40.jpeg") ;
 }
@@ -524,7 +517,7 @@ footer a:visited{
     background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta.jpeg") ;
 }
 
-/* aggiungere */
+
 #ceretta:hover{
     background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta-opaco40.jpeg") ;
 }
@@ -533,7 +526,7 @@ footer a:visited{
     background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana.jpeg") ;
 }
 
-/* aggiungere */
+
 #brasiliana:hover{
     background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana-opaco40.jpeg") ;
 }
@@ -542,7 +535,7 @@ footer a:visited{
     background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero.jpeg") ;
 }
 
-/* aggiungere */
+
 #pastaZucchero:hover{
     background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero-opaco40.jpeg") ;
 }
@@ -551,7 +544,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante.jpeg");
 }
 
-/* aggiungere */
+
 #rilassante:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante-opaco40.jpeg");
 }
@@ -560,7 +553,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico.jpeg");
 }
 
-/* aggiungere */
+
 #olistico:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico-opaco40.jpeg");
 }
@@ -569,7 +562,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante.jpeg");
 }
 
-/* aggiungere */
+
 #decontratturante:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante-opaco40.jpeg");
 }
@@ -578,7 +571,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante.jpeg");
 }
 
- /* aggiungere */
+ 
 #tonificante:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante-opaco40.jpeg");
 }
@@ -587,7 +580,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo.jpeg");
 }
 
-/* aggiungere */
+
 #linfodrenante:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo-opaco40.jpeg");
 }
@@ -596,7 +589,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante.jpeg");
 }
 
-/* aggiungere */
+
 #modellante:hover{
     background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante-opaco40.jpeg");
 }
@@ -605,7 +598,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto.jpeg");
 }
 
-/* aggiungere */
+
 #posa:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto-opaco40.jpeg");
 }
@@ -614,7 +607,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente.jpeg");
 }
 
-/* aggiungere */
+
 #semipermanente:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente-opaco40.jpeg");
 }
@@ -623,7 +616,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel.jpeg");
 }
 
-/* aggiungere */
+
 #gel:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel-opaco40.jpeg");
 }
@@ -632,7 +625,7 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
 
-/* aggiungere */
+
 #curativa:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco40.jpeg");
 }
