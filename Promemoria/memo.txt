@@ -1,20 +1,12 @@
-Da fare:
-Da ampliare contenuti.
+ANOTAZIONI:
+   - login.html = checkbox mostra password non funzionante
+   - login.html = <div id="help"> Se non ti ricordi la password... non in colonna con Accesso
+boh-  id="help" non in uso in css
+   - perche le linee 11: <link rel="stylesheet" media="screen" href="../../CSS/style.css"> non hanno la barretta finale (/>)
+    eliminare mini.css
+    @media tabella, bread, login icona
 
-Decisioni:
-Nirvana da mettere fra le keywords.
-Prenotazioni: -> Login: 1) Non passa -> Torna in Login; 2) Utente -> Area personale Utente; 3) Admin -> Area personale Admin
-Macchinari: da mettere il link nelle pagine dei singoli trattamenti
-Menù e breadcrumb (in alto, in orizzontale) si devono vedere anche quando si scrolla la pagina verso il basso
-Menù "distribuito" sulla pagina per la home
-
-PAGINE:
-Index
- 1) Trattamenti: 
-  1.1) Viso
-   1.1...)Descrizioni (se c'è abbastanza testo)
-  1.2) Corpo
-   1.2...) Descrizioni (se c'è abbastanza testo)
- 2) Consulenze
- 3) Prenotazioni
- 4) Macchinari
+NELLA RELAZIONE PRINT:
+- motivare bottoni
+- motivare link
+- motivare presenza colori
