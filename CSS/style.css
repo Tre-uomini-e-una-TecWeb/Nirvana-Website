@@ -158,7 +158,7 @@ main {
     background-color: var(--mainColorAlpha);
     color: black;
     font-size: large;
-    padding: 0.5em 0em 0.5em 1.0em;
+    padding: 0.5em 1em 0.5em 1em;
     width: 65%;
     flex: auto;
     float: left;
