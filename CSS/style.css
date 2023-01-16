@@ -150,7 +150,7 @@ main {
     width: 100%;
 }
 
-#breadcrumb {
+.breadcrumb {
     display: block;
     background-color: var(--mainColorAlpha);
     color: black;
@@ -161,15 +161,19 @@ main {
     float: left;
 }
 
+#mini_breadcrumb{
+    display: none;
+    background-color: var(--mainColorAlpha);
+    color: black;
+    font-size: 1.1em;
+    padding: 0.5em 0em 0.5em 1.0em;
+}
+
 #bredcrumb > p {
     margin-top:auto;
 }
 
-#breadcrumb a:link{
-    color:var(--linkClearBackground);
-}
-
-#breadcrumb a:visited{
+.breadcrumb a:visited, #mini_breadcrumb a:visited{
     color: var(--breadcrumbVisitedLink);
 }
 
@@ -339,10 +343,6 @@ footer a:visited{
 
 #corpo:hover, #corpo:active{
     background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-zoom.jpeg") ;
-}
-
-#corpo:active{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-opaco-zoom.jpeg") ;
 }
 
 #macchinari{

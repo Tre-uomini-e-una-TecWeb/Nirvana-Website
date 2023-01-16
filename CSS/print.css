@@ -44,7 +44,7 @@ header > img {
     display: none;
 }
 
-#breadcrumb {
+.breadcrumb {
     display: none;
 }
 
@@ -213,11 +213,11 @@ main{
     margin-top:auto;
 } */
 
-/* #breadcrumb a:link{
+/* .breadcrumb a:link{
     color: yellow;
 } */
 
-/* #breadcrumb a:visited{
+/* .breadcrumb a:visited{
     color: #fff;
 } */
 
