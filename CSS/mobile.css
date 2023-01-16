@@ -6,6 +6,13 @@ nav:not(#top-right) {
     width: auto;
     float:none;
     flex:none;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+}
+
+.breadcrumb {
+   border-bottom: none;
 }
 
 #menu {
@@ -17,10 +24,49 @@ header {
     margin: 0em;
 }
 
+main {
+    margin: 3em;
+}
+
 @media screen and (max-width:750px), only screen and (max-device-width:750px) {
     
     #mini_breadcrumb{
         display: block;
+        text-align: center;
+    }
+
+    .breadcrumb {
+        border-top: none;
+    }
+
+    #top-right{
+        display: none;
+    }
+
+    #loginMenu{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    #loginMenu li{
+        display: inline;
+        padding: 0.5em 1em 0.5em 1.0em;
+        margin: 0em auto 0em auto;
+    }
+
+    main {
+        margin: 3em 2em 3em 2em;
+    }
+
+    .contenitore_carte > li, .contenitore_carte > div{
+        margin: 1em 0em 4em 0em;
+    }
+
+    .item-footer table th, td{
+        padding: 0.5em;
     }
 
     #big_breadcrumb {

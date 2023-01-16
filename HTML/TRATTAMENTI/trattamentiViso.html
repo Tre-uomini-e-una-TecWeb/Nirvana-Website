@@ -20,8 +20,8 @@
         <nav id="top-right">
             <ul id="contentUser" class="userLinks">
                 <li><a href="../../PHP/areaPersonale.php">Area Personale</a></li>
-                <li id="LogIn"><span lang="en"><a href="../../PHP/login.php">Log In</a></span></li>
-                <li id="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
+                <li class="LogIn"><span lang="en"><a href="../../PHP/login.php">Log In</a></span></li>
+                <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
             </ul>
             <button onclick="userMenu()" class="userMenu"></button>
         </nav>
@@ -30,6 +30,11 @@
 
     <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
+        <ul id="loginMenu">
+            <li><a href="../../PHP/areaPersonale.php">Area Personale</a></li>
+            <li class="LogIn"><span lang="en"><a href="../../PHP/login.php">Log In</a></span></li>
+            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
+        </ul>
         <div class="breadcrumb" id="big_breadcrumb">
             <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt;&gt; <a href="./trattamentiMacchinari.html">Trattamenti e Macchinari</a> &gt;&gt; Trattamenti Viso</p>
         </div>
@@ -117,7 +122,7 @@
                             <td>Chiuso</td>
                         </tr>
                         <tr>
-                            <td>da Martedì a Venerdì</td>
+                            <td>Martedì - Venerdì</td>
                             <td><time datetime="09:00">09:00</time></td>
                             <td><time datetime="19:00">19:00</time></td> 
                         </tr>

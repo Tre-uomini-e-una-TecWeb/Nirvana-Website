@@ -68,7 +68,7 @@ header h1{
     flex: 1;
 }
 
-#logOut{
+#logOut, #loginMenu {
     display: none;
 }
 
@@ -97,7 +97,7 @@ h2 {
 }
 
 main {
-    margin: 3em 3em 3em 3em;
+    margin: 3em 6em 3em 6em;
 }
 
 #menu {
@@ -107,6 +107,9 @@ main {
     flex: auto;
     float: left;
     text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 #menu a:link{
@@ -137,12 +140,12 @@ main {
     width: -webkit-fill-available;
     width: -moz-available;
     margin: auto;
-    border: 1px solid var(--mainColorAlpha);
+    border: 1px solid white;
 }
 
 .menuCont li{
     padding: 0.2em 0em 0.2em 0em;
-    border: 1px solid var(--mainColorAlpha);
+    border: 1px solid white;
 }
 
 .menuCont li a{
@@ -154,11 +157,13 @@ main {
     display: block;
     background-color: var(--mainColorAlpha);
     color: black;
-    font-size: 1.1em;
+    font-size: large;
     padding: 0.5em 0em 0.5em 1.0em;
     width: 65%;
     flex: auto;
     float: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 #mini_breadcrumb{
@@ -169,7 +174,7 @@ main {
     padding: 0.5em 0em 0.5em 1.0em;
 }
 
-#bredcrumb > p {
+.breadcrumb > p {
     margin-top:auto;
 }
 
