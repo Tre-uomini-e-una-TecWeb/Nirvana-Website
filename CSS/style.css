@@ -630,7 +630,6 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
 
-
 #curativa:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco40.jpeg");
 }
@@ -642,7 +641,6 @@ footer a:visited{
 
 #contain input {
     padding: 0.2em;
-    margin: 0.2em;
 }
 
 
@@ -652,4 +650,86 @@ footer a:visited{
 
 #accesso {
     flex: auto;
+}
+
+#signup{
+    border-right: 1px solid black;
+}
+
+#signup, #login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em 2em 0em 2em;
+}
+
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel {
+    grid-column: 1;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+
+#mostraPswR, #mostraPswA, .print-invisible{
+    grid-column: 1/3;
+}
+
+#name, #surname, #birth, #email, #phone, #username, #password, #usernameLogin, #passwordLogin {
+    grid-column: 2;
+    margin-bottom: 0.5em;
+}
+
+#name, #nameLabel, #usernameLogin, #utenteLabel{
+    grid-row: 1;
+}
+
+#surname, #surnameLabel, #passwordLogin, #passwordLoginLabel{
+    grid-row: 2;
+}
+
+#birth, #birthLabel, #mostraPswA{
+    grid-row: 3;
+}
+
+#email, #emailLabel{
+    grid-row: 4;
+}
+
+#phone, #phoneLabel{
+    grid-row: 5;
+}
+
+#username, #userLabel{
+    grid-row: 6;
+}
+
+#password, #passwordLabel{
+    grid-row: 7;
+}
+
+#mostraPswR{
+    grid-row: 8;
+}
+
+#mostraPswR, #mostraPswA{
+    text-align: right;
+}
+
+#registerButton, #accessButton{
+    margin-top: 2em;
+}
+
+/**
+#signup label, #login label{
+    margin-top: 2em;
+    text-align: left;
+    margin-left: 10%;
+}
+
+#signup input, #login input{
+    margin-left:auto;
+    margin-right: 10%;
+} **/
+
+#help{
+    margin-top: 2em;
+    text-align: center;
 }

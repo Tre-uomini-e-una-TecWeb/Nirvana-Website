@@ -53,22 +53,23 @@
         <section id="registrazione" >
             <h2>Registrazione</h2>
             <form id="signup" method="post" action="login.php">
-                <label for="name"> Nome: </label>
+                <label for="name" id="nameLabel"> Nome: </label>
                 <input type="text" id="name" name="name" required aria-required="true"><br>
-                <label for="surname"> Cognome: </label>
+                <label for="surname" id="surnameLabel"> Cognome: </label>
                 <input type="text" id="surname" name="surname" required aria-required="true"><br>
-                <label for="birth">Data di nascita:</label>
+                <label for="birth" id="birthLabel">Data di nascita:</label>
                 <input type="date" id="birth" name="birth" required aria-required="true"><br>
-                <label lang="en" for="email">Email:</label>
+                <label lang="en" for="email" id="emailLabel">Email:</label>
                 <input type="email" id="email" name="email" required aria-required="true"><br>
-                <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true"><br>
-                <label lang="en" for="username">Utente:</label>
+                <label for="phone" id="phoneLabel"> Numero di telefono:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi"><br>
+                <label for="username" id="userLabel">Utente:</label>
                 <input type="text" id="username" name="username" required aria-required="true"><br>
-                <label lang="en" for="password">Password:</label>
-                <input type="password" id="password" name="password" required aria-required="true"> <!--<br>-->
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                <input class="print-invisible" type="submit" name="registrazione" value="Iscrivimi">
+                <label lang="en" for="password" id="passwordLabel">Password:</label>
+                <input type="password" id="password" name="password" required aria-required="true"> <br>
+                <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="myFunction()">
+                <label for="mostraPswRegistrazione">Mostra password</label></div>
+                <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
             </form>
             <esitoRegistrazione />
         </section>
@@ -76,12 +77,13 @@
         <section id="accesso" >
             <h2>Accesso</h2>
             <form id="login" method="post" action="login.php">
-                <label lang="en"> Username: </label>
+                <label for="usernameLogin" id="utenteLabel"> Utente: </label>
                 <input type="text" id="usernameLogin" name="Username" required aria-required="true"><br>
-                <label lang="en"> Password: </label>
-                <input type="password" id="passwordLogin" name="Password" required aria-required="true"><!--<br>-->
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                <input class="print-invisible" type="submit" name="accesso" value="Invia">
+                <label lang="en" for="passwordLogin" id="passwordLoginLabel"> Password: </label>
+                <input type="password" id="passwordLogin" name="Password" required aria-required="true"><br>
+                <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="myFunction()">
+                    <label for="mostraPswAccesso">Mostra password</label></div>
+                <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
             </form>
             <avvisoLogin />
         </section>

@@ -28,7 +28,25 @@ main {
     margin: 3em;
 }
 
-@media screen and (max-width:750px), only screen and (max-device-width:750px) and (orientation: landscape) {
+@media screen and (max-width:800px), only screen and (max-device-width:800px) {
+
+    #contain {
+        display: block;
+        /* text-align: center; */
+    }
+    
+    #signup, #login {
+        border: 1px solid black;
+        padding: 2em 2em 1em 2em;
+    }
+
+    #registrazione {
+        flex: none;
+    }
+    
+    #accesso {
+        flex: none;
+    }
     
     #mini_breadcrumb{
         display: block;
