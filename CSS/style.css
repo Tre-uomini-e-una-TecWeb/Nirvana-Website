@@ -51,14 +51,16 @@ header h1{
 
 #top-right > button{
     background-image: url("../IMG/user.png");
-    background-size: 2em;
+    background-size: 3em;
     background-color: var(--mainColor);
     background-repeat: no-repeat;
-    padding: 1em;
+    padding: 1.5em;
     border:none;
-    border-radius: 1.1em;
+    border-radius: 3em;
     cursor:pointer;
     float: right;
+    position: relative;
+    margin: 0.8em 0em;
 }
 
 #contentUser{
@@ -120,16 +122,19 @@ h2 {
 }
 
 main {
-    margin: 3em 3em 3em 3em;
+    margin: 3em 6em 3em 6em;
 }
 
 #menu {
     background-color: var(--secondaryColor);
     font-size: 1.1em;
-    width: 40%;
+    width: 35%;
     flex: auto;
     float: left;
     text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 #menu a:link{
@@ -157,16 +162,12 @@ main {
     background-color: var(--secondaryColor);
     color: var(--mainColor);
     position: absolute;
-    width: 39.1%;
+    width: 34.1%;
     width: -webkit-fill-available;
     width: -moz-available;
     width: fill-available;
     margin: auto;
-    border: 1px solid var(--mainColorAlpha);
-}
-
-#menu > div {
-    text-align: center;
+    border: 1px solid white;
 }
 
 .menuCont li{
@@ -179,26 +180,28 @@ main {
     width: 100%;
 }
 
-#breadcrumb {
+.breadcrumb {
     display: block;
     background-color: var(--mainColorAlpha);
     color: black;
-    font-size: 1.1em;
-    padding: 0.5em 0em 0.5em 1.0em;
-    width: 60%;
+    font-size: large;
+    padding: 0.5em 1em 0.5em 1em;
+    width: 65%;
     flex: auto;
     float: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-#bredcrumb > p {
+.bredcrumb > p {
     margin-top:auto;
 }
 
-#breadcrumb a:link{
+.breadcrumb a:link{
     color:var(--linkClearBackground);
 }
 
-#breadcrumb a:visited{
+.breadcrumb a:visited{
     color: var(--breadcrumbVisitedLink);
 }
 
