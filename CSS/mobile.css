@@ -37,7 +37,12 @@ main {
     
     #signup, #login {
         border: 1px solid black;
-        padding: 2em 2em 1em 2em;
+        padding: 2em 2em 1em 1em;
+        text-align: center;
+    }
+
+    #nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel {
+        margin-left: 0.5em;
     }
 
     #registrazione {
