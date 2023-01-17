@@ -15,6 +15,10 @@
     font-family: "Arial" , sans-serif;
 }
 
+body{
+    min-height: 100%;
+}
+
 header{
     display: flex;
     background-color: var(--mainColor);
@@ -134,10 +138,16 @@ main {
     background-color: var(--secondaryColor);
     color: var(--mainColor);
     position: absolute;
+    width: 39.1%;
     width: -webkit-fill-available;
     width: -moz-available;
+    width: fill-available;
     margin: auto;
     border: 1px solid var(--mainColorAlpha);
+}
+
+#menu > div {
+    text-align: center;
 }
 
 .menuCont li{
@@ -445,21 +455,31 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
 
-#contain {
+#logPage {
     display: flex;
     /* text-align: center; */
 }
 
-#contain input {
+.accesso {
+    flex: auto;
+    text-align: center;
+}
+.accesso form {
+    text-align: initial;
+}
+
+#logPage input {
+    text-align: initial;
     padding: 0.2em;
     margin: 0.2em;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: var(--mainColor);
+}
+#logPage label {
+    text-align: initial;
 }
 
-
-#registrazione {
-    flex: auto;
-}
-
-#accesso {
-    flex: auto;
+#logPage input.submit {
+    text-align: center;
 }

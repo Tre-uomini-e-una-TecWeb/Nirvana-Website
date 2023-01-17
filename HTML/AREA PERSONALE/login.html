@@ -33,18 +33,20 @@
             <p>Ti trovi in: <a href="../index.php"><span lang="en">Home</span></a> &#62; &#62; <span lang="en">Log in</span></p> 
         </div>
         <div id="menu">
-            <button onclick="menuButton()" class="buttonMenu">Menu</button>
-            <ul id="menuList" class="menuCont">
-                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
-                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
-                <li><a href="../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
-            </ul>
+            <div>
+
+                <button onclick="menuButton()" class="buttonMenu">Menu</button>
+                <ul id="menuList" class="menuCont">
+                    <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
+                    <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                    <li><a href="../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <main>
-        <div id="contain">
-        <section id="registrazione" >
+    <main id="logPage">
+        <section class="accesso" >
             <h2>Registrazione</h2>
             <form id="signup" method="post" action="login.php">
                 <label for="name"> Nome: </label>
@@ -62,12 +64,12 @@
                 <label lang="en" for="password">Password:</label>
                 <input type="password" id="password" name="password" required aria-required="true"> <!--<br>-->
                 <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                <input type="submit" name="registrazione" value="Iscrivimi">
+                <input class="submit" type="submit" name="registrazione" value="Iscrivimi">
             </form>
             <esitoRegistrazione />
         </section>
 
-        <section id="accesso" >       
+        <section class="accesso" >       
             <h2>Accesso</h2>
             <form id="login" method="post" action="login.php">
                 <label lang="en"> Username: </label>
@@ -75,15 +77,11 @@
                 <label lang="en"> Password: </label>
                 <input type="password" id="passwordLogin" name="Password" required aria-required="true"><!--<br>-->
                 <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                <input type="submit" name="accesso" value="Invia">
+                <input class="submit" type="submit" name="accesso" value="Invia">
             </form>
             <avvisoLogin />
+            <p>Se non ti ricordi la password, contatta il centro estetico</p>
         </section>
-        </div>
-        <section>
-            <div id="help"> Se non ti ricordi la password, contatta il centro estetico</div>
-        </section>
-
     </main>
 
     <footer>
