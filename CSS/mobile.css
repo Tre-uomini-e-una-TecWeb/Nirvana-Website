@@ -1,0 +1,222 @@
+nav:not(#top-right) {
+    display: block;
+}
+
+.breadcrumb, #menu {
+    width: auto;
+    float:none;
+    flex:none;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+}
+
+.breadcrumb {
+   border-bottom: none;
+}
+
+#menu {
+    margin-bottom: 6em;
+}
+
+header {
+    padding: 0em;
+    margin: 0em;
+}
+
+main {
+    margin: 3em;
+}
+
+@media screen and (max-width:800px), only screen and (max-device-width:800px) {
+
+    #contain {
+        display: block;
+        /* text-align: center; */
+    }
+    
+    #help{
+        margin-top: 3em;
+    }
+    
+    #signup, #login {
+        border: 1px solid black;
+        padding: 2em 2em 1em 1em;
+        text-align: center;
+    }
+
+    #nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel {
+        margin-left: 0.5em;
+    }
+
+    #registrazione {
+        flex: none;
+    }
+    
+    #accesso {
+        flex: none;
+    }
+    
+    #mini_breadcrumb{
+        display: block;
+        text-align: center;
+    }
+
+    .breadcrumb {
+        border-top: none;
+    }
+
+    #top-right{
+        display: none;
+    }
+
+    #loginMenu{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    #loginMenu li{
+        display: inline;
+        padding: 0.5em 1em 0.5em 1.0em;
+        margin: 0em auto 0em auto;
+    }
+
+    main {
+        margin: 3em 2em 3em 2em;
+    }
+
+    .contenitore_carte > li, .contenitore_carte > div{
+        margin: 1em 0em 4em 0em;
+    }
+
+    .item-footer table th, td{
+        padding: 0.5em;
+    }
+
+    #big_breadcrumb {
+        display: none;
+    }
+
+    .carta {
+        color:black;
+    }
+
+    #puliziaViso{
+        background-image: url("../IMG/VISO/PULIZIA_VISO/Viso-opaco50.jpeg");
+    }
+
+    #idratazione{
+        background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti-opaco50.jpeg") ;
+    }
+
+    #antiage{
+        background-image:url("../IMG/VISO/ANTI-AGE/antiage-opaco50.jpeg") ;
+    }
+
+    #effettoLifting{
+        background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect-opaco50.jpeg") ;
+    }
+
+    #rimpolpanti{
+        background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti-opaco50.png") ;
+    }
+
+    #sebo-regolatori{
+        background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori-opaco50.jpeg") ;
+    }
+
+    #desensibilizzanti{
+        background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante-opaco50.jpeg") ;
+    }
+
+    #lucePulsata{
+        background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata-opaco40.jpeg");
+    }
+
+    #radiofrequenza{
+        background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza-opaco40.jpeg") ;
+    }
+
+    #ultrasuoni{
+        background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni-opaco40.jpeg") ;
+    }
+
+    #elettrocoagulatore{
+        background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore-opaco40.jpeg") ;
+    }
+
+    #elettroscultore{
+        background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore-opaco40.jpeg") ;
+    }
+
+    #elettroporatore{
+        background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore-opaco40.jpeg") ;
+    }
+
+    #pressoterapia{
+        background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia-opaco40.jpeg") ;
+    }
+
+    #brush{
+        background-image:url("../IMG/MACCHINARI/BRUSH/brush-opaco40.jpeg") ;
+    }
+
+    #massaggioEndodermico{
+        background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico-opaco40.jpeg") ;
+    }
+
+    #ceretta{
+        background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta-opaco40.jpeg") ;
+    }
+
+    #brasiliana{
+        background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana-opaco40.jpeg") ;
+    }
+
+    #pastaZucchero{
+        background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero-opaco40.jpeg") ;
+    }
+
+    #rilassante{
+        background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante-opaco40.jpeg");
+    }
+
+    #olistico{
+        background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico-opaco40.jpeg");
+    }
+
+    #decontratturante{
+        background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante-opaco40.jpeg");
+    }
+
+    #tonificante{
+        background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante-opaco40.jpeg");
+    }
+
+    #linfodrenante{
+        background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo-opaco40.jpeg");
+    }
+
+    #modellante{
+        background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante-opaco40.jpeg");
+    }
+
+    #posa{
+        background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto-opaco40.jpeg");
+    }
+
+    #semipermanente{
+        background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente-opaco40.jpeg");
+    }
+
+    #gel{
+        background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel-opaco40.jpeg");
+    }
+
+    #curativa{
+        background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco40.jpeg");
+    }
+}

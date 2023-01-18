@@ -68,7 +68,7 @@ header h1{
     flex: 1;
 }
 
-#logOut{
+#logOut, #loginMenu {
     display: none;
 }
 
@@ -97,7 +97,7 @@ h2 {
 }
 
 main {
-    margin: 3em 3em 3em 3em;
+    margin: 3em 6em 3em 6em;
 }
 
 #menu {
@@ -107,6 +107,9 @@ main {
     flex: auto;
     float: left;
     text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 #menu a:link{
@@ -137,12 +140,12 @@ main {
     width: -webkit-fill-available;
     width: -moz-available;
     margin: auto;
-    border: 1px solid var(--mainColorAlpha);
+    border: 1px solid white;
 }
 
 .menuCont li{
     padding: 0.2em 0em 0.2em 0em;
-    border: 1px solid var(--mainColorAlpha);
+    border: 1px solid white;
 }
 
 .menuCont li a{
@@ -150,26 +153,32 @@ main {
     width: 100%;
 }
 
-#breadcrumb {
+.breadcrumb {
     display: block;
+    background-color: var(--mainColorAlpha);
+    color: black;
+    font-size: large;
+    padding: 0.5em 1em 0.5em 1em;
+    width: 65%;
+    flex: auto;
+    float: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#mini_breadcrumb{
+    display: none;
     background-color: var(--mainColorAlpha);
     color: black;
     font-size: 1.1em;
     padding: 0.5em 0em 0.5em 1.0em;
-    width: 65%;
-    flex: auto;
-    float: left;
 }
 
-#bredcrumb > p {
+.breadcrumb > p {
     margin-top:auto;
 }
 
-#breadcrumb a:link{
-    color:var(--linkClearBackground);
-}
-
-#breadcrumb a:visited{
+.breadcrumb a:visited, #mini_breadcrumb a:visited{
     color: var(--breadcrumbVisitedLink);
 }
 
@@ -236,7 +245,6 @@ th, td{
     background-size:cover;
     border: 1px solid black;
     min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
-    background-color: var(--mainColor);
     padding: 1em 1em 0em 1em;
     /*border-radius: 10vw;*/
     max-width: 100%;
@@ -352,10 +360,6 @@ footer a:visited{
 
 #corpo:hover, #corpo:active{
     background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-zoom.jpeg") ;
-}
-
-#corpo:active{
-    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-opaco-zoom.jpeg") ;
 }
 
 #macchinari{
@@ -638,7 +642,6 @@ footer a:visited{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa.jpeg");
 }
 
-
 #curativa:hover{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco40.jpeg");
 }
@@ -650,7 +653,6 @@ footer a:visited{
 
 #contain input {
     padding: 0.2em;
-    margin: 0.2em;
 }
 
 
@@ -660,4 +662,86 @@ footer a:visited{
 
 #accesso {
     flex: auto;
+}
+
+#signup{
+    border-right: 1px solid black;
+}
+
+#signup, #login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em 2em 0em 2em;
+}
+
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel {
+    grid-column: 1;
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+
+#mostraPswR, #mostraPswA, .print-invisible{
+    grid-column: 1/3;
+}
+
+#name, #surname, #birth, #email, #phone, #username, #password, #usernameLogin, #passwordLogin {
+    grid-column: 2;
+    margin-bottom: 0.5em;
+}
+
+#name, #nameLabel, #usernameLogin, #utenteLabel{
+    grid-row: 1;
+}
+
+#surname, #surnameLabel, #passwordLogin, #passwordLoginLabel{
+    grid-row: 2;
+}
+
+#birth, #birthLabel, #mostraPswA{
+    grid-row: 3;
+}
+
+#email, #emailLabel{
+    grid-row: 4;
+}
+
+#phone, #phoneLabel{
+    grid-row: 5;
+}
+
+#username, #userLabel{
+    grid-row: 6;
+}
+
+#password, #passwordLabel{
+    grid-row: 7;
+}
+
+#mostraPswR{
+    grid-row: 8;
+}
+
+#mostraPswR, #mostraPswA{
+    text-align: right;
+}
+
+#registerButton, #accessButton{
+    margin-top: 1em;
+}
+
+/**
+#signup label, #login label{
+    margin-top: 2em;
+    text-align: left;
+    margin-left: 10%;
+}
+
+#signup input, #login input{
+    margin-left:auto;
+    margin-right: 10%;
+} **/
+
+#help{
+    margin-top: 2em;
+    text-align: center;
 }

@@ -24,8 +24,7 @@ function PageLoad() {
 
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
-}
-  
+} 
 
 document.addEventListener("click", function(event){
   if (!event.target.matches('.buttonMenu')) {
@@ -50,5 +49,20 @@ document.addEventListener("click", function(event){
   } 
 });
 
+function statusPass(){
+    var x = document.getElementById("ragionevolePassword");
+    changeStatus(x);
+  }
 
+  function statusPassLogin(){
+    var x = document.getElementById("passwordLogin");
+    changeStatus(x);
+  }
 
+  function changeStatus(x){
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
