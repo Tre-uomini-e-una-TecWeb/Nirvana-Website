@@ -9,14 +9,20 @@ function userMenu() {
 function PageLoad() {
   if(document.getElementById("areaPersonale") != null){
     sessionStorage.setItem('loggedIn', 'true');
+    // sessionStorage.setItem('cambiato', 'false');
     console.log('H1');
   }
 
   if(sessionStorage.getItem('loggedIn') == 'true'){
     document.getElementById("LogIn").style.display = "none";
     document.getElementById("LogOut").style.display = "block";
+    document.getElementById("LogOut").style.border = "none";
+    document.getElementById("LogOut").style.padding = "0";
+    // sessionStorage.setItem('cambiato', 'true');
   } else {
     document.getElementById("LogIn").style.display = "block";
+    document.getElementById("LogIn").style.border = "none";
+    document.getElementById("LogIn").style.padding = "0";
     document.getElementById("LogOut").style.display = "none";
   }
   
