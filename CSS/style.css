@@ -121,7 +121,6 @@ header h1{
     border-radius: 0.4em 0.4em 0em 0em;
 }
 
-
 #top-right li > a{
     border-radius: 0.4em 0.4em 0em 0em;
 }
@@ -131,6 +130,24 @@ header h1{
 
 #top-right li.menuList span{
     border-radius: 0em 0em 0.4em 0.4em;
+}
+
+#top-right li.menuList.menuLogInUt{
+    display:block;
+    padding: 0;
+    border: none;
+    border-radius: 0em 0em 0.4em 0.4em;
+}
+
+.menuLogOutUt {
+    display:block;
+    padding: 0;
+    border: none;
+}
+
+.menuLogDesk {
+    position: relative;
+    bottom: initial;
 }
 
 
@@ -191,7 +208,7 @@ main {
     background-color: var(--secondaryColor);
     color: var(--mainColor);
     position: absolute;
-    width: 34.1%;
+    width: 33.9%;
     width: -webkit-fill-available;
     width: -moz-available;
     width: fill-available;
@@ -249,6 +266,10 @@ th, td{
     font-size: large;
     font-weight: bold;
     text-align: center;
+}
+
+.hide{
+    display: none;
 }
 
 .show{

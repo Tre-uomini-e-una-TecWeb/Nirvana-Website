@@ -39,12 +39,27 @@ main {
         border-top: none;
     }
 
-    #top-right{
+    /* #top-right{
         position: fixed;
         right: 2em;
         bottom: 2em;
         z-index: 10;
+    } */
+
+    .menuLogMob {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        top: initial;
+        z-index: 10;
     }
+    
+    .menuLogMobStop {
+        position: absolute;
+        top: initial;
+        right: 2em;
+    }
+    
 
     #loginMenu{
         position: relative;
