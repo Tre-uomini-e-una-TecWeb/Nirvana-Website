@@ -183,16 +183,16 @@ th, td{
 }
 
 ::placeholder {
-    color: #000;
+    color: var(--secondaryColor);
     opacity: 1; /* Per Firefox */
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #000;
+   color: var(--secondaryColor);
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-   color: #000;
+   color: var(--secondaryColor);
   }
 
 .contenitore_carte>li,
