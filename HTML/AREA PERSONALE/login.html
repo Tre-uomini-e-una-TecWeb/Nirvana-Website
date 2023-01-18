@@ -54,20 +54,20 @@
             <h2>Registrazione</h2>
             <form id="signup" method="post" action="login.php">
                 <label for="name" id="nameLabel"> Nome: </label>
-                <input type="text" id="name" name="name" required aria-required="true"><br>
+                <input type="text" id="name" name="name" required aria-required="true">
                 <label for="surname" id="surnameLabel"> Cognome: </label>
-                <input type="text" id="surname" name="surname" required aria-required="true"><br>
+                <input type="text" id="surname" name="surname" required aria-required="true">
                 <label for="birth" id="birthLabel">Data di nascita:</label>
-                <input type="date" id="birth" name="birth" required aria-required="true"><br>
+                <input type="date" id="birth" name="birth" required aria-required="true">
                 <label lang="en" for="email" id="emailLabel">Email:</label>
-                <input type="email" id="email" name="email" required aria-required="true"><br>
+                <input type="email" id="email" name="email" required aria-required="true">
                 <label for="phone" id="phoneLabel"> Numero di telefono:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi"><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi">
                 <label for="username" id="userLabel">Utente:</label>
-                <input type="text" id="username" name="username" required aria-required="true"><br>
+                <input type="text" id="username" name="username" required aria-required="true">
                 <label lang="en" for="password" id="passwordLabel">Password:</label>
-                <input type="password" id="password" name="password" required aria-required="true"> <br>
-                <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="myFunction()">
+                <input type="password" id="ragionevolePassword" name="password" required aria-required="true"> 
+                <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="statusPass()">
                 <label for="mostraPswRegistrazione">Mostra password</label></div>
                 <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
             </form>
@@ -78,10 +78,10 @@
             <h2>Accesso</h2>
             <form id="login" method="post" action="login.php">
                 <label for="usernameLogin" id="utenteLabel"> Utente: </label>
-                <input type="text" id="usernameLogin" name="Username" required aria-required="true"><br>
+                <input type="text" id="usernameLogin" name="Username" required aria-required="true">
                 <label lang="en" for="passwordLogin" id="passwordLoginLabel"> Password: </label>
-                <input type="password" id="passwordLogin" name="Password" required aria-required="true"><br>
-                <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="myFunction()">
+                <input type="password" id="passwordLogin" name="Password" required aria-required="true">
+                <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="statusPassLogin()">
                     <label for="mostraPswAccesso">Mostra password</label></div>
                 <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
             </form>

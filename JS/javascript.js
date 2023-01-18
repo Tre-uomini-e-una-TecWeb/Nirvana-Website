@@ -13,25 +13,11 @@ function PageLoad() {
   }
 
   if(sessionStorage.getItem('loggedIn') == 'true'){
-    var list = document.getElementsByClassName("LogIn");
-    for (let item of list) {
-      item.style.display = "none";
-    }
-
-    list = document.getElementsByClassName("LogOut");
-    for (let item of list) {
-      item.style.display = "block";
-    }
+    document.getElementById("LogIn").style.display = "none";
+    document.getElementById("LogOut").style.display = "block";
   } else {
-    var list = document.getElementsByClassName("LogIn");
-    for (let item of list) {
-      item.style.display = "block";
-    }
-
-    list = document.getElementsByClassName("LogOut");
-    for (let item of list) {
-      item.style.display = "none";
-    }
+    document.getElementById("LogIn").style.display = "block";
+    document.getElementById("LogOut").style.display = "none";
   }
   
 }
@@ -63,6 +49,25 @@ document.addEventListener("click", function(event){
     }
   } 
 });
+
+function statusPass(){
+    var x = document.getElementById("ragionevolePassword");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  function statusPassLogin(){
+    var x = document.getElementById("passwordLogin");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
 
 
 
