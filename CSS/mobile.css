@@ -30,15 +30,15 @@ main {
 
 @media screen and (max-width:800px), only screen and (max-device-width:800px) {
 
-    header, main {
+    header, main{
         font-size: 1.1em;
     }
 
-    footer {
+    footer{
         font-size: 1.1em;
     }
 
-    #contain {
+    #contain{
         display: block;
         /* text-align: center; */
     }
@@ -47,17 +47,17 @@ main {
         margin-top: 3em;
     }
     
-    #signup, #login {
+    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes{
         border: 1px solid black;
         padding: 2em 2em 2em 0.9em;
         text-align: center;
     }
 
-    #signup label, #login label {
+    #signup label, #login label, #insertRes label{
         margin-right: 1em;
     }
 
-    #signup input, #login input {
+    #signup input, #login input, #insertRes input{
         margin-right: 1em;
     }
 
@@ -65,11 +65,11 @@ main {
         margin-top: 1em;
     }
 
-    #registrazione {
+    #registrazione{
         flex: none;
     }
     
-    #accesso {
+    #accesso{
         flex: none;
     }
     
@@ -78,7 +78,7 @@ main {
         text-align: center;
     }
 
-    .breadcrumb {
+    .breadcrumb{
         border-top: none;
     }
 
