@@ -30,6 +30,14 @@ main {
 
 @media screen and (max-width:800px), only screen and (max-device-width:800px) {
 
+    header, main {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 1.1em;
+    }
+
     #contain {
         display: block;
         /* text-align: center; */
