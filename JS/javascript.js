@@ -22,6 +22,14 @@ function PageLoad() {
   
 }
 
+function makeDate(){
+  document.getElementById("birth").type='date';
+}
+
+function returnText(){
+  document.getElementById("birth").type='text';
+}
+
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
 }

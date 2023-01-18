@@ -47,16 +47,16 @@
         <form id="datiUtente" method="post" action="areaPersonale.php">
             <label id="username">Username: <usernameUtente /></label><br>
             <label for="name"> Nome: </label>
-            <input type="text" id="name" name="name" required aria-required="true" placeholder="<nomeUtente />"><br>
+            <input type="text" id="name" name="name" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />"><br>
             <label for="surname"> Cognome: </label>
-            <input type="text" id="surname" name="surname" required aria-required="true" placeholder="<cognomeUtente />"><br>
+            <input type="text" id="surname" name="surname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />"><br>
             <label for="birth">Data di nascita:</label>
-            <input type="date" id="birth" name="birth" required aria-required="true" placeholder="<dataNascitaUtente />"><br>
+            <input type="text" id="birth" name="birth" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />"><br>
             <label lang="en" for="email">Email:</label>
-            <input type="email" id="email" name="email" required aria-required="true" placeholder="<mailUtente />"><br>
+            <input type="email" id="email" name="email" placeholder="<mailUtente />" aria-placeholder="<mailUtente />"><br>
             <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="<telefonoUtente />"><br>
-            <input class="print-invisible" type="submit" name="modifica" value="Modifica dati">
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />"><br>
+            <input class="print-invisible" type="submit" name="modifica" value="Modifica dati" aria-valuetext="Modifica dati">
         </form>
         <esitoModifica />
         <section class="print-invisible">
