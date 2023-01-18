@@ -21,11 +21,7 @@ header{
     padding-bottom: 0.2em;
     align-items: center;
 }
-
-header > h1 {
-    font-size: 3em;
-    flex:auto;
-}
+    
 
 header h1{
     background-image: url(../IMG/header.png);
@@ -35,6 +31,7 @@ header h1{
     text-indent: -9999px;
     line-height: 1.5em;
     font-size: 6em;
+    flex:auto;
 }
 
 #top-right {
@@ -102,7 +99,6 @@ main {
 
 #menu {
     background-color: var(--secondaryColor);
-    font-size: 1.1em;
     width: 35%;
     flex: auto;
     float: left;
@@ -155,9 +151,9 @@ main {
 
 .breadcrumb {
     display: block;
+    font-size: 1.1em;
     background-color: var(--mainColorAlpha);
     color: black;
-    font-size: large;
     padding: 0.5em 1em 0.5em 1em;
     width: 65%;
     flex: auto;
@@ -170,7 +166,7 @@ main {
     display: none;
     background-color: var(--mainColorAlpha);
     color: black;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 0.5em 0em 0.5em 1.0em;
 }
 
@@ -207,7 +203,7 @@ th, td{
 .contenitore_carte>li,
 .contenitore_carte>div>dt,
 .item-footer>dt{
-    font-size: large;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
 }
@@ -246,7 +242,7 @@ th, td{
     border: 1px solid black;
     min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
     padding: 1em 1em 0em 1em;
-    /*border-radius: 10vw;*/
+    border-radius: 1em;
     max-width: 100%;
     height: 100%;
     color: rgba(0,0,0,0);
@@ -319,7 +315,7 @@ footer a:visited{
 
 .item-footer table>caption{
     font-weight: bold;
-    font-size: large;
+    font-size: 1em;
 }
 
 #trattamenti{
@@ -744,4 +740,103 @@ footer a:visited{
 #help{
     margin-top: 2em;
     text-align: center;
+}
+
+@media screen and (min-width:1900px), only screen and (min-device-width:1900px) {
+    header, main, footer, #menu {
+        font-size: 1.3em;
+    }
+
+    .breadcrumb {
+        font-size: 1.4em;
+    }
+
+    .buttonMenu {
+        font-size: 0.8em;
+    }
+
+    .contenitore_carte dt, h2{
+        font-size: 2em;
+    }
+
+    .contenitore_carte>li,
+    .contenitore_carte>div>dt,
+    .item-footer>dt{
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width:1500px) {
+    nav:not(#top-right) {
+        display: block;
+    }
+    
+    .breadcrumb, #menu {
+        width: auto;
+        float:none;
+        flex:none;
+        text-align: center;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .breadcrumb {
+       border-bottom: none;
+    }
+    
+    #menu {
+        margin-bottom: 6em;
+    }
+    
+    header {
+        padding: 0em;
+        margin: 0em;
+    }
+    
+    main {
+        margin: 3em;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #registrazione {
+        flex: none;
+    }
+    
+    #accesso {
+        flex: none;
+    }
+    
+    #mini_breadcrumb{
+        display: block;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .breadcrumb {
+        border-top: none;
+    }
+
+    #top-right{
+        display: none;
+    }
+
+    #loginMenu{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        font-size: 1.4em;
+    }
+
+    #loginMenu li{
+        display: inline;
+        padding: 0.5em 1em 0.5em 1.0em;
+        margin: 0em auto 0em auto;
+    }
+
+    #big_breadcrumb {
+        display: none;
+    }
 }
