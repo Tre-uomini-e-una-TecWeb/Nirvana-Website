@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="screen" href="../../CSS/style.css">
     <link rel="stylesheet" media="handheld, screen and (max-width:1150px), only screen and (max-device-width:1150px)" href="../../CSS/mobile.css" />
+    <link rel="stylesheet" media="handheld, screen and (min-width:1900px), only screen and (min-device-width:1900px)" href="../../CSS/wide-screen.css" />
     <link rel="stylesheet" media="print" href="../../CSS/print.css" />
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
@@ -49,8 +50,9 @@
 
     <main>
         <!--PUtente=PaginaUtente-->
+        <div id="contain">
         <section class="sezionePUtente">
-            <h2>Pagina utente</h2>
+            <h2>Dati personali</h2>
             <dl>
                 <!-- da aggiornare con dati dal database -->
                 <section class="datiPUtente">
@@ -82,17 +84,20 @@
 
         <section class="sezionePUtente print-invisible">
             <h2 >Cambio password</h2>
-            <form>
-                <label for="password"> Password: </label>
-                <input type="password" id="password" name="password">
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                <label for="password"> Ripeti la password: </label>
-                <input type="password" id="password" name="password">
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
+            <form id="changePsw">
+                <label for="password1" id="password1Label"> Password: </label>
+                <input type="password" id="password1" name="password">
+                <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPass1()">
+                <label for="mostraPsw">Mostra password</label></div>
+                <label for="password2" id="password2Label"> Ripeti la password: </label>
+                <input type="password" id="password2" name="password">
+                <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPass2()">
+                <label for="mostraPswRipeti">Mostra password</label></div>
                 
                 <input class="print-invisible" type="submit" value="Salva modifiche">
             </form>
         </section>
+        </div>
     </main>
 
     <footer>
