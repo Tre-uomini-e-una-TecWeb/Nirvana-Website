@@ -65,9 +65,9 @@
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi">
                 <label for="username" id="userLabel">Utente:</label>
                 <input type="text" id="username" name="username" required aria-required="true">
-                <label lang="en" for="password" id="passwordLabel">Password:</label>
-                <input type="password" id="ragionevolePassword" name="password" required aria-required="true"> 
-                <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="statusPass()">
+                <label lang="en" for="password1" id="passwordLabel">Password:</label>
+                <input type="password" id="password1" name="password" required aria-required="true"> 
+                <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="statusPass1()">
 
                 <label for="mostraPswRegistrazione">Mostra password</label></div>
                 <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
@@ -80,10 +80,9 @@
             <form id="login" method="post" action="login.php">
                 <label for="usernameLogin" id="utenteLabel"> Utente: </label>
                 <input type="text" id="usernameLogin" name="Username" required aria-required="true">
-                <label lang="en" for="passwordLogin" id="passwordLoginLabel"> Password: </label>
-                <input type="password" id="passwordLogin" name="Password" required aria-required="true">
-                <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="statusPassLogin()">
-
+                <label lang="en" for="password2" id="passwordLoginLabel"> Password: </label>
+                <input type="password" id="password2" name="Password" required aria-required="true">
+                <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="statusPass2()">
                     <label for="mostraPswAccesso">Mostra password</label></div>
                 <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
             </form>

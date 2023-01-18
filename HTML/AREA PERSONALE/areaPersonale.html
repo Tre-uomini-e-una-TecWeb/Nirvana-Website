@@ -84,11 +84,13 @@
             <h2 >Cambio password</h2>
             <form>
                 <label for="password"> Password: </label>
-                <input type="password" id="password" name="password">
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
+                <input type="password" id="password1" name="password">
+                <input type="checkbox" id="mostraPsw" onclick="statusPass1()">
+                <label for="mostraPsw">Mostra password</label><br>
                 <label for="password"> Ripeti la password: </label>
-                <input type="password" id="password" name="password">
-                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
+                <input type="password" id="password2" name="password">
+                <input type="checkbox" id="mostraPswRipeti" onclick="statusPass2()">
+                <label for="mostraPswRipeti">Mostra password</label><br>
                 
                 <input class="print-invisible" type="submit" value="Salva modifiche">
             </form>
