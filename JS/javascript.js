@@ -24,8 +24,7 @@ function PageLoad() {
 
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
-}
-  
+} 
 
 document.addEventListener("click", function(event){
   if (!event.target.matches('.buttonMenu')) {
@@ -67,7 +66,3 @@ function statusPass(){
       x.type = "password";
     }
   }
-
-
-
-

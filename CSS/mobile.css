@@ -35,6 +35,10 @@ main {
         /* text-align: center; */
     }
     
+    #help{
+        margin-top: 3em;
+    }
+    
     #signup, #login {
         border: 1px solid black;
         padding: 2em 2em 1em 1em;

@@ -232,7 +232,6 @@ th, td{
     background-size:cover;
     border: 1px solid black;
     min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
-    background-color: var(--mainColor);
     padding: 1em 1em 0em 1em;
     /*border-radius: 10vw;*/
     max-width: 100%;
