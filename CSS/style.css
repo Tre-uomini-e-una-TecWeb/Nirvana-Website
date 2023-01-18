@@ -266,6 +266,7 @@ footer{
     left: 0;
     width: 100%;
     background-color: #ffcc99;
+    margin-top: 2em;
 }
 
 footer a:link{
@@ -649,6 +650,7 @@ footer a:visited{
 
 #contain input {
     padding: 0.2em;
+    font-size: 0.9em;
 }
 
 
@@ -667,17 +669,21 @@ footer a:visited{
 #signup, #login{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2em 2em 0em 2em;
+    padding: 2em;
+    row-gap: 0.5em;
 }
 
 #nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel {
     grid-column: 1;
-    margin-left: 2em;
     margin-bottom: 0.5em;
 }
 
 #mostraPswR, #mostraPswA, .print-invisible{
     grid-column: 1/3;
+}
+
+.print-errorText{
+    margin-bottom: 1em;
 }
 
 #name, #surname, #birth, #email, #phone, #username, #password, #usernameLogin, #passwordLogin {
