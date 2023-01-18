@@ -51,15 +51,15 @@ document.addEventListener("click", function(event){
 
 function statusPass(){
     var x = document.getElementById("ragionevolePassword");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
+    changeStatus(x);
   }
 
   function statusPassLogin(){
     var x = document.getElementById("passwordLogin");
+    changeStatus(x);
+  }
+
+  function changeStatus(x){
     if (x.type === "password") {
       x.type = "text";
     } else {
