@@ -63,13 +63,12 @@
             <h2 >Cambio password</h2>
             <form>
                 <label for="password"> Password: </label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" placeholder="Nuova password" aria-placeholder="Nuova password">
                 <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
                 <label for="password"> Ripeti la password: </label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="passwordRepeat" name="passwordRepeat" placeholder="Ripeti la nuova password" aria-placeholder="Ripeti la nuova password">
                 <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
-                
-                <input class="print-invisible" type="submit" value="Salva modifiche">
+                <input class="print-invisible" type="submit" name="changePasswd" value="Salva modifiche">
             </form>
         </section>
     </main>
