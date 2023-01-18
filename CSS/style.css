@@ -191,6 +191,19 @@ th, td{
     padding: 0.5em;
 }
 
+::placeholder {
+    color: #000;
+    opacity: 1; /* Per Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #000;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #000;
+  }
+
 .contenitore_carte>li,
 .contenitore_carte>div>dt,
 .item-footer>dt{

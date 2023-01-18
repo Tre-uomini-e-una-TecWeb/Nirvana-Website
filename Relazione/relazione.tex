@@ -150,6 +150,10 @@
 \usepackage{scrextend} 
 \addtokomafont{labelinglabel} 
 {\sffamily}
+
+%FILE INCLUSI
+\usepackage{graphicx}
+
 \begin{document}
 
 \copertina
@@ -248,11 +252,41 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
  	\item Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore"
 	\item Logout "Area personale";
 \end{itemize}
+
+%nuova sezione
 \section{Progettazione}
-\section{Presentazione}
+\subsection{Obbiettivi}
+\subsection{Design del sito}
+\subsection{Database}
+
+%nuova sezione
+%\section{Presentazione}
+\subsection{Desktop}
+\subsection{Mobile}
+\pagebreak
+\subsection{Print}
+Il file relativo alla stampa e' stato implementato in modo tale da rimuovere le funzionalita' interattive quali link, bottoni, breadcrumb e sezione menu'.\\
+Per facilitare la leggibilita' delle informazioni in modalita' cartacea, quelle che nei file .html sono classificate come carte, vengono visualizzate sottoforma di semplice testo.\\
+La scelta voluta di non rimuovere il colore di background permette all'utente di scegliere l'opzione "bianco e nero" e "grafica di background" presente in ogni finestra di dialogo stampa dei motori di ricerca favorendo l'esperienza di personalizzazione.\\
+Di seguito due  esempi di stampa della stessa pagina:\\
+	\fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-w.pdf}}
+	\fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-wo.pdf}}
+
+%nuova sezione
 \section{Implementazione}
+\subsection{Linguaggi}
+\subsubsection{HTML e css}
+\subsubsection{PHP}
+\subsubsection{SQL}
+\subsubsection{JavaScript}
+
+%nuova sezione
 \section{Validazione}
+
+%nuova sezione
 \section{Fase di Test}
+
+%nuova sezione
 \section{Strumenti}
 A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
 Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo.
@@ -264,7 +298,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Lisien Skenderi: 
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Index, Consulenze, Gestione Prenotazioni - Cliente;
-		\item CSS: Modifiche relative al foglio per la visualizzazione desktop
+		\item CSS:  elaborazione coordinata del file style.css con particolare attenzione alle sezioni header e breadcrumb
 		\item Javascript: Sviluppo delle funzioni per i menú
 		\item PHP:
 		\item Immagini:
@@ -273,7 +307,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Matteo Cusin:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Trattamenti Viso, Login e Registrazione, Eliminazione prenotazioni;
-		\item CSS: Implementazioni sui fogli relativi alla visualizzazione desktop e mobile
+		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
 		\item Javascript:
 		\item PHP:
 		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate
@@ -281,12 +315,12 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\end{itemize} ;
 	\item Annalisa Egidi:
 	\begin{itemize}
-		\item HTML: Sviluppo delle seguenti pagine: ;
-		\item CSS: Implementazioni sui fogli relativi alla visualizzazione desktop e mobile, oltre alle modifiche sul foglio per la stampa
-		\item Javascript:
-		\item PHP:
-		\item Immagini:
-		\item Relazione:
+		\item HTML: Sviluppo coordinato delle seguenti pagine: 404, areaPersonale, file di trattamenti e index /**/;
+		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
+		\item Javascript: /**/
+		\item PHP: /**/
+		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse.
+		\item Relazione: /**/
 	\end{itemize} ;
 	\item Nicola Baesso:
 	\begin{itemize}
