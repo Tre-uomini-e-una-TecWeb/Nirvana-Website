@@ -8,7 +8,9 @@
     <meta name="keywords" content="Nirvana, Trattamento, Viso, Corpo, Macchinario" />
     <meta name="author" content="Annalisa Egidi" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" media="screen" href="../../CSS/style.css">
+    <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
+    <link rel="stylesheet" media="handheld, screen and (max-width:1150px), only screen and (max-device-width:1150px)" href="../../CSS/mobile.css" />
+    <link rel="stylesheet" media="handheld, screen and (min-width:1900px), only screen and (min-device-width:1900px)" href="../../CSS/wide-screen.css" />
     <link rel="stylesheet" media="print" href="../../CSS/print.css" />
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
@@ -17,10 +19,10 @@
     <!-- Header -->
     <header>
         <h1>Centro Estetico Nirvana</h1>
-        <nav id="top-right">
+        <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
-                <li><a href="../../PHP/areaPersonale.php">Area Personale</a></li>
-                <li id="LogIn"><span lang="en"><a href="../../PHP/login.php">Log In</a></span></li>
+                <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+                <li id="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
                 <li id="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
             </ul>
             <button onclick="userMenu()" class="userMenu"></button>
@@ -30,8 +32,16 @@
 
     <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <div id="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt; &gt; Trattamenti e Macchinari</p>
+        <!-- <ul id="loginMenu">
+            <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+            <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
+            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
+        </ul> -->
+        <div class="breadcrumb" id="big_breadcrumb">
+            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt;&gt; Trattamenti e Macchinari</p>
+        </div>
+        <div class="breadcrumb" id="mini_breadcrumb">
+            <p>Livello superiore: <a href="../INDEX/index.html"><span lang="en">Home</span></a></p> 
         </div>
         <div id="menu">
             <button onclick="menuButton()" class="buttonMenu">Menu</button>
@@ -66,6 +76,7 @@
     </main>
 
     <footer>
+        <hr>
         <dl class="contenitore-footer">
 
             <div class="item-footer">
@@ -88,26 +99,30 @@
                 <dd>
                     <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
                         <caption>Orari</caption>
-                        <tr>
-                            <th scope="col">Giorno</th>
-                            <th scope="col">Apertura</th>
-                            <th scope="col">Chiusura</th>
-                        </tr>
-                        <tr>
-                            <td>Lunedì</td>
-                            <td>Chiuso</td>
-                            <td>Chiuso</td>
-                        </tr>
-                        <tr>
-                            <td>da Martedì a Venerdì</td>
-                            <td><time datetime="09:00">09:00</time></td>
-                            <td><time datetime="19:00">19:00</time></td> 
-                        </tr>
-                        <tr>
-                            <td>Sabato e Domenica</td>
-                            <td><time datetime="09:00">09:00</time></td>
-                            <td><time datetime="15:00">15:00</time></td> 
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th scope="col">Giorno</th>
+                                <th scope="col">Apertura</th>
+                                <th scope="col">Chiusura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunedì</td>
+                                <td>Chiuso</td>
+                                <td>Chiuso</td>
+                            </tr>
+                            <tr>
+                                <td>Martedì - Venerdì</td>
+                                <td><time datetime="09:00">09:00</time></td>
+                                <td><time datetime="19:00">19:00</time></td> 
+                            </tr>
+                            <tr>
+                                <td>Sabato e Domenica</td>
+                                <td><time datetime="09:00">09:00</time></td>
+                                <td><time datetime="15:00">15:00</time></td> 
+                            </tr>
+                        </tbody>
                     </table>
                 </dd>
             </div>

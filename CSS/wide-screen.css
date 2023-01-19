@@ -1,0 +1,82 @@
+header, main, footer, #menu {
+    font-size: 1.3em;
+}
+
+.breadcrumb {
+    font-size: 1.4em;
+}
+
+.buttonMenu {
+    font-size: 0.8em;
+}
+
+.contenitore_carte dt, h2{
+    font-size: 2em;
+}
+
+.contenitore_carte>li,
+.contenitore_carte>div>dt,
+.item-footer>dt{
+    font-size: 1.1em;
+}
+
+
+@media screen and (max-width:1500px) {
+    nav:not(#top-right) {
+        display: block;
+    }
+    
+    .breadcrumb, #menu {
+        width: auto;
+        float:none;
+        flex:none;
+        text-align: center;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .breadcrumb {
+       border-bottom: none;
+    }
+    
+    #menu {
+        margin-bottom: 6em;
+    }
+    
+    header {
+        padding: 0em;
+        margin: 0em;
+    }
+    
+    main {
+        margin: 3em;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #registrazione {
+        flex: none;
+    }
+    
+    #accesso {
+        flex: none;
+    }
+    
+    #mini_breadcrumb{
+        display: block;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .breadcrumb {
+        border-top: none;
+    }
+
+    #top-right{
+        display: none;
+    }
+
+    #big_breadcrumb {
+        display: none;
+    }
+}
