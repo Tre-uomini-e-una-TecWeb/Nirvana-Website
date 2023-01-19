@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Non autenticato-Centro Estetico Nirvana</title>
+    <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
+    <meta name="description"
+        content="Questa pagina mostra l'errore 401 per l'accesso a pagine che richiedono il login." />
+    <meta name="keyword"
+        content="nirvana, centro estetico" />
+    <meta name="author" content="Nicola Baesso">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" media="screen" href="../../CSS/style.css">
+    <link rel="stylesheet" media="handheld, screen and (max-width:1150px), only screen and (max-device-width:1150px)" href="../../CSS/mobile.css" />
+    <link rel="stylesheet" media="handheld, screen and (min-width:1900px), only screen and (min-device-width:1900px)" href="../../CSS/wide-screen.css" />
+    <link rel="stylesheet" media="print" href="../../CSS/print.css" />
+    <script type="text/javascript" src="../../JS/javascript.js"></script>
+</head>
+
+<body onload="PageLoad()">
+    <!-- Header -->
+    <header>
+        <h1>Centro Estetico Nirvana</h1>
+        <nav id="top-right">
+            <ul id="contentUser" class="userLinks">
+                <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+                <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
+                <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
+            </ul>
+            <button onclick="userMenu()" class="userMenu"></button>
+        </nav>
+    </header>
+    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
+
+    <!-- La seconda navigazione e' quella della breadcrumb-->
+    <nav>
+        <ul id="loginMenu">
+            <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+            <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
+            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
+        </ul>
+        <div class="breadcrumb">
+            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &gt;&gt; 401-Non autenticato</p>
+        </div>
+        <div id="menu">
+            <button onclick="menuButton()" class="buttonMenu">Menu</button>
+            <ul id="menuList" class="menuCont">
+                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
+                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Qui e' la fine di header -->
+
+    <main>
+        <section class="error">
+            <h2>401</h2>
+            <h3 class="print-errorText">La pagina da te scelta non puó essere visualizzata senza autenticazione.</h3>
+            <p><a class="print-invisible" href="../../PHP/AREA PERSONALE/login.php">Effettua il login</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <dl class="contenitore-footer">
+
+            <div class="item-footer">
+                <dt>Indirizzo</dt>
+                <dd><address>Via Roma, 1</address></dd>
+            </div>
+
+            <div class="item-footer">
+                <dt>Telefono</dt>
+                <dd><a href="tel:123456789">123456789</a></dd>
+            </div>
+
+            <div class="item-footer">
+                <dt>Email</dt>
+                <dd> <a href="mailto:example@ovunque.com">example@ovunque.com</a> </dd>
+            </div>
+
+            <div class="item-footer">
+                <dt></dt>
+                <dd>
+                    <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                        <caption>Orari</caption>
+                        <tr>
+                            <th scope="col">Giorno</th>
+                            <th scope="col">Apertura</th>
+                            <th scope="col">Chiusura</th>
+                        </tr>
+                        <tr>
+                            <td>Lunedì</td>
+                            <td>Chiuso</td>
+                            <td>Chiuso</td>
+                        </tr>
+                        <tr>
+                            <td>Martedì - Venerdì</td>
+                            <td><time datetime="09:00">09:00</time></td>
+                            <td><time datetime="19:00">19:00</time></td> 
+                        </tr>
+                        <tr>
+                            <td>Sabato e Domenica</td>
+                            <td><time datetime="09:00">09:00</time></td>
+                            <td><time datetime="15:00">15:00</time></td> 
+                        </tr>
+                    </table>
+                </dd>
+            </div>
+        </dl>
+    </footer>
+</body>
+
+</html>

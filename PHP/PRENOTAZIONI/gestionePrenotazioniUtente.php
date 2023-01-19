@@ -3,13 +3,13 @@
 session_start();
 if($_SESSION["privilegi"] != "cliente"){
     header("HTTP/1.1 403 Unauthorized");
-    header("Location: ../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: ../../HTML/AMMINISTRAZIONE/403.html");
     die();
 }
-require_once "connessione.php";
+require_once "../connessione.php";
 use DB\DBAccess;
 
-$pagina_HTML = file_get_contents("../HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html");
+$pagina_HTML = file_get_contents("../../HTML/PRENOTAZIONI/gestionePrenotazioniUtente.html");
 
 $connessione = new DBAccess();
 $connOk = $connessione->openDBConnection();
@@ -45,7 +45,8 @@ if($connOk){
         }
     }
 
-    $query_result = $connessione->getPrenotazioni();
+
+    $query_result = $connessione->getPrenotazioniUtente($_SESSION["username"]);
     if($query_result != null){
         foreach($query_result as $prenotazione){
             $prenotazioni .= "<tr>";

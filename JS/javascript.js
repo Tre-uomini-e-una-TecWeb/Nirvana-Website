@@ -36,6 +36,26 @@ function PageLoad() {
     // sessionStorage.setItem('cambiato', 'true');
     // console.log('object');
   }
+  // if(sessionStorage.getItem('loggedIn') == 'true'){
+  //   var list = document.getElementsByClassName("LogIn");
+  //   for (let item of list) {
+  //     item.style.display = "none";
+  //   }
+
+  //   list = document.getElementsByClassName("LogOut");
+  //   for (let item of list) {
+  //     item.style.display = "block";
+  //   }
+  // } else {
+  //   var list = document.getElementsByClassName("LogIn");
+  //   for (let item of list) {
+  //     item.style.display = "block";
+  //   }
+
+  //   list = document.getElementsByClassName("LogOut");
+  //   for (let item of list) {
+  //     item.style.display = "none";
+  //   }
   
 }
 
@@ -72,19 +92,19 @@ document.addEventListener("scroll", function(event){
   let scrollBrn = document.querySelector("#top-right");
   let footer = document.querySelector("footer");
   let body = document.querySelector("body");
-  const  x = window.matchMedia("(max-width: 750px)").matches;
+  const  x = window.matchMedia("(max-width: 800px)").matches;
   const y = (body.offsetHeight - footer.offsetHeight - 90 );
   if(x){
-    if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight)){
+    if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight + 20)){
       scrollBrn.classList.remove("menuLogMob");
       scrollBrn.classList.add("menuLogMobStop");
       // scrollBrn.style.position = "absolute";
       // let classStyle = document.getElementsByClassName("menuLogMobStop");
       let topRule = new Array();
-        if (document.styleSheets[4].cssRules[6].cssRules[3]) {
-            topRule = document.styleSheets[4].cssRules[6].cssRules[3];
-        } else if (document.styleSheets[4].rules[6].rules[3]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
-            topRule = document.styleSheets[4].rules[6].rules[3];
+        if (document.styleSheets[4].cssRules[6].cssRules[13]) {
+            topRule = document.styleSheets[4].cssRules[6].cssRules[13];
+        } else if (document.styleSheets[4].rules[6].rules[13]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+            topRule = document.styleSheets[4].rules[6].rules[13];
         }
         topRule.style.top = y + 'px';
         // theRules.style.righ
@@ -101,11 +121,28 @@ document.addEventListener("scroll", function(event){
       // console.log(footer.offsetHeight);
       // console.log(window.scrollY);
       }
-  } else {
-    scrollBrn.classList.remove("menuLogMobStop");
-    scrollBrn.classList.remove("menuLogMob");
-    scrollBrn.classList.add("menuLogDesk");
-  }
+  } /*else {
+    // scrollBrn.classList.remove("menuLogMobStop");
+    // scrollBrn.classList.remove("menuLogMob");
+    // scrollBrn.classList.add("menuLogDesk");
+  }*/
 });
 
 
+// function statusPass1(){
+//     var x = document.getElementById("password1");
+//     changeStatus(x);
+//   }
+
+//   function statusPass2(){
+//     var x = document.getElementById("password2");
+//     changeStatus(x);
+//   }
+
+//   function changeStatus(x){
+//     if (x.type === "password") {
+//       x.type = "text";
+//     } else {
+//       x.type = "password";
+//     }
+//   }
