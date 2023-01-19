@@ -15,6 +15,8 @@ $cognome="";
 $dataNascita="";
 $mail="";
 $telefono="";
+$modDati = "";
+$modPasswd = "";
 if($connOk){
     $query_result=$connessione->checkUtente($_SESSION["username"]);
     if($query_result != null){
@@ -30,11 +32,21 @@ if($connOk){
 else {
 }
 
+if(isset($_POST['modificaDati'])){
+    $modDati = $_POST['newBirth'];
+}
+
+if(isset($_POST['modificaPasswd'])){
+    $modPasswd = "Dai cazzo!";
+}
+
 $pagina_HTML = str_replace("<usernameUtente />", $_SESSION["username"], $pagina_HTML);
 $pagina_HTML = str_replace("<nomeUtente />", $nome, $pagina_HTML);
 $pagina_HTML = str_replace("<cognomeUtente />", $cognome, $pagina_HTML);
 $pagina_HTML = str_replace("<dataNascitaUtente />", $dataNascita, $pagina_HTML);
 $pagina_HTML = str_replace("<mailUtente />", $mail, $pagina_HTML);
 $pagina_HTML = str_replace("<telefonoUtente />", $telefono, $pagina_HTML);
+$pagina_HTML = str_replace("<esitoModificaDati />", $modDati, $pagina_HTML);
+$pagina_HTML = str_replace("<esitoCambioPassword />", $modPasswd, $pagina_HTML);
 echo $pagina_HTML;
 ?>
