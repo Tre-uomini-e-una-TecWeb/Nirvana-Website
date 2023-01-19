@@ -5,6 +5,12 @@ if(!array_key_exists("username", $_SESSION) || $_SESSION["username"] == ""){//l'
     header("Location: ../HTML/AMMINISTRAZIONE/401.html");
     die();
 }
+function pulisciInput($value){
+    $value=trim($value);
+    $value=strip_tags($value);
+    $value=htmlentities($value);
+    return $value;
+}
 require_once "../connessione.php";
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../../HTML/AREA PERSONALE/areaPersonale.html"); 
@@ -33,7 +39,33 @@ else {
 }
 
 if(isset($_POST['modificaDati'])){
-    $modDati = $_POST['newBirth'];
+    $modNome = "";
+    $modCognome = "";
+    $modDataNascita = "";
+    $modEmail = "";
+    $modTelefono = "";
+    //controllo se effettivamente é stato modificato un dato
+    if(isset($_POST['newPhone']) || isset($_POST['newEmail']) || isset($_POST['newName']) || isset($_POST['newSurname']) || isset($_POST['newBirth'])){
+        if(isset($_POST['newName'])){
+            $modNome = pulisciInput($_POST['newName']);
+        }
+        if(isset($_POST['newSurname'])){
+            $modCognome = pulisciInput($_POST['newSurname']);
+        }
+        if(isset($_POST['newBirth'])){
+            $modDataNascita = pulisciInput($_POST['newBirth']);
+        }
+        if(isset($_POST['newEmail'])){
+            $modEmail = pulisciInput($_POST['newEmail']);
+        }
+        if(isset($_POST['newPhone'])){
+            $modTelefono = pulisciInput($_POST['newPhone']);
+        }
+        $modDati = "Nome: ".$modNome." Cognome: ".$modCognome." Data di nascita: ".$modDataNascita." Email: ".$modEmail." Telefono: ".$modTelefono;//linea di debug
+    }
+    else{
+        $modDati = "<p>Non é stato modificato alcun dato.</p>";
+    }
 }
 
 if(isset($_POST['modificaPasswd'])){

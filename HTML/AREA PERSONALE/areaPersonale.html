@@ -60,7 +60,7 @@
             <label for="surname"> Cognome: </label>
             <input type="text" id="surname" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />"><br>
             <label for="birth">Data di nascita:</label>
-            <input type="text" id="birth" name="newBirth" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />"><br>
+            <input type="text" id="birth" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />"><br>
             <label lang="en" for="email">Email:</label>
             <input type="email" id="email" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />"><br>
             <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
