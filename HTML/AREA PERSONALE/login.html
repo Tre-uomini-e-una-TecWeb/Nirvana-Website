@@ -18,11 +18,14 @@
     <!-- Header -->
     <header>
         <h1>Centro Estetico Nirvana</h1>
-        <nav id="top-right">
+        <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
-                <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+                <li class="menuList">Area Personale</li>
+                <li id="LogIn" class="menuList"><span lang="en">Log In</span></li>
+                <li id="LogOut"><span lang="en">Log Out</span></li>
+                <!-- <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
                 <li class="LogIn"><span lang="en">Log In</span></li>
-                <li class="LogOut"><span lang="en">Log Out</span></li>
+                <li class="LogOut"><span lang="en">Log Out</span></li> -->
             </ul>
             <button onclick="userMenu()" class="userMenu"></button>
         </nav>
@@ -31,29 +34,47 @@
 
     <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <ul id="loginMenu">
+        <!-- <ul id="loginMenu">
             <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
             <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
             <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-        </ul>
+        </ul> -->
         <div class="breadcrumb">
             <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; <span lang="en">Log in</span></p> 
         </div>
         <div id="menu">
-            <button onclick="menuButton()" class="buttonMenu">Menu</button>
-            <ul id="menuList" class="menuCont">
-                <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
-                <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
-                <li><a href="../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
-            </ul>
+            <div>
+
+                <button onclick="menuButton()" class="buttonMenu">Menu</button>
+                <ul id="menuList" class="menuCont">
+                    <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
+                    <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>
+                    <li><a href="../PHP/gestionePrenotazioni.php"> Prenotazione</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <main>
-        <div id="contain">
-        <section id="registrazione" >
+    <main id="logPage">
+        <section class="accesso" >
             <h2>Registrazione</h2>
             <form id="signup" method="post" action="login.php">
+                <label for="name"> Nome: </label>
+                <input type="text" id="name" name="name" required aria-required="true"><br>
+                <label for="surname"> Cognome: </label>
+                <input type="text" id="surname" name="surname" required aria-required="true"><br>
+                <label for="birth">Data di nascita:</label>
+                <input type="date" id="birth" name="birth" required aria-required="true"><br>
+                <label lang="en" for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true"><br>
+                <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true"><br>
+                <label lang="en" for="username">Utente:</label>
+                <input type="text" id="username" name="username" required aria-required="true"><br>
+                <label lang="en" for="password">Password:</label>
+                <input type="password" id="password" name="password" required aria-required="true"> <!--<br>-->
+                <input type="checkbox" onclick="myFunction()">Mostra <span lang="en">password</span><br>
+                <input class="submit" type="submit" name="registrazione" value="Iscrivimi">
                 <label for="name" id="nameLabel"> Nome: </label>
                 <input type="text" id="name" name="name" required aria-required="true">
                 <label for="surname" id="surnameLabel"> Cognome: </label>
@@ -70,7 +91,7 @@
                 <input type="password" id="password1" name="password" required aria-required="true"> 
                 <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="statusPass1()">
 
-                <label for="mostraPswRegistrazione">Mostra password</label></div>
+                <label for="mostraPswRegistrazione">Mostra <span>password</span></label></div>
                 <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
             </form>
             <esitoRegistrazione />
@@ -88,12 +109,8 @@
                 <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
             </form>
             <avvisoLogin />
+            <p>Se non ti ricordi la password, contatta il centro estetico</p>
         </section>
-        </div>
-        <section>
-            <div id="help"> Se non ti ricordi la password, contatta il centro estetico</div>
-        </section>
-
     </main>
 
     <footer>

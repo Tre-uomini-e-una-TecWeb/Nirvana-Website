@@ -78,15 +78,44 @@ main {
         text-align: center;
     }
 
+    .breadcrumb {
+        border-top: none;
+    }
+
+    /* #top-right{
+        position: fixed;
+        right: 2em;
+        bottom: 2em;
+        z-index: 10;
+    } */
+
+    .menuLogMob {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        top: initial;
+        z-index: 10;
+    }
+    
+    .menuLogMobStop {
+        position: absolute;
+        top: initial;
+        right: 2em;
+    }
+    
+
+    #loginMenu{
+        position: relative; 
+    }
     .breadcrumb{
         border-top: none;
     }
 
-    #top-right{
+    /* #top-right{
         display: none;
-    }
+    } */
 
-    #loginMenu{
+    /* #loginMenu{
         width: 100%;
         display: flex;
         align-content: center;
@@ -98,7 +127,7 @@ main {
         display: inline;
         padding: 0.5em 1em 0.5em 1.0em;
         margin: 0em auto 0em auto;
-    }
+    } */
 
     main {
         margin: 1em;
