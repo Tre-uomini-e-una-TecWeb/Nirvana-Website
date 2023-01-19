@@ -11,35 +11,37 @@ function PageLoad() {
   if(document.getElementById("areaPersonale") != null){
     sessionStorage.setItem('loggedIn', 'true');
     sessionStorage.setItem('cambiato', 'false');
-    console.log('H1');
   }
-  if('cambiato' in sessionStorage){
+  if(!("cambiato" in sessionStorage)){
     sessionStorage.setItem('cambiato', 'false');
+    console.log("object");
   }
 
-  if(sessionStorage.getItem('cambiato') == 'false' && sessionStorage.getItem('loggedIn') == 'true'){
+  if(/*sessionStorage.getItem('cambiato') == 'false' &&*/ sessionStorage.getItem('loggedIn') == 'true'){
     // document.getElementById("LogIn").style.display = "none";
     // document.getElementById("LogOut").style.display = "block";
     // document.getElementById("LogOut").style.border = "none";
     // document.getElementById("LogOut").style.padding = "0";
     document.getElementById("LogIn").classList.add('hide');
     document.getElementById("LogOut").classList.add('menuLogOutUt');
-    sessionStorage.setItem('cambiato', 'true');
-  } else if (sessionStorage.getItem('cambiato') == 'false'){
+    // sessionStorage.setItem('cambiato', 'true');
+    console.log('hii');
+  } else /*if (sessionStorage.getItem('cambiato') == 'false')*/{
     // document.getElementById("LogIn").style.display = "block";
     // document.getElementById("LogIn").style.border = "none";
     // document.getElementById("LogIn").style.padding = "0";
     // document.getElementById("LogOut").style.display = "none";
     document.getElementById("LogIn").classList.add("menuLogInUt");
     document.getElementById("LogOut").classList.add('hide');
-    sessionStorage.setItem('cambiato', 'true');
+    // sessionStorage.setItem('cambiato', 'true');
+    // console.log('object');
   }
   
 }
 
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
-  sessionStorage.setItem('cambiato', 'false');
+  // sessionStorage.setItem('cambiato', 'false');
 }
   
 
