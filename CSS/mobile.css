@@ -47,9 +47,9 @@ main {
         margin-top: 3em;
     }
     
-    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes{
+    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente{
         border: 1px solid black;
-        padding: 2em 2em 2em 0.9em;
+        padding: 2em 2em 1em 0.9em;
         text-align: center;
     }
 
@@ -59,10 +59,6 @@ main {
 
     #signup input, #login input, #insertRes input{
         margin-right: 1em;
-    }
-
-    #registerButton, #accessButton{
-        margin-top: 1em;
     }
 
     #registrazione{

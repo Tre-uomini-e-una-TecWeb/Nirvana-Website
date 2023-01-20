@@ -88,16 +88,16 @@
         <section class="sezionePUtente print-invisible">
             <h2 >Cambio password</h2>
             <form id="changePsw">
-                <label for="password1" id="password1Label"> Password: </label>
-                <input type="password" id="password1" name="password">
-                <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPass1()">
+                <label for="passwordPers1" id="passwordPers1Label"> Password: </label>
+                <input type="password" id="passwordPers1" name="password">
+                <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPassPers1()">
                 <label for="mostraPsw">Mostra password</label></div>
-                <label for="password2" id="password2Label"> Ripeti la password: </label>
-                <input type="password" id="password2" name="password">
-                <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPass2()">
+                <label for="passwordPers2" id="passwordPers2Label"> Ripeti la password: </label>
+                <input type="password" id="passwordPers2" name="Password">
+                <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPassPers2()">
                 <label for="mostraPswRipeti">Mostra password</label></div>
                 
-                <input class="print-invisible" type="submit" value="Salva modifiche">
+                <input class="print-invisible" id="updateButton" type="submit" value="Salva modifiche">
             </form>
         </section>
         </div>

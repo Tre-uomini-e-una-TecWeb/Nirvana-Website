@@ -740,22 +740,7 @@ footer a:visited{
     /* text-align: center; */
 }
 
-.accesso {
-    flex: auto;
-    text-align: center;
-}
-.accesso form {
-    text-align: initial;
-}
-
-#logPage input {
-    text-align: initial;
-    padding: 0.2em;
-    font-size: 0.9em;
-}
-
-
-#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione {
+#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione{
     flex: auto;
 }
 
@@ -766,16 +751,16 @@ footer a:visited{
 #signup, #login, .sezionePUtente dl, #changePsw, #insertRes{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2em;
+    padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
 }
 
-#mostraPswR, #mostraPswA, .print-invisible, #mostraPsw1, #mostraPsw2{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2{
     grid-column: 1/3;
 }
 
@@ -783,20 +768,20 @@ footer a:visited{
     margin-bottom: 1em;
 }
 
-#name, #surname, #birth, #email, #phone, #username, #password, #usernameLogin, #passwordLogin, #password1, #password2, #date, #hour, #service{
+#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service{
     grid-column: 2;
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #password1, #password1Label, #dateLabel, #date{
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #passwordLogin, #passwordLoginLabel, #mostraPsw1, #hourLabel, #hour{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label{
     grid-row: 3;
 }
 
@@ -808,11 +793,11 @@ footer a:visited{
     grid-row: 5;
 }
 
-#username, #userLabel{
+#username, #userLabel, #updateButton{
     grid-row: 6;
 }
 
-#password, #passwordLabel{
+#password1, #password1Label{
     grid-row: 7;
 }
 
@@ -822,10 +807,13 @@ footer a:visited{
 
 #mostraPswR, #mostraPswA, #mostraPsw1, #mostraPsw2{
     text-align: right;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton{
+#registerButton, #accessButton, #updateButton, #userReservationButton{
     margin-top: 1em;
+    padding: 0.3em;
 }
 
 /**
@@ -845,3 +833,10 @@ footer a:visited{
     text-align: center;
 }
 
+#prenotazioniUtente{
+    margin: 2em;
+}
+
+#descrTabPrenAmm{
+    margin-bottom: 1em;
+}
