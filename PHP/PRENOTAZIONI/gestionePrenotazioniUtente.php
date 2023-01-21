@@ -51,15 +51,15 @@ if($connOk){
         foreach($query_result as $prenotazione){
             $prenotazioni .= "<tr>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
-            $prenotazioni .= "<td scope=\"row\">".$dataPrenotazione."</td>"
-                          .  "<td scope=\"row\">".$oraPrenotazione."</td>"
-                          .  "<td scope=\"row\">".$prenotazione['Trattamento']."</td>"
-                          .  "<td scope=\"row\">".$prenotazione['Stato']."</td>"
+            $prenotazioni .= "<td data-title='' class='header'>".$prenotazione['Trattamento']."</td>"
+                        .    "<td data-title='Data:'>".$dataPrenotazione."</td>"
+                          .  "<td data-title='Ora:'>".$oraPrenotazione."</td>"
+                          .  "<td data-title='Stato richiesta:'>".$prenotazione['Stato']."</td>"
                           . "</tr>";
         }
     }
     else{
-        $prenotazioni .= "<tr><td scope=\"row\">Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
     $prenotazioni="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";

@@ -37,12 +37,12 @@ if(isset($_POST['accesso'])){
                 die();
             }
             else{
-                $avvisoLogin = "<p id=\"loginKo\">Password non corretta: login non effettuato.</p>";
+                $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
             }
         }
     }
     else{
-        $avvisoLogin = "<p id=\"loginKo\">Utente non trovato: login non effettuato. Verificare di aver inserito lo <span lang=\"en\">username</span> correttamente.</p>";
+        $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
     }
 }
 if(isset($_POST['registrazione'])){

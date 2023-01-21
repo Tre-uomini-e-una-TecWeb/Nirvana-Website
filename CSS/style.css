@@ -357,7 +357,7 @@ footer{
     margin-top: 2em;
 }
 
-footer th {
+table th {
     background-color: var(--mainColorAlpha);
 }
 
@@ -402,7 +402,7 @@ footer a:visited{
 
 .item-footer tr:nth-child(even) {background-color: #ffe0c1}
 
-.item-footer table th, td{
+.item-footer table th, .item-footer table td{
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
@@ -465,7 +465,7 @@ footer a:visited{
 
 
 #puliziaViso:hover{
-    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso-opaco50.jpeg");
+    background-image: url("../IMG/VISO/PULIZIA_VISO/Viso-opaco60.jpeg");
 }
 
 #idratazione{
@@ -474,16 +474,15 @@ footer a:visited{
 
 
 #idratazione:hover{
-    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti-opaco50.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_IDRATANTI/idratanti-opaco60.jpeg") ;
 }
 
 #antiage{
     background-image:url("../IMG/VISO/ANTI-AGE/antiage.jpeg") ;
 }
 
-
 #antiage:hover{
-    background-image:url("../IMG/VISO/ANTI-AGE/antiage-opaco50.jpeg") ;
+    background-image:url("../IMG/VISO/ANTI-AGE/antiage-opaco60.jpeg") ;
 }
 
 #effettoLifting{
@@ -491,7 +490,7 @@ footer a:visited{
 }
 
 #effettoLifting:hover{
-    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect-opaco50.jpeg") ;
+    background-image:url("../IMG/VISO/EFFETTO_LIFTING/liftingeffect-opaco60.jpeg") ;
 }
 
 #rimpolpanti{
@@ -499,7 +498,7 @@ footer a:visited{
 }
 
 #rimpolpanti:hover{
-    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti-opaco50.png") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_RIMPOLPANTI/rimpolpanti-opaco60.png") ;
 }
 
 #sebo-regolatori{
@@ -508,7 +507,7 @@ footer a:visited{
 
 
 #sebo-regolatori:hover{
-    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori-opaco50.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_SEBO-REGOLATORI/seboregolatori-opaco60.jpeg") ;
 }
 
 #desensibilizzanti{
@@ -516,7 +515,7 @@ footer a:visited{
 }
 
 #desensibilizzanti:hover{
-    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante-opaco50.jpeg") ;
+    background-image:url("../IMG/VISO/TRATTAMENTI_DESENSIBILIZZANTI/desensibilizzante-opaco60.jpeg") ;
 }
 
 #epilazione{
@@ -548,7 +547,7 @@ footer a:visited{
 }
 
 #lucePulsata:hover{
-    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata-opaco40.jpeg");
+    background-image: url("../IMG/MACCHINARI/LUCE_PULSATA/pulsata-opaco60.jpeg");
 }
 
 #radiofrequenza{
@@ -556,7 +555,7 @@ footer a:visited{
 }
 
 #radiofrequenza:hover{
-    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/RADIOFREQUENZA/radiofrequenza-opaco60.jpeg") ;
 }
 
 #ultrasuoni{
@@ -564,7 +563,7 @@ footer a:visited{
 }
 
 #ultrasuoni:hover{
-    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ULTRASUONI/ultrasuoni-opaco60.jpeg") ;
 }
 
 #elettrocoagulatore{
@@ -572,7 +571,7 @@ footer a:visited{
 }
 
 #elettrocoagulatore:hover{
-    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROCOAGULATORE/elettrocoagulatore-opaco60.jpeg") ;
 }
 
 #elettroscultore{
@@ -580,7 +579,7 @@ footer a:visited{
 }
 
 #elettroscultore:hover{
-    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROSCULTORE/elettroscultore-opaco60.jpeg") ;
 }
 
 #elettroporatore{
@@ -589,7 +588,7 @@ footer a:visited{
 
 
 #elettroporatore:hover{
-    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/ELETTROPORATORE/elettroporatore-opaco60.jpeg") ;
 }
 
 #pressoterapia{
@@ -598,7 +597,7 @@ footer a:visited{
 
 
 #pressoterapia:hover{
-    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/PRESSOTERAPIA/pressoterapia-opaco60.jpeg") ;
 }
 
 #brush{
@@ -607,7 +606,7 @@ footer a:visited{
 
 
 #brush:hover{
-    background-image:url("../IMG/MACCHINARI/BRUSH/brush-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/BRUSH/brush-opaco60.jpeg") ;
 }
 
 #massaggioEndodermico{
@@ -616,7 +615,7 @@ footer a:visited{
 
 
 #massaggioEndodermico:hover{
-    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico-opaco40.jpeg") ;
+    background-image:url("../IMG/MACCHINARI/MASSAGGIO_ENDODERMICO/endodermico-opaco60.jpeg") ;
 }
 
 #ceretta{
@@ -625,7 +624,7 @@ footer a:visited{
 
 
 #ceretta:hover{
-    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta-opaco40.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/CERETTA/ceretta-opaco60.jpeg") ;
 }
 
 #brasiliana{
@@ -634,7 +633,7 @@ footer a:visited{
 
 
 #brasiliana:hover{
-    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana-opaco40.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/BRASILIANA/brasiliana-opaco60.jpeg") ;
 }
 
 #pastaZucchero{
@@ -643,7 +642,7 @@ footer a:visited{
 
 
 #pastaZucchero:hover{
-    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero-opaco40.jpeg") ;
+    background-image:url("../IMG/CORPO/EPILAZIONE/PASTA_ZUCCHERO/pastaDiZucchero-opaco60.jpeg") ;
 }
 
 #rilassante{
@@ -652,7 +651,7 @@ footer a:visited{
 
 
 #rilassante:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/RILASSANTE/rilassante-opaco60.jpeg");
 }
 
 #olistico{
@@ -661,7 +660,7 @@ footer a:visited{
 
 
 #olistico:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/OLISTICO/olistico-opaco60.jpeg");
 }
 
 #decontratturante{
@@ -670,7 +669,7 @@ footer a:visited{
 
 
 #decontratturante:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/DECONTRATTURANTE/decontratturante-opaco60.jpeg");
 }
 
 #tonificante{
@@ -679,7 +678,7 @@ footer a:visited{
 
  
 #tonificante:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/TONIFICANTE/tonificante-opaco60.jpeg");
 }
 
 #linfodrenante{
@@ -688,7 +687,7 @@ footer a:visited{
 
 
 #linfodrenante:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/LINFODRENANTE_EMOLINFATICO/linfo-opaco60.jpeg");
 }
 
 #modellante{
@@ -697,7 +696,7 @@ footer a:visited{
 
 
 #modellante:hover{
-    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MASSAGGIO/MODELLANTE/modellante-opaco60.jpeg");
 }
 
 #posa{
@@ -706,7 +705,7 @@ footer a:visited{
 
 
 #posa:hover{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SMALTO/smalto-opaco60.jpeg");
 }
 
 #semipermanente{
@@ -715,7 +714,7 @@ footer a:visited{
 
 
 #semipermanente:hover{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/SEMIPERMANENTE/semipermanente-opaco60.jpeg");
 }
 
 #gel{
@@ -724,7 +723,7 @@ footer a:visited{
 
 
 #gel:hover{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/GEL/gel-opaco60.jpeg");
 }
 
 #curativa{
@@ -732,7 +731,7 @@ footer a:visited{
 }
 
 #curativa:hover{
-    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco40.jpeg");
+    background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco60.jpeg");
 }
 
 #contain {
@@ -740,22 +739,7 @@ footer a:visited{
     /* text-align: center; */
 }
 
-.accesso {
-    flex: auto;
-    text-align: center;
-}
-.accesso form {
-    text-align: initial;
-}
-
-#logPage input {
-    text-align: initial;
-    padding: 0.2em;
-    font-size: 0.9em;
-}
-
-
-#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione {
+#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione{
     flex: auto;
 }
 
@@ -766,16 +750,20 @@ footer a:visited{
 #signup, #login, .sezionePUtente dl, #changePsw, #insertRes{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2em;
+    padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordLabel, #utenteLabel, #passwordLoginLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
+#prenotazioniUtente{
+    padding: 2em 2em 0em 2em;
+}
+
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
 }
 
-#mostraPswR, #mostraPswA, .print-invisible, #mostraPsw1, #mostraPsw2{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo{
     grid-column: 1/3;
 }
 
@@ -783,24 +771,24 @@ footer a:visited{
     margin-bottom: 1em;
 }
 
-#name, #surname, #birth, #email, #phone, #username, #password, #usernameLogin, #passwordLogin, #password1, #password2, #date, #hour, #service{
+#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service{
     grid-column: 2;
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #password1, #password1Label, #dateLabel, #date{
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #passwordLogin, #passwordLoginLabel, #mostraPsw1, #hourLabel, #hour{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label{
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2{
+#email, #emailLabel, #mostraPsw2, #loginKo{
     grid-row: 4;
 }
 
@@ -808,11 +796,11 @@ footer a:visited{
     grid-row: 5;
 }
 
-#username, #userLabel{
+#username, #userLabel, #updateButton{
     grid-row: 6;
 }
 
-#password, #passwordLabel{
+#password1, #password1Label{
     grid-row: 7;
 }
 
@@ -822,10 +810,13 @@ footer a:visited{
 
 #mostraPswR, #mostraPswA, #mostraPsw1, #mostraPsw2{
     text-align: right;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton{
+#registerButton, #accessButton, #updateButton, #userReservationButton{
     margin-top: 1em;
+    padding: 0.3em;
 }
 
 /**
@@ -845,3 +836,6 @@ footer a:visited{
     text-align: center;
 }
 
+#descrTabPrenAmm{
+    margin-bottom: 1em;
+}

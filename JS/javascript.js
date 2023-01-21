@@ -129,20 +129,30 @@ document.addEventListener("scroll", function(event){
 });
 
 
-// function statusPass1(){
-//     var x = document.getElementById("password1");
-//     changeStatus(x);
-//   }
+function statusPassLog1(){
+    var x = document.getElementById("password1");
+    changeStatus(x);
+  }
 
-//   function statusPass2(){
-//     var x = document.getElementById("password2");
-//     changeStatus(x);
-//   }
+function statusPassLog2(){
+  var x = document.getElementById("password2");
+  changeStatus(x);
+}
 
-//   function changeStatus(x){
-//     if (x.type === "password") {
-//       x.type = "text";
-//     } else {
-//       x.type = "password";
-//     }
-//   }
+function statusPassPers1(){
+  var x = document.getElementById("passwordPers1");
+  changeStatus(x);
+}
+
+function statusPassPers2(){
+var x = document.getElementById("passwordPers2");
+changeStatus(x);
+}
+
+function changeStatus(x){
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
