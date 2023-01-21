@@ -101,10 +101,10 @@ document.addEventListener("scroll", function(event){
       // scrollBrn.style.position = "absolute";
       // let classStyle = document.getElementsByClassName("menuLogMobStop");
       let topRule = new Array();
-        if (document.styleSheets[4].cssRules[6].cssRules[13]) {
-            topRule = document.styleSheets[4].cssRules[6].cssRules[13];
-        } else if (document.styleSheets[4].rules[6].rules[13]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
-            topRule = document.styleSheets[4].rules[6].rules[13];
+        if (document.styleSheets[4].cssRules[5].cssRules[19]) {
+            topRule = document.styleSheets[4].cssRules[5].cssRules[19];
+        } else if (document.styleSheets[4].rules[5].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+            topRule = document.styleSheets[4].rules[5].rules[19];
         }
         topRule.style.top = y + 'px';
         // theRules.style.righ
