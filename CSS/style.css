@@ -357,7 +357,7 @@ footer{
     margin-top: 2em;
 }
 
-footer th {
+table th {
     background-color: var(--mainColorAlpha);
 }
 
@@ -402,7 +402,7 @@ footer a:visited{
 
 .item-footer tr:nth-child(even) {background-color: #ffe0c1}
 
-.item-footer table th, td{
+.item-footer table th, .item-footer table td{
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
@@ -480,7 +480,6 @@ footer a:visited{
 #antiage{
     background-image:url("../IMG/VISO/ANTI-AGE/antiage.jpeg") ;
 }
-
 
 #antiage:hover{
     background-image:url("../IMG/VISO/ANTI-AGE/antiage-opaco50.jpeg") ;
@@ -755,6 +754,10 @@ footer a:visited{
     row-gap: 0.5em;
 }
 
+#prenotazioniUtente{
+    padding: 2em 2em 0em 2em;
+}
+
 #nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
@@ -831,10 +834,6 @@ footer a:visited{
 #help{
     margin-top: 2em;
     text-align: center;
-}
-
-#prenotazioniUtente{
-    margin: 2em;
 }
 
 #descrTabPrenAmm{

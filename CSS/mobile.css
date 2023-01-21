@@ -15,10 +15,6 @@ nav:not(#top-right) {
    border-bottom: none;
 }
 
-#menu {
-    margin-bottom: 6em;
-}
-
 header {
     padding: 0em;
     margin: 0em;
@@ -32,6 +28,10 @@ main {
 
     header, main{
         font-size: 1.1em;
+    }
+
+    #menu {
+        margin-bottom: 6em;
     }
 
     footer{
@@ -49,8 +49,39 @@ main {
     
     #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente{
         border: 1px solid black;
-        padding: 2em 2em 1em 0.9em;
+        padding: 1.1em 1em 1em 0.9em;
         text-align: center;
+    }
+
+    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot{
+        display: none;
+    }
+
+    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td {
+        display: block;
+    }
+
+    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before {
+        content: attr(data-title) "\00A0";
+        font-weight: bold;
+    }
+
+    .header{
+        background-color: var(--mainColorAlpha);
+        border: none;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+    }
+
+    #tabellaPrenotazioniUtente{
+        height: 100%;
+        width: 100%;
+        border: 2px solid black
+    }
+
+    #tabellaPrenotazioniUtente td:not(.header){
+        border:none;
+        border-top: 1px solid black;
     }
 
     #signup label, #login label, #insertRes label{
@@ -133,7 +164,7 @@ main {
         margin: 1em 0em 4em 0em;
     }
 
-    .item-footer table th, td{
+    .item-footer table th, .item-footer table td{
         padding: 0.3em;
     }
 
@@ -143,6 +174,10 @@ main {
 
     .carta {
         color:black;
+    }
+
+    #service{
+        max-width: 35vw;
     }
 
     #puliziaViso{
