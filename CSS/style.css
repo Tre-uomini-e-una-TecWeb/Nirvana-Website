@@ -160,12 +160,12 @@ nav {
 h2 {
     color: var(--secondaryColor);
     text-align: center;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 1em;
 }
 
 main {
-    margin: 3em 6em 3em 6em;
+    margin: 2.5em;
 }
 
 #menu {
