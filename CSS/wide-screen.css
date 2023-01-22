@@ -2,7 +2,11 @@ header, main, footer, #menu {
     font-size: 1.3em;
 }
 
-.breadcrumb {
+form input, form select{
+    font-size: 0.8em;
+}
+
+.breadcrumb, #mini_breadcrumb {
     font-size: 1.4em;
 }
 
@@ -25,6 +29,10 @@ header, main, footer, #menu {
     nav:not(#top-right) {
         display: block;
     }
+
+    h2{
+        font-size: 1.5em;
+    }
     
     .breadcrumb, #menu {
         width: auto;
@@ -33,6 +41,10 @@ header, main, footer, #menu {
         text-align: center;
         border-left: none;
         border-right: none;
+    }    
+
+    #loginMenu{
+        position: relative; 
     }
     
     .breadcrumb {
@@ -40,7 +52,7 @@ header, main, footer, #menu {
     }
     
     #menu {
-        margin-bottom: 6em;
+        margin-bottom: 3em;
     }
     
     header {
@@ -53,30 +65,145 @@ header, main, footer, #menu {
     }
 }
 
-@media screen and (max-width:1000px) {
-    #registrazione {
+@media screen and (max-width:1120px) {
+
+    #menu {
+        margin-bottom: 6em;
+    }
+
+    footer{
+        font-size: 1.1em;
+    }
+
+    #contain{
+        display: block;
+        /* text-align: center; */
+    }
+    
+    #help{
+        margin-top: 3em;
+    }
+    
+    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente, #prenotazioniAmministratore{
+        border: 1px solid black;
+        padding: 1.1em 1em 1em 0.9em;
+        text-align: center;
+    }
+
+    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot{
+        display: none;
+    }
+
+    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td {
+        display: block;
+    }
+
+    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before {
+        content: attr(data-title) "\00A0";
+        font-weight: bold;
+    }
+
+    .header{
+        background-color: var(--mainColorAlpha);
+        border: none;
+        border-bottom: 1px solid black;
+        font-weight: bold;
+    }
+
+    #tabellaPrenotazioniUtente{
+        height: 100%;
+        width: 100%;
+        border: 2px solid black
+    }
+
+    #tabellaPrenotazioniUtente td:not(.header){
+        border:none;
+        border-top: 1px solid black;
+    }
+
+    #signup label, #login label, #insertRes label{
+        margin-right: 1em;
+    }
+
+    #signup input, #login input, #insertRes input{
+        margin-right: 1em;
+    }
+
+    #registrazione{
         flex: none;
     }
     
-    #accesso {
+    #accesso{
         flex: none;
     }
     
     #mini_breadcrumb{
         display: block;
         text-align: center;
-        font-size: 1.4em;
     }
 
-    .breadcrumb {
-        border-top: none;
+    /* #top-right{
+        position: fixed;
+        right: 2em;
+        bottom: 2em;
+        z-index: 10;
+    } */
+
+    .menuLogMob {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        top: initial;
+        z-index: 10;
+    }
+    
+    .menuLogMobStop {
+        position: absolute;
+        top: initial;
+        right: 2em;
+    }
+    
+
+    #loginMenu{
+        position: relative; 
     }
 
-    #top-right{
+    /* #top-right{
         display: none;
+    } */
+
+    /* #loginMenu{
+        width: 100%;
+        display: flex;
+        align-content: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    #loginMenu li{
+        display: inline;
+        padding: 0.5em 1em 0.5em 1.0em;
+        margin: 0em auto 0em auto;
+    } */
+
+    main {
+        margin: 1em;
+    }
+
+    .contenitore_carte > li, .contenitore_carte > div{
+        margin: 1em 0em 4em 0em;
+    }
+
+    .item-footer table th, .item-footer table td{
+        padding: 0.3em;
     }
 
     #big_breadcrumb {
         display: none;
     }
+
+    #service{
+        max-width: 35vw;
+    }
+
 }
