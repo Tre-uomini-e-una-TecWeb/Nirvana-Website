@@ -2,6 +2,10 @@ header, main, footer, #menu {
     font-size: 1.3em;
 }
 
+form input, form select{
+    font-size: 0.8em;
+}
+
 .breadcrumb, #mini_breadcrumb {
     font-size: 1.4em;
 }
@@ -80,7 +84,7 @@ header, main, footer, #menu {
         margin-top: 3em;
     }
     
-    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente{
+    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente, #prenotazioniAmministratore{
         border: 1px solid black;
         padding: 1.1em 1em 1em 0.9em;
         text-align: center;

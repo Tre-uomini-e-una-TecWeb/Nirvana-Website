@@ -754,16 +754,16 @@ footer a:visited{
     row-gap: 0.5em;
 }
 
-#prenotazioniUtente{
+#prenotazioniUtente, #prenotazioniAmministratore{
     padding: 2em 2em 0em 2em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo, #adminReservationButton{
     grid-column: 1/3;
 }
 
@@ -771,24 +771,24 @@ footer a:visited{
     margin-bottom: 1em;
 }
 
-#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service{
+#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service, #customers, #dateAdmin, #hourAdmin, #serviceAdmin{
     grid-column: 2;
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label{
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel{
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2, #loginKo{
+#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel{
     grid-row: 4;
 }
 
@@ -814,7 +814,7 @@ footer a:visited{
     margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton, #updateButton, #userReservationButton{
+#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton{
     margin-top: 1em;
     padding: 0.3em;
 }
@@ -838,4 +838,8 @@ footer a:visited{
 
 #descrTabPrenAmm{
     margin-bottom: 1em;
+}
+
+.textbox-n{
+    max-width:6em;
 }

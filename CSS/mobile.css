@@ -92,7 +92,7 @@ header {
         margin-top: 3em;
     }
     
-    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente{
+    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente, #prenotazioniAmministratore{
         border: 1px solid black;
         padding: 1.1em 1em 1em 0.9em;
         text-align: center;
