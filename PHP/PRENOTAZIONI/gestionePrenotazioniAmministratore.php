@@ -247,7 +247,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         $prenotazioni .= "<tr><td scope=\"row\">Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 }
-$pagina_HTML = str_replace("<elencoClienti />", $clienti, $pagina_HTML);
+$pagina_HTML=str_replace("<elencoClienti />", $clienti, $pagina_HTML);
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
 $pagina_HTML=str_replace("<prenotazioniEsistenti />", $prenotazioni, $pagina_HTML);
 $pagina_HTML=str_replace("<esitoModifiche />", $esitoModifica, $pagina_HTML);
