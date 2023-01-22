@@ -6,6 +6,9 @@ boh-  id="help" non in uso in css
     eliminare mini.css
     @media tabella, bread, login icona
 
+    DA FARE:
+    ricordarsi di aggiustare la bread quando viene modificata pagina Elimina Prenotazioni
+
 NELLA RELAZIONE PRINT:
 - motivare bottoni
 - motivare link
