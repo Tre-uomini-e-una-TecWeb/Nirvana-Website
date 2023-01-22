@@ -25,7 +25,7 @@
                     <li id="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
                     <li id="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
                 </ul>
-                <button onclick="userMenu()" class="userMenu"></button>
+                <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
             </nav>
         </header>
         <!-- La prima navigazione e' quella sopra a destra per l'utente -->
@@ -44,7 +44,7 @@
                 <p>Livello superiore: <a href="./trattamentiMacchinari.html">Trattamenti e Macchinari</a></p>
             </div>
             <div id="menu">
-                <button onclick="menuButton()" class="buttonMenu">Menu</button>
+                <button aria-haspopup="menu" aria-label="Buttone di Menù Principale" onclick="menuButton()" class="buttonMenu">Menu</button>
                 <ul id="menuList" class="menuCont">
                     <li><a href="./trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
                     <li><a href="../CONSULENZE/consulenze.html"> Consulenze </a></li>

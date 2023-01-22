@@ -109,10 +109,10 @@ document.addEventListener("scroll", function(event){
       // scrollBrn.style.position = "absolute";
       // let classStyle = document.getElementsByClassName("menuLogMobStop");
       let topRule = new Array();
-        if (document.styleSheets[4].cssRules[6].cssRules[13]) {
-            topRule = document.styleSheets[4].cssRules[6].cssRules[13];
-        } else if (document.styleSheets[4].rules[6].rules[13]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
-            topRule = document.styleSheets[4].rules[6].rules[13];
+        if (document.styleSheets[4].cssRules[5].cssRules[19]) {
+            topRule = document.styleSheets[4].cssRules[5].cssRules[19];
+        } else if (document.styleSheets[4].rules[5].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+            topRule = document.styleSheets[4].rules[5].rules[19];
         }
         topRule.style.top = y + 'px';
         // theRules.style.righ
@@ -137,20 +137,30 @@ document.addEventListener("scroll", function(event){
 });
 
 
-// function statusPass1(){
-//     var x = document.getElementById("password1");
-//     changeStatus(x);
-//   }
+function statusPassLog1(){
+    var x = document.getElementById("password1");
+    changeStatus(x);
+  }
 
-//   function statusPass2(){
-//     var x = document.getElementById("password2");
-//     changeStatus(x);
-//   }
+function statusPassLog2(){
+  var x = document.getElementById("password2");
+  changeStatus(x);
+}
 
-//   function changeStatus(x){
-//     if (x.type === "password") {
-//       x.type = "text";
-//     } else {
-//       x.type = "password";
-//     }
-//   }
+function statusPassPers1(){
+  var x = document.getElementById("passwordPers1");
+  changeStatus(x);
+}
+
+function statusPassPers2(){
+var x = document.getElementById("passwordPers2");
+changeStatus(x);
+}
+
+function changeStatus(x){
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}

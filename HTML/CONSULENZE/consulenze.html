@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Centro Estetico Nirvana</title>
+    <title>Consulenze - Centro Estetico Nirvana</title>
     <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
     <meta name="description" content="Questa pagina e' dedicata al centro estetico Nirvana. Nel sito sono descritti i trattamenti per il viso e per il corpo, le consulenze offerte nonché la possibilitá di prenotare un trattamento o una consulenza." />
     <meta name="keyword" content="nirvana, centro estetico, trattamenti viso, trattamenti corpo, massaggi, depilazioni, consulenze estetiche" />
@@ -24,7 +24,7 @@
                 <li id="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
                 <li id="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
             </ul>
-            <button onclick="userMenu()" class="userMenu"></button>
+            <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
     <!-- La prima navigazione e' quella sopra a destra per l'utente -->
@@ -40,7 +40,7 @@
             <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt;&gt; Consulenze</p> 
         </div>
         <div id="menu">
-            <button onclick="menuButton()" class="buttonMenu">Menu</button>
+            <button aria-haspopup="menu" aria-label="Buttone di Menù Principale" onclick="menuButton()" class="buttonMenu">Menu</button>
             <ul id="menuList" class="menuCont">
                 <li><a href="../TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
                 <li>Consulenze</li>
