@@ -15,6 +15,20 @@ nav:not(#top-right) {
    border-bottom: none;
 }
 
+.menuLogMob {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    top: initial;
+    z-index: 10;
+}
+
+/* .menuLogMobStop {
+    position: absolute;
+    top: initial;
+    right: 2em;
+} */
+
 header {
     padding: 0em;
     margin: 0em;
@@ -38,6 +52,9 @@ main {
     font-size: 1.1em;
 }
 
+/* #top-right{
+    display: none;
+} */
 
 #big_breadcrumb {
     display: none;
@@ -56,20 +73,6 @@ header {
 
     header, main{
         font-size: 1.1em;
-    }
-
-    .menuLogMob {
-        position: fixed;
-        bottom: 2em;
-        right: 2em;
-        /* top: initial; */
-        z-index: 10;
-    }
-    
-    .menuLogMobStop {
-        position: absolute;
-        /* top: initial; */
-        right: 2em;
     }
 
     #menu {
