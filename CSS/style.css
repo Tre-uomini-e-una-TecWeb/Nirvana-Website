@@ -739,15 +739,15 @@ footer a:visited{
     /* text-align: center; */
 }
 
-#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione{
+#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione, #userData, #cambioPassword{
     flex: auto;
 }
 
-#signup, .sezionePUtente dl, #insertRes{
+#signup, .sezionePUtente dl, #insertRes, #datiUtente{
     border-right: 1px solid black;
 }
 
-#signup, #login, .sezionePUtente dl, #changePsw, #insertRes{
+#signup, #login, .sezionePUtente dl, #changePsw, #insertRes, #datiUtente, #changePsw{
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 2em 2em 0em 2em;
@@ -756,6 +756,10 @@ footer a:visited{
 
 #prenotazioniUtente, #prenotazioniAmministratore{
     padding: 2em 2em 0em 2em;
+}
+
+#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
+    margin: 0 auto;
 }
 
 #nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel{
