@@ -38,10 +38,6 @@ main {
     margin: 3em;
 }
 
-#registrazione, #accesso, #userData, #cambioPassword{
-    flex: none;
-}
-
 #mini_breadcrumb{
     display: block;
     text-align: center;
@@ -98,15 +94,15 @@ header {
         padding-top: 0em;
     }
 
-    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot{
+    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot, #tabellaPrenotazioniAmministratore thead, #tabellaPrenotazioniAmministratore tfoot{
         display: none;
     }
 
-    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td {
+    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td, #tabellaPrenotazioniAmministratore tr, #tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniAmministratore td {
         display: block;
     }
 
-    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before {
+    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before, #tabellaPrenotazioniAmministratore th[data-title]:before, #tabellaPrenotazioniAmministratore td[data-title]:before {
         content: attr(data-title) "\00A0";
         font-weight: bold;
     }
@@ -115,16 +111,17 @@ header {
         background-color: var(--mainColorAlpha);
         border: none;
         border-bottom: 1px solid black;
+        border-top: 2px solid black;
         font-weight: bold;
     }
 
     #tabellaPrenotazioniUtente{
-        height: 100%;
-        width: 100%;
-        border: 2px solid black
+       border: 2px solid black;
+       border-top: none;
+       margin-bottom: 4em;
     }
 
-    #tabellaPrenotazioniUtente td:not(.header){
+    #tabellaPrenotazioniUtente td:not(.header), #tabellaPrenotazioniAmministratore td:not(.header){
         border:none;
         border-top: 1px solid black;
     }
@@ -171,9 +168,16 @@ header {
         right: 2em;
     }
     
-
     #loginMenu{
         position: relative; 
+    }
+
+    #adminReservationButton{
+        margin-bottom: 4em;
+    }
+
+    #tabellaPrenotazioniAmministratore{
+        margin-bottom: 2em;
     }
 
     /* #top-right{
