@@ -412,7 +412,7 @@ footer a:visited{
     background-color: #ffeede;
 }
 
-.item-footer table th, .item-footer table td{
+.item-footer table th, .item-footer table td, #tabPrenAmm th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabPrenAmm td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
