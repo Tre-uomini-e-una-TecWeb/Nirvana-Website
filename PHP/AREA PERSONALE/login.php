@@ -33,7 +33,7 @@ if(isset($_POST['accesso'])){
                 else{
                     $_SESSION["privilegi"] = "admin";
                 }
-                header("Location: ../../HTML/AREA PERSONALE/areaPersonale.html");
+                header("Location: ../../PHP/AREA PERSONALE/areaPersonale.php");
                 die();
             }
             else{
@@ -54,7 +54,7 @@ if(isset($_POST['registrazione'])){
     $username = pulisciInput($_POST['username']);
     $utenteInDB = $connessione->checkUtente($username);
     if($utenteInDB != null){
-        $esitoRegistrazione="<p id=\"registrazioneKo\">Username giá registrato da un altro cliente. Per favore scegline un altro.</p>";
+        $esitoRegistrazione="<p id=\"registrazioneKo\">Non é possibile utilizzare questo username. Per favore scegline un altro.</p>";
         $utenteInDB=true;
     }
     $password = pulisciInput($_POST['password']);
