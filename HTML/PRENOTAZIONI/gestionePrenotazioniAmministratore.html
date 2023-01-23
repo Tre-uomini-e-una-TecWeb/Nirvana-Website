@@ -53,90 +53,81 @@
     </nav>
 
     <main>
-        <div id="contain">
-            <section id="gestionePrenotazione">
-                <h2>Inserisci Prenotazione</h2>
-                <form id="insertRes" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <label for="customers" id="customersAdminLabel">Cliente:</label>
-                    <elencoClienti />
-                    <label for="dateAdmin" id="dateAdminLabel">Data:</label>
-                    <input type="date" id="dateAdmin" name="date" required aria-required="true">
-                    <label for="hourAdmin" id="hourAdminLabel"> Ora:</label>
-                    <input type="time" id="hourAdmin" name="hour" required aria-required="true">
-                    <label for="serviceAdmin" id="serviceAdminLabel">Trattamento:</label>
-                    <select id="serviceAdmin" name="service" required aria-required="true">
-                        <option value="" selected>Selezionare un trattamento</option>
-                        <option value="puliziaViso">Pulizia viso</option>
-                        <option value="idratante">Trattamento viso idratante</option>
-                        <option value="antiAge">Trattamento viso anti-age</option>
-                        <option value="effettoLifting">Trattamento viso effetto lifting</option>
-                        <option value="rimpolpante">Trattamento viso rimpolpante</option>
-                        <option value="seboRegolatore">Trattamento viso sebo-regolatore</option>
-                        <option value="desensibilizzante">Trattamento viso desensibilizzante</option>
-                        <option value="ceretta">Epilazione con ceretta</option>
-                        <option value="brasiliana">Epilazione con brasiliana</option>
-                        <option value="pastaZucchero">Epilazione con pasta di zucchero</option>
-                        <option value="rilassanteBase">Massaggio rilassante base</option>
-                        <option value="thailandese">Massaggio rilassante thailandese</option>
-                        <option value="hawaiano">Massaggio rilassante hawaiano</option>
-                        <option value="californiano">Massaggio rilassante californiano</option>
-                        <option value="ayurvedico">Massaggio olistico ayurvedico</option>
-                        <option value="chakra">Massaggio olistico <span lang="in">chakra</span></option>
-                        <option value="riflessologiaPlantare">Massaggio olistico per riflessologia plantare</option>
-                        <option value="decontratturante">Massaggio decontratturante</option>
-                        <option value="tonificante">Massaggio tonificante</option>
-                        <option value="linfodrenanteEmolinfatico">Massaggio linfodrenante e emolinfatico</option>
-                        <option value="lipolitico">Massaggio modellante lipolitico</option>
-                        <option value="anticellulitico">Massaggio modellante anticellulitico</option>
-                        <option value="manicurePosaSmalto">Manicure con posa smalto</option>
-                        <option value="manicureSemipermanente">Manicure con semipermanente</option>
-                        <option value="manicureGelCartine">Manicure con gel tramite cartine</option>
-                        <option value="manicureGelTip">Manicure con gel tramite tip</option>
-                        <option value="pedicurePosaSmalto">Pedicure con posa smalto</option>
-                        <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
-                        <option value="pedicureCurativa">Pedicure curativa</option>
-                        <option value="consulenzaViso">Consulenza viso</option>
-                        <option value="consulenzaCorpo">Consulenza corpo</option>
-                    </select>
-                    <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
+        <section id="gestionePrenotazioneAdmin">
+            <h2>Inserisci Prenotazione</h2>
+            <form id="insertResAmm" action="gestionePrenotazioniAmministratore.php" method="post">
+                <label for="customers" id="customersAdminLabel">Cliente:</label>
+                <elencoClienti />
+                <label for="dateAdmin" id="dateAdminLabel">Data:</label>
+                <input type="date" id="dateAdmin" name="date" required aria-required="true">
+                <label for="hourAdmin" id="hourAdminLabel"> Ora:</label>
+                <input type="time" id="hourAdmin" name="hour" required aria-required="true">
+                <label for="serviceAdmin" id="serviceAdminLabel">Trattamento:</label>
+                <select id="serviceAdmin" name="service" required aria-required="true">
+                    <option value="" selected>Selezionare un trattamento</option>
+                    <option value="puliziaViso">Pulizia viso</option>
+                    <option value="idratante">Trattamento viso idratante</option>
+                    <option value="antiAge">Trattamento viso anti-age</option>
+                    <option value="effettoLifting">Trattamento viso effetto lifting</option>
+                    <option value="rimpolpante">Trattamento viso rimpolpante</option>
+                    <option value="seboRegolatore">Trattamento viso sebo-regolatore</option>
+                    <option value="desensibilizzante">Trattamento viso desensibilizzante</option>
+                    <option value="ceretta">Epilazione con ceretta</option>
+                    <option value="brasiliana">Epilazione con brasiliana</option>
+                    <option value="pastaZucchero">Epilazione con pasta di zucchero</option>
+                    <option value="rilassanteBase">Massaggio rilassante base</option>
+                    <option value="thailandese">Massaggio rilassante thailandese</option>
+                    <option value="hawaiano">Massaggio rilassante hawaiano</option>
+                    <option value="californiano">Massaggio rilassante californiano</option>
+                    <option value="ayurvedico">Massaggio olistico ayurvedico</option>
+                    <option value="chakra">Massaggio olistico <span lang="in">chakra</span></option>
+                    <option value="riflessologiaPlantare">Massaggio olistico per riflessologia plantare</option>
+                    <option value="decontratturante">Massaggio decontratturante</option>
+                    <option value="tonificante">Massaggio tonificante</option>
+                    <option value="linfodrenanteEmolinfatico">Massaggio linfodrenante e emolinfatico</option>
+                    <option value="lipolitico">Massaggio modellante lipolitico</option>
+                    <option value="anticellulitico">Massaggio modellante anticellulitico</option>
+                    <option value="manicurePosaSmalto">Manicure con posa smalto</option>
+                    <option value="manicureSemipermanente">Manicure con semipermanente</option>
+                    <option value="manicureGelCartine">Manicure con gel tramite cartine</option>
+                    <option value="manicureGelTip">Manicure con gel tramite tip</option>
+                    <option value="pedicurePosaSmalto">Pedicure con posa smalto</option>
+                    <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
+                    <option value="pedicureCurativa">Pedicure curativa</option>
+                    <option value="consulenzaViso">Consulenza viso</option>
+                    <option value="consulenzaCorpo">Consulenza corpo</option>
+                </select>
+                <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
+            </form>
+            <esitoForm />
+        </section>
+        <section id="visualizzazionePrenotazione">
+            <h2>Gestisci prenotazioni</h2>
+            <div id="prenotazioniAmministratore">
+                <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
+                <p>Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+                <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
+                    <table aria-describedby="descrTabPrenAmm" id="tabellaPrenotazioniAmministratore">
+                        <thead>
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Ora</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Cognome</th>
+                                <th scope="col">Etá</th>
+                                <th scope="col">Richiesta</th>
+                                <th scope="col">Stato</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <prenotazioniEsistenti />
+                        </tbody>
+                    </table>
+                    <input type="submit"  class="print-invisible" id="adminReservationButton" name="modificaPrenotazioni" value="Applica modifiche" />
                 </form>
-                <esitoForm />
-            </section>
-            <section id="visualizzazionePrenotazione">
-                <h2>Gestisci prenotazioni</h2>
-                <div id="prenotazioniAmministratore">
-                    <p class="centrato">Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
-                    <br>
-                    <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                        <table summary="Tabella che contiene tutte le prenotazioni disponibili da oggi." aria-describedby="descrTabPrenAmm" id="tabPrenAmm">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Cognome</th>
-                                    <th scope="col">Etá</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Ora</th>
-                                    <th scope="col">Richiesta</th>
-                                    <th scope="col">Stato</th>
-                                </tr>
-                            </thead>
-                            <!-- Dati di esempio, quelli reali vengono inseriti dal PHP!!! -->
-                            <tbody>
-                                <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                                    <prenotazioniEsistenti />
-                                </form>
-                            </tbody>
-                        </table>
-                        <input type="submit"  class="print-invisible" id="adminReservationButton" name="modificaPrenotazioni" value="Applica modifiche" />
-                    </form>
-                    <!-- <br>
-                    <div class="centrato">
-                        <button class="print-invisible" type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
-                    </div> -->
-                    <esitoModifiche />
-                </div>
-            </section>
-        </div>
+                <esitoModifiche />
+            </div>
+        </section>
     </main>
 
     <footer>
