@@ -151,6 +151,17 @@ class DBAccess{
         }
     }
 
+    public function deletePrenotazioni($username, $data, $ora){
+        $query="DELETE FROM Prenotazioni WHERE Utente='".$username."' AND DataOra='".$data." ".$ora."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function getPrenotazioniDaConfermare(){
         $dataOggi = date("Y-m-d");
         $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' AND Stato='P' ORDER BY DataOra ASC";
