@@ -55,16 +55,19 @@
     <main>
         <section id="visualizzazioneClienti">
             <h2>Clienti iscritti</h2>
-            <p id="descrTabClienti" class="aiuti">Tabella che contiene tutte le informazioni relative ai clienti</p>
-            <table aria-describedby="descrTabClienti" id="tabClienti">
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cognome</th>
-                    <th scope="col">Data di Nascita</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefono</th>
-                </tr>
-                <clientiIscritti />
+            <table summary="Tabella che contiene tutte le informazioni relative ai clienti" aria-describedby="descrTabClienti" id="tabClienti">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cognome</th>
+                        <th scope="col">Data di Nascita</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <clientiIscritti />
+                </tbody>
             </table>
         </section>
     </main>
