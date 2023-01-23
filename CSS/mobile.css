@@ -23,11 +23,11 @@ nav:not(#top-right) {
     z-index: 10;
 }
 
-.menuLogMobStop {
+/* .menuLogMobStop {
     position: absolute;
     top: initial;
     right: 2em;
-}
+} */
 
 header {
     padding: 0em;
@@ -52,9 +52,9 @@ main {
     font-size: 1.1em;
 }
 
-#top-right{
+/* #top-right{
     display: none;
-}
+} */
 
 #big_breadcrumb {
     display: none;
