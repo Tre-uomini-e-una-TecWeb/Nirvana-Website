@@ -404,8 +404,12 @@ footer a:visited{
     border: 2px black solid;
 }
 
-.item-footer tr:nth-child(even), #tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
-    background-color: #ffe0c1
+.item-footer tr:nth-child(even){
+    background-color: #ffe0c1;
+}
+
+#tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
+    background-color: #ffeede;
 }
 
 .item-footer table th, .item-footer table td{
