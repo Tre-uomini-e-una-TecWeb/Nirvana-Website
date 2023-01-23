@@ -100,7 +100,7 @@ document.addEventListener("scroll", function(event){
   let scrollBrn = document.querySelector("#top-right");
   let footer = document.querySelector("footer");
   let body = document.querySelector("body");
-  const  x = window.matchMedia("(max-width: 800px)").matches;
+  const  x = window.matchMedia("(max-width: 900px)").matches;
   const y = (body.offsetHeight - footer.offsetHeight - 90 );
   if(x){
     if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight + 20)){
@@ -109,11 +109,11 @@ document.addEventListener("scroll", function(event){
       // scrollBrn.style.position = "absolute";
       // let classStyle = document.getElementsByClassName("menuLogMobStop");
       let topRule = new Array();
-        if (document.styleSheets[4].cssRules[5].cssRules[19]) {
-            topRule = document.styleSheets[4].cssRules[5].cssRules[19];
-        } else if (document.styleSheets[4].rules[5].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
-            topRule = document.styleSheets[4].rules[5].rules[19];
-        }
+      if (document.styleSheets[4].cssRules[12].cssRules[18]) {
+        topRule = document.styleSheets[4].cssRules[12].cssRules[18];
+      } else if (document.styleSheets[4].rules[12].rules[18]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+        topRule = document.styleSheets[4].rules[12].rules[18];
+      }
         topRule.style.top = y + 'px';
         // theRules.style.righ
       // scrollBrn.style.top = (y) + "px";
