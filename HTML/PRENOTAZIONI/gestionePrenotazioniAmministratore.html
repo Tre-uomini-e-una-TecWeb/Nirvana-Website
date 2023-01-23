@@ -27,15 +27,15 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
+    <!--La prima navigazione e' quella sopra a destra per l'utente-->
 
-    <!-- La seconda navigazione e' quella della breadcrumb-->
+    <!--La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <!-- <ul id="loginMenu">
+        <!--<ul id="loginMenu">
             <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
             <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
             <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-        </ul> -->
+        </ul>-->
         <div class="breadcrumb" id="big_breadcrumb">
             <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62; &#62; Gestione Prenotazioni</p> 
         </div>
@@ -103,23 +103,31 @@
         </section>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
-            <p>Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+            <p class="centrato">Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+            <br>
             <table summary="Tabella che contiene tutte le prenotazioni disponibili da oggi." aria-describedby="descrTabPrenAmm" id="tabPrenAmm">
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cognome</th>
-                    <th scope="col">Etá</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Ora</th>
-                    <th scope="col">Richiesta</th>
-                    <th scope="col">Stato</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cognome</th>
+                        <th scope="col">Etá</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Ora</th>
+                        <th scope="col">Richiesta</th>
+                        <th scope="col">Stato</th>
+                    </tr>
+                </thead>
                 <!-- Dati di esempio, quelli reali vengono inseriti dal PHP!!! -->
-                <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <prenotazioniEsistenti />
-                </form>
+                <tbody>
+                    <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
+                        <prenotazioniEsistenti />
+                    </form>
+                </tbody>
             </table>
-            <button class="print-invisible" type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
+            <br>
+            <div class="centrato">
+                <button class="print-invisible" type="submit" id="modificaPrenotazioni" name="modificaPrenotazioni" form="reservations">Applica modifiche</button>
+            </div>
             <esitoModifiche />
         </section>
     </main>

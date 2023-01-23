@@ -343,8 +343,12 @@ th, td{
 .carta:hover{
     color: black;
 }
-
+ 
 .error{
+    text-align: center;
+}
+
+.centrato{
     text-align: center;
 }
 
@@ -389,14 +393,14 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table{
+.item-footer table, #tabPrenAmm, #tabClienti, #tabellaPrenotazioniUtente{
     margin: 0 auto;
-    border-bottom: hidden;
+    /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th{
+.item-footer table tr th, #tabPrenAmm tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
     border: 2px black solid;
 }
 

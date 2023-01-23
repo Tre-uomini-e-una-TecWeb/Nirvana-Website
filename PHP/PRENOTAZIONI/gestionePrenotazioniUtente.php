@@ -52,10 +52,10 @@ if($connOk){
             $prenotazioni .= "<tr>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
             $prenotazioni .= "<td data-title='' class='header'>".$prenotazione['Trattamento']."</td>"
-                        .    "<td data-title='Data:'>".$dataPrenotazione."</td>"
+                          .  "<td data-title='Data:'>".$dataPrenotazione."</td>"
                           .  "<td data-title='Ora:'>".$oraPrenotazione."</td>"
                           .  "<td data-title='Stato richiesta:'>".$prenotazione['Stato']."</td>"
-                          . "</tr>";
+                          .  "</tr>";
         }
     }
     else{
