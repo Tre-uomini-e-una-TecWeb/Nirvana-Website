@@ -56,17 +56,18 @@
             <section id="userData">
                 <h2>Pagina utente</h2>
                 <form id="datiUtente" method="post" action="areaPersonale.php">
-                    <label id="usernamePersonalPage">Username: <usernameUtente /></label><br>
+                    <label id="usernamePersonalPageLabel" for="usernamePersonalPage">Username:</label>
+                    <label id="usernamePersonalPage"><usernameUtente /></label>
                     <label for="namePersonalPage" id="namePersonalPageLabel"> Nome: </label>
-                    <input type="text" id="namePersonalPage" name="newName" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />"><br>
+                    <input type="text" id="namePersonalPage" name="newName" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />">
                     <label for="surnamePersonalPage" id="surnamePersonalPageLabel"> Cognome: </label>
-                    <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />"><br>
+                    <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />">
                     <label for="birthPersonalPage" id="birthPersonalPageLabel">Data di nascita:</label>
-                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />"><br>
+                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
                     <label lang="en" for="emailPersonalPage" id="emailPersonalPageLabel">Email:</label>
-                    <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />"><br>
-                    <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
-                    <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />"><br>
+                    <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
+                    <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri, senza spazi):</label>
+                    <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />">
                     <input class="print-invisible" id="updatePersonalPageLabel" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
                 </form>
             </section>

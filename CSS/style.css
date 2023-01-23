@@ -758,11 +758,15 @@ footer a:visited{
     padding: 2em 2em 0em 2em;
 }
 
+#cambioPassword{
+    margin-bottom: 4em;
+}
+
 #tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
     margin: 0 auto;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
 }
@@ -775,36 +779,36 @@ footer a:visited{
     margin-bottom: 1em;
 }
 
-#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service, #customers, #dateAdmin, #hourAdmin, #serviceAdmin{
+#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service, #customers, #dateAdmin, #hourAdmin, #serviceAdmin, #namePersonalPage, #surnamePersonalPage, #birthPersonalPage, #emailPersonalPage, #phonePersonalPage, #usernamePersonalPage{
     grid-column: 2;
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel{
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel, #usernamePersonalPage, #usernamePersonalPageLabel{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel, #namePersonalPage, #namePersonalPageLabel{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel, #surnamePersonalPage, #surnamePersonalPageLabel{
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel{
+#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
     grid-row: 4;
 }
 
-#phone, #phoneLabel{
+#phone, #phoneLabel, #emailPersonalPage, #emailPersonalPageLabel{
     grid-row: 5;
 }
 
-#username, #userLabel, #updateButton{
+#username, #userLabel, #updateButton, #phonePersonalPage, #phonePersonalPageLabel{
     grid-row: 6;
 }
 
-#password1, #password1Label{
+#password1, #password1Label, #updatePersonalPageLabel{
     grid-row: 7;
 }
 
@@ -818,7 +822,7 @@ footer a:visited{
     margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton{
+#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton, #updatePersonalPageLabel{
     margin-top: 1em;
     padding: 0.3em;
 }
