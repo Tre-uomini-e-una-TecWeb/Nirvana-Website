@@ -32,9 +32,6 @@ if($connOk){
             $clienti.="<option value=\"".$cliente['Username']."\">".$cliente['Nome']." ".$cliente['Cognome']." ".$cliente['DataNascita']."</option>";
         }
     }
-    /*else{
-        $clienti="<p>Non ci sono clienti iscritti</p>";
-    }*/
     $clienti.="</select>";
     $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
@@ -93,23 +90,38 @@ else {
 }
 
 if(isset($_POST['submit'])){
+    $errPrenotazione = "";
+    $canMakeRes = true;
     $cliente=pulisciInput($_POST['customers']);
     $data=pulisciInput($_POST['date']);
+    if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$data)){
+        $errPrenotazione.='<li>Data per la prenotazione non valida: formato non valido!</li>';
+        $canMakeRes = false;
+    }
     $ora=pulisciInput($_POST['hour']);
+    if (!preg_match("/\d{2}:\d{2}/",$ora)){
+        $errPrenotazione.='<li>Ora per la prenotazione non valida: formato non valido!</li>';
+        $canMakeRes = false;
+    }
+    if($canMakeRes && ($ora<"09:00" || $ora >"19:00")){
+        $errPrenotazione.='<li>Orario non valido: il centro é chiuso nell\'orario richiesto!</li>';
+        $canMakeRes = false;
+    }
     $trattamento=pulisciInput($_POST['service']);
     
+
     /*Inserisco i dati nel DB, se non ci sono errori*/
-    if($connOk){
+    if($canMakeRes){
         $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
         if($queryOk){//prenotazione inserita
             $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
         }
-        else{//prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
+        else{//prenotazione non inserita: il cliente ha giá una prenotazione per ora e data scelti!
             $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
         }
     }
-    else{
-        $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+    else{//dati errati
+        $esitoInserimento="<div id=\"erroreInserimento\"><p>Prenotazione non inserita per i seguenti motivi: ".$errPrenotazione."</p></div>";
     }
     //aggiorno nuovamente le prenotazioni
     $prenotazioni = "";
