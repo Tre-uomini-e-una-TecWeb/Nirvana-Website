@@ -46,21 +46,42 @@ if(isset($_POST['accesso'])){
     }
 }
 if(isset($_POST['registrazione'])){
+    $errRegistrazione = "";
+    $canInsert = true;
     $nome = pulisciInput($_POST['name']);
+    if (preg_match("/\d/",$nome)){
+        $errRegistrazione.='<li>Nome non valido: non possono esserci numeri!</li>';
+        $canInsert = false;
+    }
     $cognome = pulisciInput($_POST['surname']);
+    if (preg_match("/\d/",$cognome)){
+        $errRegistrazione.='<li>Cognome non valido: non possono esserci numeri!</li>';
+        $canInsert = false;
+    }
     $dataNascita = pulisciInput($_POST['birth']);
+    if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$dataNascita)){
+        $errRegistrazione.='<li>Data di nascita non valida: formato non valido!</li>';
+        $canInsert = false;
+    }
     $email = pulisciInput($_POST['email']);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errRegistrazione .= "<li>Email non valida: formato non corretto!</li>";
+        $canInsert = false;
+    }
     $telefono = pulisciInput($_POST['phone']);
+    if (preg_match("/\D/",$telefono)){
+        $errRegistrazione.='<li>Numero di telefono non valido: possono esserci solo numeri!</li>';
+        $canInsert = false;
+    }
     $username = pulisciInput($_POST['username']);
     $utenteInDB = $connessione->checkUtente($username);
     if($utenteInDB != null){
-        $esitoRegistrazione="<p id=\"registrazioneKo\">Non é possibile utilizzare questo username. Per favore scegline un altro.</p>";
         $utenteInDB=true;
     }
     $password = pulisciInput($_POST['password']);
     $pwd = password_hash($password,PASSWORD_DEFAULT);
     $privilegi = 0;
-    if($utenteInDB == false){
+    if($canInsert && $utenteInDB == false){
         $query_result = $connessione->insertUtente($username,$nome,$cognome,$dataNascita,$email,$telefono,$pwd,$privilegi);
         if($query_result){
             $esitoRegistrazione = "<p id=\"registrazioneOk\">Registrazione andata a buon fine!</p>";
@@ -68,6 +89,14 @@ if(isset($_POST['registrazione'])){
         }
         else{
             $esitoRegistrazione = "<p id=\"registrazioneKo\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
+        }
+    }
+    else{
+        if(!$canInsert){
+            $esitoRegistrazione = "<p id=\"registrazioneKo\">Registrazione non andata a buon fine per questi motivi:".$errRegistrazione."</p>";
+        }
+        else{
+            $esitoRegistrazione = "<p id=\"registrazioneKo\">É giá presente un utente con i dati inseriti. Riprovare.</p>";
         }
     }
 }
