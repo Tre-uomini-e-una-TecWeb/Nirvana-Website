@@ -168,6 +168,10 @@ header {
         right: 2em;
     }
     
+    #insertResAmm{
+        max-width: none
+    }
+
     #loginMenu{
         position: relative; 
     }
