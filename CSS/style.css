@@ -332,7 +332,7 @@ th, td{
     background-repeat: no-repeat;
     background-size:cover;
     border: 1px solid black;
-    min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    min-height: 12em;
     padding: 1em 1em 0em 1em;
     border-radius: 1em;
     max-width: 100%;
@@ -397,7 +397,7 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table, #tabellaPrenotazioniAmministratore, #tabClienti, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
     margin: 0 auto;
     /* border-bottom: hidden; */
     border-left:hidden;
@@ -416,7 +416,7 @@ footer a:visited{
     background-color: #ffeede;
 }
 
-.item-footer table th, .item-footer table td {
+.item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
@@ -425,7 +425,7 @@ footer a:visited{
     font-size: 1em;
 }
 
-#tabellaPrenotazioniAmministratore th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
+#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td {
     padding: 0.3em;
 }
 
@@ -781,6 +781,11 @@ footer a:visited{
     max-width: 52vw;
     padding: 2em;
     border: 1px solid black;
+}
+
+#tabClienti{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #datiUtente input:not(#updatePersonalPage){

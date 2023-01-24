@@ -56,8 +56,7 @@ if($connOk){
                 $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
             }
-            $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
-            $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
+            $prenotazioni .= "<td data-title='Utente: '>".$prenotazione['Nome']." ".$prenotazione['Cognome']."</td>";
             $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
             $prenotazioni .= "<td data-title='Età: '>".$eta->y."</td>";
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
@@ -133,8 +132,7 @@ if(isset($_POST['submit'])){
                 $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
             }
-            $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
-            $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
+            $prenotazioni .= "<td data-title='Utente: '>".$prenotazione['Nome']." ".$prenotazione['Cognome']."</td>";
             $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
             $prenotazioni .= "<td data-title='Età: '>".$eta->y."</td>";
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
@@ -217,8 +215,7 @@ if(isset($_POST['modificaPrenotazioni'])){
                 $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
             }
-            $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
-            $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
+            $prenotazioni .= "<td data-title='Utente: '>".$prenotazione['Nome']." ".$prenotazione['Cognome']."</td>";
             $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
             $prenotazioni .= "<td data-title='Età: '>".$eta->y."</td>";
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
