@@ -397,14 +397,14 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table, #tabPrenAmm, #tabClienti, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabClienti, #tabellaPrenotazioniUtente{
     margin: 0 auto;
     /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th, #tabPrenAmm tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
+.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
     border: 2px black solid;
 }
 
@@ -412,17 +412,21 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
     background-color: #ffeede;
 }
 
-.item-footer table th, .item-footer table td, #tabPrenAmm th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabPrenAmm td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
+.item-footer table th, .item-footer table td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
 .item-footer table>caption{
     font-weight: bold;
     font-size: 1em;
+}
+
+#tabellaPrenotazioniAmministratore th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
+    padding: 0.3em;
 }
 
 #trattamenti{
@@ -888,7 +892,7 @@ footer a:visited{
     text-align: center;
 }
 
-#descrTabPrenAmm{
+#descrtabellaPrenotazioniAmministratore{
     margin-bottom: 1em;
 }
 

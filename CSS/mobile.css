@@ -206,7 +206,7 @@ header {
         margin: 1em 0em 4em 0em;
     }
 
-    .item-footer table th, .item-footer table td{
+    .item-footer table th, .item-footer table td, #tabellaPrenotazioniAmministratore th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabClienti  td, #tabellaPrenotazioniUtente  td{
         padding: 0.3em;
     }
 
