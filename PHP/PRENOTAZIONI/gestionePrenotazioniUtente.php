@@ -26,22 +26,36 @@ function pulisciInput($value){
 
 if($connOk){
     if(isset($_POST['submit'])){
+        $errPrenotazione = "";
+        $canAskRes = true;
         $cliente = $_SESSION["username"];
         $data = pulisciInput($_POST['date']);
+        if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$data)){
+            $errPrenotazione.='<li>Data per la prenotazione non valida: formato non valido!</li>';
+            $canAskRes = false;
+        }
         $ora = pulisciInput($_POST['hour']);
+        if (!preg_match("/\d{2}:\d{2}/",$ora)){
+            $errPrenotazione.='<li>Ora per la prenotazione non valida: formato non valido!</li>';
+            $canAskRes = false;
+        }
+        if($canMakeRes && ($ora<"09:00" || $ora >"19:00")){
+            $errPrenotazione.='<li>Orario non valido: il centro é chiuso nell\'orario richiesto!</li>';
+            $canAskRes = false;
+        }
         $servizio = pulisciInput($_POST['service']);
     
-        if($connOk){
+        if($canAskRes){
             $queryOk=$connessione->insertNewReservationUser($cliente,$data,$ora,$servizio);
             if($queryOk){
                 // Prenotazione inserita!
-                $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
+                $esitoInserimento="<div id=\"confermaInserimento\"><p>Richiesta di prenotazione avvenuta con successo!</p></div>";
             } else {
                 // Prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
-                $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
+                $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile richiedere la prenotazione, esiste giá una prenotazione per la data e l'orario selezionato!</p></div>";
             }
         } else {
-            $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+            $esitoInserimento="<div id=\"erroreInserimento\"><p>Non é stato possibile inserire la richiesta per queste motivazioni: ".$errPrenotazione."</p></div>";
         }
     }
 
