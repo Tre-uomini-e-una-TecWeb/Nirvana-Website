@@ -42,15 +42,15 @@ if($connOk){
             $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
             switch ($prenotazione['Stato']){
                 case 'A':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 case 'R':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
@@ -134,15 +134,15 @@ if(isset($_POST['submit'])){
             $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
             switch ($prenotazione['Stato']){
                 case 'A':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 case 'R':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
@@ -196,25 +196,25 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
         list($nuovaData, $nuovoOrario, $nuovoStato) = explode("?", $modifiche);
         if ($nuovoStato == '') {
-            $errModficaPren .= '<li>Stato non valido: é necessario accettare o rifiutare la prenotazione!</li>';
+            $errModficaPren .= '<p>Stato non valido: é necessario accettare o rifiutare la prenotazione!</p>';
             $toSkip = true;
         }
         if($nuovaData==""){
             $nuovaData = $dataP;
         }
         if (!$toSkip && !preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$nuovaData)){
-            $errModficaPren.='<li>Data per la prenotazione non valida: formato non valido!</li>';
+            $errModficaPren.='<p>Data per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
         }
         if($nuovoOrario==""){
             $nuovoOrario = $oraP;
         }
         if (!$toSkip && !preg_match("/\d{2}:\d{2}/",$nuovoOrario)){
-            $errModficaPren.='<li>Ora per la prenotazione non valida: formato non valido!</li>';
+            $errModficaPren.='<p>Ora per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
         }
         if(!$toSkip && ($nuovoOrario<"09:00" || $nuovoOrario >"19:00")){
-            $errModficaPren.='<li>Orario non valido: il centro é chiuso nell\'orario inserito!</li>';
+            $errModficaPren.='<p>Orario non valido: il centro é chiuso nell\'orario inserito!</p>';
             $toSkip = true;
         }
         if(!$toSkip){
@@ -243,15 +243,15 @@ if(isset($_POST['modificaPrenotazioni'])){
             $idPrenotazione = $prenotazione['Username'] . $dataPrenotazione . $oraPrenotazione;
             switch ($prenotazione['Stato']){
                 case 'A':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 case 'R':
-                    $prenotazioni .= "<td data-title='' class='header'>".$dataPrenotazione."</td>";
+                    $prenotazioni .= "<td data-title='Data: ' class='header'>".$dataPrenotazione."</td>";
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";

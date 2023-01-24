@@ -52,35 +52,35 @@ if(isset($_POST['modificaDati'])){
         if($_POST['newName']!=""){
             $modNome = pulisciInput($_POST['newName']);
             if (preg_match("/\d/",$modNome)){
-                $errUpdate.='<li>Nome non valido: non possono esserci numeri!</li>';
+                $errUpdate.='<p>Nome non valido: non possono esserci numeri!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newSurname']!=""){
             $modCognome = pulisciInput($_POST['newSurname']);
             if (preg_match("/\d/",$modCognome)){
-                $errUpdate.='<li>Cognome non valido: non possono esserci numeri!</li>';
+                $errUpdate.='<p>Cognome non valido: non possono esserci numeri!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newBirth']!=""){
             $modDataNascita = pulisciInput($_POST['newBirth']);
             if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$modDataNascita)){
-                $errUpdate.='<li>Data di nascita non valida: formato non valido!</li>';
+                $errUpdate.='<p>Data di nascita non valida: formato non valido!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newEmail']!=""){
             $modEmail = pulisciInput($_POST['newEmail']);
             if (!filter_var($modEmail, FILTER_VALIDATE_EMAIL)) {
-                $errUpdate .= "<li>Email non valida: formato non corretto!</li>";
+                $errUpdate .= "<p>Email non valida: formato non corretto!</p>";
                 $canUpdate = false;
             }
         }
         if($_POST['newPhone']!=""){
             $modTelefono = pulisciInput($_POST['newPhone']);
             if (preg_match("/\D/",$modTelefono)){
-                $errUpdate.='<li>Numero di telefono non valido: possono esserci solo numeri!</li>';
+                $errUpdate.='<p>Numero di telefono non valido: possono esserci solo numeri!</p>';
                 $canUpdate = false;
             }
         }
@@ -145,7 +145,6 @@ if(isset($_POST['modificaDati'])){
         }
         else{
             $modDati = "<p>Si sono verificati degli errori:".$errUpdate."</p>";
-            $modDati .= "<p>Nessuna modifica effettuata.</p>";
         }
     }
     else{
