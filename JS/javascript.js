@@ -59,12 +59,16 @@ function PageLoad() {
   
 }
 
-function makeDate(){
-  document.getElementById("birth").type='date';
+function makeDate(x){
+  document.getElementById(x).type='date';
 }
 
-function returnText(){
-  document.getElementById("birth").type='text';
+function makeTime(x){
+  document.getElementById(x).type='time';
+}
+
+function returnText(x){
+  document.getElementById(x).type='text';
 }
 
 function LogOut() {

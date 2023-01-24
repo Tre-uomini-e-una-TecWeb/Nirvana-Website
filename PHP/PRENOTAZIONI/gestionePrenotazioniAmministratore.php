@@ -50,8 +50,8 @@ if($connOk){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
             $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
@@ -142,8 +142,8 @@ if(isset($_POST['submit'])){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
             $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
@@ -183,8 +183,9 @@ if(isset($_POST['modificaPrenotazioni'])){
     /* Qua elaborazione dati */
     $prenotazioniVerificate = 0;
     $aggiornate = 0;
-    $errori = false;
+    $errModficaPren = "";
     while ($prenotazioniVerificate < $numPrenotazioniDaVerificare){
+        $toSkip = false;
         $idPrenotazione = $prenotazioniDaVerificare[$prenotazioniVerificate];
         list($utente,$dataP,$oraP)=explode(" ",$idPrenotazione);
         $idPrenotazione = $utente . $dataP . $oraP;
@@ -194,9 +195,33 @@ if(isset($_POST['modificaPrenotazioni'])){
             $modifiche .= $value."?";
         }
         list($nuovaData, $nuovoOrario, $nuovoStato) = explode("?", $modifiche);
-        $query_result = $connessione->modificaPrenotazione($nuovaData,$nuovoOrario,$nuovoStato,$utente, $dataP, $oraP);
-        if($query_result){
-            $aggiornate++;
+        if ($nuovoStato == '') {
+            $errModficaPren .= '<li>Stato non valido: é necessario accettare o rifiutare la prenotazione!</li>';
+            $toSkip = true;
+        }
+        if($nuovaData==""){
+            $nuovaData = $dataP;
+        }
+        if (!$toSkip && !preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$nuovaData)){
+            $errModficaPren.='<li>Data per la prenotazione non valida: formato non valido!</li>';
+            $toSkip = true;
+        }
+        if($nuovoOrario==""){
+            $nuovoOrario = $oraP;
+        }
+        if (!$toSkip && !preg_match("/\d{2}:\d{2}/",$nuovoOrario)){
+            $errModficaPren.='<li>Ora per la prenotazione non valida: formato non valido!</li>';
+            $toSkip = true;
+        }
+        if(!$toSkip && ($nuovoOrario<"09:00" || $nuovoOrario >"19:00")){
+            $errModficaPren.='<li>Orario non valido: il centro é chiuso nell\'orario inserito!</li>';
+            $toSkip = true;
+        }
+        if(!$toSkip){
+            $query_result = $connessione->modificaPrenotazione($nuovaData,$nuovoOrario,$nuovoStato,$utente, $dataP, $oraP);
+            if($query_result){
+                $aggiornate++;
+            }
         }
         $prenotazioniVerificate++;
     }
@@ -204,7 +229,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         $esitoModifica="<div id=\"confermaModifica\"><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p></div>";
     }
     else{
-        $esitoModifica="<div><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p><p>É necessario scegliere uno stato per le prenotazioni da confermare.</p></div>";
+        $esitoModifica="<div><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p><p>Si sono verificati i seguent problemi:".$errModficaPren."</p></div>";
     }
     
     //aggiorno nuovamente le prenotazioni
@@ -226,8 +251,8 @@ if(isset($_POST['modificaPrenotazioni'])){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='date')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" type=\"text\" onfocus=\"(this.type='time')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Nome: '>".$prenotazione['Nome']."</td>";
             $prenotazioni .= "<td data-title='Cognome: '>".$prenotazione['Cognome']."</td>";
