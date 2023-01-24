@@ -37,12 +37,12 @@ if(isset($_POST['accesso'])){
                 die();
             }
             else{
-                $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+                $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
             }
         }
     }
     else{
-        $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+        $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
     }
 }
 if(isset($_POST['registrazione'])){
@@ -54,7 +54,7 @@ if(isset($_POST['registrazione'])){
     $username = pulisciInput($_POST['username']);
     $utenteInDB = $connessione->checkUtente($username);
     if($utenteInDB != null){
-        $esitoRegistrazione="<p id=\"registrazioneKo\">Non é possibile utilizzare questo username. Per favore scegline un altro.</p>";
+        $esitoRegistrazione="<p class=\"errore\">Non é possibile utilizzare questo username.</p>";
         $utenteInDB=true;
     }
     $password = pulisciInput($_POST['password']);
@@ -63,11 +63,11 @@ if(isset($_POST['registrazione'])){
     if($utenteInDB == false){
         $query_result = $connessione->insertUtente($username,$nome,$cognome,$dataNascita,$email,$telefono,$pwd,$privilegi);
         if($query_result){
-            $esitoRegistrazione = "<p id=\"registrazioneOk\">Registrazione andata a buon fine!</p>";
-            $esitoRegistrazione .= "<p>Effettua il login per accedere alla tua area personale.</p>";
+            $esitoRegistrazione = "<p class=\"conferma\">Registrazione andata a buon fine!</p>";
+            $esitoRegistrazione .= "<p id=\"loginHelpMessage\">Effettua il login per accedere alla tua area personale.</p>";
         }
         else{
-            $esitoRegistrazione = "<p id=\"registrazioneKo\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
+            $esitoRegistrazione = "<p class=\"errore\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
         }
     }
 }

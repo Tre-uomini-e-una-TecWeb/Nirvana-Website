@@ -101,14 +101,14 @@ if(isset($_POST['submit'])){
     if($connOk){
         $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
         if($queryOk){//prenotazione inserita
-            $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
+            $esitoInserimento="<div class=\"conferma\"><p>Inserimento avvenuto con successo!</p></div>";
         }
         else{//prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
-            $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
+            $esitoInserimento="<div class=\"errore\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
         }
     }
     else{
-        $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+        $esitoInserimento="<div class=\"errore\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
     }
     //aggiorno nuovamente le prenotazioni
     $prenotazioni = "";
@@ -190,7 +190,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         $esitoModifica="<div id=\"confermaModifica\"><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p></div>";
     }
     else{
-        $esitoModifica="<div><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p><p>É necessario scegliere uno stato per le prenotazioni da confermare.</p></div>";
+        $esitoModifica="<div id=\"confermaModifica\"><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p><p>É necessario scegliere uno stato per le prenotazioni da confermare.</p></div>";
     }
     
     //aggiorno nuovamente le prenotazioni

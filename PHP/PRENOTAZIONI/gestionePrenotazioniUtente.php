@@ -35,13 +35,13 @@ if($connOk){
             $queryOk=$connessione->insertNewReservationUser($cliente,$data,$ora,$servizio);
             if($queryOk){
                 // Prenotazione inserita!
-                $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
+                $esitoInserimento="<div class='conferma'><p>Inserimento avvenuto con successo!</p></div>";
             } else {
                 // Prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
-                $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
+                $esitoInserimento="<div class='errore'><p>Una sua prenotazione è già presente!</p></div>";
             }
         } else {
-            $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+            $esitoInserimento="<div class='errore'><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
         }
     }
 
@@ -62,7 +62,7 @@ if($connOk){
         $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
-    $prenotazioni="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+    $prenotazioni="<div class='errore'><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
 }
 
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
