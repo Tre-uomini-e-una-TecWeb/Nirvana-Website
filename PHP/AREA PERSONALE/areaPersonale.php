@@ -132,7 +132,33 @@ if(isset($_POST['modificaDati'])){
 }
 
 if(isset($_POST['modificaPasswd'])){
-    $modPasswd = "Dai cazzo!";
+    $newPasswd=pulisciInput($_POST['password']);
+    $newPasswdConfirm=pulisciInput($_POST['confirmPassword']);
+    $query_result = $connessione->checkUtente($_SESSION["username"]);
+    $oldPw = "";
+    if($query_result != null){
+        foreach ($query_result as $utente) {
+            $oldPw = $utente['Password'];
+        }
+    }
+    if(strcmp($newPasswd,$newPasswdConfirm)==0){
+        $password = password_hash($newPasswd,PASSWORD_DEFAULT);
+        if(!password_verify($newPasswd,$oldPw)){
+            $isUpdated = $connessione->updatePasswdUtente($_SESSION["username"], $password);
+            if($isUpdated){
+                $modPasswd = "<p>Password aggiornata con successo!</p>";
+            }
+            else{
+                $modPasswd = "<p>Non é stato possibile aggiornare la password</p>";
+            }
+        }
+        else{
+            $modPasswd = "<p>La password é identica a quella giá in uso.</p>";
+        }
+    }
+    else{
+        $modPasswd = "<p>Le password non coincidono.</p>";
+    }
 }
 
 $pagina_HTML = str_replace("<usernameUtente />", $_SESSION["username"], $pagina_HTML);

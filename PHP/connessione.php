@@ -245,6 +245,17 @@ class DBAccess{
         }
     }
 
+    public function updatePasswdUtente($user,$newPasswd){
+        $query="UPDATE `Utenti` SET `Password`='".$newPasswd."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function closeConnection(){
         mysqli_close($this->connection);
     }
