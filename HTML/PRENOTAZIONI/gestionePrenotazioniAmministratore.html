@@ -104,16 +104,15 @@
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <div id="prenotazioniAmministratore">
-                <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
                 <p>Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <table aria-describedby="descrTabPrenAmm" id="tabellaPrenotazioniAmministratore">
+                    <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
                         <thead>
                             <tr>
-                                <th scope="col">Data</th>
-                                <th scope="col">Ora</th>
                                 <th scope="col">Utente</th>
                                 <th scope="col">Etá</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Ora</th>
                                 <th scope="col">Richiesta</th>
                                 <th scope="col">Stato</th>
                             </tr>

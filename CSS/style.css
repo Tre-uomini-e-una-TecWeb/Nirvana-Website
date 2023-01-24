@@ -783,6 +783,11 @@ footer a:visited{
     border: 1px solid black;
 }
 
+input, select{
+    text-align: center;
+    font-size: 0.9em;
+}
+
 #tabClienti{
     margin-left: auto;
     margin-right: auto;
