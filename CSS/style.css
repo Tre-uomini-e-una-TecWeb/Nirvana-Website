@@ -332,7 +332,7 @@ th, td{
     background-repeat: no-repeat;
     background-size:cover;
     border: 1px solid black;
-    min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    min-height: 12em;
     padding: 1em 1em 0em 1em;
     border-radius: 1em;
     max-width: 100%;
@@ -397,14 +397,14 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table, #tabPrenAmm, #tabClienti, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
     margin: 0 auto;
     /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th, #tabPrenAmm tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
+.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
     border: 2px black solid;
 }
 
@@ -412,17 +412,21 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
     background-color: #ffeede;
 }
 
-.item-footer table th, .item-footer table td, #tabPrenAmm th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabPrenAmm td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
+.item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
 .item-footer table>caption{
     font-weight: bold;
     font-size: 1em;
+}
+
+#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td {
+    padding: 0.3em;
 }
 
 #trattamenti{
@@ -779,6 +783,16 @@ footer a:visited{
     border: 1px solid black;
 }
 
+input, select{
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#tabClienti{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #datiUtente input:not(#updatePersonalPage){
     min-width: 12em;
 }
@@ -888,7 +902,7 @@ footer a:visited{
     text-align: center;
 }
 
-#descrTabPrenAmm{
+#descrtabellaPrenotazioniAmministratore{
     margin-bottom: 1em;
 }
 

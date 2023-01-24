@@ -16,11 +16,10 @@ if($connOk){
     if($query_result != null){
         foreach($query_result as $cliente){
             $clienti.="<tr>";
-            $clienti .= "<td>".$cliente['Nome']."</td>";
-            $clienti .= "<td>".$cliente['Cognome']."</td>";
-            $clienti .= "<td>".$cliente['DataNascita']."</td>";
-            $clienti .= "<td><a href=\"mailto:".$cliente['Email']."\">".$cliente['Email']."</a></td>";
-            $clienti .= "<td><a href=\"tel:".$cliente['Telefono']."\">".$cliente['Telefono']."</a></td>";
+            $clienti .= "<td data-title='' class='header'>".$cliente['Nome']." ".$cliente['Cognome']."</td>";
+            $clienti .= "<td data-title='Data di Nascita: '>".$cliente['DataNascita']."</td>";
+            $clienti .= "<td data-title='Email'><a href=\"mailto:".$cliente['Email']."\">".$cliente['Email']."</a></td>";
+            $clienti .= "<td data-title='Telefono'><a href=\"tel:".$cliente['Telefono']."\">".$cliente['Telefono']."</a></td>";
             $clienti .= "</tr>";
         }
     }
