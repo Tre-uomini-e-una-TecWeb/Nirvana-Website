@@ -168,6 +168,10 @@ main {
     margin: 2.5em;
 }
 
+main table{
+    text-align: center;
+}
+
 #menu {
     background-color: var(--secondaryColor);
     /* font-size: 1.1em; */
@@ -343,8 +347,12 @@ th, td{
 .carta:hover{
     color: black;
 }
-
+ 
 .error{
+    text-align: center;
+}
+
+.centrato{
     text-align: center;
 }
 
@@ -389,20 +397,26 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table{
+.item-footer table, #tabPrenAmm, #tabClienti, #tabellaPrenotazioniUtente{
     margin: 0 auto;
-    border-bottom: hidden;
+    /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th{
+.item-footer table tr th, #tabPrenAmm tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
     border: 2px black solid;
 }
 
-.item-footer tr:nth-child(even) {background-color: #ffe0c1}
+.item-footer tr:nth-child(even){
+    background-color: #ffe0c1;
+}
 
-.item-footer table th, .item-footer table td{
+#tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
+    background-color: #ffeede;
+}
+
+.item-footer table th, .item-footer table td, #tabPrenAmm th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabPrenAmm td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
@@ -739,31 +753,61 @@ footer a:visited{
     /* text-align: center; */
 }
 
-#registrazione, #accesso, .sezionePUtente, #gestionePrenotazione, #visualizzazionePrenotazione{
+#registrazione, #accesso, #visualizzazionePrenotazione, #userData, #cambioPassword{
     flex: auto;
 }
 
-#signup, .sezionePUtente dl, #insertRes{
+#gestionePrenotazioneAdmin{
+    margin-top: 6em;
+}
+
+#separator{
     border-right: 1px solid black;
 }
 
-#signup, #login, .sezionePUtente dl, #changePsw, #insertRes{
+#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #insertResAmm{
     display: grid;
-    grid-template-columns: 1fr 1fr;
     padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
 }
 
-#prenotazioniUtente, #prenotazioniAmministratore{
+#insertResAmm{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 52vw;
+    padding: 2em;
+    border: 1px solid black;
+}
+
+#datiUtente input:not(#updatePersonalPage){
+    min-width: 12em;
+}
+
+#prenotazioniUtente{
     padding: 2em 2em 0em 2em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel{
-    grid-column: 1;
-    margin-bottom: 0.5em;
+#cambioPassword{
+    margin-bottom: 4em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo, #adminReservationButton{
+#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+#tabellaPrenotazioniAmministratore{
+    margin-top: 1em;
+}
+
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
+    grid-column: 1;
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+}
+
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo{
     grid-column: 1/3;
 }
 
@@ -771,36 +815,36 @@ footer a:visited{
     margin-bottom: 1em;
 }
 
-#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service, #customers, #dateAdmin, #hourAdmin, #serviceAdmin{
+#name, #surname, #birth, #email, #phone, #username, #usernameLogin, #passwordPers1, #passwordPers2, #password1, #password2, #date, #hour, #service, #customers, #dateAdmin, #hourAdmin, #serviceAdmin, #namePersonalPage, #surnamePersonalPage, #birthPersonalPage, #emailPersonalPage, #phonePersonalPage, #usernamePersonalPage{
     grid-column: 2;
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel{
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel, #usernamePersonalPage, #usernamePersonalPageLabel{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel, #namePersonalPage, #namePersonalPageLabel{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel, #surnamePersonalPage, #surnamePersonalPageLabel{
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel{
+#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
     grid-row: 4;
 }
 
-#phone, #phoneLabel{
+#phone, #phoneLabel, #emailPersonalPage, #emailPersonalPageLabel{
     grid-row: 5;
 }
 
-#username, #userLabel, #updateButton{
+#username, #userLabel, #updateButton, #phonePersonalPage, #phonePersonalPageLabel{
     grid-row: 6;
 }
 
-#password1, #password1Label{
+#password1, #password1Label, #updatePersonalPage{
     grid-row: 7;
 }
 
@@ -814,9 +858,17 @@ footer a:visited{
     margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton{
+#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton, #updatePersonalPage{
     margin-top: 1em;
     padding: 0.3em;
+}
+
+#adminReservationButton{
+    width: 40vw;
+}
+
+#reservations{
+    text-align: center;
 }
 
 /**

@@ -70,8 +70,8 @@ ID:
 
 
 CLASSI:
-    aiuti
-    bottonePUtente
+    
+    
     buttonMenu
     card -> carta
     carte -> contenitore_carte

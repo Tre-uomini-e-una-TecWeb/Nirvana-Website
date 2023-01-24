@@ -84,7 +84,7 @@ form input, form select{
         margin-top: 3em;
     }
     
-    #signup, #login, #changePsw, .sezionePUtente dl, #insertRes, #prenotazioniUtente, #prenotazioniAmministratore{
+    #signup, #login, #changePsw, #datiUtente,.sezionePUtente dl, #insertRes, #prenotazioniUtente, #prenotazioniAmministratore{
         border: 1px solid black;
         padding: 1.1em 1em 1em 0.9em;
         text-align: center;
@@ -121,19 +121,15 @@ form input, form select{
         border-top: 1px solid black;
     }
 
-    #signup label, #login label, #insertRes label{
+    #signup label, #login label, #insertRes label, #datiUtente label, #changePsw label{
         margin-right: 1em;
     }
 
-    #signup input, #login input, #insertRes input{
+    #signup input, #login input, #insertRes input, #datiUtente input, #changePsw input{
         margin-right: 1em;
     }
 
-    #registrazione{
-        flex: none;
-    }
-    
-    #accesso{
+    #registrazione, #accesso, #userData, #cambioPassword{
         flex: none;
     }
     
@@ -149,19 +145,19 @@ form input, form select{
         z-index: 10;
     } */
 
-    .menuLogMob {
+    /*.menuLogMob {
         position: fixed;
         bottom: 2em;
         right: 2em;
         top: initial;
         z-index: 10;
-    }
+    }*/
     
-    .menuLogMobStop {
+    /* .menuLogMobStop {
         position: absolute;
         top: initial;
         right: 2em;
-    }
+    } */
     
 
     #loginMenu{

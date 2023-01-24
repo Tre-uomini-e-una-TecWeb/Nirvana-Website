@@ -52,38 +52,42 @@
     </nav>
 
     <main>
-        <h2>Pagina utente</h2>
-        <form id="datiUtente" method="post" action="areaPersonale.php">
-            <label id="username">Username: <usernameUtente /></label><br>
-            <label for="name"> Nome: </label>
-            <input type="text" id="name" name="newName" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />"><br>
-            <label for="surname"> Cognome: </label>
-            <input type="text" id="surname" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />"><br>
-            <label for="birth">Data di nascita:</label>
-            <input type="text" id="birth" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />"><br>
-            <label lang="en" for="email">Email:</label>
-            <input type="email" id="email" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />"><br>
-            <label for="phone"> Numero di telefono (formato da 10 numeri, senza spazi):</label>
-            <input type="tel" id="phone" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />"><br>
-            <input class="print-invisible" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
-        </form>
-        <esitoModificaDati />
-        <section class="print-invisible">
-            <h2 >Cambio password</h2>
-            <form id="changePsw" method="post" action="areaPersonale.php">
-                <label for="passwordPers1" id="passwordPers1Label"> Password: </label>
-                <input type="password" id="passwordPers1" name="password">
-                <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPassPers1()">
-                <label for="mostraPsw">Mostra password</label></div>
-                <label for="passwordPers2" id="passwordPers2Label"> Ripeti la password: </label>
-                <input type="password" id="passwordPers2" name="Password">
-                <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPassPers2()">
-                <label for="mostraPswRipeti">Mostra password</label></div>
-                
-                <input class="print-invisible" id="updateButton" type="submit" name="modificaPasswd" value="Salva modifiche">
-            </form>
-        <esitoCambioPassword />
-        </section>
+        <div id="contain">
+            <section id="userData">
+                <h2>Informazioni personali</h2>
+                <form id="datiUtente" method="post" action="areaPersonale.php">
+                    <label id="usernamePersonalPageLabel" for="usernamePersonalPage">Username:</label>
+                    <label id="usernamePersonalPage"><usernameUtente /></label>
+                    <label for="namePersonalPage" id="namePersonalPageLabel"> Nome: </label>
+                    <input type="text" id="namePersonalPage" name="newName" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />">
+                    <label for="surnamePersonalPage" id="surnamePersonalPageLabel"> Cognome: </label>
+                    <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />">
+                    <label for="birthPersonalPage" id="birthPersonalPageLabel">Data di nascita:</label>
+                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
+                    <label lang="en" for="emailPersonalPage" id="emailPersonalPageLabel">Email:</label>
+                    <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
+                    <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri):</label>
+                    <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />">
+                    <input class="print-invisible" id="updatePersonalPage" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
+                </form>
+            </section>
+            <div id="separator"></div>
+            <section id="cambioPassword">
+                <h2 >Cambio password</h2>
+                <form id="changePsw">
+                    <label for="passwordPers1" id="passwordPers1Label"> Password: </label>
+                    <input type="password" id="passwordPers1" name="password">
+                    <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPassPers1()">
+                    <label for="mostraPsw">Mostra password</label></div>
+                    <label for="passwordPers2" id="passwordPers2Label"> Ripeti la password: </label>
+                    <input type="password" id="passwordPers2" name="Password">
+                    <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPassPers2()">
+                    <label for="mostraPswRipeti">Mostra password</label></div>
+                    
+                    <input class="print-invisible" id="updateButton" type="submit" value="Salva modifiche">
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer>
