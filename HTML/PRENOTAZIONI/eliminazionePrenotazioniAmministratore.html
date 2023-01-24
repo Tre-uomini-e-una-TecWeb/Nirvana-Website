@@ -51,13 +51,16 @@
 
     <main>
         <h2>Elimina prenotazioni</h2>
-            <form>
-                <fieldset>
-                    <legend> Riepilogo prenotazione </legend>
-                    <label for="reservation"> <strong> Prenotazione: </strong> </label><br/>
-                    <listaPrenotazioni />           <!-- Placeholder per <select> generata da PHP -->
-                </fieldset>
-            </form>
+        <form method="post" action="eliminazionePrenotazioniAmministratore.php">
+            <fieldset>
+                <legend> Riepilogo prenotazione </legend>
+                <label for="reservation"> <strong> Prenotazione: </strong> </label><br/>
+                <listaPrenotazioni />           <!-- Placeholder per <select> generata da PHP -->
+                <input type="submit" name="deleteP" value="Elimina prenotazione" />
+            </fieldset>
+        </form>
+        <esitoDelete />
+        <p>Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
     </main>
 
     <footer>

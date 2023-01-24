@@ -151,6 +151,17 @@ class DBAccess{
         }
     }
 
+    public function deletePrenotazioni($username, $data, $ora){
+        $query="DELETE FROM Prenotazioni WHERE Utente='".$username."' AND DataOra='".$data." ".$ora."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function getPrenotazioniDaConfermare(){
         $dataOggi = date("Y-m-d");
         $query="SELECT * FROM Prenotazioni JOIN Utenti ON Prenotazioni.Utente=Utenti.Username WHERE DataOra>'$dataOggi' AND Stato='P' ORDER BY DataOra ASC";
@@ -170,6 +181,72 @@ class DBAccess{
 
     public function insertUtente($user,$name,$surname,$birth,$email,$tel,$passwd,$isAdmin){
         $query="INSERT INTO `Utenti` (`Username`, `Nome`, `Cognome`, `DataNascita`, `Email`, `Telefono`, `Password`, `Privilegi`) VALUES ('".$user."', '".$name."', '".$surname."', '".$birth."', '".$email."', '".$tel."', '".$passwd."', '".$isAdmin."')";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateNameUtente($user,$newName){
+        $query="UPDATE `Utenti` SET `Nome`='".$newName."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateSurnameUtente($user,$newSurname){
+        $query="UPDATE `Utenti` SET `Nome`=`Cognome`='".$newSurname."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateBirthUtente($user,$newBirth){
+        $query="UPDATE `Utenti` SET `DataNascita`='".$newBirth."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateEmailUtente($user,$newEmail){
+        $query="UPDATE `Utenti` SET `Email`='".$newEmail."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateTelUtente($user,$newTel){
+        $query="UPDATE `Utenti` SET `Telefono`='".$newTel."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updatePasswdUtente($user,$newPasswd){
+        $query="UPDATE `Utenti` SET `Password`='".$newPasswd."' WHERE Username='".$user."'";
         $query_result=mysqli_query($this->connection,$query);
         if($query_result){
             return true;
