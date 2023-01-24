@@ -6,6 +6,17 @@ function userMenu() {
   document.getElementById("contentUser").classList.toggle("show");
 }
 
+function goUp() {
+  // window.location.href = '#header';
+  let elem = document.getElementById("header");
+  window.scroll({
+    top: elem.offsetTop, 
+    left: 0, 
+    behavior: 'smooth' 
+});
+  document.getElementById("goUp").style.opacity = '0';
+}
+
 function PageLoad() {
   // sessionStorage.setItem('cambiato', 'false');
   if(document.getElementById("areaPersonale") != null){
@@ -87,6 +98,24 @@ document.addEventListener("click", function(event){
     }
   } 
 });
+
+let lastScrollTop = 0;
+let headerH = document.querySelector("header");
+
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+document.addEventListener("scroll", function(){ 
+  let headerH = document.querySelector("header").offsetHeight;
+  let st = window.pageYOffset || document.documentElement.scrollTop; 
+  if (st > lastScrollTop || st < headerH){
+    // downscroll code
+    document.getElementById("goUp").style.opacity = '0';
+  } else {
+    // upscroll code
+    document.getElementById("goUp").style.opacity = '1';
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
 
 document.addEventListener("scroll", function(event){
   let scrollBrn = document.querySelector("#top-right");
