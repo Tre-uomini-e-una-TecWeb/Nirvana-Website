@@ -190,6 +190,61 @@ class DBAccess{
         }
     }
 
+    public function updateNameUtente($user,$newName){
+        $query="UPDATE `Utenti` SET `Nome`='".$newName."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateSurnameUtente($user,$newSurname){
+        $query="UPDATE `Utenti` SET `Nome`=`Cognome`='".$newSurname."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateBirthUtente($user,$newBirth){
+        $query="UPDATE `Utenti` SET `DataNascita`='".$newBirth."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateEmailUtente($user,$newEmail){
+        $query="UPDATE `Utenti` SET `Email`='".$newEmail."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateTelUtente($user,$newTel){
+        $query="UPDATE `Utenti` SET `Telefono`='".$newTel."' WHERE Username='".$user."'";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function closeConnection(){
         mysqli_close($this->connection);
     }

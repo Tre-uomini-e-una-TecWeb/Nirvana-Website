@@ -2,7 +2,7 @@
 session_start();
 if(!array_key_exists("username", $_SESSION) || $_SESSION["username"] == ""){//l'utente deve effettuare l'autenticazione
     header("HTTP/1.1 401 Unauthenticated");
-    header("Location: ../HTML/AMMINISTRAZIONE/401.html");
+    header("Location: ../../HTML/AMMINISTRAZIONE/401.html");
     die();
 }
 function pulisciInput($value){
@@ -12,6 +12,7 @@ function pulisciInput($value){
     return $value;
 }
 require_once "../connessione.php";
+ini_set('display_errors', 1);
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../../HTML/AREA PERSONALE/areaPersonale.html"); 
 $connessione=new DBAccess();
@@ -45,23 +46,85 @@ if(isset($_POST['modificaDati'])){
     $modEmail = "";
     $modTelefono = "";
     //controllo se effettivamente é stato modificato un dato
-    if(isset($_POST['newPhone']) || isset($_POST['newEmail']) || isset($_POST['newName']) || isset($_POST['newSurname']) || isset($_POST['newBirth'])){
-        if(isset($_POST['newName'])){
+    if($_POST['newPhone']!="" || $_POST['newEmail']!="" || $_POST['newName']!="" || $_POST['newSurname']!="" || $_POST['newBirth']!=""){
+        $canUpdate = true;
+        if($_POST['newName']!=""){
             $modNome = pulisciInput($_POST['newName']);
         }
-        if(isset($_POST['newSurname'])){
+        if($_POST['newSurname']!=""){
             $modCognome = pulisciInput($_POST['newSurname']);
         }
-        if(isset($_POST['newBirth'])){
+        if($_POST['newBirth']!=""){
             $modDataNascita = pulisciInput($_POST['newBirth']);
         }
-        if(isset($_POST['newEmail'])){
+        if($_POST['newEmail']!=""){
             $modEmail = pulisciInput($_POST['newEmail']);
         }
-        if(isset($_POST['newPhone'])){
+        if($_POST['newPhone']!=""){
             $modTelefono = pulisciInput($_POST['newPhone']);
         }
-        $modDati = "Nome: ".$modNome." Cognome: ".$modCognome." Data di nascita: ".$modDataNascita." Email: ".$modEmail." Telefono: ".$modTelefono;//linea di debug
+        if($canUpdate){
+            $isOk=true;
+            if($modNome!=""){
+                $isOk = $connessione->updateNameUtente($_SESSION["username"], $modNome);
+                if($isOk){
+                    $modDati .= "<p>Nome aggiornato con successo!</p>";
+                }
+                else{
+                    $modDati .= "<p>Non é stato possibile aggiornare il nome.</p>";
+                }
+            }
+            if($modCognome!=""){
+                $isOk = $connessione->updateSurnameUtente($_SESSION["username"], $modCognome);
+                if($isOk){
+                    $modDati .= "<p>Cognome aggiornato con successo!</p>";
+                }
+                else{
+                    $modDati .= "<p>Non é stato possibile aggiornare il cognome.</p>";
+                }
+            }
+            if($modDataNascita!=""){
+                $isOk = $connessione->updateBirthUtente($_SESSION["username"], $modDataNascita);
+                if($isOk){
+                    $modDati .= "<p>Data di nascita aggiornata con successo!</p>";
+                }
+                else{
+                    $modDati .= "<p>Non é stato possibile aggiornare la data di nascita.</p>";
+                }
+            }
+            if($modEmail!=""){
+                $isOk = $connessione->updateEmailUtente($_SESSION["username"], $modEmail);
+                if($isOk){
+                    $modDati .= "<p>Email aggiornata con successo!</p>";
+                }
+                else{
+                    $modDati .= "<p>Non é stato possibile aggiornare l'email.</p>";
+                }
+            }  
+            if($modTelefono!=""){
+                $isOk = $connessione->updateTelUtente($_SESSION["username"], $modTelefono);
+                if($isOk){
+                    $modDati .= "<p>Numero di telefono aggiornato con successo!</p>";
+                }
+                else{
+                    $modDati .= "<p>Non é stato possibile aggiornare il numero di telefono.</p>";
+                }
+            }
+            //mostro i nuovi dati
+            $query_result=$connessione->checkUtente($_SESSION["username"]);
+            if($query_result != null){
+                foreach($query_result as $infoUtente){
+                    $nome = $infoUtente['Nome'];
+                    $cognome = $infoUtente['Cognome'];
+                    $dataNascita = $infoUtente['DataNascita'];
+                    $mail = $infoUtente['Email'];
+                    $telefono = $infoUtente['Telefono'];
+                }
+            }
+        }
+        else{
+            $modDati = "Persistono errori.";
+        }
     }
     else{
         $modDati = "<p>Non é stato modificato alcun dato.</p>";
