@@ -37,7 +37,7 @@
             <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
         </ul> --> 
         <div class="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62;&#62; Elimina Prenotazioni</p> 
+            <p>Ti trovi in: <a href="../../HTML/INDEX/index.html"><span lang="en">Home</span></a> &#62;&#62; Elimina Prenotazioni</p> 
         </div>
         <div id="menu">
             <button aria-haspopup="menu" aria-label="Buttone di Menù Principale" onclick="menuButton()" class="buttonMenu">I nostri servizi</button>
@@ -53,9 +53,23 @@
         <h2>Elimina prenotazioni</h2>
         <form method="post" action="eliminazionePrenotazioniAmministratore.php">
             <fieldset>
-                <legend> Riepilogo prenotazione </legend>
-                <label for="reservation"> <strong> Prenotazione: </strong> </label><br/>
-                <listaPrenotazioni />           <!-- Placeholder per <select> generata da PHP -->
+                <legend> Prenotazioni </legend>
+                <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
+                        <thead>
+                            <tr>
+                                <th scope="col">Utente</th>
+                                <th scope="col">Etá</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Ora</th>
+                                <th scope="col">Richiesta</th>
+                                <th scope="col">Stato</th>
+                                <th scope="col">Eliminare</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <listaPrenotazioni />
+                        </tbody>
+                    </table>
                 <input type="submit" name="deleteP" value="Elimina prenotazione" />
             </fieldset>
         </form>
