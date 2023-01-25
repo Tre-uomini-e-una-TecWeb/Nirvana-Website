@@ -61,10 +61,10 @@
                 <label for="dateAdmin" id="dateAdminLabel">Data:</label>
                 <input type="date" id="dateAdmin" name="date" required aria-required="true">
                 <label for="hourAdmin" id="hourAdminLabel"> Ora:</label>
-                <input type="time" id="hourAdmin" name="hour" required aria-required="true">
-                <label for="serviceAdmin" id="serviceAdminLabel">Trattamento:</label>
+                <input type="time" id="hourAdmin" name="hour" min="09:00" max="19:00" required aria-required="true">
+                <label for="serviceAdmin" id="serviceAdminLabel">Servizio:</label>
                 <select id="serviceAdmin" name="service" required aria-required="true">
-                    <option value="" selected>Selezionare un trattamento</option>
+                    <option value="" selected>Selezionare un servizio</option>
                     <option value="puliziaViso">Pulizia viso</option>
                     <option value="idratante">Trattamento viso idratante</option>
                     <option value="antiAge">Trattamento viso anti-age</option>
@@ -97,24 +97,23 @@
                     <option value="consulenzaViso">Consulenza viso</option>
                     <option value="consulenzaCorpo">Consulenza corpo</option>
                 </select>
+                <esitoForm />
                 <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
             </form>
-            <esitoForm />
         </section>
+        <p id="wrongReservationLink">Inserita in maniera errata una prenotazione? Vai alla <a href="eliminazionePrenotazioniAmministratore.php">pagina di eliminazione prenotazioni</a>!</p>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <div id="prenotazioniAmministratore">
-                <p id="descrTabPrenAmm" class="aiuti">Tabella che contiene tutte le prenotazioni disponibili da oggi</p>
                 <p>Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <table aria-describedby="descrTabPrenAmm" id="tabellaPrenotazioniAmministratore">
+                    <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
                         <thead>
                             <tr>
+                                <th scope="col">Utente</th>
+                                <th scope="col">Etá</th>
                                 <th scope="col">Data</th>
                                 <th scope="col">Ora</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Cognome</th>
-                                <th scope="col">Etá</th>
                                 <th scope="col">Richiesta</th>
                                 <th scope="col">Stato</th>
                             </tr>
@@ -123,9 +122,9 @@
                             <prenotazioniEsistenti />
                         </tbody>
                     </table>
+                    <esitoModifiche />
                     <input type="submit"  class="print-invisible" id="adminReservationButton" name="modificaPrenotazioni" value="Applica modifiche" />
                 </form>
-                <esitoModifiche />
             </div>
         </section>
     </main>

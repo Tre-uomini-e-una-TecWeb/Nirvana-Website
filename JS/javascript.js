@@ -63,12 +63,16 @@ function PageLoad() {
   
 }
 
-function makeDate(){
-  document.getElementById("birth").type='date';
+function makeDate(x){
+  document.getElementById(x).type='date';
 }
 
-function returnText(){
-  document.getElementById("birth").type='text';
+function makeTime(x){
+  document.getElementById(x).type='time';
+}
+
+function returnText(x){
+  document.getElementById(x).type='text';
 }
 
 function LogOut() {
@@ -121,7 +125,7 @@ document.addEventListener("scroll", function(event){
   let scrollBrn = document.querySelector("#top-right");
   let footer = document.querySelector("footer");
   let body = document.querySelector("body");
-  const  x = window.matchMedia("(max-width: 920px)").matches;
+  const  x = window.matchMedia("(max-width: 940px)").matches;
   const y = (body.offsetHeight - footer.offsetHeight - 90 );
   if(x){
     if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight + 20)){

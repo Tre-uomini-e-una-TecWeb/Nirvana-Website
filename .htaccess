@@ -1,2 +1,1 @@
-ErrorDocument 401 /HTML/AMMINISTRAZIONE/401.html
-ErrorDocument 403 /HTML/AMMINISTRAZIONE/403.html
+ErrorDocument 404 /Nirvana-Website/HTML/AMMINISTRAZIONE/404.html

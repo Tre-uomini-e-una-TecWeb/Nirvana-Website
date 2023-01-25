@@ -61,7 +61,7 @@ header {
     margin: 0em;
 }
 
-@media screen and (max-width:920px), only screen and (max-device-width:920px) {
+@media screen and (max-width:940px), only screen and (max-device-width:940px) {
 
     header, main{
         font-size: 1.1em;
@@ -91,18 +91,18 @@ header {
     }
 
     #prenotazioniUtente, #prenotazioniAmministratore{
-        padding-top: 0em;
+        padding: 0em;
     }
 
-    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot, #tabellaPrenotazioniAmministratore thead, #tabellaPrenotazioniAmministratore tfoot{
+    #tabellaPrenotazioniUtente thead, #tabellaPrenotazioniUtente tfoot, #tabellaPrenotazioniAmministratore thead, #tabellaPrenotazioniAmministratore tfoot, #tabClienti thead, #tabClienti tfoot{
         display: none;
     }
 
-    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td, #tabellaPrenotazioniAmministratore tr, #tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniAmministratore td {
+    #tabellaPrenotazioniUtente tr, #tabellaPrenotazioniUtente th, #tabellaPrenotazioniUtente td, #tabellaPrenotazioniAmministratore tr, #tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniAmministratore td, #tabClienti tr, #tabClienti th, #tabClienti td {
         display: block;
     }
 
-    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before, #tabellaPrenotazioniAmministratore th[data-title]:before, #tabellaPrenotazioniAmministratore td[data-title]:before {
+    #tabellaPrenotazioniUtente th[data-title]:before, #tabellaPrenotazioniUtente td[data-title]:before, #tabellaPrenotazioniAmministratore th[data-title]:before, #tabellaPrenotazioniAmministratore td[data-title]:before, #tabClienti th[data-title]:before, #tabClienti td[data-title]:before{
         content: attr(data-title) "\00A0";
         font-weight: bold;
     }
@@ -115,13 +115,13 @@ header {
         font-weight: bold;
     }
 
-    #tabellaPrenotazioniUtente{
+    #tabellaPrenotazioniUtente, #tabClienti{
        border: 2px solid black;
        border-top: none;
        margin-bottom: 4em;
     }
 
-    #tabellaPrenotazioniUtente td:not(.header), #tabellaPrenotazioniAmministratore td:not(.header){
+    #tabellaPrenotazioniUtente td:not(.header), #tabellaPrenotazioniAmministratore td:not(.header), #tabClienti td:not(.header) {
         border:none;
         border-top: 1px solid black;
     }
@@ -167,17 +167,26 @@ header {
         top: initial;
         right: 2em;
     }
+
+    #confermaModifica{
+        padding-top: 0em;
+    }
+
+    #tabClienti{
+        height: 100%;
+        width: 100%;
+    }
     
+    #insertResAmm{
+        max-width: none
+    }
+
     #loginMenu{
         position: relative; 
     }
 
     #adminReservationButton{
         margin-bottom: 4em;
-    }
-
-    #tabellaPrenotazioniAmministratore{
-        margin-bottom: 2em;
     }
 
     /* #top-right{
@@ -206,7 +215,7 @@ header {
         margin: 1em 0em 4em 0em;
     }
 
-    .item-footer table th, .item-footer table td{
+    .item-footer table th, .item-footer table td, #tabellaPrenotazioniAmministratore th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabClienti  td, #tabellaPrenotazioniUtente  td{
         padding: 0.3em;
     }
 
@@ -218,8 +227,8 @@ header {
         color:black;
     }
 
-    #service{
-        max-width: 35vw;
+    #service, #customers, #serviceAdmin{
+        max-width: 40vw;
     }
 
     #puliziaViso{

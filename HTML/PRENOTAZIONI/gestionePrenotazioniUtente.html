@@ -60,7 +60,7 @@
                 <label for="date" id="dateLabel">Data:</label>
                 <input type="date" id="date" name="date" required aria-required="true">
                 <label for="hour" id="hourLabel"> Ora:</label>
-                <input type="time" id="hour" name="hour" required aria-required="true">
+                <input type="time" id="hour" name="hour" min="09:00" max="19:00" required aria-required="true">
                 <label for="service" id="serviceLabel">Trattamento:</label>
                 <select id="service" name="service">
                     <option value="puliziaViso">Pulizia viso</option>
@@ -95,15 +95,15 @@
                     <option value="consulenzaViso">Consulenza viso</option>
                     <option value="consulenzaCorpo">Consulenza corpo</option>
                 </select>
+                <esitoForm />
                 <input class="print-invisible" type="submit" id="userReservationButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
             </form>
-            <esitoForm />
         </section>
         <div id="separator"></div>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <div id="prenotazioniUtente">
-                <table summary="Tabella che contiene tutte le prenotazioni effettuate ed il loro stato." aria-describedby="descrTabPrenAmm" id="tabellaPrenotazioniUtente">
+                <table summary="Tabella che contiene tutte le prenotazioni effettuate ed il loro stato." id="tabellaPrenotazioniUtente">
                     <thead>
                         <tr>
                             <th scope="col">Richiesta</th>

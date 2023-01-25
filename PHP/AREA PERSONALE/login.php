@@ -33,41 +33,70 @@ if(isset($_POST['accesso'])){
                 else{
                     $_SESSION["privilegi"] = "admin";
                 }
-                header("Location: ../../HTML/AREA PERSONALE/areaPersonale.html");
+                header("Location: ../../PHP/AREA PERSONALE/areaPersonale.php");
                 die();
             }
             else{
-                $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+                $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
             }
         }
     }
     else{
-        $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+        $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
     }
 }
 if(isset($_POST['registrazione'])){
+    $errRegistrazione = "";
+    $canInsert = true;
     $nome = pulisciInput($_POST['name']);
+    if (preg_match("/\d/",$nome)){
+        $errRegistrazione.='<p class=\'errore\'>Nome non valido: non possono esserci numeri!</p>';
+        $canInsert = false;
+    }
     $cognome = pulisciInput($_POST['surname']);
+    if (preg_match("/\d/",$cognome)){
+        $errRegistrazione.='<p class=\'errore\'>Cognome non valido: non possono esserci numeri!</p>';
+        $canInsert = false;
+    }
     $dataNascita = pulisciInput($_POST['birth']);
+    if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$dataNascita)){
+        $errRegistrazione.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
+        $canInsert = false;
+    }
     $email = pulisciInput($_POST['email']);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errRegistrazione .= "<p class=\'errore\'>Email non valida: formato non corretto!</p>";
+        $canInsert = false;
+    }
     $telefono = pulisciInput($_POST['phone']);
+    if (preg_match("/\D/",$telefono)){
+        $errRegistrazione.='<p class=\'errore\'>Numero di telefono non valido: possono esserci solo numeri!</p>';
+        $canInsert = false;
+    }
     $username = pulisciInput($_POST['username']);
     $utenteInDB = $connessione->checkUtente($username);
     if($utenteInDB != null){
-        $esitoRegistrazione="<p id=\"registrazioneKo\">Username giá registrato da un altro cliente. Per favore scegline un altro.</p>";
         $utenteInDB=true;
     }
     $password = pulisciInput($_POST['password']);
     $pwd = password_hash($password,PASSWORD_DEFAULT);
     $privilegi = 0;
-    if($utenteInDB == false){
+    if($canInsert && $utenteInDB == false){
         $query_result = $connessione->insertUtente($username,$nome,$cognome,$dataNascita,$email,$telefono,$pwd,$privilegi);
         if($query_result){
-            $esitoRegistrazione = "<p id=\"registrazioneOk\">Registrazione andata a buon fine!</p>";
-            $esitoRegistrazione .= "<p>Effettua il login per accedere alla tua area personale.</p>";
+            $esitoRegistrazione = "<p class=\"conferma\">Registrazione andata a buon fine!</p>";
+            $esitoRegistrazione .= "<p id=\"loginHelpMessage\">Effettua il login per accedere alla tua area personale.</p>";
         }
         else{
-            $esitoRegistrazione = "<p id=\"registrazioneKo\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
+            $esitoRegistrazione = "<p class=\"errore\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
+        }
+    }
+    else{
+        if(!$canInsert){
+            $esitoRegistrazione = $errRegistrazione;
+        }
+        else{
+            $esitoRegistrazione = "<p class=\"errore\">Lo <span lang='en'>username scelto non è disponibile!</p>";
         }
     }
 }

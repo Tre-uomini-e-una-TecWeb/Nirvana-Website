@@ -63,28 +63,29 @@
                     <label for="surnamePersonalPage" id="surnamePersonalPageLabel"> Cognome: </label>
                     <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />">
                     <label for="birthPersonalPage" id="birthPersonalPageLabel">Data di nascita:</label>
-                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
+                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate('birthPersonalPage')" onblur="returnText('birthPersonalPage')" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
                     <label lang="en" for="emailPersonalPage" id="emailPersonalPageLabel">Email:</label>
                     <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
                     <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri):</label>
                     <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />">
+                    <esitoModificaDati />
                     <input class="print-invisible" id="updatePersonalPage" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
                 </form>
             </section>
             <div id="separator"></div>
             <section id="cambioPassword">
                 <h2 >Cambio password</h2>
-                <form id="changePsw">
+                <form id="changePsw" method="post" action="areaPersonale.php">
                     <label for="passwordPers1" id="passwordPers1Label"> Password: </label>
-                    <input type="password" id="passwordPers1" name="password">
+                    <input type="password" id="passwordPers1" name="password" >
                     <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPassPers1()">
-                    <label for="mostraPsw">Mostra password</label></div>
+                    <label for="mostraPsw" class="showPasswordCheckbox">Mostra password</label></div>
                     <label for="passwordPers2" id="passwordPers2Label"> Ripeti la password: </label>
-                    <input type="password" id="passwordPers2" name="Password">
+                    <input type="password" id="passwordPers2" name="confirmPassword">
                     <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPassPers2()">
-                    <label for="mostraPswRipeti">Mostra password</label></div>
-                    
-                    <input class="print-invisible" id="updateButton" type="submit" value="Salva modifiche">
+                    <label for="mostraPswRipeti" class="showPasswordCheckbox">Mostra password</label></div>
+                    <esitoCambioPassword />
+                    <input class="print-invisible" id="updateButton" type="submit" name="modificaPasswd" value="Salva modifiche">
                 </form>
             </section>
         </div>

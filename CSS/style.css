@@ -7,6 +7,9 @@
     --linkClearBackground: #00166b;
     --breadcrumbVisitedLink: #241F31;
     --linkDarkBackground: white;
+    --goodAction: #96be25;
+    --badAction: #e0694b;
+    --formInput: #f6f2f1;
 }
 
 * {
@@ -296,16 +299,16 @@ th, td{
 }
 
 ::placeholder {
-    color: #000;
+    color: var(--secondaryColor);
     opacity: 1; /* Per Firefox */
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #000;
+   color: var(--secondaryColor);
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-   color: #000;
+   color: var(--secondaryColor);
   }
 
 .contenitore_carte>li,
@@ -352,7 +355,7 @@ th, td{
     background-repeat: no-repeat;
     background-size:cover;
     border: 1px solid black;
-    min-height: 12em;    /* Dipendiamo dalle macchine (da questa riga in particolare)*/
+    min-height: 12em;
     padding: 1em 1em 0em 1em;
     border-radius: 1em;
     max-width: 100%;
@@ -417,14 +420,14 @@ footer a:visited{
     /* border: 1px solid black; */
 }
 
-.item-footer table, #tabPrenAmm, #tabClienti, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
     margin: 0 auto;
     /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th, #tabPrenAmm tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
+.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
     border: 2px black solid;
 }
 
@@ -432,17 +435,21 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabPrenAmm tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
     background-color: #ffeede;
 }
 
-.item-footer table th, .item-footer table td, #tabPrenAmm th, #tabClienti  th, #tabellaPrenotazioniUtente  th, #tabPrenAmm td, #tabClienti  td, #tabellaPrenotazioniUtente  td {
+.item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
 .item-footer table>caption{
     font-weight: bold;
     font-size: 1em;
+}
+
+#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td {
+    padding: 0.3em;
 }
 
 #trattamenti{
@@ -785,7 +792,7 @@ footer a:visited{
     border-right: 1px solid black;
 }
 
-#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #insertResAmm{
+#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw{
     display: grid;
     padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
@@ -794,29 +801,64 @@ footer a:visited{
 form input, #customers , #serviceAdmin, #service{
     border-radius: 0.5em;
     border:1px solid black;
-    background-color: var(--mainColor);
+    background-color: var(--formInput);
     padding: 0.4em;
     text-align:center;
 }
+
+form input[type=submit]{
+    background-color: var(--mainColor);
+}
+
 #service {
     width: 100%;
 }
 
-form label {
+form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     border-bottom: 1px solid rosybrown;
 }
 
-#mostraPsw2 > label, #mostraPsw1 > label, #mostraPswA > label, #mostraPswR > label{
-    border: none;
-    cursor: auto;
-}
-
 #insertResAmm{
+    display: grid;
+    padding: 2em 2em 1em 2em; 
+    row-gap: 0.5em;
     margin-left: auto;
     margin-right: auto;
     max-width: 52vw;
-    padding: 2em;
     border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+.errore, .conferma, #loginHelpMessage{
+    text-align: center;
+    padding: 0.3em;
+}
+
+.errore{
+    background-color: var(--badAction);
+}
+
+.conferma{
+    background-color: var(--goodAction);
+}
+
+#wrongReservationLink{
+    text-align: center;
+}
+
+#confermaModifica{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+input, select, #usernamePersonalPage{
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#tabClienti{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #datiUtente input:not(#updatePersonalPage){
@@ -839,15 +881,16 @@ form label {
 
 #tabellaPrenotazioniAmministratore{
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel, #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
     margin-right: 1em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione{
     grid-column: 1/3;
 }
 
@@ -872,7 +915,7 @@ form label {
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
+#email, #emailLabel, #mostraPsw2, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
     grid-row: 4;
 }
 
@@ -884,7 +927,7 @@ form label {
     grid-row: 6;
 }
 
-#password1, #password1Label, #updatePersonalPage{
+#password1, #password1Label{
     grid-row: 7;
 }
 
@@ -911,14 +954,13 @@ form label {
     cursor: pointer;
 }
 
-
-
 #adminReservationButton{
     width: 40vw;
 }
 
-#reservations{
+#reservations, #warningRegistrazione{
     text-align: center;
+    margin-top: 1em;
 }
 
 /**
@@ -938,7 +980,7 @@ form label {
     text-align: center;
 }
 
-#descrTabPrenAmm{
+#descrtabellaPrenotazioniAmministratore{
     margin-bottom: 1em;
 }
 

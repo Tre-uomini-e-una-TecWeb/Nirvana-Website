@@ -20,7 +20,7 @@
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
-                <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
+                <li class="menuList"><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
                 <li id="LogIn" class="menuList"><span lang="en">Log In</span></li>
                 <li id="LogOut"><span lang="en">Log Out</span></li>
                 <!-- <li><a href="../../PHP/AREA PERSONALE/areaPersonale.php">Area Personale</a></li>
@@ -70,26 +70,27 @@
                     <input type="email" id="email" name="email" required aria-required="true">
                     <label for="phone" id="phoneLabel"> Numero di telefono:</label>
                     <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi">
-                    <label for="username" id="userLabel">Utente:</label>
+                    <label for="username" id="userLabel">Nome Utente:</label>
                     <input type="text" id="username" name="username" required aria-required="true">
-                    <label lang="en" for="password1" id="passwordLabel">Password:</label>
+                    <label lang="en" for="password1" id="password1Label">Password:</label>
                     <input type="password" id="password1" name="password" required aria-required="true"> 
-                    <div id="mostraPswR"><input type="checkbox" id="mostraPswRegistrazione" onclick="statusPassLog1()">
-                    <label for="mostraPswRegistrazione">Mostra password</label></div>
+                    <div id="mostraPswR"><input type="checkbox" class="showPasswordCheckbox" id="mostraPswRegistrazione" onclick="statusPassLog1()">
+                    <label for="mostraPswRegistrazione"class="showPasswordCheckbox">Mostra password</label></div>
+                    <esitoRegistrazione />
                     <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
+                    <p id="warningRegistrazione">Attenzione! Una volta scelto, il nome utente non é piú modificabile!</p>
                 </form>
-                <esitoRegistrazione />
             </section>
             <div id="separator"></div>
             <section id="accesso" >
                 <h2>Accesso</h2>
                 <form id="login" method="post" action="login.php">
-                    <label for="usernameLogin" id="utenteLabel"> Utente: </label>
+                    <label for="usernameLogin" id="utenteLabel"> Nome Utente: </label>
                     <input type="text" id="usernameLogin" name="Username" required aria-required="true">
                     <label lang="en" for="password2" id="password2Label"> Password: </label>
                     <input type="password" id="password2" name="Password" required aria-required="true">
-                    <div id="mostraPswA"><input type="checkbox" id="mostraPswAccesso" onclick="statusPassLog2()">
-                        <label for="mostraPswAccesso">Mostra password</label></div>
+                    <div id="mostraPswA"><input type="checkbox" class="showPasswordCheckbox" id="mostraPswAccesso" onclick="statusPassLog2()">
+                        <label for="mostraPswAccesso"class="showPasswordCheckbox">Mostra password</label></div>
                     <avvisoLogin />
                     <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
                 </form>

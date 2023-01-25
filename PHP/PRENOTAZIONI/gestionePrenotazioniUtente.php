@@ -26,22 +26,36 @@ function pulisciInput($value){
 
 if($connOk){
     if(isset($_POST['submit'])){
+        $errPrenotazione = "";
+        $canAskRes = true;
         $cliente = $_SESSION["username"];
         $data = pulisciInput($_POST['date']);
+        if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$data)){
+            $errPrenotazione.='<p class=\'errore\'>Data per la prenotazione non valida: formato non valido!</p>';
+            $canAskRes = false;
+        }
         $ora = pulisciInput($_POST['hour']);
+        if (!preg_match("/\d{2}:\d{2}/",$ora)){
+            $errPrenotazione.='<p class=\'errore\'>Ora per la prenotazione non valida: formato non valido!</p>';
+            $canAskRes = false;
+        }
+        if($canMakeRes && ($ora<"09:00" || $ora >"19:00")){
+            $errPrenotazione.='<p class=\'errore\'>Orario non valido: il centro é chiuso nell\'orario richiesto!</p>';
+            $canAskRes = false;
+        }
         $servizio = pulisciInput($_POST['service']);
     
-        if($connOk){
+        if($canAskRes){
             $queryOk=$connessione->insertNewReservationUser($cliente,$data,$ora,$servizio);
             if($queryOk){
                 // Prenotazione inserita!
-                $esitoInserimento="<div id=\"confermaInserimento\"><p>Inserimento avvenuto con successo!</p></div>";
+                $esitoInserimento="<div class='conferma'><p>Richiesta di prenotazione avvenuta con successo!</p></div>";
             } else {
                 // Prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
-                $esitoInserimento="<div id=\"erroreInserimento\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
+                $esitoInserimento="<div class='errore'><p>Una prenotazione è già presente per l'orario selezionato!</p></div>";
             }
         } else {
-            $esitoInserimento="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+            $esitoInserimento=$errPrenotazione;
         }
     }
 
@@ -59,10 +73,10 @@ if($connOk){
         }
     }
     else{
-        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td colspan='4'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
-    $prenotazioni="<div id=\"erroreInserimento\"><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+    $prenotazioni="<div class='errore'><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
 }
 
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);
