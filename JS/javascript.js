@@ -7,8 +7,7 @@ function userMenu() {
 }
 
 function goUp() {
-  // window.location.href = '#header';
-  let elem = document.getElementById("header");
+  let elem = document.getElementById("cima");
   window.scroll({
     top: elem.offsetTop, 
     left: 0, 
@@ -18,34 +17,25 @@ function goUp() {
 }
 
 function PageLoad() {
-  // sessionStorage.setItem('cambiato', 'false');
   if(document.getElementById("areaPersonale") != null){
     sessionStorage.setItem('loggedIn', 'true');
     sessionStorage.setItem('cambiato', 'false');
   }
-  if(!("cambiato" in sessionStorage)){
-    sessionStorage.setItem('cambiato', 'false');
-    console.log("object");
-  }
 
-  if(/*sessionStorage.getItem('cambiato') == 'false' &&*/ sessionStorage.getItem('loggedIn') == 'true'){
+  if(sessionStorage.getItem('loggedIn') == 'true'){
     // document.getElementById("LogIn").style.display = "none";
     // document.getElementById("LogOut").style.display = "block";
     // document.getElementById("LogOut").style.border = "none";
     // document.getElementById("LogOut").style.padding = "0";
     document.getElementById("LogIn").classList.add('hide');
     document.getElementById("LogOut").classList.add('menuLogOutUt');
-    // sessionStorage.setItem('cambiato', 'true');
-    console.log('hii');
-  } else /*if (sessionStorage.getItem('cambiato') == 'false')*/{
+  } else {
     // document.getElementById("LogIn").style.display = "block";
     // document.getElementById("LogIn").style.border = "none";
     // document.getElementById("LogIn").style.padding = "0";
     // document.getElementById("LogOut").style.display = "none";
     document.getElementById("LogIn").classList.add("menuLogInUt");
     document.getElementById("LogOut").classList.add('hide');
-    // sessionStorage.setItem('cambiato', 'true');
-    // console.log('object');
   }
   // if(sessionStorage.getItem('loggedIn') == 'true'){
   //   var list = document.getElementsByClassName("LogIn");
@@ -72,7 +62,6 @@ function PageLoad() {
 
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
-  // sessionStorage.setItem('cambiato', 'false');
 }
   
 
@@ -100,9 +89,7 @@ document.addEventListener("click", function(event){
 });
 
 let lastScrollTop = 0;
-let headerH = document.querySelector("header");
 
-// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 document.addEventListener("scroll", function(){ 
   let headerH = document.querySelector("header").offsetHeight;
   let st = window.pageYOffset || document.documentElement.scrollTop; 
