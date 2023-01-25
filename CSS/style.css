@@ -9,6 +9,7 @@
     --linkDarkBackground: white;
     --goodAction: #96be25;
     --badAction: #e0694b;
+    --formInput: #f6f2f1;
 }
 
 * {
@@ -800,21 +801,21 @@ footer a:visited{
 form input, #customers , #serviceAdmin, #service{
     border-radius: 0.5em;
     border:1px solid black;
-    background-color: var(--mainColor);
+    background-color: var(--formInput);
     padding: 0.4em;
     text-align:center;
 }
+
+form input[type=submit]{
+    background-color: var(--mainColor);
+}
+
 #service {
     width: 100%;
 }
 
-form label {
+form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     border-bottom: 1px solid rosybrown;
-}
-
-#mostraPsw2 > label, #mostraPsw1 > label, #mostraPswA > label, #mostraPswR > label{
-    border: none;
-    cursor: auto;
 }
 
 #insertResAmm{
@@ -880,15 +881,16 @@ input, select, #usernamePersonalPage{
 
 #tabellaPrenotazioniAmministratore{
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel, #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
     margin-right: 1em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione{
     grid-column: 1/3;
 }
 
@@ -952,14 +954,13 @@ input, select, #usernamePersonalPage{
     cursor: pointer;
 }
 
-
-
 #adminReservationButton{
     width: 40vw;
 }
 
-#reservations{
+#reservations, #warningRegistrazione{
     text-align: center;
+    margin-top: 1em;
 }
 
 /**

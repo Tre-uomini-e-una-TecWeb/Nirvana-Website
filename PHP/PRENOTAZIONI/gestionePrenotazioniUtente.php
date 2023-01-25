@@ -73,7 +73,7 @@ if($connOk){
         }
     }
     else{
-        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td colspan='4'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
     $prenotazioni="<div class='errore'><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";

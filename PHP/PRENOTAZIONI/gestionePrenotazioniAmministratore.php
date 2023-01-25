@@ -53,7 +53,7 @@ if($connOk){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data: '><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
@@ -80,12 +80,12 @@ if($connOk){
         }
     }
     else{
-        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td td colspan='6'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } 
 else {
     $clienti = "<p>Non è possibile caricare la lista dei clienti.</p>";
-    $prenotazioni = "<tr><td>Non è possibile caricare la lista delle prenotazioni.</td></tr>";
+    $prenotazioni = "<tr><td colspan='6'>Non è possibile caricare la lista delle prenotazioni.</td></tr>";
 }
 
 if(isset($_POST['submit'])){
@@ -113,10 +113,10 @@ if(isset($_POST['submit'])){
     if($canMakeRes){
         $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
         if($queryOk){//prenotazione inserita
-            $esitoInserimento="<div class=\"conferma\"><p>Inserimento avvenuto con successo!</p></div>";
+            $esitoInserimento="<p class=\"conferma\">Inserimento avvenuto con successo!</p>";
         }
         else{//prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
-            $esitoInserimento="<div class=\"errore\"><p>Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p></div>";
+            $esitoInserimento="<p class=\"errore\">Esiste giá una prenotazione per il cliente all'orario selezionato!</p>";
         }
     }
     else{
@@ -144,7 +144,7 @@ if(isset($_POST['submit'])){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td td data-title='Data: '><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
@@ -172,7 +172,7 @@ if(isset($_POST['submit'])){
         }
     }
     else{
-        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td colspan='6'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
     
 }
@@ -220,18 +220,20 @@ if(isset($_POST['modificaPrenotazioni'])){
             if($query_result){
                 $aggiornate++;
             }
+            else{
+                $esitoModifica.="<p class=\"errore\">Impossibile inserire la prenotazione, esiste giá una prenotazione per il cliente all'orario selezionato!</p>";
+            }
         }
         $prenotazioniVerificate++;
     }
     if($aggiornate == $numPrenotazioniDaVerificare){
-        $esitoModifica="<div id=\"conferma\"><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p></div>";
+        $esitoModifica.="<p id=\"conferma\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p>";
     }
     else{
-        $esitoModifica="<div id=\"confermaModifica\"><p>Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare."</p>";
+        $esitoModifica.="<p id=\"confermaModifica\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare."</p>";
         if($errModficaPren){
             $esitoModifica .= $errModficaPren;
         }
-        $esitoModifica .="</div>";
     }
     
     //aggiorno nuovamente le prenotazioni
@@ -256,7 +258,7 @@ if(isset($_POST['modificaPrenotazioni'])){
                     $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td data-title='Data: ' class='header'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data: '><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
                 $prenotazioni .= "<td data-title='Orario: '><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
@@ -283,7 +285,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
     }
     else{
-        $prenotazioni .= "<tr><td>Non ci sono prenotazioni da visualizzare.</td></tr>";
+        $prenotazioni .= "<tr><td colspan='6'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 }
 $pagina_HTML=str_replace("<elencoClienti />", $clienti, $pagina_HTML);
