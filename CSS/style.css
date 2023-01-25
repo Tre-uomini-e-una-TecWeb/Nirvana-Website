@@ -7,6 +7,9 @@
     --linkClearBackground: #00166b;
     --breadcrumbVisitedLink: #241F31;
     --linkDarkBackground: white;
+    --goodAction: #96be25;
+    --badAction: #e0694b;
+    --formInput: #f6f2f1;
 }
 
 * {
@@ -789,7 +792,7 @@ footer a:visited{
     border-right: 1px solid black;
 }
 
-#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #insertResAmm{
+#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw{
     display: grid;
     padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
@@ -798,32 +801,57 @@ footer a:visited{
 form input, #customers , #serviceAdmin, #service{
     border-radius: 0.5em;
     border:1px solid black;
-    background-color: var(--mainColor);
+    background-color: var(--formInput);
     padding: 0.4em;
     text-align:center;
 }
+
+form input[type=submit]{
+    background-color: var(--mainColor);
+}
+
 #service {
     width: 100%;
 }
 
-form label {
+form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     border-bottom: 1px solid rosybrown;
 }
 
-#mostraPsw2 > label, #mostraPsw1 > label, #mostraPswA > label, #mostraPswR > label{
-    border: none;
-    cursor: auto;
-}
-
 #insertResAmm{
+    display: grid;
+    padding: 2em 2em 1em 2em; 
+    row-gap: 0.5em;
     margin-left: auto;
     margin-right: auto;
     max-width: 52vw;
-    padding: 2em;
     border: 1px solid black;
+    margin-bottom: 1em;
 }
 
-input, select{
+.errore, .conferma, #loginHelpMessage{
+    text-align: center;
+    padding: 0.3em;
+}
+
+.errore{
+    background-color: var(--badAction);
+}
+
+.conferma{
+    background-color: var(--goodAction);
+}
+
+#wrongReservationLink{
+    text-align: center;
+}
+
+#confermaModifica{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+input, select, #usernamePersonalPage{
     text-align: center;
     font-size: 0.9em;
 }
@@ -853,15 +881,16 @@ input, select{
 
 #tabellaPrenotazioniAmministratore{
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel, #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
     grid-column: 1;
     margin-bottom: 0.5em;
     margin-right: 1em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, #loginKo{
+#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione{
     grid-column: 1/3;
 }
 
@@ -886,7 +915,7 @@ input, select{
     grid-row: 3;
 }
 
-#email, #emailLabel, #mostraPsw2, #loginKo, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
+#email, #emailLabel, #mostraPsw2, #serviceAdmin, #serviceAdminLabel, #birthPersonalPage, #birthPersonalPageLabel{
     grid-row: 4;
 }
 
@@ -898,7 +927,7 @@ input, select{
     grid-row: 6;
 }
 
-#password1, #password1Label, #updatePersonalPage{
+#password1, #password1Label{
     grid-row: 7;
 }
 
@@ -925,14 +954,13 @@ input, select{
     cursor: pointer;
 }
 
-
-
 #adminReservationButton{
     width: 40vw;
 }
 
-#reservations{
+#reservations, #warningRegistrazione{
     text-align: center;
+    margin-top: 1em;
 }
 
 /**

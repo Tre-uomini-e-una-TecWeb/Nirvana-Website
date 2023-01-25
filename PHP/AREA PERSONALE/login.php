@@ -37,12 +37,12 @@ if(isset($_POST['accesso'])){
                 die();
             }
             else{
-                $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+                $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
             }
         }
     }
     else{
-        $avvisoLogin = "<p id=\"loginKo\">Credenziali errate: login non effettuato.</p>";
+        $avvisoLogin = "<p class='errore'>Credenziali errate: login non effettuato.</p>";
     }
 }
 if(isset($_POST['registrazione'])){
@@ -50,27 +50,27 @@ if(isset($_POST['registrazione'])){
     $canInsert = true;
     $nome = pulisciInput($_POST['name']);
     if (preg_match("/\d/",$nome)){
-        $errRegistrazione.='<li>Nome non valido: non possono esserci numeri!</li>';
+        $errRegistrazione.='<p class=\'errore\'>Nome non valido: non possono esserci numeri!</p>';
         $canInsert = false;
     }
     $cognome = pulisciInput($_POST['surname']);
     if (preg_match("/\d/",$cognome)){
-        $errRegistrazione.='<li>Cognome non valido: non possono esserci numeri!</li>';
+        $errRegistrazione.='<p class=\'errore\'>Cognome non valido: non possono esserci numeri!</p>';
         $canInsert = false;
     }
     $dataNascita = pulisciInput($_POST['birth']);
     if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$dataNascita)){
-        $errRegistrazione.='<li>Data di nascita non valida: formato non valido!</li>';
+        $errRegistrazione.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
         $canInsert = false;
     }
     $email = pulisciInput($_POST['email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errRegistrazione .= "<li>Email non valida: formato non corretto!</li>";
+        $errRegistrazione .= "<p class=\'errore\'>Email non valida: formato non corretto!</p>";
         $canInsert = false;
     }
     $telefono = pulisciInput($_POST['phone']);
     if (preg_match("/\D/",$telefono)){
-        $errRegistrazione.='<li>Numero di telefono non valido: possono esserci solo numeri!</li>';
+        $errRegistrazione.='<p class=\'errore\'>Numero di telefono non valido: possono esserci solo numeri!</p>';
         $canInsert = false;
     }
     $username = pulisciInput($_POST['username']);
@@ -84,19 +84,19 @@ if(isset($_POST['registrazione'])){
     if($canInsert && $utenteInDB == false){
         $query_result = $connessione->insertUtente($username,$nome,$cognome,$dataNascita,$email,$telefono,$pwd,$privilegi);
         if($query_result){
-            $esitoRegistrazione = "<p id=\"registrazioneOk\">Registrazione andata a buon fine!</p>";
-            $esitoRegistrazione .= "<p>Effettua il login per accedere alla tua area personale.</p>";
+            $esitoRegistrazione = "<p class=\"conferma\">Registrazione andata a buon fine!</p>";
+            $esitoRegistrazione .= "<p id=\"loginHelpMessage\">Effettua il login per accedere alla tua area personale.</p>";
         }
         else{
-            $esitoRegistrazione = "<p id=\"registrazioneKo\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
+            $esitoRegistrazione = "<p class=\"errore\">Impossibile effettuare la registrazione. Controlla i dati inseriti e riprova.</p>";
         }
     }
     else{
         if(!$canInsert){
-            $esitoRegistrazione = "<p id=\"registrazioneKo\">Registrazione non andata a buon fine per questi motivi:".$errRegistrazione."</p>";
+            $esitoRegistrazione = $errRegistrazione;
         }
         else{
-            $esitoRegistrazione = "<p id=\"registrazioneKo\">É giá presente un utente con i dati inseriti. Riprovare.</p>";
+            $esitoRegistrazione = "<p class=\"errore\">Lo <span lang='en'>username scelto non è disponibile!</p>";
         }
     }
 }
