@@ -48,39 +48,38 @@ if(isset($_POST['modificaDati'])){
     //controllo se effettivamente é stato modificato un dato
     if($_POST['newPhone']!="" || $_POST['newEmail']!="" || $_POST['newName']!="" || $_POST['newSurname']!="" || $_POST['newBirth']!=""){
         $canUpdate = true;
-        $errUpdate = "";
         if($_POST['newName']!=""){
             $modNome = pulisciInput($_POST['newName']);
             if (preg_match("/\d/",$modNome)){
-                $errUpdate.='<p>Nome non valido: non possono esserci numeri!</p>';
+                $modDati.='<p class=\'errore\'>Nome non valido: non possono esserci numeri!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newSurname']!=""){
             $modCognome = pulisciInput($_POST['newSurname']);
             if (preg_match("/\d/",$modCognome)){
-                $errUpdate.='<p>Cognome non valido: non possono esserci numeri!</p>';
+                $modDati.='<p class=\'errore\'>Cognome non valido: non possono esserci numeri!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newBirth']!=""){
             $modDataNascita = pulisciInput($_POST['newBirth']);
             if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$modDataNascita)){
-                $errUpdate.='<p>Data di nascita non valida: formato non valido!</p>';
+                $modDati.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
                 $canUpdate = false;
             }
         }
         if($_POST['newEmail']!=""){
             $modEmail = pulisciInput($_POST['newEmail']);
             if (!filter_var($modEmail, FILTER_VALIDATE_EMAIL)) {
-                $errUpdate .= "<p>Email non valida: formato non corretto!</p>";
+                $modDati .= "<p class='\errore'\><span lang='en'>Email</span> non valida: formato non corretto!</p>";
                 $canUpdate = false;
             }
         }
         if($_POST['newPhone']!=""){
             $modTelefono = pulisciInput($_POST['newPhone']);
             if (preg_match("/\D/",$modTelefono)){
-                $errUpdate.='<p>Numero di telefono non valido: possono esserci solo numeri!</p>';
+                $modDati.='<p class=\'errore\'>Numero di telefono non valido: possono esserci solo numeri!</p>';
                 $canUpdate = false;
             }
         }
@@ -89,46 +88,46 @@ if(isset($_POST['modificaDati'])){
             if($modNome!=""){
                 $isOk = $connessione->updateNameUtente($_SESSION["username"], $modNome);
                 if($isOk){
-                    $modDati .= "<p>Nome aggiornato con successo!</p>";
+                    $modDati .= "<p class='conferma'>Nome aggiornato con successo!</p>";
                 }
                 else{
-                    $modDati .= "<p>Non é stato possibile aggiornare il nome.</p>";
+                    $modDati .= "<p class='errore'>Non é stato possibile aggiornare il nome.</p>";
                 }
             }
             if($modCognome!=""){
                 $isOk = $connessione->updateSurnameUtente($_SESSION["username"], $modCognome);
                 if($isOk){
-                    $modDati .= "<p>Cognome aggiornato con successo!</p>";
+                    $modDati .= "<p class='conferma'>Cognome aggiornato con successo!</p>";
                 }
                 else{
-                    $modDati .= "<p>Non é stato possibile aggiornare il cognome.</p>";
+                    $modDati .= "<p class='errore'>Non é stato possibile aggiornare il cognome.</p>";
                 }
             }
             if($modDataNascita!=""){
                 $isOk = $connessione->updateBirthUtente($_SESSION["username"], $modDataNascita);
                 if($isOk){
-                    $modDati .= "<p>Data di nascita aggiornata con successo!</p>";
+                    $modDati .= "<p class='conferma'>Data di nascita aggiornata con successo!</p>";
                 }
                 else{
-                    $modDati .= "<p>Non é stato possibile aggiornare la data di nascita.</p>";
+                    $modDati .= "<p class='errore'>Non é stato possibile aggiornare la data di nascita.</p>";
                 }
             }
             if($modEmail!=""){
                 $isOk = $connessione->updateEmailUtente($_SESSION["username"], $modEmail);
                 if($isOk){
-                    $modDati .= "<p>Email aggiornata con successo!</p>";
+                    $modDati .= "<p class='conferma'><span lang='en'>Email</span> aggiornata con successo!</p>";
                 }
                 else{
-                    $modDati .= "<p>Non é stato possibile aggiornare l'email.</p>";
+                    $modDati .= "<p class='errore'>Non é stato possibile aggiornare l'email.</p>";
                 }
             }  
             if($modTelefono!=""){
                 $isOk = $connessione->updateTelUtente($_SESSION["username"], $modTelefono);
                 if($isOk){
-                    $modDati .= "<p>Numero di telefono aggiornato con successo!</p>";
+                    $modDati .= "<p class='conferma'>Numero di telefono aggiornato con successo!</p>";
                 }
                 else{
-                    $modDati .= "<p>Non é stato possibile aggiornare il numero di telefono.</p>";
+                    $modDati .= "<p class='errore'>Non é stato possibile aggiornare il numero di telefono.</p>";
                 }
             }
             //mostro i nuovi dati
@@ -143,12 +142,9 @@ if(isset($_POST['modificaDati'])){
                 }
             }
         }
-        else{
-            $modDati = "<p>Si sono verificati degli errori:".$errUpdate."</p>";
-        }
     }
     else{
-        $modDati = "<p>Non é stato modificato alcun dato.</p>";
+        $modDati = "<p class='errore'>Non é stato modificato alcun dato.</p>";
     }
 }
 
@@ -167,18 +163,18 @@ if(isset($_POST['modificaPasswd'])){
         if(!password_verify($newPasswd,$oldPw)){
             $isUpdated = $connessione->updatePasswdUtente($_SESSION["username"], $password);
             if($isUpdated){
-                $modPasswd = "<p>Password aggiornata con successo!</p>";
+                $modPasswd = "<p class='conferma'>Password aggiornata con successo!</p>";
             }
             else{
-                $modPasswd = "<p>Non é stato possibile aggiornare la password</p>";
+                $modPasswd = "<p class='errore'>Non é stato possibile aggiornare la password</p>";
             }
         }
         else{
-            $modPasswd = "<p>La password é identica a quella giá in uso.</p>";
+            $modPasswd = "<p class='errore'>La password é identica a quella giá in uso.</p>";
         }
     }
     else{
-        $modPasswd = "<p>Le password non coincidono.</p>";
+        $modPasswd = "<p class='errore'>Le password non coincidono.</p>";
     }
 }
 

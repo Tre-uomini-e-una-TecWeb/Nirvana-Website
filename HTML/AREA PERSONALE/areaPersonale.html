@@ -17,7 +17,7 @@
 </head>
 <body onload="PageLoad()" id="areaPersonale">
     <!-- Header -->
-    <header>
+    <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
@@ -68,9 +68,9 @@
                     <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
                     <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri):</label>
                     <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />">
+                    <esitoModificaDati />
                     <input class="print-invisible" id="updatePersonalPage" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
                 </form>
-                <esitoModificaDati />
             </section>
             <div id="separator"></div>
             <section id="cambioPassword">
@@ -79,18 +79,20 @@
                     <label for="passwordPers1" id="passwordPers1Label"> Password: </label>
                     <input type="password" id="passwordPers1" name="password" >
                     <div id="mostraPsw1"><input type="checkbox" id="mostraPsw" onclick="statusPassPers1()">
-                    <label for="mostraPsw">Mostra password</label></div>
+                    <label for="mostraPsw" class="showPasswordCheckbox">Mostra password</label></div>
                     <label for="passwordPers2" id="passwordPers2Label"> Ripeti la password: </label>
                     <input type="password" id="passwordPers2" name="confirmPassword">
                     <div id="mostraPsw2"><input type="checkbox" id="mostraPswRipeti" onclick="statusPassPers2()">
-                    <label for="mostraPswRipeti">Mostra password</label></div>
-                    
+                    <label for="mostraPswRipeti" class="showPasswordCheckbox">Mostra password</label></div>
+                    <esitoCambioPassword />
                     <input class="print-invisible" id="updateButton" type="submit" name="modificaPasswd" value="Salva modifiche">
                 </form>
-                <esitoCambioPassword />
             </section>
         </div>
     </main>
+    <nav>
+        <button onclick="goUp()" id="goUp"></button>
+    </nav>
 
     <footer>
         <hr>

@@ -16,7 +16,7 @@
 </head>
 <body onload="PageLoad()">
     <!-- Header -->
-    <header>
+    <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
@@ -95,9 +95,9 @@
                     <option value="consulenzaViso">Consulenza viso</option>
                     <option value="consulenzaCorpo">Consulenza corpo</option>
                 </select>
+                <esitoForm />
                 <input class="print-invisible" type="submit" id="userReservationButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
             </form>
-            <esitoForm />
         </section>
         <div id="separator"></div>
         <section id="visualizzazionePrenotazione">
@@ -120,6 +120,9 @@
         </section>
         </div>
     </main>
+    <nav>
+        <button onclick="goUp()" id="goUp"></button>
+    </nav>
 
     <footer>
         <hr>
