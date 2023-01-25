@@ -6,35 +6,36 @@ function userMenu() {
   document.getElementById("contentUser").classList.toggle("show");
 }
 
+function goUp() {
+  let elem = document.getElementById("cima");
+  window.scroll({
+    top: elem.offsetTop, 
+    left: 0, 
+    behavior: 'smooth' 
+});
+  document.getElementById("goUp").style.opacity = '0';
+}
+
 function PageLoad() {
-  // sessionStorage.setItem('cambiato', 'false');
   if(document.getElementById("areaPersonale") != null){
     sessionStorage.setItem('loggedIn', 'true');
     sessionStorage.setItem('cambiato', 'false');
   }
-  if(!("cambiato" in sessionStorage)){
-    sessionStorage.setItem('cambiato', 'false');
-    console.log("object");
-  }
 
-  if(/*sessionStorage.getItem('cambiato') == 'false' &&*/ sessionStorage.getItem('loggedIn') == 'true'){
+  if(sessionStorage.getItem('loggedIn') == 'true'){
     // document.getElementById("LogIn").style.display = "none";
     // document.getElementById("LogOut").style.display = "block";
     // document.getElementById("LogOut").style.border = "none";
     // document.getElementById("LogOut").style.padding = "0";
     document.getElementById("LogIn").classList.add('hide');
     document.getElementById("LogOut").classList.add('menuLogOutUt');
-    // sessionStorage.setItem('cambiato', 'true');
-    console.log('hii');
-  } else /*if (sessionStorage.getItem('cambiato') == 'false')*/{
+  } else {
     // document.getElementById("LogIn").style.display = "block";
     // document.getElementById("LogIn").style.border = "none";
     // document.getElementById("LogIn").style.padding = "0";
     // document.getElementById("LogOut").style.display = "none";
     document.getElementById("LogIn").classList.add("menuLogInUt");
     document.getElementById("LogOut").classList.add('hide');
-    // sessionStorage.setItem('cambiato', 'true');
-    // console.log('object');
   }
   // if(sessionStorage.getItem('loggedIn') == 'true'){
   //   var list = document.getElementsByClassName("LogIn");
@@ -69,7 +70,6 @@ function returnText(){
 
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
-  // sessionStorage.setItem('cambiato', 'false');
 }
   
 
@@ -95,6 +95,22 @@ document.addEventListener("click", function(event){
     }
   } 
 });
+
+let lastScrollTop = 0;
+
+document.addEventListener("scroll", function(){ 
+  let headerH = document.querySelector("header").offsetHeight;
+  let st = window.pageYOffset || document.documentElement.scrollTop; 
+  if (st > lastScrollTop || st < headerH){
+    // downscroll code
+    document.getElementById("goUp").style.opacity = '0';
+  } else {
+    // upscroll code
+    document.getElementById("goUp").style.opacity = '1';
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
 
 document.addEventListener("scroll", function(event){
   let scrollBrn = document.querySelector("#top-right");
