@@ -435,9 +435,7 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){
-    background-color: #ffeede;
-}
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){background-color: #ffeede;}
 
 .item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
