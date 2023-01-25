@@ -36,8 +36,11 @@
             <li class="LogIn"><span lang="en"><a href="../../PHP/AREA PERSONALE/login.php">Log In</a></span></li>
             <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
         </ul> --> 
-        <div class="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &#62;&#62; Elimina Prenotazioni</p> 
+        <div class="breadcrumb" id="big_breadcrumb">
+            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; Elimina Prenotazioni</p> 
+        </div>
+        <div class="breadcrumb" id="mini_breadcrumb">
+            <p>Livello superiore: <a href="../../index.php"><span lang="en">Home</span></a></p> 
         </div>
         <div id="menu">
             <button aria-haspopup="menu" aria-label="Buttone di Menù Principale" onclick="menuButton()" class="buttonMenu">I nostri servizi</button>
@@ -51,16 +54,29 @@
 
     <main>
         <h2>Elimina prenotazioni</h2>
-        <form method="post" action="eliminazionePrenotazioniAmministratore.php">
-            <fieldset>
-                <legend> Riepilogo prenotazione </legend>
-                <label for="reservation"> <strong> Prenotazione: </strong> </label><br/>
-                <listaPrenotazioni />           <!-- Placeholder per <select> generata da PHP -->
-                <input type="submit" name="deleteP" value="Elimina prenotazione" />
-            </fieldset>
-        </form>
-        <esitoDelete />
-        <p>Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
+        <div id="eliminazioniAmministratore">
+            <form method="post" action="eliminazionePrenotazioniAmministratore.php" id="deleteReservations">
+                <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
+                    <thead>
+                        <tr>
+                            <th scope="col">Utente</th>
+                            <th scope="col">Etá</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Ora</th>
+                            <th scope="col">Richiesta</th>
+                            <th scope="col">Stato</th>
+                            <th scope="col">Eliminare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <listaPrenotazioni />
+                    </tbody>
+                </table>
+                <input type="submit" name="deleteP" value="Elimina prenotazione" id="adminDeleteButton" />
+            </form>
+            <esitoDelete />
+            <p id="reservationsLink">Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
+        </div>
     </main>
     <nav>
         <button onclick="goUp()" id="goUp"></button>
