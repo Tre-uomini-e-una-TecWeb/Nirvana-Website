@@ -50,18 +50,38 @@ if(isset($_POST['modificaDati'])){
         $canUpdate = true;
         if($_POST['newName']!=""){
             $modNome = pulisciInput($_POST['newName']);
+            if (preg_match("/\d/",$modNome)){
+                $modDati.='<p class=\'errore\'>Nome non valido: non possono esserci numeri!</p>';
+                $canUpdate = false;
+            }
         }
         if($_POST['newSurname']!=""){
             $modCognome = pulisciInput($_POST['newSurname']);
+            if (preg_match("/\d/",$modCognome)){
+                $modDati.='<p class=\'errore\'>Cognome non valido: non possono esserci numeri!</p>';
+                $canUpdate = false;
+            }
         }
         if($_POST['newBirth']!=""){
             $modDataNascita = pulisciInput($_POST['newBirth']);
+            if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$modDataNascita)){
+                $modDati.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
+                $canUpdate = false;
+            }
         }
         if($_POST['newEmail']!=""){
             $modEmail = pulisciInput($_POST['newEmail']);
+            if (!filter_var($modEmail, FILTER_VALIDATE_EMAIL)) {
+                $modDati .= "<p class='\errore'\><span lang='en'>Email</span> non valida: formato non corretto!</p>";
+                $canUpdate = false;
+            }
         }
         if($_POST['newPhone']!=""){
             $modTelefono = pulisciInput($_POST['newPhone']);
+            if (preg_match("/\D/",$modTelefono)){
+                $modDati.='<p class=\'errore\'>Numero di telefono non valido: possono esserci solo numeri!</p>';
+                $canUpdate = false;
+            }
         }
         if($canUpdate){
             $isOk=true;
@@ -95,7 +115,7 @@ if(isset($_POST['modificaDati'])){
             if($modEmail!=""){
                 $isOk = $connessione->updateEmailUtente($_SESSION["username"], $modEmail);
                 if($isOk){
-                    $modDati .= "<p class='conferma'>Email aggiornata con successo!</p>";
+                    $modDati .= "<p class='conferma'><span lang='en'>Email</span> aggiornata con successo!</p>";
                 }
                 else{
                     $modDati .= "<p class='errore'>Non é stato possibile aggiornare l'email.</p>";
@@ -121,9 +141,6 @@ if(isset($_POST['modificaDati'])){
                     $telefono = $infoUtente['Telefono'];
                 }
             }
-        }
-        else{
-            $modDati = "<p class='errore'>Persistono errori.</p>";
         }
     }
     else{

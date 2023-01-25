@@ -149,6 +149,25 @@ header h1{
     bottom: initial;
 }
 
+#goUp {
+    background: url(../IMG/pngwing.com.png);
+    background-color: var(--secondaryColor);
+    background-position: center;
+    background-size: 2.6em;
+    background-repeat: no-repeat;
+    padding: 1.3em;
+    position: fixed;
+    left: 2.8em;
+    bottom: 2.8em;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 5em;
+    font-size: 1em;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+    border: none;
+    opacity: 0;
+}
 
 nav  ul{
     list-style-type: none;
@@ -204,6 +223,7 @@ main table{
     border: none;
     padding: 0.9em 1em 0.9em 1em;
     width: 100%;
+    font-size: 0.9em;
 }
 
 
@@ -777,6 +797,26 @@ footer a:visited{
     row-gap: 0.5em;
 }
 
+form input, #customers , #serviceAdmin, #service{
+    border-radius: 0.5em;
+    border:1px solid black;
+    background-color: var(--mainColor);
+    padding: 0.4em;
+    text-align:center;
+}
+#service {
+    width: 100%;
+}
+
+form label {
+    border-bottom: 1px solid rosybrown;
+}
+
+#mostraPsw2 > label, #mostraPsw1 > label, #mostraPswA > label, #mostraPswR > label{
+    border: none;
+    cursor: auto;
+}
+
 #insertResAmm{
     display: grid;
     padding: 2em 2em 1em 2em; 
@@ -903,6 +943,16 @@ input, select, #usernamePersonalPage{
     margin-top: 1em;
     padding: 0.3em;
 }
+
+#updateButton, #updatePersonalPage, #confirmButton, #registerButton, #accessButton, #userReservationButton, #adminReservationButton{
+    font-size: 0.9em;
+    padding: 0.5em;
+    place-self: center;
+    width: 40%;
+    cursor: pointer;
+}
+
+
 
 #adminReservationButton{
     width: 40vw;

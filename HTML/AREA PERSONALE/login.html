@@ -16,7 +16,7 @@
 </head>
 <body onload="PageLoad()">
     <!-- Header -->
-    <header>
+    <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
@@ -78,6 +78,7 @@
                     <label for="mostraPswRegistrazione">Mostra password</label></div>
                     <esitoRegistrazione />
                     <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
+                    <p id="warningRegistrazione">Attenzione! Una volta scelto, lo username non é piú modificabile!</p>
                 </form>
             </section>
             <div id="separator"></div>
@@ -99,6 +100,9 @@
                 <div id="help"> Se non ti ricordi la password, contatta il centro estetico</div>
             </section>
     </main>
+    <nav>
+        <button onclick="goUp()" id="goUp"></button>
+    </nav>
 
     <footer>
         <hr>

@@ -16,7 +16,7 @@
 </head>
 <body onload="PageLoad()">
     <!-- Header -->
-    <header>
+    <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
             <ul id="contentUser" class="userLinks">
@@ -60,7 +60,7 @@
                 <label for="date" id="dateLabel">Data:</label>
                 <input type="date" id="date" name="date" required aria-required="true">
                 <label for="hour" id="hourLabel"> Ora:</label>
-                <input type="time" id="hour" name="hour" required aria-required="true">
+                <input type="time" id="hour" name="hour" min="09:00" max="19:00" required aria-required="true">
                 <label for="service" id="serviceLabel">Trattamento:</label>
                 <select id="service" name="service">
                     <option value="puliziaViso">Pulizia viso</option>
@@ -120,6 +120,9 @@
         </section>
         </div>
     </main>
+    <nav>
+        <button onclick="goUp()" id="goUp"></button>
+    </nav>
 
     <footer>
         <hr>
