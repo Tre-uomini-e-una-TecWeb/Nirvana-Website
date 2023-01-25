@@ -7,13 +7,16 @@ function userMenu() {
 }
 
 function goUp() {
-  let elem = document.getElementById("cima");
-  window.scroll({
-    top: elem.offsetTop, 
-    left: 0, 
-    behavior: 'smooth' 
-});
-  document.getElementById("goUp").style.opacity = '0';
+  if(document.getElementById("goUp").style.opacity == '1'){
+    let elem = document.getElementById("cima");
+    window.scroll({
+      top: elem.offsetTop, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+    document.getElementById("goUp").style.opacity = '0';
+    document.getElementById("goUp").style.cursor = 'default';
+  }
 }
 
 function PageLoad() {
@@ -108,8 +111,10 @@ document.addEventListener("scroll", function(){
   if (st > lastScrollTop || st < headerH){
     // downscroll code
     document.getElementById("goUp").style.opacity = '0';
+    document.getElementById("goUp").style.cursor = 'default'
   } else {
     // upscroll code
+    document.getElementById("goUp").style.cursor = 'pointer';
     document.getElementById("goUp").style.opacity = '1';
   }
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
