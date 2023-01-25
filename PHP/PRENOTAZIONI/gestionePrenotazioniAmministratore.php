@@ -84,7 +84,7 @@ if($connOk){
     }
 } 
 else {
-    $clienti = "<p>Non è possibile caricare la lista dei clienti.</p>";
+    $clienti = "<p class='errore'>Non è possibile caricare la lista dei clienti.</p>";
     $prenotazioni = "<tr><td colspan='6'>Non è possibile caricare la lista delle prenotazioni.</td></tr>";
 }
 
@@ -181,6 +181,7 @@ if(isset($_POST['modificaPrenotazioni'])){
     /* Qua elaborazione dati */
     $prenotazioniVerificate = 0;
     $aggiornate = 0;
+    $stateError=false;
     $errModficaPren = "";
     while ($prenotazioniVerificate < $numPrenotazioniDaVerificare){
         $toSkip = false;
@@ -194,7 +195,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
         list($nuovaData, $nuovoOrario, $nuovoStato) = explode("?", $modifiche);
         if ($nuovoStato == '') {
-            $errModficaPren .= '<p>Stato non valido: é necessario accettare o rifiutare la prenotazione!</p>';
+            $stateError=true;
             $toSkip = true;
         }
         if($nuovaData==""){
@@ -227,10 +228,13 @@ if(isset($_POST['modificaPrenotazioni'])){
         $prenotazioniVerificate++;
     }
     if($aggiornate == $numPrenotazioniDaVerificare){
-        $esitoModifica.="<p id=\"conferma\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p>";
+        $esitoModifica.="<p class=\"conferma\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p>";
     }
     else{
         $esitoModifica.="<p id=\"confermaModifica\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare."</p>";
+        if($stateError){
+            $errModficaPren .= "<p class='errore'>Alcune prenotazioni necessitano di approvazione!</p>";
+        }
         if($errModficaPren){
             $esitoModifica .= $errModficaPren;
         }
