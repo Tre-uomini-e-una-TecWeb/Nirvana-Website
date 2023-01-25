@@ -63,7 +63,7 @@
                     <label for="surnamePersonalPage" id="surnamePersonalPageLabel"> Cognome: </label>
                     <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />">
                     <label for="birthPersonalPage" id="birthPersonalPageLabel">Data di nascita:</label>
-                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate()" onblur="returnText()" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
+                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate('birthPersonalPage')" onblur="returnText('birthPersonalPage')" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
                     <label lang="en" for="emailPersonalPage" id="emailPersonalPageLabel">Email:</label>
                     <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
                     <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri):</label>
