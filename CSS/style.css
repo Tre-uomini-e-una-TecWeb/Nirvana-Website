@@ -171,7 +171,7 @@ header h1{
     cursor: pointer;
     border-radius: 5em;
     font-size: 1em;
-    transition-duration: 0.1s;
+    transition-duration: 25ms;
     transition-timing-function: ease-in;
     border: none;
     /* opacity: 0; */
