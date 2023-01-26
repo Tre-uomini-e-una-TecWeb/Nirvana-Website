@@ -226,7 +226,11 @@ if(isset($_POST['modificaPrenotazioni'])){
         $prenotazioniVerificate++;
     }
     if($aggiornate == $numPrenotazioniDaVerificare){
-        $esitoModifica.="<p class=\"conferma\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p>";
+        if($numPrenotazioniDaVerificare>0){
+            $esitoModifica.="<p class=\"conferma\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare.".</p>";
+        } else {
+            $esitoModifica.="<p>Non ci sono prenotazioni da aggiornare!</p>";
+        }    
     }
     else{
         $esitoModifica.="<p id=\"confermaModifica\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare."</p>";

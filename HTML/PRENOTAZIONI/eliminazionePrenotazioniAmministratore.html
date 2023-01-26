@@ -55,6 +55,7 @@
     <main>
         <h2>Elimina prenotazioni</h2>
         <div id="eliminazioniAmministratore">
+            <p id="reservationsLink">Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
             <form method="post" action="eliminazionePrenotazioniAmministratore.php" id="deleteReservations">
                 <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
                     <thead>
@@ -72,10 +73,9 @@
                         <listaPrenotazioni />
                     </tbody>
                 </table>
-                <input type="submit" name="deleteP" value="Elimina prenotazione" id="adminDeleteButton" />
+                <input class="print-invisible" type="submit" name="deleteP" value="Elimina prenotazione" id="adminDeleteButton" />
             </form>
             <esitoDelete />
-            <p id="reservationsLink">Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
         </div>
     </main>
     <nav>
