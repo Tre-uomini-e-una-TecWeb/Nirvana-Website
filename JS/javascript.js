@@ -178,7 +178,6 @@ document.addEventListener("scroll", function(event){
       // topRule.style.top = y + 'px';
       // ===============================================
       scrollBrn.style.position = "absolute";
-      let classStyle = document.getElementsByClassName("menuLogMobStop");
       scrollBrn.style.top = (y) + "px";
       scrollBrn.style.bottom = 'initial';
       // scrollBrn.style.bottom = -60 + "em";
