@@ -16,6 +16,42 @@ function goUp() {
     });
     document.getElementById("goUp").style.opacity = '0';
     document.getElementById("goUp").style.cursor = 'default';
+    document.getElementById("goUp").style.padding = '0';
+  }
+}
+
+function utentMen(){
+  let scrollBrn = document.querySelector("#top-right");
+  let footer = document.querySelector("footer");
+  let body = document.querySelector("body");
+  const  x = window.matchMedia("(max-width: 940px)").matches;
+  const y = (body.offsetHeight - footer.offsetHeight - 90 );
+  if(x){
+    if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight + 20)){
+      // scrollBrn.classList.remove("menuLogMob");
+      // scrollBrn.classList.add("menuLogMobStop");
+      // let topRule = new Array();
+      // if (document.styleSheets[1].cssRules[9].cssRules[19]) {
+      //   topRule = document.styleSheets[1].cssRules[9].cssRules[19];
+      // } else if (document.styleSheets[1].rules[9].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+      //   topRule = document.styleSheets[1].rules[9].rules[19];
+      // }
+      // topRule.style.top = y + 'px';
+      // console.log(y);
+      // let classStyle = document.getElementsByClassName("menuLogMobStop");
+      // ===============================================
+      scrollBrn.style.position = "absolute";
+      scrollBrn.style.top = (y) + "px";
+      scrollBrn.style.bottom = 'initial';
+      // scrollBrn.style.bottom = -60 + "em";
+    } else {
+      // scrollBrn.classList.remove("menuLogMobStop");
+      // scrollBrn.classList.add("menuLogMob")
+      // ===============================================
+      scrollBrn.style.position = "fixed";
+      scrollBrn.style.bottom = 2 + "em";
+      scrollBrn.style.top = "initial";
+      }
   }
 }
 
@@ -112,8 +148,10 @@ document.addEventListener("scroll", function(){
     // downscroll code
     document.getElementById("goUp").style.opacity = '0';
     document.getElementById("goUp").style.cursor = 'default'
+    document.getElementById("goUp").style.padding = '0';
   } else {
     // upscroll code
+    document.getElementById("goUp").style.padding = '1.3em';
     document.getElementById("goUp").style.cursor = 'pointer';
     document.getElementById("goUp").style.opacity = '1';
   }
@@ -129,30 +167,27 @@ document.addEventListener("scroll", function(event){
   const y = (body.offsetHeight - footer.offsetHeight - 90 );
   if(x){
     if((window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - footer.offsetHeight + 20)){
-      scrollBrn.classList.remove("menuLogMob");
-      scrollBrn.classList.add("menuLogMobStop");
-      // scrollBrn.style.position = "absolute";
-      // let classStyle = document.getElementsByClassName("menuLogMobStop");
-      let topRule = new Array();
-      if (document.styleSheets[1].cssRules[9].cssRules[19]) {
-        topRule = document.styleSheets[1].cssRules[9].cssRules[19];
-      } else if (document.styleSheets[1].rules[9].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
-        topRule = document.styleSheets[1].rules[9].rules[19];
-      }
-        topRule.style.top = y + 'px';
-        // theRules.style.righ
-      // scrollBrn.style.top = (y) + "px";
+      // scrollBrn.classList.remove("menuLogMob");
+      // scrollBrn.classList.add("menuLogMobStop");
+      // let topRule = new Array();
+      // if (document.styleSheets[1].cssRules[9].cssRules[19]) {
+      //   topRule = document.styleSheets[1].cssRules[9].cssRules[19];
+      // } else if (document.styleSheets[1].rules[9].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+      //   topRule = document.styleSheets[1].rules[9].rules[19];
+      // }
+      // topRule.style.top = y + 'px';
+      // ===============================================
+      scrollBrn.style.position = "absolute";
+      scrollBrn.style.top = (y) + "px";
+      scrollBrn.style.bottom = 'initial';
       // scrollBrn.style.bottom = -60 + "em";
     } else {
-      scrollBrn.classList.remove("menuLogMobStop");
-      scrollBrn.classList.add("menuLogMob")
-      // scrollBrn.style.position = "fixed";
-      // scrollBrn.style.bottom = 2 + "em";
-      // scrollBrn.style.top = "initial";
-      // console.log('HIII');
-      // console.log(document.body.clientHeight);
-      // console.log(footer.offsetHeight);
-      // console.log(window.scrollY);
+      // scrollBrn.classList.remove("menuLogMobStop");
+      // scrollBrn.classList.add("menuLogMob")
+      // ===============================================
+      scrollBrn.style.position = "fixed";
+      scrollBrn.style.bottom = 2 + "em";
+      scrollBrn.style.top = "initial";
       }
   } /*else {
     // scrollBrn.classList.remove("menuLogMobStop");

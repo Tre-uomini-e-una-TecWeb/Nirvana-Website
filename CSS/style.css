@@ -163,7 +163,7 @@ header h1{
     background-position: center;
     background-size: 2.6em;
     background-repeat: no-repeat;
-    padding: 1.3em;
+    padding: 0;
     position: fixed;
     left: 2.8em;
     bottom: 2.8em;
@@ -174,7 +174,7 @@ header h1{
     transition-duration: 0.1s;
     transition-timing-function: ease-in;
     border: none;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 nav  ul{
