@@ -2,6 +2,7 @@
     --mainColor: #ffcc99;
     /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
     --secondaryColor: #800000;
+    --secondaryColorDark: #600006;
     --mainColorAlpha: #d17e7a;
     --visitedLinkClearBackground: #C64600;
     --linkClearBackground: #00166b;
@@ -70,6 +71,10 @@ header h1{
     margin: 1.1em 0em;
 }
 
+#top-right > button:hover{
+    background-color: var(--mainColorAlpha);
+}
+
 #contentUser{
     background-color: var(--secondaryColor);
     color: var(--mainColor);
@@ -122,6 +127,10 @@ header h1{
     width: fill-available;
     border: 1px solid black;
     
+}
+
+#top-right a:hover{
+    background-color: var(--secondaryColorDark);
 }
 
 #top-right li{
@@ -177,6 +186,10 @@ header h1{
     /* opacity: 0; */
 }
 
+#goUp:hover {
+    background-color: var(--secondaryColorDark);
+}
+
 nav  ul{
     list-style-type: none;
     display:none;
@@ -219,6 +232,10 @@ main table{
     color: var(--mainColor);
 }
 
+#menu:hover {
+    background-color: var(--secondaryColorDark);
+}
+
 .buttonMenu {
     background-color: var(--secondaryColor);
     color: var(--mainColor);
@@ -232,6 +249,9 @@ main table{
     font-size: 0.9em;
 }
 
+.buttonMenu:hover {
+    background-color: var(--secondaryColorDark);
+}
 
 .menuCont {
     background-color: var(--secondaryColor);
@@ -246,13 +266,21 @@ main table{
 }
 
 .menuCont li{
-    padding: 0.2em 0em 0.2em 0em;
     border: 1px solid white;
 }
 
 .menuCont li a{
+    padding: 0.2em 0em 0.2em 0em;
     display: block;
     width: 100%;
+}
+
+.noLinkMenu {
+    padding: 0.2em 0em;
+}
+
+.menuCont li a:hover{
+    background-color: var(--secondaryColorDark);
 }
 
 .breadcrumb {
