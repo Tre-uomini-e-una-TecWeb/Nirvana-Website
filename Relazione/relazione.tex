@@ -256,18 +256,19 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 %nuova sezione
 \section{Progettazione}
 \subsection{Obbiettivi}
-L'interfaccia del sito si pone l'obiettivo di esporre in modo chiaro ed accessibile quelli che sono i servizi del centro estetico, dando anche l'opportunità di mettersi in contatto con il personale. \\
-Inoltre, ai clienti registrati si vuole dare la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
-Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard. \\
+L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email. \\
+Ai clienti registrati si vuole dare inoltre la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
+Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard suddivisa in una serie di pagine distinte. \\
 
 	\begin{itemize}
-		\item \textbf{Accessibilità:} si è deciso di assegnare uno stile comune a tutte le pagine in modo da facilitare l'orientamento e minimizzare il sovraccarico cognitivo durante la navigazione del sito. \\
+		\item \textbf{Accessibilità:} si è deciso di assegnare uno stile comune a tutte le pagine in modo da facilitare l'orientamento e minimizzare il sovraccarico cognitivo durante la navigazione. \\
+			Il sito è stato progettato in modo da consentire ad un pubblico quanto più ampio possibile di accedere ai servizi ed alle informazioni per mezzo dei seguenti accorgimenti:
 			\begin{itemize}
-				\item %opacità scritte sulle carte, in modo da essere leggibili da screen-reader
-				%i contrasti sono a norma almeno AA (speriamo)
-				%torna su nel bottone
-				%pulsante login per mobile							
-				%parlare delle tabelle
+				\item Le spiegazioni dei trattamenti offerti e dei macchinari utilizzati nel centro estetico sono rese sempre accessibili attraverso l'utilizzo della regola CSS \textit{color}: quando una scritta non deve essere visibile tramite il display, la sua opacità è resa pari a zero (non è quindi nascosta agli screen-readers);
+				\item I contrasti tra colori attigui rispettano il livello di conformità alle WCAG detto AA;
+				\item La presenza di un bottone che consenta di evitare lo scrolling verticale se si necessitasse di ritornare all'intestazione di una pagina; 
+				\item La presenza di un bottone che rimanga in una zona facilmente raggiungibile dall'utente che utilizza device mobili: tale utente tende a dedicare attenzione solo parzialmente al dispositivo e quindi predilige azioni comode e veloci (swipe, tap, double tap, ecc.); 						
+				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope} per fornire una descrizione della tabella migliore agli screen-readers e, in generale, ai dispositivi che usano modalità di visualizzazione dei dati alternative. 
 			\end{itemize}
 			%punti di rottura layout
 			%comprensibilità delle informazioni
@@ -311,7 +312,7 @@ Di seguito due  esempi di stampa della stessa pagina:\\
 %nuova sezione
 \section{Implementazione}
 \subsection{Linguaggi}		
-\subsubsection{HTML e css}	%Annalisa e Matteo
+\subsubsection{HTML e CSS}	%Annalisa e Matteo
 \subsubsection{PHP} % Matteo e Nicola
 \subsubsection{SQL}	% Nicola
 \subsubsection{JavaScript} %Lisien
