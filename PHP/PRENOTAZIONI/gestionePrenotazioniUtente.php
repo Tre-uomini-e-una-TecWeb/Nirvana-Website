@@ -38,7 +38,7 @@ if($connOk){
             $errPrenotazione.='<p class=\'errore\'>Ora per la prenotazione non valida: formato non valido!</p>';
             $canAskRes = false;
         }
-        if($canMakeRes && ($ora<"09:00" || $ora >"19:00")){
+        if($canAskRes && ($ora<"09:00" || $ora >"19:00")){
             $errPrenotazione.='<p class=\'errore\'>Orario non valido: il centro é chiuso nell\'orario richiesto!</p>';
             $canAskRes = false;
         }

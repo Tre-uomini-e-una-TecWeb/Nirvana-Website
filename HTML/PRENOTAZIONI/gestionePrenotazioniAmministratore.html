@@ -37,7 +37,7 @@
             <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
         </ul>-->
         <div class="breadcrumb" id="big_breadcrumb">
-            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62; &#62; Gestione Prenotazioni</p> 
+            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; Gestione Prenotazioni</p> 
         </div>
         <div class="breadcrumb" id="mini_breadcrumb">
             <p>Livello superiore: <a href="../../index.php"><span lang="en">Home</span></a></p> 
@@ -55,6 +55,8 @@
     <main>
         <section id="gestionePrenotazioneAdmin">
             <h2>Inserisci Prenotazione</h2>
+            <p id="wrongReservationLink">Inserita in maniera errata una prenotazione? Vai alla <a href="eliminazionePrenotazioniAmministratore.php">pagina di eliminazione prenotazioni</a>!</p>
+            <br>
             <form id="insertResAmm" action="gestionePrenotazioniAmministratore.php" method="post">
                 <label for="customers" id="customersAdminLabel">Cliente:</label>
                 <elencoClienti />
@@ -101,15 +103,15 @@
                 <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
             </form>
         </section>
-        <p id="wrongReservationLink">Inserita in maniera errata una prenotazione? Vai alla <a href="eliminazionePrenotazioniAmministratore.php">pagina di eliminazione prenotazioni</a>!</p>
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
+            <p class="centrato">Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+            <br>
             <div id="prenotazioniAmministratore">
-                <p>Ricordati di <a href="../AREA PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
                     <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
                         <thead>
-                            <tr>
+                            <tr> 
                                 <th scope="col">Utente</th>
                                 <th scope="col">Etá</th>
                                 <th scope="col">Data</th>

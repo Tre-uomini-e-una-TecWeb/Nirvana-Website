@@ -5,13 +5,18 @@
 /* ---------------------------------------------- */
 
 :root{
-    --color1: #ffcc99;
-    /*--color2: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
-    --color2: #800000;
-    --color1Alpha: rgba(255, 204, 153, 0.54);
-    --color2Alpha: rgba(179, 40, 33, 0.54);
+    --mainColor: #ffcc99;
+    /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+    --secondaryColor: #800000;
+    --mainColorAlpha: #d17e7a;
+    --visitedLinkClearBackground: #C64600;
+    --linkClearBackground: #00166b;
+    --breadcrumbVisitedLink: #241F31;
+    --linkDarkBackground: white;
+    --goodAction: #96be25;
+    --badAction: #e0694b;
+    --formInput: #f6f2f1;
 }
-
 * {
     padding: 0em;
     margin: 0em;
@@ -19,7 +24,7 @@
 
 header{
     display: flex;
-    background-color: var(--color1);
+    background-color: var(--mainColor);
     padding-bottom: 0.2em;
     align-items: center;
 }
@@ -49,7 +54,7 @@ header > img {
 }
 
 h2 {
-    color: var(--color2);
+    color: var(--secondaryColor);
     text-align: left;
     margin-top: 1em;
     /* margin-bottom: 1em; */
@@ -83,6 +88,8 @@ footer{
     background-color: #ffcc99;
 }
 
+
+
 .contenitore-footer {
     display: flex;
     margin: 0 auto;
@@ -99,15 +106,17 @@ footer{
     text-align: center;
 }
 
+
 .item-footer table{
     margin: 0 auto;
-    border-bottom: hidden;
+    /* border-bottom: hidden; */
     border-left:hidden;
     border-right: hidden;
     margin-right: 1em;
 }
 
 .item-footer tr:nth-child(even) {background-color: #ffe0c1}
+
 
 .item-footer table th, td{
     padding: 0.5em 1.5em 0.5em 1.5em;
@@ -143,4 +152,51 @@ main{
 
 .carta li,.bulletNone{
     margin-left: 1em;
+}
+
+/* LOGIN PAGE */
+
+#registrazione, #accesso, #visualizzazionePrenotazione, #userData, #cambioPassword{
+    flex: auto;
+}
+ 
+#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw{
+    display: grid;
+    max-width: 50%;
+    /* padding: 2em 2em 0em 2em; */
+    row-gap: 0.5em;
+}
+
+form input, #customers , #serviceAdmin, #service{
+    border-radius: 0.5em;
+    /* border:1px solid black; */
+    padding: 0.4em;
+    background-color: var(--formInput);
+    /* text-align:center; */
+}
+
+/* TABELLE */
+table th {
+    background-color: var(--mainColorAlpha);
+}
+
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){background-color: #ffeede;}
+
+/* PAGINE PRENOTAZIONI */
+#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#insertResAmm{
+    display: grid;
+    /* padding: 2em 2em 1em 2em;  */
+    row-gap: 0.5em;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    max-width: 50%;
+    /* border: 1px solid black; */
+    margin-bottom: 1em;
 }
