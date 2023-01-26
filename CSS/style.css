@@ -26,8 +26,8 @@ body{
 main {
     margin: 2.5em;
     max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 header{
