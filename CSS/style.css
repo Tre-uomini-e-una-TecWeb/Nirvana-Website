@@ -787,10 +787,6 @@ footer a:visited{
     flex: auto;
 }
 
-#gestionePrenotazioneAdmin{
-    margin-top: 6em;
-}
-
 #separator{
     border-right: 1px solid black;
 }
@@ -813,7 +809,7 @@ form input[type=submit]{
     background-color: var(--mainColor);
 }
 
-#service {
+#service, #customers, #serviceAdmin {
     width: 100%;
 }
 
@@ -829,7 +825,6 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     margin-right: auto;
     max-width: 52vw;
     border: 1px solid black;
-    margin-bottom: 1em;
 }
 
 .errore, .conferma, #loginHelpMessage{
@@ -845,8 +840,9 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     background-color: var(--goodAction);
 }
 
-#wrongReservationLink{
+#wrongReservationLink, #reservationsLink, #reservations, #warningRegistrazione, #deleteReservations{
     text-align: center;
+    margin-top: 1em;
 }
 
 #confermaModifica{
@@ -944,12 +940,12 @@ input, select, #usernamePersonalPage{
     margin-bottom: 0.5em;
 }
 
-#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton, #updatePersonalPage{
+#registerButton, #accessButton, #confirmButton, #updateButton, #userReservationButton, #adminReservationButton, #updatePersonalPage, #adminDeleteButton{
     margin-top: 1em;
     padding: 0.3em;
 }
 
-#updateButton, #updatePersonalPage, #confirmButton, #registerButton, #accessButton, #userReservationButton, #adminReservationButton{
+#updateButton, #updatePersonalPage, #confirmButton, #registerButton, #accessButton, #userReservationButton, #adminReservationButton, #adminDeleteButton{
     font-size: 0.9em;
     padding: 0.5em;
     place-self: center;
@@ -961,9 +957,13 @@ input, select, #usernamePersonalPage{
     width: 40vw;
 }
 
-#reservations, #warningRegistrazione{
-    text-align: center;
-    margin-top: 1em;
+#adminDeleteButton{
+    margin-bottom: 1em;
+}
+
+input[type="checkbox" i]{
+    height: 1.2em;
+    width: 1.2em;
 }
 
 /**

@@ -46,21 +46,17 @@ main {
     font-size: 1.1em;
 }
 
-/* #top-right{
-    display: none;
-} */
-
 #big_breadcrumb {
     display: none;
-}
-
-#service{
-    max-width: 35vw;
 }
 
 header {
     padding: 0em;
     margin: 0em;
+}
+
+#menu{
+    margin-bottom: 6em;
 }
 
 @media screen and (max-width:940px), only screen and (max-device-width:940px) {
@@ -132,7 +128,7 @@ header {
         margin-right: 1em;
     }
 
-    #signup input, #login input, #insertRes input, #datiUtente input, #changePsw input{
+    #signup input, #login input, #datiUtente input, #changePsw input{
         margin-right: 1em;
     }
 
@@ -168,6 +164,10 @@ header {
         position: absolute;
         top: initial;
         right: 2em;
+    }
+
+    #reservationsLink{
+        margin-bottom: 4em;
     }
 
     #confermaModifica{
@@ -227,10 +227,6 @@ header {
 
     .carta {
         color:black;
-    }
-
-    #service, #customers, #serviceAdmin{
-        max-width: 40vw;
     }
 
     #puliziaViso{
