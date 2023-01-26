@@ -59,6 +59,7 @@
         <div id="contain">
             <section id="registrazione" >
                 <h2>Registrazione</h2>
+                <p id="warningRegistrazione">Attenzione! Una volta scelto, il nome utente non é piú modificabile!</p>
                 <form id="signup" method="post" action="login.php">
                     <label for="name" id="nameLabel"> Nome: </label>
                     <input type="text" id="name" name="name" required aria-required="true">
@@ -74,31 +75,28 @@
                     <input type="text" id="username" name="username" required aria-required="true">
                     <label lang="en" for="password1" id="password1Label">Password:</label>
                     <input type="password" id="password1" name="password" required aria-required="true"> 
-                    <div id="mostraPswR"><input type="checkbox" class="showPasswordCheckbox" id="mostraPswRegistrazione" onclick="statusPassLog1()">
-                    <label for="mostraPswRegistrazione"class="showPasswordCheckbox">Mostra password</label></div>
+                    <div id="mostraPswR"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswRegistrazione" onclick="statusPassLog1()">
+                    <label for="mostraPswRegistrazione"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <esitoRegistrazione />
                     <input class="print-invisible" id="registerButton" type="submit" name="registrazione" value="Iscrivimi">
-                    <p id="warningRegistrazione">Attenzione! Una volta scelto, il nome utente non é piú modificabile!</p>
                 </form>
             </section>
             <div id="separator"></div>
             <section id="accesso" >
                 <h2>Accesso</h2>
+                    <div id="help"> Se non ti ricordi la password, contatta il centro estetico.</div>
                 <form id="login" method="post" action="login.php">
                     <label for="usernameLogin" id="utenteLabel"> Nome Utente: </label>
                     <input type="text" id="usernameLogin" name="Username" required aria-required="true">
                     <label lang="en" for="password2" id="password2Label"> Password: </label>
                     <input type="password" id="password2" name="Password" required aria-required="true">
-                    <div id="mostraPswA"><input type="checkbox" class="showPasswordCheckbox" id="mostraPswAccesso" onclick="statusPassLog2()">
-                        <label for="mostraPswAccesso"class="showPasswordCheckbox">Mostra password</label></div>
+                    <div id="mostraPswA"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswAccesso" onclick="statusPassLog2()">
+                        <label for="mostraPswAccesso"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <avvisoLogin />
                     <input class="print-invisible" id="accessButton" type="submit" name="accesso" value="Invia">
                 </form>
             </section>
             </div>
-            <section>
-                <div id="help"> Se non ti ricordi la password, contatta il centro estetico</div>
-            </section>
     </main>
     <nav>
         <button onclick="goUp()" id="goUp"></button>

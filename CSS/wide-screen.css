@@ -24,6 +24,12 @@ form input, form select{
     font-size: 1.1em;
 }
 
+main{
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 
 @media screen and (max-width:1500px) {
     nav:not(#top-right) {
@@ -201,5 +207,9 @@ form input, form select{
     #service{
         max-width: 35vw;
     }
+
+    #separator{
+    border-right: 1px solid black;
+}
 
 }
