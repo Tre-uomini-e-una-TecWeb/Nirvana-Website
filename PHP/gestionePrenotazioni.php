@@ -10,8 +10,7 @@ if(array_key_exists("username", $_SESSION) && $_SESSION["username"] != ""){//l'u
     }
 }
 else{//l'utente deve effettuare l'autenticazione
-    header("HTTP/1.1 401 Unauthenticated");
-    header("Location: ../HTML/AMMINISTRAZIONE/401.html");
+    header("Location: AMMINISTRAZIONE/401.php");
 }
 die();
 ?>
