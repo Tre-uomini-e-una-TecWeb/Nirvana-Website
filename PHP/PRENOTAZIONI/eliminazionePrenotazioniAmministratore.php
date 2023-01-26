@@ -1,8 +1,7 @@
 <?php
 session_start();
 if($_SESSION["privilegi"]!="admin"){
-    header("HTTP/1.1 403 Unauthorized");
-    header("Location: ../../HTML/AMMINISTRAZIONE/403.html");
+    header("Location: ../AMMINISTRAZIONE/403.php");
     die();
 }
 function pulisciInput($value){
@@ -11,6 +10,14 @@ function pulisciInput($value){
     $value=htmlentities($value);
     return $value;
 }
+require_once "../connessione.php";
+use DB\DBAccess;
+$pagina_HTML=file_get_contents("../../HTML/PRENOTAZIONI/eliminazionePrenotazioniAmministratore.html");
+$connessione=new DBAccess();
+$connOk=$connessione->openDBConnection();
+$prenotazioni = "";
+$esitoDelete = "";
+$prenotazioni .= "<select id=\"reservation\" name=\"prenotazioneDaEliminare\">";
 
 function showReservations($connessione, $prenotazioni){
     $query_result = $connessione->getPrenotazioni();
@@ -50,10 +57,6 @@ function showReservations($connessione, $prenotazioni){
     return $prenotazioni;
 }
 
-
-ini_set('display_errors', 1);
-require_once "../connessione.php";
-use DB\DBAccess;
 $pagina_HTML=file_get_contents("../../HTML/PRENOTAZIONI/eliminazionePrenotazioniAmministratore.html");
 $connessione=new DBAccess();
 $connOk=$connessione->openDBConnection();

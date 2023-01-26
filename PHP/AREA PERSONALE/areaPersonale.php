@@ -1,8 +1,7 @@
 <?php
 session_start();
 if(!array_key_exists("username", $_SESSION) || $_SESSION["username"] == ""){//l'utente deve effettuare l'autenticazione
-    header("HTTP/1.1 401 Unauthenticated");
-    header("Location: ../../HTML/AMMINISTRAZIONE/401.html");
+    header("Location: ../AMMINISTRAZIONE/401.php");
     die();
 }
 function pulisciInput($value){
@@ -12,7 +11,6 @@ function pulisciInput($value){
     return $value;
 }
 require_once "../connessione.php";
-ini_set('display_errors', 1);
 use DB\DBAccess;
 $pagina_HTML=file_get_contents("../../HTML/AREA PERSONALE/areaPersonale.html"); 
 $connessione=new DBAccess();

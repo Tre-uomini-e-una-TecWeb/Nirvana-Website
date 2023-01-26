@@ -36,6 +36,8 @@ header {
 
 main {
     margin: 3em;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #mini_breadcrumb{
