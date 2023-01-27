@@ -202,7 +202,7 @@ class DBAccess{
     }
 
     public function updateSurnameUtente($user,$newSurname){
-        $query="UPDATE `Utenti` SET `Nome`=`Cognome`='".$newSurname."' WHERE Username='".$user."'";
+        $query="UPDATE `Utenti` SET `Cognome`='".$newSurname."' WHERE Username='".$user."'";
         $query_result=mysqli_query($this->connection,$query);
         if($query_result){
             return true;
