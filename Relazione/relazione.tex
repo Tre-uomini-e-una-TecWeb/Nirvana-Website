@@ -289,11 +289,7 @@ La progettazione del sito si è concentrata sui seguenti punti:
 					\end{itemize}
 			\end{enumerate} 
 		\item \textbf{Scelta dei punti di rottura dell'interfaccia utente:} per garantire un'interfaccia gradevole su display eterogenei sono stati utilizzati fogli di stile differenti in base alla risoluzione della parte di schermo disponibile per la visualizzazione del sito web. \\
-		 Dentro a tali fogli di stile sono state utilizzate delle \textbf{media queries} per gestire contenuti eccessivamente onerosi in termini di spazio occupato:
-			\begin{itemize}
-				\item \textit{Tabelle:} ogni tabella, a partire da una certa larghezza, viene convertita in una tabella equivalente avente una sola colonna;
-				\item \textit{Breadcrumb:} alcune breadcrumb particolamente lunghe sono sostituite da breadcrumb aventi riferimento solamente al "livello superiore", ovvero alla pagina che, nella gerarchia di navigazione del sito, si trova immediatamente sopra.
-			\end{itemize}
+		 Dentro a tali fogli di stile sono state utilizzate delle \textbf{media queries} per gestire contenuti eccessivamente onerosi in termini di spazio occupato.
 	\end{itemize}
 
 \subsection{Database}
@@ -302,19 +298,33 @@ La progettazione del sito si è concentrata sui seguenti punti:
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
-	\item Desktop;
-	\item Mobile;
-	\item Desktop almeno FUllHD;
-	\item Stampa.
+	\item Desktop: per ogni tipo di device, fornisce le regole generali;
+	\item Mobile: per device (e/o spazio di visualizzazione) con larghezza inferiore a 1150 pixels;
+	\item Desktop ad alta definizione: per device (e device con spazio di visualizzazione) con larghezza superiore a 1900 pixels;
+	\item Stampa: per ogni tipo di device, fornisce le regole da applicare quando si desidera stampare una pagina del sito.
 \end{itemize}
-Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti. \\
-L'accessibilità è garantita indipendentemente dal foglio di stile utilizzato, di seguito la spiegazione specifica per singolo foglio di stile.
+Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti.
 
 \subsection{Desktop}
+%struttura delle pagine
+	% pagine semplici
+	% pagine con card --> carte link o carte semplici
+	% pagine divise in due
+%mettere immagini (una per sezione)
+
 %% Matteo, Annalisa
 \subsection{Mobile}
-%Matteo
+Il fogli di stile relativo a dispositivi mobili viene utilizzato quando la larghezza di schermo offerta per la visualizzazione dei contenuti è inferiore a 1150 pixels: tale misura è stata scelta in modo sperimentale, basandosi inizialmente sulla larghezza della breadcrumb più verbosa.\\
+Le principale variazioni di stile riguardano i seguenti elementi:
+\begin{itemize}
+	\item \textit{Tabelle:} ogni tabella viene convertita in una tabella equivalente avente una sola colonna;
+	\item \textit{Grandezza carattere:} viene aumentata la grandezza dei caratteri in modo da migliorare la leggibilità;
+	\item \textit{Menù:} il menù utente viene inserito sotto alla breadcrumb, offrendo le stesse funzionalità della versione desktop ma utilizzando in modo più efficiente la larghezza offerta dal dispositivo.
+\end{itemize}
+Tramite \textit{media query} che si attiva quando la larghezza a disposizione per la fruizione visiva del sito è inferiore a 940 pixels, alcune breadcrumb particolamente lunghe sono sostituite da breadcrumb aventi riferimento solamente al "livello superiore", ovvero alla pagina che, nella gerarchia di navigazione del sito, si trova immediatamente sopra.
 \subsection{Wide-screen}
+%mettere immagine per mobile
+
 %Annalisa
 \pagebreak
 \subsection{Print}
@@ -363,16 +373,16 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Trattamenti Viso, Login e Registrazione, Eliminazione prenotazioni;
 		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
-		\item Javascript:
-		\item PHP:
+		\item Javascript: funzione per mostrare in chiaro la password;
+		\item PHP: backend relativo all'eliminazione delle prenotazioni;
 		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate
-		\item Relazione:
+		\item Relazione: sezione progettazione (senza la sottosezione \textit{database});
 	\end{itemize} ;
 	\item Annalisa Egidi:
 	\begin{itemize}
 		\item HTML: Sviluppo coordinato delle seguenti pagine: 404, areaPersonale, file di trattamenti e index /**/;
 		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
-		\item Javascript: /**/
+		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: /**/
 		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse.
 		\item Relazione: /**/
