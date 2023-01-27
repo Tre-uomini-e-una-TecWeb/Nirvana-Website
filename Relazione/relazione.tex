@@ -306,15 +306,25 @@ Il sito permette 4 modalità di visualizzazione:
 Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti.
 
 \subsection{Desktop}
-%struttura delle pagine
-	% pagine semplici
-	% pagine con card --> carte link o carte semplici
-	% pagine divise in due
-%mettere immagini (una per sezione)
+Il foglio di stile per dispositivi desktop definisce in primis la struttura comune a tutte le pagine del sito, la quale consta di:
+\begin{itemize}
+	\item \textbf{Logo:} è l'immagine di sfondo del titolo della pagina, il quale viene spostato a sinistra in modo da essere comunque leggibile dagli screen-readers senza essere visibile sul display;
+	\item \textbf{Breadcrumb:} è la rappresentazione del percorso che l'utente ha compiuto per arrivare ad una determinata pagina;
+	\item \textbf{Menù:} fornisce dei collegamenti rapidi a risorse offerte dal sito e ne sono offerte due versioni: una per gli amministratori (in particolare appena entrano nelle pagine di gestione delle prenotazioni) ed una per gli altri utenti;
+	\item \textbf{Footer:} contiene tutti le informazioni di contatto al visitatore e gli orari di apertura del centro estetico.
+\end{itemize}
+\fbox{\includegraphics[width=0.5\textwidth]{./graphics/top-common.pdf}}
+\fbox{\includegraphics[width=0.5\textwidth]{./graphics/bottom-common.pdf}}
+In questo foglio di stile viene definita anche la struttura grafica di base per le varie tipologie di pagine presenti nel sito:
+\begin{itemize}
+	\item \textit{Pagine semplici:} sono le pagine aventi contenuti prettamente testuali (ad esempio la pagina relativa alle consulenze);
+	\item \textit{Pagine con carte}: il contenuto di tali pagine è composto da riquadri dai bordi arrotondati aventi immagini di sfondo (le "carte" appunto); i riquadri possono essere dei link ad altre pagine oppure possono contenere del testo (ad esempio per spiegare le finalità di alcuni trattamenti);
+	\item \textit{Pagine di gestione:} il contenuto di tali pagine è diviso in due metà costituite da form e/o tabelle relative alla gestione delle prenotazioni.
+\end{itemize}
 
 %% Matteo, Annalisa
 \subsection{Mobile}
-Il fogli di stile relativo a dispositivi mobili viene utilizzato quando la larghezza di schermo offerta per la visualizzazione dei contenuti è inferiore a 1150 pixels: tale misura è stata scelta in modo sperimentale, basandosi inizialmente sulla larghezza della breadcrumb più verbosa.\\
+Il foglio di stile relativo a dispositivi mobili viene utilizzato quando la larghezza di schermo offerta per la visualizzazione dei contenuti è inferiore a 1150 pixels: tale misura è stata scelta in modo sperimentale, basandosi inizialmente sulla larghezza della breadcrumb più verbosa.\\
 Le principale variazioni di stile riguardano i seguenti elementi:
 \begin{itemize}
 	\item \textit{Tabelle:} ogni tabella viene convertita in una tabella equivalente avente una sola colonna;
@@ -372,27 +382,27 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Matteo Cusin:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Trattamenti Viso, Login e Registrazione, Eliminazione prenotazioni;
-		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
+		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main;
 		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: backend relativo all'eliminazione delle prenotazioni;
-		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate
-		\item Relazione: sezione progettazione (senza la sottosezione \textit{database});
+		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate;
+		\item Relazione: sezione progettazione (senza la sottosezione \textit{database}).
 	\end{itemize} ;
 	\item Annalisa Egidi:
 	\begin{itemize}
 		\item HTML: Sviluppo coordinato delle seguenti pagine: 404, areaPersonale, file di trattamenti e index /**/;
-		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
+		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main;
 		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: /**/
-		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse.
-		\item Relazione: /**/
+		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse;
+		\item Relazione: sezione progettazione, sottosezione per foglio di stile per la stampa. 
 	\end{itemize} ;
 	\item Nicola Baesso:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: ;
 		\item CSS:
 		\item Javascript:
-		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente
+		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
 		\item Immagini:
 		\item Relazione:
 	\end{itemize} ;
