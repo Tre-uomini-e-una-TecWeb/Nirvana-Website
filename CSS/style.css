@@ -11,6 +11,8 @@
     --goodAction: #96be25;
     --badAction: #e0694b;
     --formInput: #f6f2f1;
+    --buttonsHover: #e19b55;
+    --inputHover: #cec9c7;
 }
 
 * {
@@ -833,8 +835,20 @@ form input, #customers , #serviceAdmin, #service{
     text-align:center;
 }
 
+form input:hover, #customers:hover , #serviceAdmin:hover, #service:hover{
+    background-color: var(--inputHover);
+}
+
+form input:active, #customers:active , #serviceAdmin:active, #service:active{
+    background-color: var(--formInput);
+}
+
 form input[type=submit]{
     background-color: var(--mainColor);
+}
+
+form input[type=submit]:hover{
+    background-color: var(--buttonsHover);
 }
 
 #service, #customers, #serviceAdmin {
@@ -986,10 +1000,12 @@ input, select, #usernamePersonalPage{
 }
 
 #adminDeleteButton{
+    width: 50vw;
     margin-bottom: 1em;
 }
 
-input[type="checkbox" i]{
+input[type="checkbox"]{
+    vertical-align: middle;
     height: 1.2em;
     width: 1.2em;
 }

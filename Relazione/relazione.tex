@@ -30,7 +30,7 @@
 			\vspace{24pt}
 			
 			\begin{large}
-				\textbf{Indirizzo sito web:} \emph{http://tecweb.studenti.math.unipd.it/nbaesso}\\
+				\textbf{Indirizzo sito web:} \href{http://tecweb.studenti.math.unipd.it/nbaesso}{http://tecweb.studenti.math.unipd.it/nbaesso}\\
 			\end{large} 
 			
 			\vspace{10pt} 
@@ -167,6 +167,7 @@ Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che
 Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.\\
 \section{Analisi}
 \subsection{Studio dell'utenza finale}
+\label{analisi:utenza}
 Il sito vuole fornire informazioni riguardanti i possibili trattamenti che il centro estetico Nirvana offre, garantendo una navigazione fluida e con il minor numero di operazioni possibili.\\
 Pertanto gli utilizzatori del sito sono visitatori casuali, clienti da breve o lungo tempo del centro e la responsabile del centro assieme ai propri dipendenti.
 Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
@@ -256,26 +257,40 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 %nuova sezione
 \section{Progettazione}
 \subsection{Obbiettivi}
-L'interfaccia del sito si pone l'obiettivo di esporre in modo chiaro ed accessibile quelli che sono i servizi del centro estetico, dando anche l'opportunità di mettersi in contatto con il personale. \\
-Inoltre, ai clienti registrati si vuole dare la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
-Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard. \\
+L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email. \\
+Ai clienti registrati si vuole dare inoltre la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
+Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard suddivisa in una serie di pagine distinte. \\
 
 	\begin{itemize}
-		\item \textbf{Accessibilità:} si è deciso di assegnare uno stile comune a tutte le pagine in modo da facilitare l'orientamento e minimizzare il sovraccarico cognitivo durante la navigazione del sito. \\
+		\item \textbf{Accessibilità:} si è deciso di assegnare uno stile comune a tutte le pagine in modo da facilitare l'orientamento e minimizzare il sovraccarico cognitivo durante la navigazione. \\
+			Il sito è stato progettato in modo da consentire ad un pubblico quanto più ampio possibile di accedere ai servizi ed alle informazioni per mezzo dei seguenti accorgimenti:
 			\begin{itemize}
-				\item %opacità scritte sulle carte, in modo da essere leggibili da screen-reader
-				%i contrasti sono a norma almeno AA (speriamo)
-				%torna su nel bottone
-				%pulsante login per mobile							
-				%parlare delle tabelle
+				\item Le spiegazioni dei trattamenti offerti e dei macchinari utilizzati nel centro estetico sono rese sempre accessibili attraverso l'utilizzo della regola CSS \textit{color}: quando una scritta non deve essere visibile tramite il display, la sua opacità è resa pari a zero (non è quindi nascosta agli screen-readers);
+				\item I contrasti tra colori attigui rispettano il livello di conformità alle WCAG detto AA;
+				\item La presenza di un bottone che consenta di evitare lo scrolling verticale se si necessitasse di ritornare all'intestazione di una pagina; 
+				\item La presenza di un bottone per le azioni di login e gestione delle prenotazioni che rimanga in una zona facilmente raggiungibile dall'utente che utilizza device mobili: tale utente tende a dedicare attenzione solo parzialmente al dispositivo e quindi predilige azioni comode e veloci (swipe, tap, double tap, ecc.); 						
+				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope}: tramite essi può essere fornita una descrizione della tabella migliore agli screen-readers e, in generale, ai dispositivi che usano modalità di visualizzazione dei dati alternative.
 			\end{itemize}
-			%punti di rottura layout
-			%comprensibilità delle informazioni
+			\item \textbf{Adattabilità:} l'utilizzo di \textit{Responsive Design} tramite \textbf{media queries} rende accessibile il sito web da parte di dispositivi eterogenei per forma e funzionalità, ridimensionato i contenuti all'occorrenza;
+			\item \textbf{Usabilità:} le informazioni riportate nel sito web utilizzano una struttura sintattica semplice, volta alla chiarezza espositiva ed ad una consultazione rapida, per fornire le informazioni essenziali in modo diretto.		
 	\end{itemize}
-
-subsection{Design del sito}
-%responsive design (copiare senza foto, mettere unità di misure non fisse ma relative)
-
+\subsection{Design del sito}
+La progettazione del sito si è concentrata sui seguenti punti:
+	\begin{itemize}
+		\item \textbf{Classificazione dell'utenza finale:} si è deciso di assegnare un livello di accesso distinto per ogni tipologia di utente del sito (vedi sezione \hyperref[analisi:utenza]{\underline{Studio dell'utenza finale}}) 
+		\item \textbf{Organizzazione dei contenuti:} data la natura dell'attività commerciale che andrà a fornire servizi tramite il sito web, si è deciso di organizzarne i contenuti in tre macro-aree:
+			\begin{enumerate}
+				\item \textbf{Trattamenti e macchinari:} in questa sezione sono organizzati gerarchicamente i trattamenti (suddivisi nelle sezioni \textit{Trattamenti per il corpo} e \textit{Trattamento per il viso}, a loro volta organizzate internamente) ed i macchinari utilizzati durante i trattamenti;
+				\item \textbf{Consulenze:} tale sezione si compone di una sola pagina e descrive le modalità di analisi della pelle e del corpo del cliente per accertare l'idoneità e la necessità di sottoporlo ai trattamenti;
+				\item \textbf{Prenotazioni:} questa sezione è accessibile solamente da utenti autenticati ed espone contenuti diversi in base al tipo di utente autenticato:
+					\begin{itemize}
+						\item \textit{Amministratore:} gli utenti con privilegi di "amministrazione" possono visualizzare l'elenco completo dei clienti registrati al sito, tutte le richieste di prenotazione effettuate e possono eliminare, inserire ed approvare prenotazioni (eventualmente cambiandono orario e data);
+						\item \textit{Utente:} gli utenti senza privilegi di "amministrazione" possono effettuare delle prenotazioni e visualizzarne lo storico.  
+					\end{itemize}
+			\end{enumerate} 
+		\item \textbf{Scelta dei punti di rottura dell'interfaccia utente:} per garantire un'interfaccia gradevole su display eterogenei sono stati utilizzati fogli di stile differenti in base alla risoluzione della parte di schermo disponibile per la visualizzazione del sito web. \\
+		 Dentro a tali fogli di stile sono state utilizzate delle \textbf{media queries} per gestire contenuti eccessivamente onerosi in termini di spazio occupato.
+	\end{itemize}
 
 \subsection{Database}
 %Ciao Nicola, è tutto tuo :)
@@ -283,19 +298,43 @@ subsection{Design del sito}
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
-	\item Desktop;
-	\item Mobile;
-	\item Desktop almeno FUllHD;
-	\item Stampa.
+	\item Desktop: per ogni tipo di device, fornisce le regole generali;
+	\item Mobile: per device (e/o spazio di visualizzazione) con larghezza inferiore a 1150 pixels;
+	\item Desktop ad alta definizione: per device (e device con spazio di visualizzazione) con larghezza superiore a 1900 pixels;
+	\item Stampa: per ogni tipo di device, fornisce le regole da applicare quando si desidera stampare una pagina del sito.
 \end{itemize}
-Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti. \\
-L'accessibilità è garantita indipendentemente dal foglio di stile utilizzato, di seguito la spiegazione specifica per singolo foglio di stile.
+Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti.
 
 \subsection{Desktop}
+Il foglio di stile per dispositivi desktop definisce in primis la struttura comune a tutte le pagine del sito, la quale consta di:
+\begin{itemize}
+	\item \textbf{Logo:} è l'immagine di sfondo del titolo della pagina, il quale viene spostato a sinistra in modo da essere comunque leggibile dagli screen-readers senza essere visibile sul display;
+	\item \textbf{Breadcrumb:} è la rappresentazione del percorso che l'utente ha compiuto per arrivare ad una determinata pagina;
+	\item \textbf{Menù:} fornisce dei collegamenti rapidi a risorse offerte dal sito e ne sono offerte due versioni: una per gli amministratori (in particolare appena entrano nelle pagine di gestione delle prenotazioni) ed una per gli altri utenti;
+	\item \textbf{Footer:} contiene tutti le informazioni di contatto al visitatore e gli orari di apertura del centro estetico.
+\end{itemize}
+\fbox{\includegraphics[width=0.5\textwidth]{./graphics/top-common.pdf}}
+\fbox{\includegraphics[width=0.5\textwidth]{./graphics/bottom-common.pdf}}
+In questo foglio di stile viene definita anche la struttura grafica di base per le varie tipologie di pagine presenti nel sito:
+\begin{itemize}
+	\item \textit{Pagine semplici:} sono le pagine aventi contenuti prettamente testuali (ad esempio la pagina relativa alle consulenze);
+	\item \textit{Pagine con carte}: il contenuto di tali pagine è composto da riquadri dai bordi arrotondati aventi immagini di sfondo (le "carte" appunto); i riquadri possono essere dei link ad altre pagine oppure possono contenere del testo (ad esempio per spiegare le finalità di alcuni trattamenti);
+	\item \textit{Pagine di gestione:} il contenuto di tali pagine è diviso in due metà costituite da form e/o tabelle relative alla gestione delle prenotazioni.
+\end{itemize}
+
 %% Matteo, Annalisa
 \subsection{Mobile}
-%Matteo
+Il foglio di stile relativo a dispositivi mobili viene utilizzato quando la larghezza di schermo offerta per la visualizzazione dei contenuti è inferiore a 1150 pixels: tale misura è stata scelta in modo sperimentale, basandosi inizialmente sulla larghezza della breadcrumb più verbosa.\\
+Le principale variazioni di stile riguardano i seguenti elementi:
+\begin{itemize}
+	\item \textit{Tabelle:} ogni tabella viene convertita in una tabella equivalente avente una sola colonna;
+	\item \textit{Grandezza carattere:} viene aumentata la grandezza dei caratteri in modo da migliorare la leggibilità;
+	\item \textit{Menù:} il menù utente viene inserito sotto alla breadcrumb, offrendo le stesse funzionalità della versione desktop ma utilizzando in modo più efficiente la larghezza offerta dal dispositivo.
+\end{itemize}
+Tramite \textit{media query} che si attiva quando la larghezza a disposizione per la fruizione visiva del sito è inferiore a 940 pixels, alcune breadcrumb particolamente lunghe sono sostituite da breadcrumb aventi riferimento solamente al "livello superiore", ovvero alla pagina che, nella gerarchia di navigazione del sito, si trova immediatamente sopra.
 \subsection{Wide-screen}
+%mettere immagine per mobile
+
 %Annalisa
 \pagebreak
 \subsection{Print}
@@ -311,7 +350,7 @@ Di seguito due  esempi di stampa della stessa pagina:\\
 %nuova sezione
 \section{Implementazione}
 \subsection{Linguaggi}		
-\subsubsection{HTML e css}	%Annalisa e Matteo
+\subsubsection{HTML e CSS}	%Annalisa e Matteo
 \subsubsection{PHP} % Matteo e Nicola
 \subsubsection{SQL}	% Nicola
 \subsubsection{JavaScript} %Lisien
@@ -343,27 +382,27 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Matteo Cusin:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Trattamenti Viso, Login e Registrazione, Eliminazione prenotazioni;
-		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
-		\item Javascript:
-		\item PHP:
-		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate
-		\item Relazione:
+		\item CSS: creazione e sviluppo di mobile.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main;
+		\item Javascript: funzione per mostrare in chiaro la password;
+		\item PHP: backend relativo all'eliminazione delle prenotazioni;
+		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate;
+		\item Relazione: sezione progettazione (senza la sottosezione \textit{database}).
 	\end{itemize} ;
 	\item Annalisa Egidi:
 	\begin{itemize}
 		\item HTML: Sviluppo coordinato delle seguenti pagine: 404, areaPersonale, file di trattamenti e index /**/;
-		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main
-		\item Javascript: /**/
+		\item CSS: creazione e sviluppo di print.css, elaborazione coordinata del file style.css con particolare attenzione alle sezioni footer e main;
+		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: /**/
-		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse.
-		\item Relazione: /**/
+		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse;
+		\item Relazione: sezione progettazione, sottosezione per foglio di stile per la stampa. 
 	\end{itemize} ;
 	\item Nicola Baesso:
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: ;
 		\item CSS:
 		\item Javascript:
-		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente
+		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
 		\item Immagini:
 		\item Relazione:
 	\end{itemize} ;
