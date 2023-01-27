@@ -1000,10 +1000,12 @@ input, select, #usernamePersonalPage{
 }
 
 #adminDeleteButton{
+    width: 50vw;
     margin-bottom: 1em;
 }
 
-input[type="checkbox" i]{
+input[type="checkbox"]{
+    vertical-align: middle;
     height: 1.2em;
     width: 1.2em;
 }
