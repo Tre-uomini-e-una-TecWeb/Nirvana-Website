@@ -68,37 +68,47 @@
                 <label for="serviceAdmin" id="serviceAdminLabel">Servizio:</label>
                 <select id="serviceAdmin" name="service" required aria-required="true">
                     <option value="" selected>Selezionare un servizio</option>
-                    <option value="puliziaViso">Pulizia viso</option>
-                    <option value="idratante">Trattamento viso idratante</option>
-                    <option value="antiAge">Trattamento viso anti-age</option>
-                    <option value="effettoLifting">Trattamento viso effetto lifting</option>
-                    <option value="rimpolpante">Trattamento viso rimpolpante</option>
-                    <option value="seboRegolatore">Trattamento viso sebo-regolatore</option>
-                    <option value="desensibilizzante">Trattamento viso desensibilizzante</option>
-                    <option value="ceretta">Epilazione con ceretta</option>
-                    <option value="brasiliana">Epilazione con brasiliana</option>
-                    <option value="pastaZucchero">Epilazione con pasta di zucchero</option>
-                    <option value="rilassanteBase">Massaggio rilassante base</option>
-                    <option value="thailandese">Massaggio rilassante thailandese</option>
-                    <option value="hawaiano">Massaggio rilassante hawaiano</option>
-                    <option value="californiano">Massaggio rilassante californiano</option>
-                    <option value="ayurvedico">Massaggio olistico ayurvedico</option>
-                    <option value="chakra">Massaggio olistico <span lang="in">chakra</span></option>
-                    <option value="riflessologiaPlantare">Massaggio olistico per riflessologia plantare</option>
-                    <option value="decontratturante">Massaggio decontratturante</option>
-                    <option value="tonificante">Massaggio tonificante</option>
-                    <option value="linfodrenanteEmolinfatico">Massaggio linfodrenante e emolinfatico</option>
-                    <option value="lipolitico">Massaggio modellante lipolitico</option>
-                    <option value="anticellulitico">Massaggio modellante anticellulitico</option>
-                    <option value="manicurePosaSmalto">Manicure con posa smalto</option>
-                    <option value="manicureSemipermanente">Manicure con semipermanente</option>
-                    <option value="manicureGelCartine">Manicure con gel tramite cartine</option>
-                    <option value="manicureGelTip">Manicure con gel tramite tip</option>
-                    <option value="pedicurePosaSmalto">Pedicure con posa smalto</option>
-                    <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
-                    <option value="pedicureCurativa">Pedicure curativa</option>
-                    <option value="consulenzaViso">Consulenza viso</option>
-                    <option value="consulenzaCorpo">Consulenza corpo</option>
+                    <optgroup label="Trattamenti Viso"></optgroup>
+                        <option value="puliziaViso">Pulizia viso</option>
+                        <option value="idratante">Trattamento viso idratante</option>
+                        <option value="antiAge">Trattamento viso anti-age</option>
+                        <option value="effettoLifting">Trattamento viso effetto lifting</option>
+                        <option value="rimpolpante">Trattamento viso rimpolpante</option>
+                        <option value="seboRegolatore">Trattamento viso sebo-regolatore</option>
+                        <option value="desensibilizzante">Trattamento viso desensibilizzante</option>
+                    </optgroup>
+                    <optgroup label="Epilazione">
+                        <option value="ceretta">Epilazione con ceretta</option>
+                        <option value="brasiliana">Epilazione con brasiliana</option>
+                        <option value="pastaZucchero">Epilazione con pasta di zucchero</option>
+                    </optgroup>
+                    <optgroup label="Massaggi">
+                        <option value="rilassanteBase">Massaggio rilassante base</option>
+                        <option value="thailandese">Massaggio rilassante thailandese</option>
+                        <option value="hawaiano">Massaggio rilassante hawaiano</option>
+                        <option value="californiano">Massaggio rilassante californiano</option>
+                        <option value="ayurvedico">Massaggio olistico ayurvedico</option>
+                        <option value="chakra">Massaggio olistico <span lang="in">chakra</span></option>
+                        <option value="riflessologiaPlantare">Massaggio olistico per riflessologia plantare</option>
+                        <option value="decontratturante">Massaggio decontratturante</option>
+                        <option value="tonificante">Massaggio tonificante</option>
+                        <option value="linfodrenanteEmolinfatico">Massaggio linfodrenante e emolinfatico</option>
+                        <option value="lipolitico">Massaggio modellante lipolitico</option>
+                        <option value="anticellulitico">Massaggio modellante anticellulitico</option>
+                    </optgroup>
+                    <optgroup label="Manicure e Pedicure">
+                        <option value="manicurePosaSmalto">Manicure con posa smalto</option>
+                        <option value="manicureSemipermanente">Manicure con semipermanente</option>
+                        <option value="manicureGelCartine">Manicure con gel tramite cartine</option>
+                        <option value="manicureGelTip">Manicure con gel tramite tip</option>
+                        <option value="pedicurePosaSmalto">Pedicure con posa smalto</option>
+                        <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
+                        <option value="pedicureCurativa">Pedicure curativa</option>
+                    </optgroup>
+                    <optgroup label="Consulenze">
+                        <option value="consulenzaViso">Consulenza viso</option>
+                        <option value="consulenzaCorpo">Consulenza corpo</option>
+                    </optgroup>
                 </select>
                 <esitoForm />
                 <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
