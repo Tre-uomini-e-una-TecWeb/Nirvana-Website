@@ -313,8 +313,19 @@ Il foglio di stile per dispositivi desktop definisce in primis la struttura comu
 	\item \textbf{Menù:} fornisce dei collegamenti rapidi a risorse offerte dal sito e ne sono offerte due versioni: una per gli amministratori (in particolare appena entrano nelle pagine di gestione delle prenotazioni) ed una per gli altri utenti;
 	\item \textbf{Footer:} contiene tutti le informazioni di contatto al visitatore e gli orari di apertura del centro estetico.
 \end{itemize}
-\fbox{\includegraphics[width=0.5\textwidth]{./graphics/top-common.pdf}}
-\fbox{\includegraphics[width=0.5\textwidth]{./graphics/bottom-common.pdf}}
+
+\begin{figure}[h]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/top-common.pdf}}
+	\caption{Intestazione delle pagine}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/bottom-common.pdf}}
+	\caption{Intestazione delle pagine}
+\end{figure}
+
 In questo foglio di stile viene definita anche la struttura grafica di base per le varie tipologie di pagine presenti nel sito:
 \begin{itemize}
 	\item \textit{Pagine semplici:} sono le pagine aventi contenuti prettamente testuali (ad esempio la pagina relativa alle consulenze);
@@ -342,8 +353,23 @@ Il file relativo alla stampa e' stato implementato in modo tale da rimuovere le 
 Per facilitare la leggibilità delle informazioni in modalità cartacea, quelle che nei file .html sono classificate come carte, vengono visualizzate sottoforma di semplice testo.\\
 La scelta voluta di non rimuovere il colore di background permette all'utente di scegliere l'opzione "bianco e nero" e "grafica di background" presente in ogni finestra di dialogo stampa dei motori di ricerca favorendo l'esperienza di personalizzazione.\\
 Di seguito due  esempi di stampa della stessa pagina:\\
-	\fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-w.pdf}}
-	\fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-wo.pdf}}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+	  \centering
+	  \fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-w.pdf}}
+	  \caption{Stampa con colori}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+	  \centering
+	  \fbox{\includegraphics[width=0.5\textwidth]{./graphics/NirvanaTrattamentiViso-w.pdf}}
+	  \caption{Stampa senza colori}
+	\end{subfigure}
+	\caption{Possibilità di stampa}
+\end{figure}
+	
+	
 %includere l'uso di font con le grazie
 %dire dei cambiamenti recenti
 
