@@ -167,6 +167,7 @@ Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che
 Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.\\
 \section{Analisi}
 \subsection{Studio dell'utenza finale}
+\label{analisi:utenza}
 Il sito vuole fornire informazioni riguardanti i possibili trattamenti che il centro estetico Nirvana offre, garantendo una navigazione fluida e con il minor numero di operazioni possibili.\\
 Pertanto gli utilizzatori del sito sono visitatori casuali, clienti da breve o lungo tempo del centro e la responsabile del centro assieme ai propri dipendenti.
 Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
@@ -268,15 +269,32 @@ Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permett
 				\item I contrasti tra colori attigui rispettano il livello di conformità alle WCAG detto AA;
 				\item La presenza di un bottone che consenta di evitare lo scrolling verticale se si necessitasse di ritornare all'intestazione di una pagina; 
 				\item La presenza di un bottone per le azioni di login e gestione delle prenotazioni che rimanga in una zona facilmente raggiungibile dall'utente che utilizza device mobili: tale utente tende a dedicare attenzione solo parzialmente al dispositivo e quindi predilige azioni comode e veloci (swipe, tap, double tap, ecc.); 						
-				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope}: tramite essi può essere fornita una descrizione della tabella migliore agli screen-readers e, in generale, ai dispositivi che usano modalità di visualizzazione dei dati alternative. 
+				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope}: tramite essi può essere fornita una descrizione della tabella migliore agli screen-readers e, in generale, ai dispositivi che usano modalità di visualizzazione dei dati alternative.
 			\end{itemize}
-			%punti di rottura layout
-			%comprensibilità delle informazioni
+			\item \textbf{Adattabilità:} l'utilizzo di \textit{Responsive Design} tramite \textbf{media queries} rende accessibile il sito web da parte di dispositivi eterogenei per forma e funzionalità, ridimensionato i contenuti all'occorrenza;
+			\item \textbf{Usabilità:} le informazioni riportate nel sito web utilizzano una struttura sintattica semplice, volta alla chiarezza espositiva ed ad una consultazione rapida, per fornire le informazioni essenziali in modo diretto.		
 	\end{itemize}
-
 \subsection{Design del sito}
-%responsive design (copiare senza foto, mettere unità di misure non fisse ma relative), parlare del modo in cui sono stati strutturati i contenuti
-
+La progettazione del sito si è concentrata sui seguenti punti:
+	\begin{itemize}
+		\item \textbf{Classificazione dell'utenza finale:} si è deciso di assegnare un livello di accesso distinto per ogni tipologia di utente del sito (vedi sezione \hyperref[analisi:utenza]{\underline{Studio dell'utenza finale}}) 
+		\item \textbf{Organizzazione dei contenuti:} data la natura dell'attività commerciale che andrà a fornire servizi tramite il sito web, si è deciso di organizzarne i contenuti in tre macro-aree:
+			\begin{enumerate}
+				\item \textbf{Trattamenti e macchinari:} in questa sezione sono organizzati gerarchicamente i trattamenti (suddivisi nelle sezioni \textit{Trattamenti per il corpo} e \textit{Trattamento per il viso}, a loro volta organizzate internamente) ed i macchinari utilizzati durante i trattamenti;
+				\item \textbf{Consulenze:} tale sezione si compone di una sola pagina e descrive le modalità di analisi della pelle e del corpo del cliente per accertare l'idoneità e la necessità di sottoporlo ai trattamenti;
+				\item \textbf{Prenotazioni:} questa sezione è accessibile solamente da utenti autenticati ed espone contenuti diversi in base al tipo di utente autenticato:
+					\begin{itemize}
+						\item \textit{Amministratore:} gli utenti con privilegi di "amministrazione" possono visualizzare l'elenco completo dei clienti registrati al sito, tutte le richieste di prenotazione effettuate e possono eliminare, inserire ed approvare prenotazioni (eventualmente cambiandono orario e data);
+						\item \textit{Utente:} gli utenti senza privilegi di "amministrazione" possono effettuare delle prenotazioni e visualizzarne lo storico.  
+					\end{itemize}
+			\end{enumerate} 
+		\item \textbf{Scelta dei punti di rottura dell'interfaccia utente:} per garantire un'interfaccia gradevole su display eterogenei sono stati utilizzati fogli di stile differenti in base alla risoluzione della parte di schermo disponibile per la visualizzazione del sito web. \\
+		 Dentro a tali fogli di stile sono state utilizzate delle \textbf{media queries} per gestire contenuti eccessivamente onerosi in termini di spazio occupato:
+			\begin{itemize}
+				\item \textit{Tabelle:} ogni tabella, a partire da una certa larghezza, viene convertita in una tabella equivalente avente una sola colonna;
+				\item \textit{Breadcrumb:} alcune breadcrumb particolamente lunghe sono sostituite da breadcrumb aventi riferimento solamente al "livello superiore", ovvero alla pagina che, nella gerarchia di navigazione del sito, si trova immediatamente sopra.
+			\end{itemize}
+	\end{itemize}
 
 \subsection{Database}
 %Ciao Nicola, è tutto tuo :)
