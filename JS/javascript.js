@@ -7,16 +7,17 @@ function userMenu() {
 }
 
 function goUp() {
-  if(document.getElementById("goUp").style.opacity == '1'){
+  if(document.getElementById("goUp").classList.contains("goUpVis")){
     let elem = document.getElementById("cima");
     window.scroll({
       top: elem.offsetTop, 
       left: 0, 
       behavior: 'smooth' 
     });
-    document.getElementById("goUp").style.opacity = '0';
-    document.getElementById("goUp").style.cursor = 'default';
-    document.getElementById("goUp").style.padding = '0';
+    document.getElementById("goUp").classList.remove("goUpNonVis");
+    // document.getElementById("goUp").style.opacity = '0';
+    // document.getElementById("goUp").style.cursor = 'default';
+    // document.getElementById("goUp").style.padding = '0';
   }
 }
 
