@@ -402,8 +402,33 @@ Di seguito due  esempi di stampa della stessa pagina:
 \end{figure}
 
 %nuova sezione
-\section{Implementazione}	
-\subsection{HTML e CSS}	%Annalisa e Matteo
+\section{Implementazione}
+\subsection{Linguaggi}		
+\subsubsection{HTML}
+Il progetto è stato realizzato tramite il linguaggio \textit{HTML5} ma si è resa possibile la compatibilità con browser più datati seguendo le linee guida del corso di Tecnologie Web e quelle del \textit{W3C}.
+Si è utilizzato \textit{HTML5} piuttosto che \textit{XHTML} in quanto il pubblico cui è destinato il sito web sarà indicativamente di età compresa fra i 16 ed i 60; si presume che la clientela si distribuirà in modo omogeneo in questa fascia d'età, avente quindi a disposizione motori di ricerca tendenzialmente più recenti.\\
+I file \textit{.html} si presentano con l'obbiettivo di mantenere struttura, presentazione e contenuto il più possibile separati fra loro.
+
+Per quanto concerne i \textit{tag}:
+\begin{itemize}
+	\item si sono utilizzati \textit{tag} semantici che arricchiscono il progetto in accessibilità;
+	\item si è controllata la chiusura di tutti i \textit{tag};
+	\item i \textit{metatag} presenti nella sezione \textit{head} dei file \textit{.html} aiutano il sito nel ranking di ricerca e sono di fondamentale importanza per incrementare l'accessibilità.
+\end{itemize}
+
+\subsubsection{CSS}
+La modellazione del layout del sito è stata implementata tramite CSS3.\\
+Per rendere l'esperienza di navigazione fluida tra i vari dispositivi, sono state utilizzate misure relative ed in percentuale.\\
+Abbiamo creato 4 fogli di stile per implementare il layout secondo lo specifico ambito d'uso:
+\begin{itemize}
+	\item \textit{style.css}: foglio di stile predefinito;
+	\item \textit{mobile.css}: viene utilizzato dai browser nella condizione in cui lo schermo/spazio di visualizzazione abbia larghezza inferiore a 1150px;
+	\item \textit{wide-screen.css}: viene utilizzato dai browser nella condizione in cui lo schermo/spazio di visualizzazione abbia larghezza superiore a 1900px;
+	\item \textit{print.css}: viene presa in considerazione all'atto di stampa delle pagine del sito.
+\end{itemize}
+All'interno dei \textit{.css} prodotti è possibile trovare quantopiù offerto dal \textit{CSS3}, come per esempio: flexbox, grid, media queries, variabili, selettori, etc.\\
+Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazione di un layout  "a carte" accattivante che non compromettesse l'accessibilità.
+
 \subsection{PHP} % Matteo e Nicola
 
 \subsubsection{Autenticazione}
