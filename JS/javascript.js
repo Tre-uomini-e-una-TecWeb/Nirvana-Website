@@ -108,10 +108,6 @@ function makeTime(x){
   document.getElementById(x).type='time';
 }
 
-function returnText(x){
-  document.getElementById(x).type='text';
-}
-
 function LogOut() {
   sessionStorage.setItem('loggedIn', 'false');
 }
