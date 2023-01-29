@@ -950,7 +950,7 @@ input, select, #usernamePersonalPage{
     margin-right: 1em;
 }
 
-#mostraPswR, #mostraPswA, #updateButton, .print-invisible, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione{
+#mostraPswR, #mostraPswA, #updateButton, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione, #registerButton, #accessButton, #updatePersonalPage, #userReservationButton, #confirmButton{
     grid-column: 1/3;
 }
 
