@@ -29,15 +29,24 @@ if($connOk){
         $canAskRes = true;
         $cliente = $_SESSION["username"];
         $data = pulisciInput($_POST['date']);
+        $actual_date=date("Y-m-d");
         if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$data)){
             $errPrenotazione.='<p class=\'errore\'>Data per la prenotazione non valida: formato non valido!</p>';
             $canAskRes = false;
+        } elseif($actual_date>$data){
+            $errPrenotazione.='<p class=\'errore\'>Data per la prenotazione non valida (inserita data passata)!</p>';
+            $canAskRes = false;
         }
         $ora = pulisciInput($_POST['hour']);
+        $actual_time=date("H:i");
         if (!preg_match("/\d{2}:\d{2}/",$ora)){
             $errPrenotazione.='<p class=\'errore\'>Ora per la prenotazione non valida: formato non valido!</p>';
             $canAskRes = false;
+        } elseif($actual_date==$data && $actual_time>$ora){
+            $errPrenotazione.='<p class=\'errore\'>Data-ora per la prenotazione non valida (inserita data-ora passata)!</p>';
+            $canAskRes = false;
         }
+
         if($canAskRes && ($ora<"09:00" || $ora >"19:00")){
             $errPrenotazione.='<p class=\'errore\'>Orario non valido: il centro é chiuso nell\'orario richiesto!</p>';
             $canAskRes = false;
