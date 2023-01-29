@@ -68,7 +68,7 @@
             <li><a href="../CONSULENZE/consulenze.html">Consulenze
                 <div class="carta" id="consulenze"></div></a></li>
             <li><a href="../../PHP/gestionePrenotazioni.php">Prenotazioni
-                <div class="carta" id="prenotazione"><br><br /></div></a></li>
+                <div class="carta" id="prenotazione"><br></div></a></li>
         </ul>
     </main>
     <nav class="print-invisible">
@@ -97,7 +97,8 @@
             <div class="item-footer">
                 <dt></dt>
                 <dd>
-                    <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                    <p id="sum" class="hidden">Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario.</p>
+                    <table aria-describedby="sum">
                         <caption>Orari</caption>
                         <thead>
                             <tr>
