@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(array_key_exists("username", $_SESSION) && $_SESSION["username"] != ""){//l'utente ha effettuato l'autenticazione
-    header("Location: ../../HTML/AREA PERSONALE/areaPersonale.html");
+    header("Location: ../../HTML/AREA_PERSONALE/areaPersonale.html");
     die();
 }
 function pulisciInput($value){
@@ -12,7 +12,7 @@ function pulisciInput($value){
 }
 require_once "../connessione.php";
 use DB\DBAccess;
-$pagina_HTML=file_get_contents("../../HTML/AREA PERSONALE/login.html");
+$pagina_HTML=file_get_contents("../../HTML/AREA_PERSONALE/login.html");
 $connessione=new DBAccess();
 $connOk=$connessione->openDBConnection();
 $esitoRegistrazione = "";
@@ -33,7 +33,7 @@ if(isset($_POST['accesso'])){
                 else{
                     $_SESSION["privilegi"] = "admin";
                 }
-                header("Location: ../../PHP/AREA PERSONALE/areaPersonale.php");
+                header("Location: ../../PHP/AREA_PERSONALE/areaPersonale.php");
                 die();
             }
             else{

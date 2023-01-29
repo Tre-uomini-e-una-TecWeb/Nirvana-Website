@@ -6,7 +6,7 @@ if($_SESSION["privilegi"]!="admin"){
 }
 require_once "../connessione.php";
 use DB\DBAccess;
-$pagina_HTML=file_get_contents("../../HTML/AREA PERSONALE/elencoClienti.html");
+$pagina_HTML=file_get_contents("../../HTML/AREA_PERSONALE/elencoClienti.html");
 $connessione=new DBAccess();
 $connOk=$connessione->openDBConnection();
 $clienti="";
