@@ -63,9 +63,12 @@
 	\fancyhf{}
 	
 	\lhead{
+		\includegraphics[width=0.1\linewidth]{graphics/icon2.png}
+	}
+		\rhead{
 		Centro Estetico Nirvana
 	}
-	
+
 	\lfoot{ %piè di pagina a sx
 		Relazione Progetto Tecnologie Web
 	}
@@ -373,19 +376,14 @@ Tramite \textit{media query} che si attiva quando la larghezza a disposizione pe
 	\caption{Breadcrumb, bottone e menù}
 \end{figure}
 
+%TODO Annalisa
 \subsection{Wide-screen}
-%mettere immagine per mobile
 
-%Annalisa
-\pagebreak
 \subsection{Print}
 Il file relativo alla stampa è stato implementato in modo tale da rimuovere le funzionalità interattive quali link, bottoni, breadcrumb e sezione menù.\\
 Per facilitare la leggibilità delle informazioni in modalità cartacea, quelle che nei file .html sono classificate come carte, vengono visualizzate sottoforma di semplice testo.\\
 La scelta voluta di non rimuovere il colore di background permette all'utente di scegliere l'opzione "bianco e nero" e "grafica di background" presente in ogni finestra di dialogo stampa dei motori di ricerca favorendo l'esperienza di personalizzazione.\\
 Di seguito due  esempi di stampa della stessa pagina:
-%includere l'uso di font con le grazie
-%dire dei cambiamenti recenti
-
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.5\textwidth}
@@ -449,7 +447,6 @@ Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazio
 \subsubsection{Amministrazione}
 \paragraph*{Errore 401}
 \paragraph*{Errore 403}
-
 \subsection{SQL}	% Nicola
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, quindi il browser elabora il codice. È usato per il comportamento del sito e per creare dei simulazioni nei siti.\\
@@ -474,9 +471,6 @@ Le altre funzione si occupano nel cambiamento del tipo di input:
         \item \textit{Mostra password:} questa checkbox quando viene attivata fa cambiare il tipo di input per i password al tipo di testo
         \item \textit{Tabella admin:} su questa tabella vengono mostrate le prenotazione che devono essere accettate, rifiutate o quelle nel futuro. Se l'amministratore decide di cambiare la data o ora dei prenotazioni non accettato, il tipo di input nella tabelle viene cambiato nel formato apposto.
 \end{itemize}
-
-
-
  
 %nuova sezione
 \section{Validazione}
