@@ -7,7 +7,7 @@
     <meta name="description"
         content="Questa pagina e' dedicata al centro estetico Nirvana. Nel sito sono descritti i trattamenti per il viso e per il corpo, le consulenze offerte nonché la possibilitá di prenotare un trattamento o una consulenza." />
     <meta name="keyword"
-        content="nirvana, centro estetico, trattamenti viso, trattamenti corpo, massaggi, depilazioni, consulenze estetiche" />
+        content="Centro estetico Nirvana, trattamenti viso, trattamenti corpo, massaggi, depilazioni, consulenze estetiche" />
     <meta name="author" content="Lisien Skenderi, Nicola Baesso, Matteo Cusin, Annalisa Egidi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -59,11 +59,11 @@
             <li><a href="../CONSULENZE/consulenze.html">Consulenze
                 <div class="carta" id="consulenze"></div></a></li>
             <li><a href="../../PHP/gestionePrenotazioni.php">Prenotazioni
-                <div class="carta" id="prenotazione"><br><br /></div></a></li>
+                <div class="carta" id="prenotazione"><br></div></a></li>
         </ul>
     </main>
     <nav class="print-invisible">
-        <button onclick="goUp()" id="goUp"></button>
+        <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
     </nav>
 
     <footer>
@@ -88,7 +88,8 @@
             <div class="item-footer">
                 <dt></dt>
                 <dd>
-                    <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                    <p id="sum" class="hide print-invisible">Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario.</p>
+                    <table aria-describedby="sum">
                         <caption>Orari</caption>
                         <thead>
                             <tr>

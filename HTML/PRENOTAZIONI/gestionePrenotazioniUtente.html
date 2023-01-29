@@ -5,7 +5,7 @@
     <title>Gestione Prenotazioni - Centro Estetico Nirvana</title>
     <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
     <meta name="description" content="Questa pagina e' dedicata alla gestione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
-    <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
+    <meta name="keyword" content="Centro estetico Nirvana, gestione prenotazioni" />
     <meta name="author" content="Nicola Baesso" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -55,7 +55,7 @@
                 <input type="time" id="hour" name="hour" min="09:00" max="19:00" required aria-required="true">
                 <label for="service" id="serviceLabel">Trattamento:</label>
                 <select id="service" name="service">
-                    <optgroup label="Trattamenti Viso"></optgroup>
+                    <optgroup label="Trattamenti Viso">
                         <option value="puliziaViso">Pulizia viso</option>
                         <option value="idratante">Trattamento viso idratante</option>
                         <option value="antiAge">Trattamento viso anti-age</option>
@@ -92,7 +92,7 @@
                         <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
                         <option value="pedicureCurativa">Pedicure curativa</option>
                     </optgroup>
-                    <optgroup label="Consulenze"></optgroup>
+                    <optgroup label="Consulenze">
                         <option value="consulenzaViso">Consulenza viso</option>
                         <option value="consulenzaCorpo">Consulenza corpo</option>
                     </optgroup>
@@ -105,7 +105,8 @@
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <div id="prenotazioniUtente">
-                <table summary="Tabella che contiene tutte le prenotazioni effettuate ed il loro stato." id="tabellaPrenotazioniUtente">
+                <p id="sumPren" class="hide print-invisible">Tabella che contiene tutte le prenotazioni effettuate ed il loro stato.</p>
+                <table aria-describedby="sumPren" id="tabellaPrenotazioniUtente">
                     <thead>
                         <tr>
                             <th scope="col">Richiesta</th>
@@ -123,7 +124,7 @@
         </div>
     </main>
     <nav class="print-invisible">
-        <button onclick="goUp()" id="goUp"></button>
+        <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
     </nav>
 
     <footer>
@@ -148,7 +149,8 @@
             <div class="item-footer">
                 <dt></dt>
                 <dd>
-                    <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                    <p id="sum" class="hide print-invisible">Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario.</p>
+                    <table aria-describedby="sum">
                         <caption>Orari</caption>
                         <thead>
                             <tr>

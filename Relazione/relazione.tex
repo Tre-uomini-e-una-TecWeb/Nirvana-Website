@@ -302,9 +302,9 @@ La progettazione del sito si è concentrata sui seguenti punti:
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
 	\item \textit{Desktop:} per ogni tipo di device, fornisce le regole generali;
-	\item \textit{Mobile:} per device (e/o spazio di visualizzazione) con larghezza inferiore a 1150 pixels;
-	\item \textit{Desktop ad alta definizione:} per device (e device con spazio di visualizzazione) con larghezza superiore a 1900 pixels;
-	\item \textit{Stampa:} per ogni tipo di device, fornisce le regole da applicare quando si desidera stampare una pagina del sito.
+	\item \textit{Mobile:} per device mobili aventi dimensioni ridotte;
+	\item \textit{Desktop ad alta definizione:} per device che si sviluppano in larghezza;
+	\item \textit{Stampa:} per ogni tipo di device, fornisce le regole da applicare quando si desidera stampare o esportare in formato \textit{PDF} una pagina del sito.
 \end{itemize}
 Il passaggio da una modalità di visualizzazione ad un'altra è stata gestita in modo da dare continuità alla forma dei contenuti.
 
@@ -426,9 +426,51 @@ Abbiamo creato 4 fogli di stile per implementare il layout secondo lo specifico 
 \end{itemize}
 All'interno dei \textit{.css} prodotti è possibile trovare quantopiù offerto dal \textit{CSS3}, come per esempio: flexbox, grid, media queries, variabili, selettori, etc.\\
 Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazione di un layout  "a carte" accattivante che non compromettesse l'accessibilità.
-\subsubsection{PHP} %TODO Matteo e Nicola
-\subsubsection{SQL}	%TODO Nicola
-\subsubsection{JavaScript} %TODO Lisien
+
+\subsection{PHP} % Matteo e Nicola
+
+\subsubsection{Autenticazione}
+\paragraph*{Login}
+\paragraph*{Logout}
+
+\subsubsection{Connessione}
+
+\subsubsection{Area personale}
+\paragraph*{Area personale}
+\paragraph*{Elenco clienti}
+
+\subsubsection{Prenotazioni}
+\paragraph*{Gestione prenotazioni lato utente}
+\paragraph*{Gestione prenotazioni lato amministratore}
+\paragraph*{Eliminazione prenotazioni} %Matteo
+
+\subsubsection{Amministrazione}
+\paragraph*{Errore 401}
+\paragraph*{Errore 403}
+\subsubsection{SQL}	% Nicola
+\subsection{JavaScript} %Lisien
+\textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, quindi il browser elabora il codice. È usato per il comportamento del sito e per creare dei simulazioni nei siti.\\
+Nel nostro cosa é usato per cambiare i classi di stile dei elementi HTML, e il tipo di input nei vari form e tabelle.\\
+Sono i elementi che vengono modificate le classi dei stili, con l'uso di toggle, add, o remove:
+\begin{itemize}
+        \item \textit{Menú:} se la menú viene clicata i sui voci compaiano o spariscono a seconda del fatto di essere aperto o no. Con una semplice funzione di toggle questa viene realizato.
+        \item \textit{Menú personale:} con ogni caricamento della pagina un funzione di JavaScript controlla se é stato effettuato il Log In o no. Se non é fatto allora su questa menú che compara e sparisce nel stesso modo del menú principale, viene dimostrato il link di Log In. Mentre se e stato effettuato viene dimostrato Log Out.
+\end{itemize}
+Con JavaScript é possibile aggiungere dei funzioni che ascoltano quando un azione e fatto dal utente. Due dei questi sono:
+\begin{itemize}
+        \item \textit{Click:} questa funzione semplicemente toglie le classi che fanno comparire le due menú se l'utente preme in un area che non é la menú.
+        \item \textit{Scroll:} ci sono due funzioni che controllano quando l'utente fa il scroll. Uno di questi e spiegato nella sezione di sotto. L'altro controlla quando l'utente effettua il scroll per andare su. Se l'utente va su compare una pallina fissato che ti può mandare alla cima della pagina.
+\end{itemize}
+Altri funzioni di JavaScript sono fatti per i schermi piccoli per facilitare al utente di accedere al menú personale più facilmente. Questa funzione in particolare blocca questa menú per non andare sopra il footer della pagina.
+\begin{itemize}
+        \item \textit{Menú personale:} se la lunghezza della window fa superare quella della body, il funzione cambia le classi e modifica uno degli attributi, di cui é l'attributo top. Il valore del questo attributo viene calcolato dal la somma delle lunghezze della header e la body. 
+\end{itemize}
+L'ultima funzione che si cambia i classi e quella che fa il scroll in modalità smooth quando il bottone per andare su viene premuto.\\
+Le altre funzione si occupano nel cambiamento del tipo di input:
+\begin{itemize}
+        \item \textit{Mostra password:} questa checkbox quando viene attivata fa cambiare il tipo di input per i password al tipo di testo
+        \item \textit{Tabella admin:} su questa tabella vengono mostrate le prenotazione che devono essere accettate, rifiutate o quelle nel futuro. Se l'amministratore decide di cambiare la data o ora dei prenotazioni non accettato, il tipo di input nella tabelle viene cambiato nel formato apposto.
+\end{itemize}
 
 %nuova sezione
 \section{Validazione}
@@ -448,10 +490,10 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Lisien Skenderi: 
 	\begin{itemize}
 		\item HTML: Sviluppo delle seguenti pagine: Index, Consulenze, Gestione Prenotazioni - Cliente;
-		\item CSS:  elaborazione coordinata del file style.css con particolare attenzione alle sezioni header e breadcrumb
-		\item Javascript: Sviluppo delle funzioni per i menú
-		\item PHP:
-		\item Immagini:
+		\item CSS:  Elaborazione coordinata del file style.css con particolare attenzione alle sezioni header, breadcrumb e le altre navigazione
+		\item Javascript: Sviluppo delle funzioni per i menú principale, menú del utente e il bottone che ti manda alla cima
+		\item PHP: Backend relativo al prenotazione utente, e realizzazione della Log Out
+		\item Immagini: Acquisizione usato come imagine del sfondo per i bottoni
 		\item Relazione:
 	\end{itemize}
 	\item Matteo Cusin:

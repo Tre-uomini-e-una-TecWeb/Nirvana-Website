@@ -6,7 +6,7 @@
         <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
 
         <meta name="description" content="Pagina dedicata ai trattamenti per il corpo del centro estetico Nirvana"/>
-        <meta name="keywords" content="nirvana, corpo, trattamenti"/>
+        <meta name="keywords" content="Centro estetico Nirvana, corpo, trattamenti, epilazione, manicure, pedicure"/>
         <meta name="author" content="Nicola Baesso"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -72,7 +72,7 @@
                 </ul>
         </main>
     <nav class="print-invisible">
-        <button onclick="goUp()" id="goUp"></button>
+        <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
     </nav>
         <footer>
             <hr>
@@ -96,7 +96,8 @@
                 <div class="item-footer">
                     <dt></dt>
                     <dd>
-                        <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                        <p id="sum" class="hide print-invisible">Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario.</p>
+                    <table aria-describedby="sum">
                             <caption>Orari</caption>
                             <thead>
                                 <tr>

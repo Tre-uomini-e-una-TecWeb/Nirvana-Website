@@ -5,7 +5,7 @@
     <title>Gestione Prenotazioni - Centro Estetico Nirvana</title>
     <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
     <meta name="description" content="Questa pagina e' dedicata alla gestione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
-    <meta name="keyword" content="Centro estetico Nirvana, gestione, amministrazione" />
+    <meta name="keyword" content="Centro estetico Nirvana, gestione prenotazioni, amministrazione" />
     <meta name="author" content="Nicola Baesso">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -60,7 +60,7 @@
                 <label for="serviceAdmin" id="serviceAdminLabel">Servizio:</label>
                 <select id="serviceAdmin" name="service" required aria-required="true">
                     <option value="" selected>Selezionare un servizio</option>
-                    <optgroup label="Trattamenti Viso"></optgroup>
+                    <optgroup label="Trattamenti Viso">
                         <option value="puliziaViso">Pulizia viso</option>
                         <option value="idratante">Trattamento viso idratante</option>
                         <option value="antiAge">Trattamento viso anti-age</option>
@@ -112,7 +112,8 @@
             <br>
             <div id="prenotazioniAmministratore">
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <table id="tabellaPrenotazioniAmministratore" summary="Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)">
+                    <p id="sumPren" class="hide print-invisible">Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)</p>
+                    <table id="tabellaPrenotazioniAmministratore" aria-describedby="sumPren">
                         <thead>
                             <tr> 
                                 <th scope="col">Utente</th>
@@ -134,7 +135,7 @@
         </section>
     </main>
     <nav class="print-invisible">
-        <button onclick="goUp()" id="goUp"></button>
+        <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
     </nav>
 
     <footer>
@@ -159,7 +160,8 @@
             <div class="item-footer">
                 <dt></dt>
                 <dd>
-                    <table summary="Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario. ">
+                    <p id="sum" class="hide print-invisible">Nella tabella sono elencati gli orari di apertura del centro estetico, ogni riga indica una tipologia di orario.</p>
+                    <table aria-describedby="sum">
                         <caption>Orari</caption>
                         <thead>
                             <tr>
