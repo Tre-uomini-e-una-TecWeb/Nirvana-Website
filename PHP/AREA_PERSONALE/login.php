@@ -59,8 +59,13 @@ if(isset($_POST['registrazione'])){
         $canInsert = false;
     }
     $dataNascita = pulisciInput($_POST['birth']);
+    $actual_date=date("Y-m-d");
     if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$dataNascita)){
         $errRegistrazione.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
+        $canInsert = false;
+    }
+    elseif($actual_date<=$dataNascita){
+        $errRegistrazione.='<p class=\'errore\'>Data di nascita non valida (inserita data futura)!</p>';
         $canInsert = false;
     }
     $email = pulisciInput($_POST['email']);

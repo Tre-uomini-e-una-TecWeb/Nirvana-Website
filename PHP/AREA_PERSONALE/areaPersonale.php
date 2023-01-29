@@ -62,8 +62,13 @@ if(isset($_POST['modificaDati'])){
         }
         if($_POST['newBirth']!=""){
             $modDataNascita = pulisciInput($_POST['newBirth']);
+            $actual_date=date("Y-m-d");
             if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$modDataNascita)){
                 $modDati.='<p class=\'errore\'>Data di nascita non valida: formato non valido!</p>';
+                $canUpdate = false;
+            }
+            elseif($actual_date<=$modDataNascita){
+                $modDati.='<p class=\'errore\'>Data di nascita non valida (inserita data futura)!</p>';
                 $canUpdate = false;
             }
         }

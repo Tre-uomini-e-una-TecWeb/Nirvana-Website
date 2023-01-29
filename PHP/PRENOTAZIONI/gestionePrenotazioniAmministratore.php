@@ -91,15 +91,24 @@ if(isset($_POST['submit'])){
     $canMakeRes = true;
     $cliente=pulisciInput($_POST['customers']);
     $data=pulisciInput($_POST['date']);
+    $actual_date=date("Y-m-d");
     if (!preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$data)){
         $errPrenotazione.='<p class=\'errore\'>Data per la prenotazione non valida: formato non valido!</p>';
         $canMakeRes = false;
+    } elseif($actual_date>$data){
+        $errPrenotazione.='<p class=\'errore\'>Data per la prenotazione non valida (inserita data passata)!</p>';
+        $canMakeRes = false;
     }
     $ora=pulisciInput($_POST['hour']);
+    $actual_time=date("H:i");
     if (!preg_match("/\d{2}:\d{2}/",$ora)){
         $errPrenotazione.='<p class=\'errore\'>Ora per la prenotazione non valida: formato non valido!</p>';
         $canMakeRes = false;
+    } elseif($actual_date==$data && $actual_time>$ora){
+        $errPrenotazione.='<p class=\'errore\'>Data-ora per la prenotazione non valida (inserita data-ora passata)!</p>';
+        $canMakeRes = false;
     }
+
     if($canMakeRes && ($ora<"09:00" || $ora >"19:00")){
         $errPrenotazione.='<p class=\'errore\'>Orario non valido: il centro é chiuso nell\'orario richiesto!</p>';
         $canMakeRes = false;
@@ -199,17 +208,28 @@ if(isset($_POST['modificaPrenotazioni'])){
         if($nuovaData==""){
             $nuovaData = $dataP;
         }
+        $actual_date=date("Y-m-d");
         if (!$toSkip && !preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$nuovaData)){
             $errModficaPren.='<p>Data per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
         }
+        elseif($actual_date>$nuovaData){
+            $errModficaPren.='<p class=\'errore\'>Data per la prenotazione modificata non valida (inserita data passata)!</p>';
+            $toSkip = true;
+        }
+
         if($nuovoOrario==""){
             $nuovoOrario = $oraP;
         }
+        $actual_time=date("H:i");
         if (!$toSkip && !preg_match("/\d{2}:\d{2}/",$nuovoOrario)){
             $errModficaPren.='<p>Ora per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
+        } elseif($actual_date==$nuovaData && $actual_time>$nuovoOrario){
+            $errPrenotazione.='<p class=\'errore\'>Data-ora per la prenotazione modificata non valida (inserita data-ora passata)!</p>';
+            $canMakeRes = false;
         }
+
         if(!$toSkip && ($nuovoOrario<"09:00" || $nuovoOrario >"19:00")){
             $errModficaPren.='<p>Orario non valido: il centro é chiuso nell\'orario inserito!</p>';
             $toSkip = true;
