@@ -177,7 +177,11 @@ header {
         margin-bottom: 4em;
     }
 
-    #legenda {
+    ul>li{
+        text-align: left;
+    }
+
+    #lista {
         display: inline-block;
         text-align: left;
     }
