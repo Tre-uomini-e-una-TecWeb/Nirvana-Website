@@ -170,6 +170,10 @@ header {
         margin-bottom: 4em;
     }
 
+    #legenda {
+        text-align: left;
+    }
+
     #updateButton, #updatePersonalPage, #confirmButton, #registerButton, #accessButton, #userReservationButton, #adminReservationButton, #adminDeleteButton{
         width: 50vw;
     }
