@@ -497,6 +497,15 @@ footer a:visited{
     padding: 0.3em;
 }
 
+#lista {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+#lista li{
+    margin-left: 1em;
+}
+
 #trattamenti{
     background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari.jpeg") ;
 }

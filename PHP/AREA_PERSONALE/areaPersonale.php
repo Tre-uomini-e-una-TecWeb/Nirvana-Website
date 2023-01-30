@@ -35,6 +35,7 @@ if($connOk){
     }
 } 
 else {
+    $modDati.='<p class=\'errore\'>Errore di connessione!</p>';
 }
 
 if(isset($_POST['modificaDati'])){
@@ -44,7 +45,7 @@ if(isset($_POST['modificaDati'])){
     $modEmail = "";
     $modTelefono = "";
     //controllo se effettivamente é stato modificato un dato
-    if($_POST['newPhone']!="" || $_POST['newEmail']!="" || $_POST['newName']!="" || $_POST['newSurname']!="" || $_POST['newBirth']!=""){
+    if(pulisciInput($_POST['newPhone'])!="" || pulisciInput($_POST['newEmail'])!="" || pulisciInput($_POST['newName'])!="" || pulisciInput($_POST['newSurname'])!="" || pulisciInput($_POST['newBirth'])!=""){
         $canUpdate = true;
         if($_POST['newName']!=""){
             $modNome = pulisciInput($_POST['newName']);

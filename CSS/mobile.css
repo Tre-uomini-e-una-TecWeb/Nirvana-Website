@@ -116,7 +116,6 @@ header {
     #tabellaPrenotazioniUtente, #tabClienti{
        border: 2px solid black;
        border-top: none;
-       margin-bottom: 4em;
     }
 
     #tabellaPrenotazioniUtente td:not(.header), #tabellaPrenotazioniAmministratore td:not(.header), #tabClienti td:not(.header) {
@@ -168,6 +167,23 @@ header {
 
     #reservationsLink{
         margin-bottom: 4em;
+    }
+
+    #prenotazioniUtente{
+        text-align: center;
+    }
+
+    #tabClienti{
+        margin-bottom: 4em;
+    }
+
+    ul>li{
+        text-align: left;
+    }
+
+    #lista {
+        display: inline-block;
+        text-align: left;
     }
 
     #updateButton, #updatePersonalPage, #confirmButton, #registerButton, #accessButton, #userReservationButton, #adminReservationButton, #adminDeleteButton{
