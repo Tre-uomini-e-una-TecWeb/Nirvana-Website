@@ -500,27 +500,26 @@ Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf
 \paragraph*{Errore 403}
 \subsection{SQL}	% Nicola
 \subsection{JavaScript} %Lisien
-\textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, quindi il browser elabora il codice. È usato per il comportamento del sito e per creare dei simulazioni nei siti.\\
-Nel nostro cosa é usato per cambiare i classi di stile dei elementi HTML, e il tipo di input nei vari form e tabelle.\\
-Sono i elementi che vengono modificate le classi dei stili, con l'uso di toggle, add, o remove:
+\textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
+Nel sito é usato per cambiare dinamicamente le classi degli elementi HTML ed il tipo di input nei vari form e tabelle.\\
+Nei seguenti elementi vengono modificate le classi (per assegnare uno stile particolare in base alla situazione) con l'uso delle funzioni \textit{toggle}, \textit{add}, o \textit{remove} presenti nel linguaggio JavaScript:
 \begin{itemize}
-        \item \textit{Menú:} se la menú viene clicata i sui voci compaiano o spariscono a seconda del fatto di essere aperto o no. Con una semplice funzione di toggle questa viene realizato.
-        \item \textit{Menú personale:} con ogni caricamento della pagina un funzione di JavaScript controlla se é stato effettuato il Log In o no. Se non é fatto allora su questa menú che compara e sparisce nel stesso modo del menú principale, viene dimostrato il link di Log In. Mentre se e stato effettuato viene dimostrato Log Out.
+        \item \textit{Menú:} se il menú viene cliccato, le sue voci compaiano o scompaiono a seconda dello stato logico del menù (aperto o chiuso); tale funzionalità è stata implementata utilizzando la funzione \textit{toggle};
+        \item \textit{Menú personale:} ad ogni caricamento della pagina, una funzione JavaScript controlla se é stato effettuato il login o meno e, in base a questo, viene visualizzata la voce \textbf{login} o \textbf{logout} (sono mutualmente esclusive).
 \end{itemize}
-Con JavaScript é possibile aggiungere dei funzioni che ascoltano quando un azione e fatto dal utente. Due dei questi sono:
+Nel progetto sono stati utilizzati i seguenti eventi tramite JavaScript:
 \begin{itemize}
-        \item \textit{Click:} questa funzione semplicemente toglie le classi che fanno comparire le due menú se l'utente preme in un area che non é la menú.
-        \item \textit{Scroll:} ci sono due funzioni che controllano quando l'utente fa il scroll. Uno di questi e spiegato nella sezione di sotto. L'altro controlla quando l'utente effettua il scroll per andare su. Se l'utente va su compare una pallina fissato che ti può mandare alla cima della pagina.
+        \item \textit{Click:} all'evento "click", se il menù è nello stato \textit{aperto}, questa funzione semplicemente toglie le classi che fanno comparire le voci di menú;
+        \item \textit{Scroll:} all'evento "scroll" verso l'alto, compare un'icona rossa con posizione fissa (in una zona facilmente raggiungibile anche da mobile) che consente di spostare la visualizzazione verso la cima della pagina in modo controllato (\textbf{smooth}) tramite un'altra funzione JavaScript.
 \end{itemize}
-Altri funzioni di JavaScript sono fatti per i schermi piccoli per facilitare al utente di accedere al menú personale più facilmente. Questa funzione in particolare blocca questa menú per non andare sopra il footer della pagina.
+Altre funzioni scritte in JavaScript sono state ideate per device mobili, per facilitare al utente l'accesso al menù personale:
 \begin{itemize}
-        \item \textit{Menú personale:} se la lunghezza della window fa superare quella della body, il funzione cambia le classi e modifica uno degli attributi, di cui é l'attributo top. Il valore del questo attributo viene calcolato dal la somma delle lunghezze della header e la body. 
+        \item \textit{Menú personale:} questa funzione consente al bottone che rappresenta il menù personale nella visualizzazione mobile di "fermare" la sua discesa (in seguito a \textit{scroll} verso il basso) immediatamente sopra al footer della pagina (come se si "appoggiasse").
 \end{itemize}
-L'ultima funzione che si cambia i classi e quella che fa il scroll in modalità smooth quando il bottone per andare su viene premuto.\\
-Le altre funzione si occupano nel cambiamento del tipo di input:
+Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attributo "type" degli elementi HTML "input":
 \begin{itemize}
-        \item \textit{Mostra password:} questa checkbox quando viene attivata fa cambiare il tipo di input per i password al tipo di testo
-        \item \textit{Tabella admin:} su questa tabella vengono mostrate le prenotazione che devono essere accettate, rifiutate o quelle nel futuro. Se l'amministratore decide di cambiare la data o ora dei prenotazioni non accettato, il tipo di input nella tabelle viene cambiato nel formato apposto.
+        \item \textit{Mostra password:} questa funzione viene utilizzata tramite checkbox associata ad una casella di testo atta a contenere password; come si evince dal nome, consente di visualizzare in chiaro il valore inserito in tale casella di testo;
+        \item \textit{MakeDate, MakeTime:} tali funzioni sono applicate sulla tabella di gestione delle prenotazioni lato amministratore e nell'area personale, rispettivamente al cambio della data o dell'ora delle prenotazioni non accettate ed al cambio dei dati personali.
 \end{itemize}
  
 %nuova sezione
