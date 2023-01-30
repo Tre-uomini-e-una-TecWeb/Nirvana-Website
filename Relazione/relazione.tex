@@ -297,6 +297,7 @@ La progettazione del sito si è concentrata sui seguenti punti:
 	\end{itemize}
 
 \subsection{Database}
+\label{subsec:database}
 %Ciao Nicola, è tutto tuo :)
 
 \section{Presentazione}
@@ -402,8 +403,7 @@ Di seguito due  esempi di stampa della stessa pagina:
 
 %nuova sezione
 \section{Implementazione}
-\subsection{Linguaggi}		
-\subsubsection{HTML}
+\subsection{HTML}
 Il progetto è stato realizzato tramite il linguaggio \textit{HTML5} ma si è resa possibile la compatibilità con browser più datati seguendo le linee guida del corso di Tecnologie Web e quelle del \textit{W3C}.
 Si è utilizzato \textit{HTML5} piuttosto che \textit{XHTML} in quanto il pubblico cui è destinato il sito web sarà indicativamente di età compresa fra i 16 ed i 60; si presume che la clientela si distribuirà in modo omogeneo in questa fascia d'età, avente quindi a disposizione motori di ricerca tendenzialmente più recenti.\\
 I file \textit{.html} si presentano con l'obbiettivo di mantenere struttura, presentazione e contenuto il più possibile separati fra loro.
@@ -415,7 +415,7 @@ Per quanto concerne i \textit{tag}:
 	\item i \textit{metatag} presenti nella sezione \textit{head} dei file \textit{.html} aiutano il sito nel ranking di ricerca e sono di fondamentale importanza per incrementare l'accessibilità.
 \end{itemize}
 
-\subsubsection{CSS}
+\subsection{CSS}
 La modellazione del layout del sito è stata implementata tramite CSS3.\\
 Per rendere l'esperienza di navigazione fluida tra i vari dispositivi, sono state utilizzate misure relative ed in percentuale.\\
 Abbiamo creato 4 fogli di stile per implementare il layout secondo lo specifico ambito d'uso:
@@ -429,8 +429,13 @@ All'interno dei \textit{.css} prodotti è possibile trovare quantopiù offerto d
 Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazione di un layout  "a carte" accattivante che non compromettesse l'accessibilità.
 
 \subsection{PHP} % Matteo e Nicola
-Il linguaggio PHP è stato utilizzato per lo sviluppo della parte di comportamento (server-side) del sito web.
-La versione scelta dal gruppo è 8.1 dato che la 
+Il linguaggio PHP è stato utilizzato per lo sviluppo della parte di comportamento server-side del sito web. \\
+La versione del linguaggio scelta dal gruppo è la 8.1 dato che la versione 8.0 non è più supportata dal giorno 26 Novembre 2022 (fino al 26 Novembre 2023 saranno effettuati aggiornamenti puramente relativi alla sicurezza).
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/php-support.pdf}}
+	\caption{\href{https://www.php.net/supported-versions.php}{https://www.php.net/supported-versions.php} al 30 Gennaio 2023}
+\end{figure}
 
 \subsubsection{Autenticazione}
 \paragraph*{Login}
@@ -443,9 +448,52 @@ La versione scelta dal gruppo è 8.1 dato che la
 \paragraph*{Elenco clienti}
 
 \subsubsection{Prenotazioni}
+\label{prenotazioni:valida}
+Con il termine \textbf{\textit{prenotazione valida}} utilizzato nei paragrafi seguenti si intende una prenotazione avente data-ora \textit{posteriore} rispetto alla data-ora in cui la prenotazione è presa in analisi: se un utente registrato vuole richiedere una prenotazione, essa deve essere valida e, per essere valida, deve avere data-ora \textit{successiva} alla data-ora in cui avviene la richiesta di prenotazione.
+
 \paragraph*{Gestione prenotazioni lato utente}
+La pagina di gestione delle prenotazioni, per l'utente registrato, si divide in due parti:
+\begin{itemize}
+	\item Richiesta di prenotazione;
+	\item Visualizzazione delle richieste di prenotazione.
+\end{itemize}
+La richiesta di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "In fase di approvazione": un utente con privilegi di \textit{amministrazione} dovrà occuparsi di accettare o rifiutare la prenotazione e tale cambiamento di stato sarà visualizzabile dall'utente registrato nella relativa tabella.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/userReservations.pdf}}
+	\caption{Pagina di gestione prenotazioni utente}
+\end{figure}
+
 \paragraph*{Gestione prenotazioni lato amministratore}
-\paragraph*{Eliminazione prenotazioni} %Matteo
+La pagina di gestione delle prenotazioni, per l'utente amministratore, si divide in due parti:
+\begin{itemize}
+	\item Inserimento di prenotazioni;
+	\item Gestione delle richieste di prenotazione.
+\end{itemize}
+L'inserimento di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "accettato" per un utente registrato: questo è fatto in quanto la fase di approvazione è inclusa nella fase di richiesta della prenotazione se viene effettuata da un amministratore (che dovrebbe altrimenti approvare la propria richiesta di prenotazione). \\
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/insertReservations.pdf}}
+	\caption{Inserimento prenotazioni lato amministrativo}
+\end{figure}
+La conferma o meno di una prenotazione avviene tramite un form organizzato in forma tabellare dal quale l'amministratore può anche modificare la data-ora della richiesta (si pensi a situazioni di richieste multiple sovrapposte temporalmente).
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/adminReservations.pdf}}
+	\caption{Gestione prenotazioni lato amministrativo}
+\end{figure}
+
+\paragraph*{Eliminazione prenotazioni}
+ Si è deciso di separare l'operazione di eliminazione delle prenotazioni dalla pagina di \textit{Gestione delle prenotazioni lato amministratore} per dividere le operazioni \textbf{CRUD} in più pagine, evitando un sovraccarico cognitivo da parte dell'utente amministratore (dovuto alla presenza di troppe informazioni in un'unica pagina). \\
+La logica seguita dalla pagina è la seguente: l'amministratore ha la possibilità di visualizzare ogni prenotazione considerata \hyperref[prenotazioni:valida]{\underline{valida}} tramite una tabella e può eseguire un'\textit{eliminazione multipla} selezionando una \textbf{checkbox} che si trova nella stessa riga della tabella della prenotazione da eliminare. \\
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/delete.pdf}}
+	\caption{Tabella di eliminazione prenotazioni}
+\end{figure}
+
+Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf{Data di prenotazione} e \textbf{Orario di prenotazione} ed essa costituisce l'identificativo di ogni prenotazione (vedi sottosezione \hyperref[subsec:database]{\underline{database}}); il valore delle checkboxes viene recuperato tramite apposita funzione \textit{PHP} ed è usato per eliminare la relativa prenotazione.
 
 \subsubsection{Amministrazione}
 \paragraph*{Errore 401}
@@ -497,7 +545,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item Javascript: Sviluppo delle funzioni per i menú principale, menú del utente e il bottone che ti manda alla cima
 		\item PHP: Backend relativo al prenotazione utente, e realizzazione della Log Out
 		\item Immagini: Acquisizione usato come imagine del sfondo per i bottoni
-		\item Relazione:
+		\item Relazione: sottosezione JavaScript.
 	\end{itemize}
 	\item Matteo Cusin:
 	\begin{itemize}
@@ -515,7 +563,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: /**/
 		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse;
-		\item Relazione: sezione progettazione, sottosezione relativa al foglio di stile per la stampa. 
+		\item Relazione: sezione progettazione, sviluppo condiviso sezione presentazione desktop, sottosezione relativa al foglio di stile per la stampa. 
 	\end{itemize} 
 	\item Nicola Baesso:
 	\begin{itemize}
