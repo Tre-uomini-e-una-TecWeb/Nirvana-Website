@@ -116,7 +116,6 @@ header {
     #tabellaPrenotazioniUtente, #tabClienti{
        border: 2px solid black;
        border-top: none;
-       margin-bottom: 4em;
     }
 
     #tabellaPrenotazioniUtente td:not(.header), #tabellaPrenotazioniAmministratore td:not(.header), #tabClienti td:not(.header) {
@@ -170,7 +169,16 @@ header {
         margin-bottom: 4em;
     }
 
+    #prenotazioniUtente{
+        text-align: center;
+    }
+
+    #tabClienti{
+        margin-bottom: 4em;
+    }
+
     #legenda {
+        display: inline-block;
         text-align: left;
     }
 
