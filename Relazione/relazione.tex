@@ -299,6 +299,48 @@ La progettazione del sito si è concentrata sui seguenti punti:
 \subsection{Database}
 \label{subsec:database}
 %Ciao Nicola, è tutto tuo :)
+Essendo necessario contenere le informazioni degli utenti registrati al sito e le loro relative prenotazioni, é necessario ricorrere ad un database.\\
+In fase di progettazione, si é pensato di usare un database minimale, essendo i trattamenti delle pagine a sé stanti. Ció ha portato, come si vede nella figura seguente, a due entitá:
+\begin{itemize}
+	\item \textbf{Utenti}: contiene tutte le informazioni relative all'utente, compreso il fatto che l'utente in sé sia un amministratore o meno.
+	\item \textbf{Prenotazioni}: contiene tutte le prenotazioni, legate sia all'utente che alla data e all'orario della prenotazione stessa.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/er.png}}
+	\caption{Diagramma ER del database}
+\end{figure}
+
+%Inizio parte di spunto, non spostare
+
+Ai fini di questo progetto, per vari motivi che sono stati discussi all’interno del
+gruppo, tre delle quattro tabelle elencate sono utilizzate nel momento in cui
+PHP interviene per prelevare i dati di interesse dal database.
+
+Come spiegato nella sezione Analisi, esistono due tipi di utenti in questo pro-
+getto: utente generico e amministratore.
+
+L’utente generico non viene salvato nella tabella Utente, in quanto non ha bi-
+sogno di registrarsi al sito per la semplice navigazione, mentre l’amministratore
+
+deve avere le credenziali apposite per entrare nell’Area amministratore.
+Inoltre, è obbligatorio l’utilizzo della tabella News per visualizzare le novità
+della pasticceria, e della tabella Prodotto per poter visualizzare paste e torte,
+in quanto i dati sono richiesti dinamicamente (altrimenti le pagine sarebbero
+vuote).
+Ergo, la tabella Recensione può servire solo nel caso in cui si volesse aggiungere
+un servizio interno al sito che prevede la registrazione di utenti che possono
+scrivere recensioni per i prodotti della pasticceria. Quindi, ai fini degli obiettivi
+del nostro progetto, la tabella è stata creata con l’intento di averla pronta per
+implementazioni future.
+Stesso discorso si applica alla tabella Utente: in questo progetto, questa tabella
+sarà riempita solamente con i dati dell’amministratore, in quanto unico utente
+ad aver accesso all’Area amministratore implementata nel sito.
+Nel momento in cui si vorrà implementare il servizio di recensioni utente, allora
+la tabella sarà composta anche dai parametri degli utenti che si registrano al
+servizio mediante pagina di registrazione (non prevista in questo progetto).
+%Fine parte di spunto, non spostare
 
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
@@ -507,6 +549,8 @@ Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf
 \subsubsection{Amministrazione}
 \paragraph*{Errore 401}
 \paragraph*{Errore 403}
+\paragraph*{Errore 404}
+\paragraph*{Errore 500}
 \subsection{SQL}	% Nicola
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
