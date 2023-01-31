@@ -272,6 +272,17 @@ main table{
     border: 1px solid white;
 }
 
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+ul#menuList.menuCont { 
+width:33.9%; 
+}
+}}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {	 _::-webkit-full-page-media, _:future, .menuCont { 
+    width: 33.9%; 
+    }	}
+
 .menuCont li{
     border: 1px solid white;
 }
