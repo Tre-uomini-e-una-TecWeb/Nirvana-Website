@@ -199,7 +199,7 @@ L'utente generico può entrare nella pagina \textit{Home} in diversi modi:
 	\item se si trova in un'altra pagina, può raggiungere la homepage cliccando la scritta "Home" presente nella breadcrumb;
 	%\item se si trova in un'altra pagina, può raggiungere la homepage cliccando sul logo presente nell'header;
 \end{itemize}
-All'interno di questa pagina l'utente può visualizzare una breve presentazione del centro estetico, oltre ad aver subito un piccolo menú dei servizi offerti.\\
+All'interno di questa pagina l'utente può visualizzare una breve presentazione del centro estetico, oltre ad aver subito un piccolo menú dei servizi offerti.
 
 \paragraph{Visualizzazione pagina "Trattamenti e Macchinari"}\mbox{}\\
 L'utente generico può entrare nella pagina \textit{Trattamenti e Macchinari} attraverso le apposite voci presenti sia nel menú sia nella pagina home.\\
@@ -251,44 +251,41 @@ L'utente autenticato può entrare nella sua \textit{Area personale} dalla pagina
 All'interno della pagina si possono consultare i propri dati ed accedere alle funzionalitá di modifica.
 
 \paragraph{Modifica dati in "Area personale"}\mbox{}\\
-L'utente generico può modificare i propri dati attraverso l'apposito form, sotto la sezione "Informazioni Personali", presente nella pagina \textit{Area Personale}.\\
+L'utente autenticato può modificare i propri dati attraverso l'apposito form, sotto la sezione "Informazioni Personali", presente nella pagina \textit{Area Personale}.\\
 Sará sufficiente inserire i dati che si vogliono modificare nei campi appositi e premere il pulsante "Modifica dati". Se i dati non presentono problemi, la pagina verrá ricaricata con le modifiche richieste e un avviso di conferma, altrimenti apparirá un avviso di errore con la spiegazione su cosa é andato storto.
 
-\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
-All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.
+\paragraph{Modifica password in "Area personale"}\mbox{}\\
+L'utente autenticato può modificare la propria password attraverso l'apposito form, sotto la sezione "Cambio password", presente nella pagina \textit{Area Personale}.\\
+Dopo aver inserito per due volte la nuova password, se le due combaciano e sono diverse da quella gia esistente, alla pressione del bottone "Salva modifiche" la password verrá cambiata e verrá mostrato un messaggio di conferma, altrimenti verrá mostrato un messaggio di errore con la causa del fallimento.
 
-\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
-All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.
+\paragraph{Aggiunta richieste di prenotazione in "Gestione Prenotazione - Utente"}\mbox{}\\
+L'utente autenticato può effettuare una nuova richiesta di prenotazione nella pagina \textit{Gestione Prenotazione - Utente} dall'apposito form sotto la sezione "Richiesta Prenotazione".\\
+É necessario inserire la data e l'ora in cui si vuole ricevere il trattamento, oltre al trattamento stesso. Ancora una volta, se la data e l'ora sono valide all'invio dei dati tramite il pulsante "Conferma dati" verrá inserita una nuova prenotazione con stato P (ovvero "In attesa di conferma") e relativo messaggio di avvenuto inserimento, altrimenti si avrá un messaggio di errore con le problematiche riscontrate.
 
-\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
-All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.
+\paragraph{Visualizzazione richieste di prenotazione in "Gestione Prenotazione - Utente"}\mbox{}\\
+L'utente autenticato può visualizzare le prenotazioni richieste e il loro relativo stato nella pagina \textit{Gestione Prenotazione - Utente}, raggiungibile dalla voce "Prenotazioni" sia dall'apposito menú che dalla pagina principale.\\
+Nell'apposita sezione "Gestisci prenotazioni" é presente una tabella, riassuntiva delle prenotazioni richieste. Le prenotazioni che vengono visualizzate sono hanno tutte data uguale o superiore a quella odierna.
 
-\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
-L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
-All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.
+\paragraph{Logout "Area personale"}\mbox{}\\
+L'utente autenticato può uscire dalla propria \textit{Area Personale} attraverso l'apposita voce nel menú utente.\\
+A logout effettuato, l'utente autenticato diventa a tutti gli effetti un utente generico. Sará dunque necessario effettuare nuovamente l'autenticazione per godere dei casi d'uso precedentemente elencati.
 
 \subsubsection{Amministratore}
 Un utente é definito come \textit{amministratore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale e gestire le prenotazioni per i servizi offerti dal centro, oltre ad inserirne o eliminarne manualmente e a visualizzare un elenco dei clienti registrati al sito. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
 Sempre per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{admin}.\\
-Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi d'uso extra:
+Eredita dunque tutti gli use case di \textit{utente generico}, eredita tutti i casi d'uso relativi a \textit{Area Personale} di \textit{Utente Autenticato} e dispone di casi d'uso extra:
 \begin{itemize}
-	\item Login "Area personale";
-	\item Modifica password in "Area personale";
 	\item Aggiunta prenotazione in "Gestione Prenotazione - Amministratore";
 	\item Visualizzazioni prenotazioni in "Gestione Prenotazione - Amministratore";
 	\item Modifica prenotazioni in "Gestione Prenotazione - Amministratore";
  	\item Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore";
  	\item Visualizzazione clienti registrati in "Elenco Clienti"
-	\item Logout "Area personale";
 \end{itemize}
 
 %nuova sezione
 \section{Progettazione}
 \subsection{Obiettivi}
-L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email. \\
+L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email.\\
 Ai clienti registrati si vuole dare inoltre la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
 Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard suddivisa in una serie di pagine distinte. \\
 
@@ -524,7 +521,7 @@ La pagina di gestione delle prenotazioni, per l'utente amministratore, si divide
 	\item Inserimento di prenotazioni;
 	\item Gestione delle richieste di prenotazione.
 \end{itemize}
-L'inserimento di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "accettato" per un utente registrato: questo è fatto in quanto la fase di approvazione è inclusa nella fase di richiesta della prenotazione se viene effettuata da un amministratore (che dovrebbe altrimenti approvare la propria richiesta di prenotazione). \\
+L'inserimento di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "accettato" per un utente registrato: questo è fatto in quanto la fase di approvazione è inclusa nella fase di richiesta della prenotazione se viene effettuata da un amministratore (che dovrebbe altrimenti approvare la propria richiesta di prenotazione).
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=\textwidth]{./graphics/insertReservations.pdf}}
@@ -538,7 +535,7 @@ La conferma o meno di una prenotazione avviene tramite un form organizzato in fo
 \end{figure}
 
 \paragraph*{Eliminazione prenotazioni}
- Si è deciso di separare l'operazione di eliminazione delle prenotazioni dalla pagina di \textit{Gestione delle prenotazioni lato amministratore} per dividere le operazioni \textbf{CRUD} in più pagine, evitando un sovraccarico cognitivo da parte dell'utente amministratore (dovuto alla presenza di troppe informazioni in un'unica pagina). \\
+Si è deciso di separare l'operazione di eliminazione delle prenotazioni dalla pagina di \textit{Gestione delle prenotazioni lato amministratore} per dividere le operazioni \textbf{CRUD} in più pagine, evitando un sovraccarico cognitivo da parte dell'utente amministratore (dovuto alla presenza di troppe informazioni in un'unica pagina). \\
 La logica seguita dalla pagina è la seguente: l'amministratore ha la possibilità di visualizzare ogni prenotazione considerata \hyperref[prenotazioni:valida]{\underline{valida}} tramite una tabella e può eseguire un'\textit{eliminazione multipla} selezionando una \textbf{checkbox} che si trova nella stessa riga della tabella della prenotazione da eliminare. \\
 
 \begin{figure}[H]
