@@ -23,7 +23,7 @@ $numPrenotazioniDaVerificare = 0;
 $esitoModifica = "";
 if($connOk){
     $query_result = $connessione->getUtenti();
-    $clienti="<select id=\"customers\" name=\"customers\" required aria-required=\"true\">";
+    $clienti="<select id=\"customers\" name=\"customers\" required >";
     $clienti.="<option value=\"\" selected>Selezionare un cliente</option>";
     if($query_result != null){
         foreach($query_result as $cliente){
