@@ -415,6 +415,10 @@ th, td{
     margin-left: 1em;
 }
 
+.carta{
+    text-align: left;
+}
+
 .carta:hover{
     color: black;
 }
