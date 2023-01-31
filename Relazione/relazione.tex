@@ -245,7 +245,7 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 	\item Logout "Area personale";
 \end{itemize}
 \subsubsection{Gestore}
-Un utente é definito come \textit{gestore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale ed inserire delle prenotazioni per i servizi offerti dal centro manualmente. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
+Un utente é definito come \textit{gestore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale e gestire le prenotazioni per i servizi offerti dal centro, oltre ad inserirne o eliminarne manualmente e a visualizzare un elenco dei clienti registrati al sito. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
 Sempre per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{admin}.\\
 Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi d'uso extra:
 \begin{itemize}
@@ -253,8 +253,9 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 	\item Modifica password in "Area personale";
 	\item Aggiunta prenotazione in "Gestione Prenotazione - Amministratore";
 	\item Visualizzazioni prenotazioni in "Gestione Prenotazione - Amministratore";
-	\item Modifica prenotazioni in "Gestione Prenotazione - Amministratore"
- 	\item Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore"
+	\item Modifica prenotazioni in "Gestione Prenotazione - Amministratore";
+ 	\item Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore";
+ 	\item Visualizzazione clienti registrati in "Elenco Clienti"
 	\item Logout "Area personale";
 \end{itemize}
 
@@ -315,7 +316,7 @@ In fase di progettazione, si é pensato di usare un database minimale, essendo i
 Nella parte di analisi si sono elencate tre figure: l'utente generico, l'utente autenticato e l'amministratore.\\
 Per permettere questa distinzione, nel database sono inseriti solo i dati degli utenti registrati e dell'amministratore, in modo da poterne determinarne i privilegi, e conseguentemente le pagine visualizzabili o meno.\\
 É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
-Quindi, il database é stato progetto in maniera da contenere il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità.
+Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità.
 
 
 \section{Presentazione}
