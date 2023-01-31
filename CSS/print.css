@@ -1,12 +1,6 @@
-/* ---------------------------------------------- */
-/* ---------------------------------------------- */
-/* PRINT */
-/* ---------------------------------------------- */
-/* ---------------------------------------------- */
-
 :root{
     --mainColor: #ffcc99;
-    /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+  /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
     --secondaryColor: #800000;
     --mainColorAlpha: #d17e7a;
     --visitedLinkClearBackground: #C64600;
@@ -57,16 +51,14 @@ h2 {
     color: var(--secondaryColor);
     text-align: left;
     margin-top: 1em;
-    /* margin-bottom: 1em; */
+   
 }
 
 .error{
     text-align: center;
 }
 
-/* main{
-    margin-top: -4em;
-} */
+
 
 table,th,td{
     border:1px solid #000;
@@ -109,7 +101,7 @@ footer{
 
 .item-footer table{
     margin: 0 auto;
-    /* border-bottom: hidden; */
+   
     border-left:hidden;
     border-right: hidden;
     margin-right: 1em;
@@ -154,7 +146,7 @@ main{
     margin-left: 1em;
 }
 
-/* LOGIN PAGE */
+
 
 #registrazione, #accesso, #visualizzazionePrenotazione, #userData, #cambioPassword{
     flex: auto;
@@ -163,26 +155,26 @@ main{
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw{
     display: grid;
     max-width: 50%;
-    /* padding: 2em 2em 0em 2em; */
+   
     row-gap: 0.5em;
 }
 
 form input, #customers , #serviceAdmin, #service{
     border-radius: 0.5em;
-    /* border:1px solid black; */
+   
     padding: 0.4em;
     background-color: var(--formInput);
-    /* text-align:center; */
+   
 }
 
-/* TABELLE */
+
 table th {
     background-color: var(--mainColorAlpha);
 }
 
 #tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){background-color: #ffeede;}
 
-/* PAGINE PRENOTAZIONI */
+
 #tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
     margin: 0 auto;
     height: 100%;
@@ -192,11 +184,11 @@ table th {
 
 #insertResAmm{
     display: grid;
-    /* padding: 2em 2em 1em 2em;  */
+   
     row-gap: 0.5em;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+   
+   
     max-width: 50%;
-    /* border: 1px solid black; */
+   
     margin-bottom: 1em;
 }

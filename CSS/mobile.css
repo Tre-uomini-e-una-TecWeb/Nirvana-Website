@@ -15,19 +15,9 @@ nav:not(#top-right) {
    border-bottom: none;
 }
 
-/*.menuLogMob {
-    position: fixed;
-    bottom: 2em;
-    right: 2em;
-    top: initial;
-    z-index: 10;
-}*/
 
-/* .menuLogMobStop {
-    position: absolute;
-    top: initial;
-    right: 2em;
-} */
+
+
 
 header {
     padding: 0em;
@@ -76,7 +66,7 @@ header {
 
     #contain{
         display: block;
-        /* text-align: center; */
+       
     }
     
     #help{
@@ -144,12 +134,7 @@ header {
         text-align: center;
     }
 
-    /* #top-right{
-        position: fixed;
-        right: 2em;
-        bottom: 2em;
-        z-index: 10;
-    } */
+   
 
     .menuLogMob {
         position: fixed;
@@ -215,23 +200,9 @@ header {
         margin-bottom: 4em;
     }
 
-    /* #top-right{
-        display: none;
-    } */
+   
 
-    /* #loginMenu{
-        width: 100%;
-        display: flex;
-        align-content: center;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-
-    #loginMenu li{
-        display: inline;
-        padding: 0.5em 1em 0.5em 1.0em;
-        margin: 0em auto 0em auto;
-    } */
+   
 
     main {
         margin: 1em;

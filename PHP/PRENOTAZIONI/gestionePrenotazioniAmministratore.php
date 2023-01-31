@@ -116,20 +116,20 @@ if(isset($_POST['submit'])){
     $trattamento=pulisciInput($_POST['service']);
     
 
-    /*Inserisco i dati nel DB, se non ci sono errori*/
+   
     if($canMakeRes){
         $queryOk=$connessione->insertNewReservation($cliente,$data,$ora,$trattamento);
-        if($queryOk){//prenotazione inserita
+        if($queryOk){
             $esitoInserimento="<p class=\"conferma\">Inserimento avvenuto con successo!</p>";
         }
-        else{//prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
+        else{
             $esitoInserimento="<p class=\"errore\">Esiste giá una prenotazione per il cliente all'orario selezionato!</p>";
         }
     }
     else{
         $esitoInserimento=$errPrenotazione;
     }
-    //aggiorno nuovamente le prenotazioni
+    
     $prenotazioni = "";
     $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
@@ -185,7 +185,7 @@ if(isset($_POST['submit'])){
 }
 
 if(isset($_POST['modificaPrenotazioni'])){
-    /* Qua elaborazione dati */
+   
     $prenotazioniVerificate = 0;
     $aggiornate = 0;
     $stateError=false;
@@ -262,7 +262,7 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
     }
     
-    //aggiorno nuovamente le prenotazioni
+    
     $prenotazioni = "";
     $query_result = $connessione->getPrenotazioni();
     if($query_result != null){
