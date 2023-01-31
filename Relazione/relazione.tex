@@ -174,9 +174,9 @@ Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evita
 \label{analisi:utenza}
 Il sito vuole fornire informazioni riguardanti i possibili trattamenti che il centro estetico Nirvana offre, garantendo una navigazione fluida e con il minor numero di operazioni possibili.\\
 Pertanto gli utilizzatori del sito sono visitatori casuali, clienti da breve o lungo tempo del centro e la responsabile del centro assieme ai propri dipendenti.
-Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
-I clienti hanno il diritto di accedere ad aree riservate del sito, mentre gli amministratori possono anche accedere alle funzionalitá avanzate del sito. Entrambe le categorie possono essere definite come utenti interni.\\
-L'utente finale é principalmente un utente posto tra l'utente generico e il cliente, ovvero un utente che a prescindere non conosce il linguaggio tecnico utilizzato, é dunque necessario che il sito abbia un linguaggio informale e semplice, in modo tale che sia comprensibile dalla maggior parte delle persone.
+Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente, che per semplicitá indichiamo come utente autenticato, e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
+Gli utenti autenticati hanno il diritto di accedere ad aree riservate del sito, mentre gli amministratori possono anche accedere alle funzionalitá avanzate del sito. Entrambe le categorie possono essere definite come utenti interni.\\
+L'utente finale é principalmente un utente posto tra l'utente generico e l'utente autenticato, ovvero un utente che a prescindere non conosce il linguaggio tecnico utilizzato, é dunque necessario che il sito abbia un linguaggio informale e semplice, in modo tale che sia comprensibile dalla maggior parte delle persone.
 \subsection{Casi d'uso}
 \subsubsection{Utente generico}
 Un utente é definito \textit{generico} quando non é autenticato al sito, e pertanto puó solo visualizzare i servizi offerti dal centro, descritti dal sito stesso.\\
@@ -233,19 +233,45 @@ All'interno di questa pagina si trovano tutti i tipi di massaggi offerti dal cen
 L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
 All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
 
-\subsubsection{Cliente}
-Un utente é identificato come \textit{cliente} quando é autenticato al sito e ha privilegi di utente, e pertanto puó accedere alla sua area personale ed effettuare delle richieste di prenotazione per i servizi offerti dal centro.\\
+\subsubsection{Utente autenticato}
+Un utente é identificato come \textit{utente autenticato} quando é autenticato al sito e ha privilegi di utente, e pertanto puó accedere alla sua area personale ed effettuare delle richieste di prenotazione per i servizi offerti dal centro.\\
 Per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{user}.\\
 Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi d'uso extra:
 \begin{itemize}
 	\item Login "Area personale";
+	\item Modifica dati in "Area personale";
 	\item Modifica password in "Area personale";
 	\item Aggiunta richieste di prenotazione in "Gestione Prenotazione - Utente";
 	\item Visualizzazione richieste di prenotazione in "Gestione Prenotazione - Utente";
 	\item Logout "Area personale";
 \end{itemize}
-\subsubsection{Gestore}
-Un utente é definito come \textit{gestore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale e gestire le prenotazioni per i servizi offerti dal centro, oltre ad inserirne o eliminarne manualmente e a visualizzare un elenco dei clienti registrati al sito. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
+
+\paragraph{Login "Area personale"}\mbox{}\\
+L'utente autenticato può entrare nella sua \textit{Area personale} dalla pagina di accesso apposita, inserendo le sue credenziali.\\
+All'interno della pagina si possono consultare i propri dati ed accedere alle funzionalitá di modifica.\\
+
+\paragraph{Modifica dati in "Area personale"}\mbox{}\\
+L'utente generico può modificare i propri dati attraverso l'apposito form, presente nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
+\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
+\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
+\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
+\paragraph{Visualizzazione pagina "Manicure \& Pedicure"}\mbox{}\\
+L'utente generico può entrare nella pagina \textit{Manicure \& Pedicure} dalla pagina Trattamenti Corpo.\\
+All'interno della pagina si trovano i servizi offerti dal centro per quanto riguarda la Manicure e la Pedicure, anch'essi accompagnati da un'immagine che nasconde una piccola descrizione di ogni singolo trattamento.\\
+
+\subsubsection{Amministratore}
+Un utente é definito come \textit{amministratore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale e gestire le prenotazioni per i servizi offerti dal centro, oltre ad inserirne o eliminarne manualmente e a visualizzare un elenco dei clienti registrati al sito. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
 Sempre per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{admin}.\\
 Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi d'uso extra:
 \begin{itemize}
@@ -261,7 +287,7 @@ Eredita dunque tutti gli use case di \textit{utente generico}, e dispone di casi
 
 %nuova sezione
 \section{Progettazione}
-\subsection{Obbiettivi}
+\subsection{Obiettivi}
 L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email. \\
 Ai clienti registrati si vuole dare inoltre la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
 Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard suddivisa in una serie di pagine distinte. \\
