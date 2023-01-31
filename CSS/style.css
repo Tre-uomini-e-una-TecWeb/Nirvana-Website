@@ -358,12 +358,13 @@ th, td{
    color: var(--secondaryColor);
   }
 
-.contenitore_carte>li,
-.contenitore_carte>div>dt,
-.item-footer>dt{
+.contenitore_carte>li{
     font-size: 1em;
-    font-weight: bold;
     text-align: center;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 .hide{
