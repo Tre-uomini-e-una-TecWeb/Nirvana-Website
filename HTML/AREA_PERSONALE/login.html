@@ -62,19 +62,19 @@
                 <p id="warningRegistrazione">Attenzione! Una volta scelto, il nome utente non é piú modificabile!</p>
                 <form id="signup" method="post" action="login.php">
                     <label for="name" id="nameLabel"> Nome: </label>
-                    <input type="text" id="name" name="name" required aria-required="true">
+                    <input type="text" id="name" name="name" required aria-required="true" placeholder="Il tuo nome">
                     <label for="surname" id="surnameLabel"> Cognome: </label>
-                    <input type="text" id="surname" name="surname" required aria-required="true">
+                    <input type="text" id="surname" name="surname" required aria-required="true" placeholder="Il tuo cognome">
                     <label for="birth" id="birthLabel">Data di nascita:</label>
                     <input type="date" id="birth" name="birth" required aria-required="true">
                     <label lang="en" for="email" id="emailLabel">Email:</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
+                    <input type="email" id="email" name="email" required aria-required="true" placeholder="Formato: indirizzo@provider.dominio">
                     <label for="phone" id="phoneLabel"> Numero di telefono:</label>
                     <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi">
                     <label for="username" id="userLabel">Nome Utente:</label>
-                    <input type="text" id="username" name="username" required aria-required="true">
+                    <input type="text" id="username" name="username" required aria-required="true" placeholder="Il tuo nome utente">
                     <label lang="en" for="password1" id="password1Label">Password:</label>
-                    <input type="password" id="password1" name="password" required aria-required="true"> 
+                    <input type="password" id="password1" name="password" required aria-required="true" placeholder="La tua password"> 
                     <div id="mostraPswR"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswRegistrazione" onclick="statusPassLog1()">
                     <label for="mostraPswRegistrazione"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <esitoRegistrazione />
@@ -87,9 +87,9 @@
                     <div id="help"> Se non ti ricordi la password, contatta il centro estetico.</div>
                 <form id="login" method="post" action="login.php">
                     <label for="usernameLogin" id="utenteLabel"> Nome Utente: </label>
-                    <input type="text" id="usernameLogin" name="Username" required aria-required="true">
+                    <input type="text" id="usernameLogin" name="Username" required aria-required="true" placeholder="Il tuo nome utente">
                     <label lang="en" for="password2" id="password2Label"> Password: </label>
-                    <input type="password" id="password2" name="Password" required aria-required="true">
+                    <input type="password" id="password2" name="Password" required aria-required="true" placeholder="La tua password">
                     <div id="mostraPswA"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswAccesso" onclick="statusPassLog2()">
                         <label for="mostraPswAccesso"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <avvisoLogin />
