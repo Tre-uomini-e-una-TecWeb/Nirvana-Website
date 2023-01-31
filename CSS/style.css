@@ -452,6 +452,8 @@ footer a:visited{
     flex-wrap: wrap;
     max-width: 50em;
     margin: 0 auto;
+    list-style-type: none;
+    text-align: center;
 }
 
 .item-footer {

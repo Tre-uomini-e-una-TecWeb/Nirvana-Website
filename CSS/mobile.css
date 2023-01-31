@@ -181,6 +181,10 @@ header {
         text-align: left;
     }
 
+    .contenitore-footer>li{
+        text-align: center;
+    }
+
     #lista {
         display: inline-block;
         text-align: left;

@@ -2,9 +2,9 @@
 namespace DB;
 class DBAccess{
     private const HOST_DB="127.0.0.1";
-    private const DATABASE_NAME="Nirvana";
-    private const USERNAME="root";
-    private const PASSWORD="";
+    private const DATABASE_NAME="mcusin";
+    private const USERNAME="mcusin";
+    private const PASSWORD="iel7Ree7ohR7aeSu";
     private $connection;
     public function openDBConnection(){
         mysqli_report(MYSQLI_REPORT_ERROR);
