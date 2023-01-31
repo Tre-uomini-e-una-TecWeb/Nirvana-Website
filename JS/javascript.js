@@ -15,9 +15,6 @@ function goUp() {
       behavior: 'smooth' 
     });
     document.getElementById("goUp").classList.remove("goUpNonVis");
-    // document.getElementById("goUp").style.opacity = '0';
-    // document.getElementById("goUp").style.cursor = 'default';
-    // document.getElementById("goUp").style.padding = '0';
   }
 }
 
@@ -34,24 +31,14 @@ function utentMen(){
       let topRule = new Array();
       if (document.styleSheets[1].cssRules[9].cssRules[19]) {
         topRule = document.styleSheets[1].cssRules[9].cssRules[19];
-      } else if (document.styleSheets[1].rules[9].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+      } else if (document.styleSheets[1].rules[9].rules[19]) {
         topRule = document.styleSheets[1].rules[9].rules[19];
       }
       topRule.style.top = y + 'px';
       console.log(y);
-      // let classStyle = document.getElementsByClassName("menuLogMobStop");
-      // ===============================================
-      // scrollBrn.style.position = "absolute";
-      // scrollBrn.style.top = (y) + "px";
-      // scrollBrn.style.bottom = 'initial';
-      // scrollBrn.style.bottom = -60 + "em";
     } else {
       scrollBrn.classList.remove("menuLogMobStop");
       scrollBrn.classList.add("menuLogMob")
-      // ===============================================
-      // scrollBrn.style.position = "fixed";
-      // scrollBrn.style.bottom = 2 + "em";
-      // scrollBrn.style.top = "initial";
       }
   }
 }
@@ -63,40 +50,12 @@ function PageLoad() {
   }
 
   if(sessionStorage.getItem('loggedIn') == 'true'){
-    // document.getElementById("LogIn").style.display = "none";
-    // document.getElementById("LogOut").style.display = "block";
-    // document.getElementById("LogOut").style.border = "none";
-    // document.getElementById("LogOut").style.padding = "0";
     document.getElementById("LogIn").classList.add('hide');
     document.getElementById("LogOut").classList.add('menuLogOutUt');
   } else {
-    // document.getElementById("LogIn").style.display = "block";
-    // document.getElementById("LogIn").style.border = "none";
-    // document.getElementById("LogIn").style.padding = "0";
-    // document.getElementById("LogOut").style.display = "none";
     document.getElementById("LogIn").classList.add("menuLogInUt");
     document.getElementById("LogOut").classList.add('hide');
   }
-  // if(sessionStorage.getItem('loggedIn') == 'true'){
-  //   var list = document.getElementsByClassName("LogIn");
-  //   for (let item of list) {
-  //     item.style.display = "none";
-  //   }
-
-  //   list = document.getElementsByClassName("LogOut");
-  //   for (let item of list) {
-  //     item.style.display = "block";
-  //   }
-  // } else {
-  //   var list = document.getElementsByClassName("LogIn");
-  //   for (let item of list) {
-  //     item.style.display = "block";
-  //   }
-
-  //   list = document.getElementsByClassName("LogOut");
-  //   for (let item of list) {
-  //     item.style.display = "none";
-  //   }
   
 }
 
@@ -144,19 +103,11 @@ document.addEventListener("scroll", function(){
   if (st > lastScrollTop || st < headerH){
     document.getElementById("goUp").classList.remove("goUpVis")
     document.getElementById("goUp").classList.add("goUpNonVis")
-    // downscroll code
-    // document.getElementById("goUp").style.opacity = '0';
-    // document.getElementById("goUp").style.cursor = 'default'
-    // document.getElementById("goUp").style.padding = '0';
   } else {
     document.getElementById("goUp").classList.remove("goUpNonVis")
     document.getElementById("goUp").classList.add("goUpVis")
-    // upscroll code
-    // document.getElementById("goUp").style.padding = '1.3em';
-    // document.getElementById("goUp").style.cursor = 'pointer';
-    // document.getElementById("goUp").style.opacity = '1';
   }
-  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  lastScrollTop = st <= 0 ? 0 : st;
 }, false);
 
 
@@ -173,28 +124,15 @@ document.addEventListener("scroll", function(event){
       let topRule = new Array();
       if (document.styleSheets[1].cssRules[9].cssRules[19]) {
         topRule = document.styleSheets[1].cssRules[9].cssRules[19];
-      } else if (document.styleSheets[1].rules[9].rules[19]) { // StackOverflow diceva che alcuni browser usavano .rules NON TOGLIERE!
+      } else if (document.styleSheets[1].rules[9].rules[19]) {
         topRule = document.styleSheets[1].rules[9].rules[19];
       }
       topRule.style.top = y + 'px';
-      // ===============================================
-      // scrollBrn.style.position = "absolute";
-      // scrollBrn.style.top = (y) + "px";
-      // scrollBrn.style.bottom = 'initial';
-      // scrollBrn.style.bottom = -60 + "em";
     } else {
       scrollBrn.classList.remove("menuLogMobStop");
       scrollBrn.classList.add("menuLogMob")
-      // ===============================================
-      // scrollBrn.style.position = "fixed";
-      // scrollBrn.style.bottom = 2 + "em";
-      // scrollBrn.style.top = "initial";
       }
-  } /*else {
-    // scrollBrn.classList.remove("menuLogMobStop");
-    // scrollBrn.classList.remove("menuLogMob");
-    // scrollBrn.classList.add("menuLogDesk");
-  }*/
+  }
 });
 
 

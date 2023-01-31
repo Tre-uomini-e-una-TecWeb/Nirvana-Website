@@ -6,7 +6,7 @@
     <title>Macchinari - Centro Estetico Nirvana</title>
     <meta name="description" content="Questa pagina permette di scegliere se proseguire la navigazione sui trattamenti proposti (a scelta tra viso, corpo o integrati) o sui macchinari utilizzati." />
     <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
-    <meta name="keywordss" content="macchinari bellezza, Centro estetico Nirvana, centro estetico, trattamenti viso, trattamenti corpo" />
+    <meta name="keywords" content="macchinari bellezza, Centro estetico Nirvana, centro estetico, trattamenti viso, trattamenti corpo" />
     <meta name="author" content="Annalisa Egidi" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -16,7 +16,6 @@
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()">
-    <!-- Header -->
     <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
@@ -28,15 +27,7 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-
-    <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <!-- <ul id="loginMenu">
-            <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
-            <li class="LogIn"><span lang="en"><a href="../../PHP/AREA_PERSONALE/login.php">Log In</a></span></li>
-            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-        </ul> -->
         <div class="breadcrumb" id="big_breadcrumb">
             <p>Ti trovi in: <span lang="en"><a href="../INDEX/index.html">Home</a></span> &gt;&gt; <a href="./trattamentiMacchinari.html">Trattamenti e Macchinari</a> &gt;&gt; Macchinari</p>
         </div>
@@ -52,86 +43,71 @@
             </ul>
         </div>
     </nav>
-
-<!-- Qui e' la fine di header -->
     <main>
 
         <h2>I macchinari che utilizziamo</h2>
-            <dl class="contenitore_carte">
-                <div>
-                    <dt>Luce pulsata</dt>
-                    <dd class="carta" id="lucePulsata">L'epilazione a luce pulsata è un trattamento veloce e indolore che porta ad un'epilazione progressiva permanente.</dd>
-                </div>
-                <div>
-                    <dt >Radiofrequenza</dt>
-                    <dd class="carta" id="radiofrequenza">Tra i benefici della Radiofrequenza sono presenti:
+            <ul class="contenitore_carte">
+                <li>
+                    <p class="bold">Luce pulsata</p>
+                    <p class="carta" id="lucePulsata">L'epilazione a luce pulsata è un trattamento veloce e indolore che porta ad un'epilazione progressiva permanente.</p>
+                </li>
+                <li>
+                    <p class="bold">Radiofrequenza</p>
+                    <div class="carta" id="radiofrequenza">Tra i benefici della Radiofrequenza sono presenti:
                         <ul>
                             <li>Effetto benefico sul microcircolo;</li>
-                            <li>Miglioramento degli inestetisti ( <abbr title="ad esempio">es.</abbr> cellulite);</li>
+                            <li>Miglioramento degli inestetismi ( <abbr title="ad esempio">es.</abbr> cellulite);</li>
                             <li>Elasticità cutanea;</li>
                             <li>Ricompattazione del tessuto;</li>
                             <li>Drenaggio e riduzione del tessuto adiposo;</li>
                             <li>Rassodante.</li>
                         </ul>
-                    </dd>
-                </div>
-                <div>
-                    <dt>Ultrasuoni</dt>
-                    <dd class="carta" id="ultrasuoni">Gli ultrasuoni favoriscono la riduzione della cellulite e la rimodellazione localizzata. 
-                        Grazie a questa tecnica si può migliorare la <span lang="en">texture</span> cutanea e aumentare la tonificazione dell'epidermide. 
-                        Se utilizzati sul viso gli ultrasuoni garantiscono una pulizia, idratazione e trattazione delle lassità cutanee di modesta entità nonchè la riduzione delle rughe superficiali.                
-                    </dd>
-                </div>
-                <div>
-                    <dt>Elettrocoagulatore</dt>
-                    <dd class="carta" id="elettrocoagulatore">L'Elettrocoagulatore permette il raggiungimento di una epilazione definitiva attraverso diverse sedute.</dd>
-                </div>
-                <div>
-                    <dt>Elettroscultore</dt>
-                    <dd class="carta" id="elettroscultore">L'elettroscultore svolge un'azione di modellamento completo del corpo, di tonificazione viso e corpo; inoltre, l'elettroscultore combatte la cellulite e aumenta il metabolismo cellulare avendo come risultato un miglioramento tangibile sia sulla circolazione linfatica che sanguigna.</dd>
-                </div>
-                <div>
-                    <dt>Elettroporatore</dt>
-                    <dd class="carta" id="elettroporatore">La zona trattata avrà molti benefici, tra i quali:
+                    </div>
+                </li>
+                <li>
+                    <p class="bold">Ultrasuoni</p>
+                    <div class="carta" id="ultrasuoni">
+                        <p>Gli ultrasuoni favoriscono la riduzione della cellulite e la rimodellazione localizzata.</p>
+                        <p>Grazie a questa tecnica si può migliorare la <span lang="en">texture</span> cutanea e aumentare la tonificazione dell'epidermide. </p>
+                        <p>Se utilizzati sul viso gli ultrasuoni garantiscono una pulizia, idratazione e trattazione delle lassità cutanee di modesta entità nonchè la riduzione delle rughe superficiali.</p>             
+                    </div>
+                </li>
+                <li>
+                    <p class="bold">Elettrocoagulatore</p>
+                    <p class="carta" id="elettrocoagulatore">L'Elettrocoagulatore permette il raggiungimento di una epilazione definitiva attraverso diverse sedute.</p>
+                </li>
+                <li>
+                    <p class="bold">Elettroscultore</p>
+                    <p class="carta" id="elettroscultore">L'elettroscultore svolge un'azione di modellamento completo del corpo, di tonificazione viso e corpo; inoltre, l'elettroscultore combatte la cellulite e aumenta il metabolismo cellulare avendo come risultato un miglioramento tangibile sia sulla circolazione linfatica che sanguigna.</p>
+                </li>
+                <li>
+                    <p class="bold">Elettroporatore</p>
+                    <div class="carta" id="elettroporatore">La zona trattata avrà molti benefici, tra i quali:
                         <ul>
                             <li>Aumento del trofismo cutaneo;</li>
                             <li>Miglioramento del turgore del tessuto;</li>
                             <li>Migliore compattezza.</li>
                         </ul>
                         Le collaboratrici sono a vostra disposizione per la scelta dello specifico siero che segue le vostre esigenze.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Pressoterapia</dt>
-                    <dd class="carta" id="pressoterapia">La pressoterapia favorisce il reflusso della linfa e delle tossine verso i vasi linfatici che procederanno alla loro eliminazione.</dd>
-                </div>
-                <div>
-                    <dt lang="en">Brush-system</dt>
-                    <dd class="carta" id="brush">La tecnologia <span lang="en">Brush</span> permette un'eliminazione delle impurità e del sebo permettendo un'azione di pulizia.
-                        L'effetto di compressione e decompressione ridona tono ed elasticità alla pelle.
-                        I benefici del <span lang="en">Brush</span> sono visibili già dal primo trattamento.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Massaggio Endodermico</dt>
-                    <dd class="carta" id="massaggioEndodermico">La tecnologia <span lang="en">Decoshaper</span> svolge un'azione stimolante, modellante, lipolitica, di rassodamento tissutale, drenante e anticellulite.</dd>
-                </div>
-            </dl>
-
-            <!--
-                1 Luce pulsata
-                2 Radiofrequenza
-                3 Ultrasuoni
-                4 Elettrocoagulatore
-                5 Elettroscultore
-                6 Elettroporatore
-                7 Presso massaggio
-                8 Brush
-                9 Massaggio Endodermico
-                10 Termofrequenza
-            -->
-
-
+                    </div>
+                </li>
+                <li>
+                    <p class="bold">Pressoterapia</p>
+                    <p class="carta" id="pressoterapia">La pressoterapia favorisce il reflusso della linfa e delle tossine verso i vasi linfatici che procederanno alla loro eliminazione.</p>
+                </li>
+                <li>
+                    <p class="bold" lang="en">Brush-system</p>
+                    <div class="carta" id="brush">
+                        <p>La tecnologia <span lang="en">Brush</span> permette un'eliminazione delle impurità e del sebo permettendo un'azione di pulizia.</p>
+                        <p>L'effetto di compressione e decompressione ridona tono ed elasticità alla pelle.</p>
+                        <p>I benefici del <span lang="en">Brush</span> sono visibili già dal primo trattamento.</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="bold">Massaggio Endodermico</p>
+                    <p class="carta" id="massaggioEndodermico">La tecnologia <span lang="en">Decoshaper</span> svolge un'azione stimolante, modellante, lipolitica, di rassodamento tissutale, drenante e anticellulite.</p>
+                </li>
+            </ul>
     </main>
     <nav class="print-invisible">
         <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
@@ -140,19 +116,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 

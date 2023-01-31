@@ -54,7 +54,7 @@ class DBAccess{
         list($hour, $min) = explode(":", $ora);
         $dataOraStringa=$year."-".$month."-".$day." ";
         $dataOraStringa.=$hour.":".$min;
-        //$dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
+        
         $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','A')";
         $query_result=mysqli_query($this->connection,$query);
         if($query_result){
@@ -70,7 +70,7 @@ class DBAccess{
         list($hour, $min) = explode(":", $ora);
         $dataOraStringa=$year."-".$month."-".$day." ";
         $dataOraStringa.=$hour.":".$min;
-        //$dataora = date_create_from_format("Y-m-d H:i", $dataOraStringa);
+        
         $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','P')";
         $query_result=mysqli_query($this->connection,$query);
         if($query_result){
@@ -83,10 +83,10 @@ class DBAccess{
 
     public function modificaPrenotazione($nD,$nO,$nS,$user,$vD,$vO){
         if($nS!=""){
-            if($nD=="" || $nS=="R"){//non é stata modificata la data della prenotazione
+            if($nD=="" || $nS=="R"){
                 $nD = $vD;
             }
-            if($nO==""||$nS=="R"){//non é stata modificata l'ora della prenotazione
+            if($nO==""||$nS=="R"){
                 $nO = $vO;
             }
             list($year, $month, $day) = explode("-", $nD);
@@ -111,7 +111,7 @@ class DBAccess{
                 return false;
             }
         }
-        else{//stato non modificato, non é possibile fare l'update
+        else{
             return false;
         }
         

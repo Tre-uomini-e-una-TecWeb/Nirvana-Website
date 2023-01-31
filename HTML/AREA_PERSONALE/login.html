@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()">
-    <!-- Header -->
     <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
@@ -23,22 +22,11 @@
                 <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
                 <li id="LogIn" class="menuList"><span lang="en">Log In</span></li>
                 <li id="LogOut" class="menuList"><span lang="en">Log Out</span></li>
-                <!-- <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
-                <li class="LogIn"><span lang="en">Log In</span></li>
-                <li class="LogOut"><span lang="en">Log Out</span></li> -->
             </ul>
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-
-    <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <!-- <ul id="loginMenu">
-            <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
-            <li class="LogIn"><span lang="en"><a href="../../PHP/AREA_PERSONALE/login.php">Log In</a></span></li>
-            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-        </ul> -->
         <div class="breadcrumb">
             <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; <span lang="en">Log in</span></p> 
         </div>
@@ -62,19 +50,19 @@
                 <p id="warningRegistrazione">Attenzione! Una volta scelto, il nome utente non é piú modificabile!</p>
                 <form id="signup" method="post" action="login.php">
                     <label for="name" id="nameLabel"> Nome: </label>
-                    <input type="text" id="name" name="name" required aria-required="true" placeholder="Il tuo nome">
+                    <input type="text" id="name" name="name" required  placeholder="Il tuo nome">
                     <label for="surname" id="surnameLabel"> Cognome: </label>
-                    <input type="text" id="surname" name="surname" required aria-required="true" placeholder="Il tuo cognome">
+                    <input type="text" id="surname" name="surname" required placeholder="Il tuo cognome">
                     <label for="birth" id="birthLabel">Data di nascita:</label>
-                    <input type="date" id="birth" name="birth" required aria-required="true">
+                    <input type="date" id="birth" name="birth" required >
                     <label lang="en" for="email" id="emailLabel">Email:</label>
-                    <input type="email" id="email" name="email" required aria-required="true" placeholder="Formato: indirizzo@provider.dominio">
+                    <input type="email" id="email" name="email" required placeholder="Formato: indirizzo@provider.dominio">
                     <label for="phone" id="phoneLabel"> Numero di telefono:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required aria-required="true" placeholder="10 numeri, senza spazi">
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required  placeholder="10 numeri, senza spazi">
                     <label for="username" id="userLabel">Nome Utente:</label>
-                    <input type="text" id="username" name="username" required aria-required="true" placeholder="Il tuo nome utente">
+                    <input type="text" id="username" name="username" required placeholder="Il tuo nome utente">
                     <label lang="en" for="password1" id="password1Label">Password:</label>
-                    <input type="password" id="password1" name="password" required aria-required="true" placeholder="La tua password"> 
+                    <input type="password" id="password1" name="password" required placeholder="La tua password"> 
                     <div id="mostraPswR"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswRegistrazione" onclick="statusPassLog1()">
                     <label for="mostraPswRegistrazione"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <esitoRegistrazione />
@@ -87,9 +75,9 @@
                     <div id="help"> Se non ti ricordi la password, contatta il centro estetico.</div>
                 <form id="login" method="post" action="login.php">
                     <label for="usernameLogin" id="utenteLabel"> Nome Utente: </label>
-                    <input type="text" id="usernameLogin" name="Username" required aria-required="true" placeholder="Il tuo nome utente">
+                    <input type="text" id="usernameLogin" name="Username" required placeholder="Il tuo nome utente">
                     <label lang="en" for="password2" id="password2Label"> Password: </label>
-                    <input type="password" id="password2" name="Password" required aria-required="true" placeholder="La tua password">
+                    <input type="password" id="password2" name="Password" required placeholder="La tua password">
                     <div id="mostraPswA"><input type="checkbox" class="showPasswordCheckbox print-invisible" id="mostraPswAccesso" onclick="statusPassLog2()">
                         <label for="mostraPswAccesso"class="showPasswordCheckbox print-invisible">Mostra password</label></div>
                     <avvisoLogin />
@@ -105,19 +93,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 

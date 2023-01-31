@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()">
-    <!-- Header -->
     <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
@@ -27,15 +26,7 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <!--La prima navigazione e' quella sopra a destra per l'utente-->
-
-    <!--La seconda navigazione e' quella della breadcrumb-->
     <nav>
-        <!--<ul id="loginMenu">
-            <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
-            <li class="LogIn"><span lang="en"><a href="../../PHP/AREA_PERSONALE/login.php">Log In</a></span></li>
-            <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-        </ul>-->
         <div class="breadcrumb" id="big_breadcrumb">
             <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; Gestione Prenotazioni</p> 
         </div>
@@ -61,11 +52,11 @@
                 <label for="customers" id="customersAdminLabel">Cliente:</label>
                 <elencoClienti />
                 <label for="dateAdmin" id="dateAdminLabel">Data:</label>
-                <input type="date" id="dateAdmin" name="date" required aria-required="true">
+                <input type="date" id="dateAdmin" name="date" required >
                 <label for="hourAdmin" id="hourAdminLabel"> Ora:</label>
-                <input type="time" id="hourAdmin" name="hour" min="09:00" max="19:00" required aria-required="true">
+                <input type="time" id="hourAdmin" name="hour" min="09:00" max="19:00" required >
                 <label for="serviceAdmin" id="serviceAdminLabel">Servizio:</label>
-                <select id="serviceAdmin" name="service" required aria-required="true">
+                <select id="serviceAdmin" name="service" required >
                     <option value="" selected>Selezionare un servizio</option>
                     <optgroup label="Trattamenti Viso">
                         <option value="puliziaViso">Pulizia viso</option>
@@ -119,8 +110,8 @@
             <br>
             <div id="prenotazioniAmministratore">
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">
-                    <p id="sumPren" class="hide print-invisible">Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)</p>
-                    <table id="tabellaPrenotazioniAmministratore" aria-describedby="sumPren">
+                    <p id="sum" class="hide print-invisible">Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna)</p>
+                    <table id="tabellaPrenotazioniAmministratore" aria-describedby="sum">
                         <thead>
                             <tr> 
                                 <th scope="col">Utente</th>
@@ -148,19 +139,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 
