@@ -56,10 +56,10 @@ if($connOk){
         if($canAskRes){
             $queryOk=$connessione->insertNewReservationUser($cliente,$data,$ora,$servizio);
             if($queryOk){
-                // Prenotazione inserita!
+                
                 $esitoInserimento="<div class='conferma'><p>Richiesta di prenotazione avvenuta con successo!</p></div>";
             } else {
-                // Prenotazione non inserita: cliente ha una prenotazione per ora e data scelti!
+                
                 $esitoInserimento="<div class='errore'><p>Una prenotazione è già presente per l'orario selezionato!</p></div>";
             }
         } else {
@@ -74,9 +74,9 @@ if($connOk){
             $prenotazioni .= "<tr>";
             list($dataPrenotazione,$oraPrenotazione)=explode(" ",$prenotazione['DataOra']);
             $prenotazioni .= "<td data-title='' class='header'>".$prenotazione['Trattamento']."</td>"
-                        .    "<td data-title='Data: '>".$dataPrenotazione."</td>"
-                          .  "<td data-title='Ora: '>".$oraPrenotazione."</td>"
-                          .  "<td data-title='Stato richiesta: '>".$prenotazione['Stato']."</td>"
+                        .    "<td data-title='Data:'>".$dataPrenotazione."</td>"
+                          .  "<td data-title='Ora:'>".$oraPrenotazione."</td>"
+                          .  "<td data-title='Stato richiesta:'>".$prenotazione['Stato']."</td>"
                           . "</tr>";
         }
     }

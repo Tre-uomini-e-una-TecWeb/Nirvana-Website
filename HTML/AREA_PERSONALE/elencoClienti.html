@@ -15,7 +15,6 @@
     <script type="text/javascript" src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()">
-    <!-- Header -->
     <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
@@ -27,9 +26,6 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-
-    <!-- La seconda navigazione e' quella della breadcrumb-->
     <nav>
         <ul class="print-invisible" id="loginMenu">
             <li><a href="../../PHP/areaPersonale.php">Area Personale</a></li>
@@ -55,7 +51,8 @@
     <main>
         <section id="visualizzazioneClienti">
             <h2>Clienti iscritti</h2>
-            <table summary="Tabella che contiene tutte le informazioni relative ai clienti" id="tabClienti">
+            <p id="sum" class="hide print-invisible">Tabella che contiene tutte le informazioni relative ai clienti.</p>
+            <table aria-describedby="sum" id="tabClienti">
                 <thead>
                     <tr>
                         <th scope="col">Utente</th>
@@ -77,19 +74,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 

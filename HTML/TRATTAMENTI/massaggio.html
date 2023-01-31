@@ -5,7 +5,7 @@
         <title>Massaggio - Centro Estetico Nirvana</title>
         <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
         <meta name="description" content="Pagina dedicata al massaggio al centro estetico Nirvana"/>
-        <meta name="keywordss" content="massaggio, Centro estetico Nirvana, centro estetico, corpo, trattamenti"/>
+        <meta name="keywords" content="massaggio, Centro estetico Nirvana, centro estetico, corpo, trattamenti"/>
         <meta name="author" content="Nicola Baesso"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
@@ -15,7 +15,6 @@
         <script type="text/javascript" src="../../JS/javascript.js"></script>
     </head>
     <body onload="PageLoad()">
-        <!-- Header -->
         <header id="cima">
             <h1>Centro Estetico Nirvana</h1>
             <nav id="top-right" class="menuLogMob">
@@ -27,9 +26,6 @@
                 <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
             </nav>
         </header>
-        <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-    
-        <!-- La seconda navigazione e' quella della breadcrumb-->
         <nav>
             <ul class="print-invisible" id="loginMenu">
                 <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
@@ -51,45 +47,40 @@
                     </ul>
             </div>
         </nav>
-
-        <!-- Qui e' la fine di header -->
         <main>
             <h2>Massaggio</h2>
 
-            <dl class="contenitore_carte">
-                <div>
-                    <dt>Rilassante</dt>
-                    <dd class="carta" id="rilassante">
-                        Mirato al benessere della persona. 
-                        <br>Suddiviso in base, thailandese, hawaiano e californiano.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Olistico</dt>
-                    <dd class="carta" id="olistico">
-                        Mirato al benessere energetico della persona.
-                        <br>Suddiviso in ayurvedico, <span lang="id">chakra</span> e riflessologia plantare.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Decontratturante</dt>
-                    <dd class="carta" id="decontratturante"> Adatto a ridurre la tensione e la rigidità muscolare.</dd>
-                </div>
-                <div>
-                    <dt>Tonificante</dt>
-                    <dd class="carta" id="tonificante">Adatto per sgonfiare e rassodare il corpo.</dd>
-                </div>
-                <div>
-                    <dt>Linfodrenante e emolinfatico</dt>
-                    <dd class="carta" id="linfodrenante"> Mirato al constrasto del gonfiore.</dd>
-                </div>
-                <div>
-                    <dt>Modellante</dt>
-                    <dd class="carta" id="modellante"> 
-                        Adatto per riprendere tono ed elasticità.
-                        <br>Suddiviso in lipolitico e anticellulitico.</dd>
-                </div>
-            </dl>
+            <ul class="contenitore_carte">
+                <li>
+                    <p class="bold">Rilassante</p>
+                    <p class="carta" id="rilassante">
+                        Mirato al benessere della persona, suddiviso in base, thailandese, hawaiano e californiano.
+                    </p>
+                </li>
+                <li>
+                    <p class="bold">Olistico</p>
+                    <p class="carta" id="olistico">
+                        Mirato al benessere energetico della persona, suddiviso in ayurvedico, <span lang="id">chakra</span> e riflessologia plantare.
+                    </p>
+                </li>
+                <li>
+                    <p class="bold">Decontratturante</p>
+                    <p class="carta" id="decontratturante"> Adatto a ridurre la tensione e la rigidità muscolare.</p>
+                </li>
+                <li>
+                    <p class="bold">Tonificante</p>
+                    <p class="carta" id="tonificante">Adatto per sgonfiare e rassodare il corpo.</p>
+                </li>
+                <li>
+                    <p class="bold">Linfodrenante e emolinfatico</p>
+                    <p class="carta" id="linfodrenante"> Mirato al constrasto del gonfiore.</p>
+                </li>
+                <li>
+                    <p class="bold">Modellante</p>
+                    <p class="carta" id="modellante"> 
+                        Adatto per riprendere tono ed elasticità, suddiviso in lipolitico e anticellulitico.</p>
+                </li>
+            </ul>
 
         </main>
     <nav class="print-invisible">
@@ -98,19 +89,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 

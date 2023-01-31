@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!array_key_exists("username", $_SESSION) || $_SESSION["username"] == ""){//l'utente deve effettuare l'autenticazione
+if(!array_key_exists("username", $_SESSION) || $_SESSION["username"] == ""){
     header("Location: ../AMMINISTRAZIONE/401.php");
     die();
 }
@@ -44,7 +44,7 @@ if(isset($_POST['modificaDati'])){
     $modDataNascita = "";
     $modEmail = "";
     $modTelefono = "";
-    //controllo se effettivamente é stato modificato un dato
+    
     if(pulisciInput($_POST['newPhone'])!="" || pulisciInput($_POST['newEmail'])!="" || pulisciInput($_POST['newName'])!="" || pulisciInput($_POST['newSurname'])!="" || pulisciInput($_POST['newBirth'])!=""){
         $canUpdate = true;
         if($_POST['newName']!=""){
@@ -134,7 +134,7 @@ if(isset($_POST['modificaDati'])){
                     $modDati .= "<p class='errore'>Non é stato possibile aggiornare il numero di telefono.</p>";
                 }
             }
-            //mostro i nuovi dati
+            
             $query_result=$connessione->checkUtente($_SESSION["username"]);
             if($query_result != null){
                 foreach($query_result as $infoUtente){

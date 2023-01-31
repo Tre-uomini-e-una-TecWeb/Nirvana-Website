@@ -15,7 +15,6 @@
         <script type="text/javascript" src="../../JS/javascript.js"></script>
     </head>
     <body onload="PageLoad()">
-        <!-- Header -->
         <header id="cima">
             <h1>Centro Estetico Nirvana</h1>
             <nav id="top-right" class="menuLogMob">
@@ -27,19 +26,11 @@
                 <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
             </nav>
         </header>
-        <!-- La prima navigazione e' quella sopra a destra per l'utente -->
-    
-        <!-- La seconda navigazione e' quella della breadcrumb-->
         <nav>
-            <!-- <ul id="loginMenu">
-                <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
-                <li class="LogIn"><span lang="en"><a href="../../PHP/AREA_PERSONALE/login.php">Log In</a></span></li>
-                <li class="LogOut"><span lang="en"><a href="../../PHP/logout.php" onclick="LogOut()" >Log Out</a></span></li>
-            </ul> -->
             <div class="breadcrumb" id="big_breadcrumb">
                 <p>Ti trovi in: <span lang="en"><a href="../INDEX/index.html">Home</a></span> &gt;&gt; <a href="./trattamentiMacchinari.html">Trattamenti e Macchinari</a> &gt;&gt; <a href="trattamentiCorpo.html">Trattamenti Corpo</a> &gt;&gt; Manicure &amp; Pedicure</p>
             </div>
-            <div class=" breadcrumb print-invisible" id="mini_breadcrumb">
+            <div class="breadcrumb print-invisible" id="mini_breadcrumb">
                 <p>Livello superiore: <a href="trattamentiCorpo.html">Trattamenti Corpo</a></p>
             </div>
             <div id="menu">
@@ -51,37 +42,34 @@
                     </ul>
             </div>
         </nav>
-
-        <!-- Qui e' la fine di header -->
-
         <main>
             <h2>Manicure &amp; Pedicure</h2>
 
-            <dl class="contenitore_carte">
-                <div>
-                    <dt>Posa smalto</dt>
-                    <dd class="carta" id="posa">
+            <ul class="contenitore_carte">
+                <li>
+                    <p class="bold">Posa smalto</dt>
+                    <p class="carta" id="posa">
                         Trattamento per mani e piedi.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Semipermanente</dt>
-                    <dd class="carta" id="semipermanente">
+                    </p>
+                </li>
+                <li>
+                    <p class="bold">Semipermanente</dt>
+                    <p class="carta" id="semipermanente">
                         Trattamento per mani e piedi.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Gel</dt>
-                    <dd class="carta" id="gel">
+                    </p>
+                </li>
+                <li>
+                    <p class="bold">Gel</dt>
+                    <p class="carta" id="gel">
                         Con cartine o tip. 
                         Trattamento solo per mani.
-                    </dd>
-                </div>
-                <div>
-                    <dt>Curativa</dt>
-                    <dd class="carta" id="curativa">Trattamento solo per piedi.</dd>
-                </div>
-            </dl>
+                    </p>
+                </li>
+                <li>
+                    <p class="bold">Curativa</dt>
+                    <p class="carta" id="curativa">Trattamento solo per piedi.</p>
+                </li>
+            </ul>
         </main>
     <nav class="print-invisible">
         <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
@@ -89,19 +77,19 @@
     <footer>
         <hr>
         <ul class="contenitore-footer">
-
+            
             <li class="item-footer">
-                <p>Indirizzo</p>
+                <p class="bold">Indirizzo</p>
                 <address>Via Roma, 1</address>
             </li>
 
             <li class="item-footer">
-                <p>Telefono</p>
+                <p class="bold">Telefono</p>
                 <a href="tel:123456789">123456789</a>
             </li>
 
             <li class="item-footer">
-                <p>Email</p>
+                <p class="bold">Email</p>
                 <a href="mailto:example@ovunque.com">example@ovunque.com</a>
             </li>
 

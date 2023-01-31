@@ -1,6 +1,6 @@
 :root{
     --mainColor: #ffcc99;
-    /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
+   /*--secondaryColor: #b32821; un pelo sotto al contrasto per l'accessibilita !!!*/
     --secondaryColor: #800000;
     --secondaryColorDark: #600006;
     --mainColorAlpha: #d17e7a;
@@ -28,8 +28,7 @@ body{
 main {
     margin: 2.5em;
     max-width: 1500px;
-    /* margin-left: auto;
-    margin-right: auto; */
+   
 }
 
 header{
@@ -101,13 +100,7 @@ header h1{
 
 #top-right li {
     text-align: center;
-    /* display: block;
-    padding:0.3em;
-    width: 91%;
-    width: -webkit-fill-available;
-    width: -moz-available;
-    width: fill-available;
-    border: 1px solid black; */
+   
 }
 
 #top-right li a {
@@ -174,18 +167,18 @@ header h1{
     background-position: center;
     background-size: 2.6em;
     background-repeat: no-repeat;
-    /* padding: 0; */
+   
     position: fixed;
     left: 2.8em;
     bottom: 2.8em;
     z-index: 10;
-    /* cursor: pointer; */
+   
     border-radius: 5em;
     font-size: 1em;
     transition-duration: 50ms;
     transition-timing-function: ease-in;
     border: none;
-    /* opacity: 0; */
+   
 }
 
 #goUp:hover {
@@ -228,7 +221,7 @@ main table{
 
 #menu {
     background-color: var(--secondaryColor);
-    /* font-size: 1.1em; */
+   
     width: 35%;
     flex: auto;
     float: left;
@@ -279,6 +272,17 @@ main table{
     border: 1px solid white;
 }
 
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+ul#menuList.menuCont { 
+width:33.9%; 
+}
+}}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {	 _::-webkit-full-page-media, _:future, .menuCont { 
+    width: 33.9%; 
+    }	}
+
 .menuCont li{
     border: 1px solid white;
 }
@@ -302,7 +306,7 @@ main table{
     font-size: 1.1em;
     background-color: var(--mainColorAlpha);
     color: black;
-    /* font-size: large; */
+   
     padding: 0.5em 1em 0.5em 1em;
     width: 65%;
     flex: auto;
@@ -319,7 +323,7 @@ main table{
     color:var(--linkClearBackground);
 }
 
-/* .breadcrumb a:visited{ */
+
 #mini_breadcrumb{
     display: none;
     background-color: var(--mainColorAlpha);
@@ -347,23 +351,24 @@ th, td{
 
 ::placeholder {
     color: var(--secondaryColor);
-    opacity: 1; /* Per Firefox */
+    opacity: 1;
   }
   
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  :-ms-input-placeholder {
    color: var(--secondaryColor);
   }
   
-  ::-ms-input-placeholder { /* Microsoft Edge */
+  ::-ms-input-placeholder {
    color: var(--secondaryColor);
   }
 
-.contenitore_carte>li,
-.contenitore_carte>div>dt,
-.item-footer>dt{
+.contenitore_carte>li{
     font-size: 1em;
-    font-weight: bold;
     text-align: center;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 .hide{
@@ -384,7 +389,7 @@ th, td{
 .contenitore_carte > li, .contenitore_carte > div{
     margin: 1em 1em 4em 1em;
     padding: 10px;
-/*    border-radius: 15px;*/
+
     flex: 1 1 20em;
     max-width: 53em;
 }
@@ -412,6 +417,10 @@ th, td{
 
 .carta li, .bulletNone{
     margin-left: 1em;
+}
+
+.carta{
+    text-align: left;
 }
 
 .carta:hover{
@@ -459,19 +468,19 @@ footer a:visited{
 .item-footer {
     flex: 1 1 10em;
     margin: 1em 1em ;
-    /* border: 1px solid black; */
+   
     white-space: nowrap;
     max-width: 100%;
 }
 
 .item-footer>dd{
     text-align: center;
-    /* border: 1px solid black; */
+   
 }
 
 .item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
     margin: 0 auto;
-    /* border-bottom: hidden; */
+   
     border-left:hidden;
     border-right: hidden;
 }
@@ -840,7 +849,7 @@ footer a:visited{
 
 #contain {
     display: flex;
-    /* text-align: center; */
+   
 }
 
 #registrazione, #accesso, #visualizzazionePrenotazione, #userData, #cambioPassword{
@@ -1039,18 +1048,6 @@ input[type="checkbox"]{
     height: 1.2em;
     width: 1.2em;
 }
-
-/**
-#signup label, #login label{
-    margin-top: 2em;
-    text-align: left;
-    margin-left: 10%;
-}
-
-#signup input, #login input{
-    margin-left:auto;
-    margin-right: 10%;
-} **/
 
 #help{
     margin-top: 2em;
