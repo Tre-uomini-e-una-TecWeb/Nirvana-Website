@@ -312,35 +312,11 @@ In fase di progettazione, si é pensato di usare un database minimale, essendo i
 	\caption{Diagramma ER del database}
 \end{figure}
 
-%Inizio parte di spunto, non spostare
+Nella parte di analisi si sono elencate tre figure: l'utente generico, l'utente autenticato e l'amministratore.\\
+Per permettere questa distinzione, nel database sono inseriti solo i dati degli utenti registrati e dell'amministratore, in modo da poterne determinarne i privilegi, e conseguentemente le pagine visualizzabili o meno.\\
+É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
+Quindi, il database é stato progetto in maniera da contenere il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità.
 
-Ai fini di questo progetto, per vari motivi che sono stati discussi all’interno del
-gruppo, tre delle quattro tabelle elencate sono utilizzate nel momento in cui
-PHP interviene per prelevare i dati di interesse dal database.
-
-Come spiegato nella sezione Analisi, esistono due tipi di utenti in questo pro-
-getto: utente generico e amministratore.
-
-L’utente generico non viene salvato nella tabella Utente, in quanto non ha bi-
-sogno di registrarsi al sito per la semplice navigazione, mentre l’amministratore
-
-deve avere le credenziali apposite per entrare nell’Area amministratore.
-Inoltre, è obbligatorio l’utilizzo della tabella News per visualizzare le novità
-della pasticceria, e della tabella Prodotto per poter visualizzare paste e torte,
-in quanto i dati sono richiesti dinamicamente (altrimenti le pagine sarebbero
-vuote).
-Ergo, la tabella Recensione può servire solo nel caso in cui si volesse aggiungere
-un servizio interno al sito che prevede la registrazione di utenti che possono
-scrivere recensioni per i prodotti della pasticceria. Quindi, ai fini degli obiettivi
-del nostro progetto, la tabella è stata creata con l’intento di averla pronta per
-implementazioni future.
-Stesso discorso si applica alla tabella Utente: in questo progetto, questa tabella
-sarà riempita solamente con i dati dell’amministratore, in quanto unico utente
-ad aver accesso all’Area amministratore implementata nel sito.
-Nel momento in cui si vorrà implementare il servizio di recensioni utente, allora
-la tabella sarà composta anche dai parametri degli utenti che si registrano al
-servizio mediante pagina di registrazione (non prevista in questo progetto).
-%Fine parte di spunto, non spostare
 
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
