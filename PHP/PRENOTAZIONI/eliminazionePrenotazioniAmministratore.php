@@ -31,11 +31,11 @@ function showReservations($connessione, $prenotazioni){
             $idPrenotazione = $prenotazione['Username'].",". $dataPrenotazione.",".$oraPrenotazione;
             $prenotazioni .= "<td data-title='' class='header'>".$prenotazione['Nome']." ".$prenotazione['Cognome']."</td>";
             $eta = $dataOggi->diff(new DateTime($prenotazione['DataNascita']));
-            $prenotazioni .= "<td data-title='Età: '>".$eta->y."</td>";
-            $prenotazioni .= "<td data-title='Data: '>".$dataPrenotazione."</td>";
-            $prenotazioni .= "<td data-title='Orario: '>".$oraPrenotazione."</td>";
-            $prenotazioni .= "<td data-title='Richiesta: '>".$prenotazione['Trattamento']."</td>";
-            $prenotazioni .= "<td data-title='Stato: '>";
+            $prenotazioni .= "<td data-title='Età:'>".$eta->y."</td>";
+            $prenotazioni .= "<td data-title='Data:'>".$dataPrenotazione."</td>";
+            $prenotazioni .= "<td data-title='Orario:'>".$oraPrenotazione."</td>";
+            $prenotazioni .= "<td data-title='Richiesta:'>".$prenotazione['Trattamento']."</td>";
+            $prenotazioni .= "<td data-title='Stato:'>";
             switch ($prenotazione['Stato']){
                 case 'A':
                     $prenotazioni .= "Accettata";
@@ -47,7 +47,7 @@ function showReservations($connessione, $prenotazioni){
                     $prenotazioni .= "In attesa";
             }
             $prenotazioni .= "</td>";
-            $prenotazioni .= "<td data-title='Eliminare: '> <input type='checkbox' id='myCheckbox[]' name='".$i."' value='".$idPrenotazione."' > </td>";
+            $prenotazioni .= "<td data-title='Eliminare:'> <input type='checkbox' id='myCheckbox[]' name='".$i."' value='".$idPrenotazione."' > </td>";
             $prenotazioni .= "</tr>";
         }
     }
