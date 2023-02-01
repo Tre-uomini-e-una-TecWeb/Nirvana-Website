@@ -65,11 +65,14 @@ table,th,td{
     border-collapse: collapse;
 }
 
-.contenitore_carte>li,
-.contenitore_carte>div>dt {
+.contenitore_carte>li{
     font-size: large;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-align: left;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 footer{
