@@ -273,7 +273,7 @@ A logout effettuato, l'utente autenticato diventa a tutti gli effetti un utente 
 \subsubsection{Amministratore}
 Un utente é definito come \textit{amministratore} quando é autenticato al sito e ha privilegi di amministratore, e pertanto puó accedere alla sua area personale e gestire le prenotazioni per i servizi offerti dal centro, oltre ad inserirne o eliminarne manualmente e a visualizzare un elenco dei clienti registrati al sito. Puó inoltre controllare le richieste attive e modificarle oppure confermarle o meno.\\
 Sempre per rispettare le regole di progetto, login e password per questo utente sono uguali a \textbf{admin}.\\
-Eredita dunque tutti gli use case di \textit{utente generico}, eredita tutti i casi d'uso relativi a \textit{Area Personale} di \textit{Utente Autenticato} e dispone di casi d'uso extra:
+Eredita dunque tutti gli use case di \textit{utente generico}, eredita tutti i casi d'uso relativi a \textit{Area Personale} di \textit{utente autenticato} e dispone di casi d'uso extra:
 \begin{itemize}
 	\item Aggiunta prenotazione in "Gestione Prenotazione - Amministratore";
 	\item Visualizzazioni prenotazioni in "Gestione Prenotazione - Amministratore";
@@ -281,6 +281,28 @@ Eredita dunque tutti gli use case di \textit{utente generico}, eredita tutti i c
  	\item Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore";
  	\item Visualizzazione clienti registrati in "Elenco Clienti"
 \end{itemize}
+
+\paragraph{Aggiunta prenotazione in "Gestione Prenotazione - Amministratore"}\mbox{}\\
+L'amministratore può aggiungere una prenotazione nella pagina \textit{Gestione Prenotazione - Amministratore} attraverso l'apposito form nella sezione "Inserisci prenotazione".\\
+Nel caso i dati inseriti siano corretti, la pressione del bottone "Conferma dati" invia i dati inseriti e inserisce una nuova prenotazione con stato A (ovvero "Accettata") mostrando il messaggio di avvenuto inserimento. Altrimenti, viene visualizzato un messaggio che indica dove sono avvenute delle problematiche nell'inserimento dei dati.
+
+\paragraph{Visualizzazioni prenotazioni in "Gestione Prenotazione - Amministratore"}\mbox{}\\
+L'amministratore può visualizzare le prenotazioni disponibili nella pagina \textit{Gestione Prenotazione - Amministratore} nella sezione "Gestisci prenotazioni".\\
+Vengono mostrate, attraverso una tabella, le prenotazioni disponibili assieme alle generalitá (nome e cognome) e all'etá della persona coinvolta. Inoltre, sono visualizzate solo le prenotazioni con data uguale o superiore a quella odierna.
+
+\paragraph{Modifica prenotazioni in "Gestione Prenotazione - Amministratore"}\mbox{}\\
+L'amministratore può modificare le prenotazioni in attesa nella pagina \textit{Gestione Prenotazione - Amministratore} nella sezione "Gestisci prenotazioni".\\
+Se sono presenti prenotazioni con stato P, ovvero "In attesa", si possono modificare data ed ora di prenotazione, oltre ad accettare o rifiutare la prenotazione stessa. Alla pressione di "Applica modifiche", vengono controllate le eventuali modifiche a data, ora e stato delle varie prenotazioni che possono essere modificate.\\
+Se tutti i dati sono corretti, le prenotazioni vengono aggiornate nel database e viene segnalato il numero di prenotazioni modificate. Se le prenotazioni presentano errori o hanno sempre stato P, allora il numero di prenotazioni modificate é minore delle prenotazioni modificabili e vengono segnalati gli errori che sono avvenuti.
+
+\paragraph{Eliminazione prenotazione in "Eliminazione Prenotazione - Amministratore"}\mbox{}\\
+L'amministratore può eliminare una o piú prenotazioni nella pagina \textit{Eliminazione Prenotazione - Amministratore}, raggiungibile dall'apposito menú presente nella sezione Prenotazione (solo per l'amministratore) e dal link presente nella sezione "Inserisci prenotazione" nella pagina \textit{Area Personale}.\\
+Da questa pagina, l'amministratore puó eliminare una o piú prenotazioni indipendentemente dal suo stato. Viene data la possibilitá di eliminare prenotazioni con data uguale o maggiore di quella odierna.\\
+Dopo aver selezionato le prenotazioni da eliminare, la pressione di "Elimina prenotazione" effettua la rimozione delle prenotazioni dal database, con successivo messaggio di avvenuta cancellazione. Nel caso non si fosse selezionata alcuna prenotazione, verrá mostrato un messaggio di errore che segnala la non selezione di prenotazioni.
+
+\paragraph{Visualizzazione clienti registrati in "Elenco Clienti"}\mbox{}\\
+L'amministratore può visualizzare la lsita dei clienti registrati al sito dalla pagina \textit{Elenco Clienti}, raggiungibile dall'apposito menú presente nella sezione Prenotazione (solo per l'amministratore) e dal link presente nella sezione "Gestisci prenotazioni" nella pagina \textit{Area Personale}.\\
+La lista viene mostrata in forma tabellare per motivi di ordine, ogni riga mostra le informazioni di un cliente, al fine di avvisarlo nel caso venga modificata una sua prenotazione.
 
 %nuova sezione
 \section{Progettazione}
@@ -339,7 +361,7 @@ In fase di progettazione, si é pensato di usare un database minimale, essendo i
 Nella parte di analisi si sono elencate tre figure: l'utente generico, l'utente autenticato e l'amministratore.\\
 Per permettere questa distinzione, nel database sono inseriti solo i dati degli utenti registrati e dell'amministratore, in modo da poterne determinarne i privilegi, e conseguentemente le pagine visualizzabili o meno.\\
 É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
-Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità.
+Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità. Oppure, nel momento in cui saranno presenti piú utenti con funzioni di amministratore non sará necessario effettuare modifiche ad altre parti del sito, ma sará solo necessario inserire la persona nel database con Privilegi=true.
 
 
 \section{Presentazione}
