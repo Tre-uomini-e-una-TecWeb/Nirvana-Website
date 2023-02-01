@@ -653,6 +653,10 @@ L'errore 404 avviene alla ricerca di un contenuto non presente nel server. L'azi
 \paragraph*{Errore 500}
 L'errore 500 avviene quando il server non é raggiungibile, e pertanto non é possibile effettuare le operazioni riguardanti l'accesso, la modifica dei dati e la prenotazione.
 \subsection{SQL}	% Nicola
+Per il salvataggio dei dati, si é ritenuto opportuno l'utilizzo di SQL tramite \textit{MariaDB}.
+Di conseguenza, per le interazioni con il database si é utilizzata la libreria mysqli di PHP.
+Nel capitolo 3.3 viene descritto il database che l'applicazione utilizza per il salvataggio dei dati.
+
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
 Nel sito é usato per cambiare dinamicamente le classi degli elementi HTML ed il tipo di input nei vari form e tabelle.\\
@@ -688,9 +692,46 @@ Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attribu
 \newpage
 \section{Strumenti}
 A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
-Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo.
+Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo. Infine, alcuni strumenti sono stati utilizzati sia per la fase di sviluppo sia per la fase di test, e quindi si includono in una terza categoria che include le precedenti.
 \subsection{Strumenti di sviluppo}
+\subsubsection*{Lighthouse}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/lighthouse.png}}
+	\caption{Schermata iniziale di Lighthouse}
+\end{figure}
+\subsubsection*{Silktide}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/silktide.png}}
+	\caption{Schermata iniziale di Silktide}
+\end{figure}
 \subsection{Strumenti di test}
+\subsubsection*{NVDA}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[scale=0.7]{./graphics/nvda.png}}
+	\caption{Logo di NVDA}
+\end{figure}
+\subsubsection*{Links}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/links.png}}
+	\caption{Pagina principale del sito vista da Links}
+\end{figure}
+\subsection{Strumenti sia di test che di sviluppo}
+\subsubsection*{Visual Studio Code}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[scale=0.06]{./graphics/vscode.png}}
+	\caption{Logo di VSCode}
+\end{figure}
+\subsubsection*{Xampp}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/xampp.jpg}}
+	\caption{Pannello di controllo di Xampp}
+\end{figure}
 \newpage
 \section{Suddivisione del lavoro}
 Per garantire una buona suddivisione del carico di lavoro che il progetto ha inevitabilmente richiesto, si é suddiviso il lavoro tra i membri del gruppo in questo modo:
@@ -725,11 +766,10 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Nicola Baesso:
 	\begin{itemize}
 		\item HTML: sviluppo delle seguenti pagine: ;
-		\item CSS:
-		\item Javascript:
+		\item CSS: settaggio variabili colori principali, modifiche al colore dei placeholder;
+		\item Javascript: funzioni per la trasformazione da campi testo a campi data/ora e conseguente ritorno a campo testo;
 		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
-		\item Immagini:
-		\item Relazione:
+		\item Relazione: sezione casi d'uso, sottosezione Database, sezione PHP, sezione Strumenti.
 	\end{itemize} 
 \end{itemize}
 
