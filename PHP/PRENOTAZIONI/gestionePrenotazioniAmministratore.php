@@ -64,7 +64,7 @@ if($connOk){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
+                    $prenotazioni .= "<select aria-label=\"Stato della prenotazione\" id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
@@ -165,7 +165,7 @@ if(isset($_POST['submit'])){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
+                    $prenotazioni .= "<select aria-label=\"Stato della prenotazione\" id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
