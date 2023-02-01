@@ -49,7 +49,7 @@ header {
     margin-bottom: 6em;
 }
 
-@media screen and (max-width:940px), only screen and (max-device-width:940px) {
+@media screen and (max-width:940px){
 
     header, main{
         font-size: 1.1em;
