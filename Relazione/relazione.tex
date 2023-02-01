@@ -491,6 +491,47 @@ Per quanto concerne i \textit{tag}:
 	\item i \textit{metatag} presenti nella sezione \textit{head} dei file \textit{.html} aiutano il sito nel ranking di ricerca e sono di fondamentale importanza per incrementare l'accessibilità.
 \end{itemize}
 
+\subsubsection{Amministrazione}
+Tramite l'HTML si é fornita un'implementazione per le pagine classiche di errore.\\
+Gli errori individuati sono i seguenti codici:
+\begin{itemize}
+	\item 401
+	\item 403
+	\item 404
+	\item 500
+\end{itemize}
+La spiegazione di come vengono riconosciuti questi errori viene delegata all'anonima sezione nella parte in PHP.
+\paragraph*{Errore 401}
+Questa pagina mostra la necessitá di autenticarsi per poter accedere a determinate pagine.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/401.png}}
+	\caption{Schermata dell'errore 401}
+\end{figure}
+\paragraph*{Errore 403}
+Questa pagina indica la non possibilitá di accedere a determinate pagine, poiché non propriamente autorizzati.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/403.png}}
+	\caption{Schermata dell'errore 403}
+\end{figure}
+\paragraph*{Errore 404}
+Questa pagina indica la mancanza del file cercato dall'utente.\\
+Essendo questo un errore potenzialmente piú frequente tra gli errori di tipo 4xx, é apparso opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/404.png}}
+	\caption{Schermata dell'errore 404}
+\end{figure}
+\paragraph*{Errore 500}
+Questa pagina viene mostrata quando il server é momentaneamente irraggiungibile.\\
+Essendo questo un errore che compromette le funzionalitá del sito, si é ritenuto opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/500.png}}
+	\caption{Schermata dell'errore 500}
+\end{figure}
+
 \subsection{CSS}
 La modellazione del layout del sito è stata implementata tramite CSS3.\\
 Per rendere l'esperienza di navigazione fluida tra i vari dispositivi, sono state utilizzate misure relative ed in percentuale.\\
@@ -540,8 +581,19 @@ La pagina di \textbf{logout}, non mostrata all'utente, si preoccupa di eliminare
 
 \subsubsection{Area personale}
 \paragraph*{Area personale}
+L'area personale contiene tutte le informazioni relative all'utente, e offre anche la possibilitá di modificarli.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/areaPersonale.png}}
+	\caption{Area personale, vista dall'utente "User"}
+\end{figure}
 \paragraph*{Elenco clienti}
-
+La pagina Elenco Clienti mostra, in forma tabellare, gli utenti iscritti alla piattaforma. É visibile solo all'amministratore, in quanto é necessaria per avere un contatto con i clienti.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/elencoClienti.png}}
+	\caption{Elenco dei clienti}
+\end{figure}
 \subsubsection{Prenotazioni}
 \label{prenotazioni:valida}
 Con il termine \textbf{\textit{prenotazione valida}} utilizzato nei paragrafi seguenti si intende una prenotazione avente data-ora \textit{posteriore} rispetto alla data-ora in cui la prenotazione è presa in analisi: se un utente registrato vuole richiedere una prenotazione, essa deve essere valida e, per essere valida, deve avere data-ora \textit{successiva} alla data-ora in cui avviene la richiesta di prenotazione.
@@ -591,10 +643,15 @@ La logica seguita dalla pagina è la seguente: l'amministratore ha la possibilit
 Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf{Data di prenotazione} e \textbf{Orario di prenotazione} ed essa costituisce l'identificativo di ogni prenotazione (vedi sottosezione \hyperref[subsec:database]{\underline{database}}); il valore delle checkboxes viene recuperato tramite apposita funzione \textit{PHP} ed è usato per eliminare la relativa prenotazione.
 
 \subsubsection{Amministrazione}
+Di seguito si elencano i meccanismi che portano al verificarsi di un determinato errore, e alla visualizzazione della pagina relativa (elencate nella sezione HTML).
 \paragraph*{Errore 401}
+L'errore 401 si verifica quando un utente generico tenta di accedere ad una pagina che richiede l'autenticazione.
 \paragraph*{Errore 403}
+L'errore 403 si verifica quando un utente autenticato o l'amministratore tentano di accedere ad una pagina non riservata a loro, e quindi gli si nega l'accesso.
 \paragraph*{Errore 404}
+L'errore 404 avviene alla ricerca di un contenuto non presente nel server. L'azione é effettuata dal server stesso, non appoggiandosi a PHP.
 \paragraph*{Errore 500}
+L'errore 500 avviene quando il server non é raggiungibile, e pertanto non é possibile effettuare le operazioni riguardanti l'accesso, la modifica dei dati e la prenotazione.
 \subsection{SQL}	% Nicola
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
