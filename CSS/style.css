@@ -499,7 +499,7 @@ footer a:visited{
     padding: 0.5em 1.5em 0.5em 1.5em;
 }
 
-.item-footer table>caption{
+caption{
     font-weight: bold;
     font-size: 1em;
 }

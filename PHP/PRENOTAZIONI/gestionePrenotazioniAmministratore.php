@@ -51,8 +51,8 @@ if($connOk){
                     $prenotazioni .= "<td data-title='Orario:'>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td data-title='Data:'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario:'><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data:'><label class=\"hide print-invisible\" for='".$idPrenotazione."data'>Data di prenotazione</label><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario:'><label class=\"hide print-invisible\" for='".$idPrenotazione."ora'>Orario di prenotazione</label><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta:'>".$prenotazione['Trattamento']."</td>";
             $prenotazioni .= "<td data-title='Stato:'>";
@@ -64,7 +64,7 @@ if($connOk){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
+                    $prenotazioni .= "<label class=\"hide print-invisible\" for='stato'>Stato della prenotazione</label><select id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
@@ -151,8 +151,8 @@ if(isset($_POST['submit'])){
                     $prenotazioni .= "<td data-title='Orario:'>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td data-title='Data:'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario:'><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data:'><label class=\"hide print-invisible\" for='".$idPrenotazione."data'>Data di prenotazione</label><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario:'><label class=\"hide print-invisible\" for='".$idPrenotazione."ora'>Orario di prenotazione</label><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta:'>".$prenotazione['Trattamento']."</td>";
             $prenotazioni .= "<td data-title='Stato:'>";
@@ -165,7 +165,7 @@ if(isset($_POST['submit'])){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
+                    $prenotazioni .= "<label class=\"hide print-invisible\" for='stato'>Stato della prenotazione</label><select id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";
@@ -284,8 +284,8 @@ if(isset($_POST['modificaPrenotazioni'])){
                     $prenotazioni .= "<td data-title='Orario:'>".$oraPrenotazione."</td>";
                     break;
                 default:
-                $prenotazioni .= "<td data-title='Data:'><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
-                $prenotazioni .= "<td data-title='Orario:'><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Data:'><label class=\"hide print-invisible\" for='".$idPrenotazione."data'>Data di prenotazione</label><input placeholder=\"".$dataPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."data\" type=\"text\" onfocus=\"makeDate('".$idPrenotazione."data')\" onblur=\"returnText('".$idPrenotazione."data')\" name=\"".$idPrenotazione."[]\"></td>";
+                $prenotazioni .= "<td data-title='Orario:'> <label class=\"hide print-invisible\" for='".$idPrenotazione."ora'>Orario di prenotazione</label><input placeholder=\"".$oraPrenotazione."\" class=\"textbox-n\" id=\"".$idPrenotazione."ora\" type=\"text\" onfocus=\"makeTime('".$idPrenotazione."ora')\" onblur=\"returnText('".$idPrenotazione."ora')\" name=\"".$idPrenotazione."[]\"></td>";
             }
             $prenotazioni .= "<td data-title='Richiesta:'>".$prenotazione['Trattamento']."</td>";
             $prenotazioni .= "<td data-title='Stato:'>";
@@ -297,7 +297,7 @@ if(isset($_POST['modificaPrenotazioni'])){
                     $prenotazioni .= "Rifiutata";
                     break;
                 default:
-                    $prenotazioni .= "<select id=\"stato\" name=\"".$idPrenotazione."[]\">";
+                    $prenotazioni .= "<label class=\"hide print-invisible\" for='stato'>Stato della prenotazione</label><select id=\"stato\" name=\"".$idPrenotazione."[]\">";
                     $prenotazioni .= "<option value=\"\" disabled selected>Da confermare</option>";
                     $prenotazioni .= "<option value=\"A\">Accetta prenotazione</option>";
                     $prenotazioni .= "<option value=\"R\">Rifiuta prenotazione</option>";

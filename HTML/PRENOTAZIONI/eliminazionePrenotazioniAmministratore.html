@@ -8,11 +8,11 @@
     <meta name="keywords" content="gestione prenotazioni, Centro estetico Nirvana, centro estetico, amministrazione" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="Matteo Cusin">
-    <link rel="stylesheet" media="handheld, screen" href="../../CSS/style.css">
-    <link rel="stylesheet" media="handheld, screen and (max-width:1150px), only screen and (max-device-width:1150px)" href="../../CSS/mobile.css" />
-    <link rel="stylesheet" media="handheld, screen and (min-width:1900px), only screen and (min-device-width:1900px)" href="../../CSS/wide-screen.css" />
+    <link rel="stylesheet" media="screen" href="../../CSS/style.css">
+    <link rel="stylesheet" media="screen and (max-width:1150px)" href="../../CSS/mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width:1900px)" href="../../CSS/wide-screen.css" />
     <link rel="stylesheet" media="print" href="../../CSS/print.css" />
-    <script type="text/javascript" src="../../JS/javascript.js"></script>
+    <script src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()">
     <header id="cima">
@@ -48,8 +48,9 @@
         <div id="eliminazioniAmministratore">
             <p id="reservationsLink">Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
             <form method="post" action="eliminazionePrenotazioniAmministratore.php" id="deleteReservations">
-                <p id="sum" class="hide print-invisible">Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna).</p>
-                <table id="tabellaPrenotazioniAmministratore" aria-describedby="sum">
+                <p id="sumPren" class="hide print-invisible">Tabella che contiene tutte le prenotazioni attive (una data uguale o seguente a quella odierna).</p>
+                <table id="tabellaPrenotazioniAmministratore" aria-describedby="sumPren">
+                    <caption>Prenotazioni attive</caption>
                     <thead>
                         <tr>
                             <th scope="col">Utente</th>
