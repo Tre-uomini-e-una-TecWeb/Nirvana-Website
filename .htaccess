@@ -1,1 +1,2 @@
-ErrorDocument 404 /Nirvana-Website/HTML/AMMINISTRAZIONE/404.html
+ErrorDocument 404 http://127.0.0.1/HTML/AMMINISTRAZIONE/404.html
+ErrorDocument 500 http://127.0.0.1/nbaesso/HTML/AMMINISTRAZIONE/500.html
