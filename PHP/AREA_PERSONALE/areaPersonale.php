@@ -35,7 +35,8 @@ if($connOk){
     }
 } 
 else {
-    $modDati.='<p class=\'errore\'>Errore di connessione!</p>';
+    http_response_code(500);
+    die();
 }
 
 if(isset($_POST['modificaDati'])){

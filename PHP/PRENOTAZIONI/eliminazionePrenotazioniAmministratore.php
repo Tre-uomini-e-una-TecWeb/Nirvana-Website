@@ -64,34 +64,34 @@ $prenotazioni = "";
 $esitoDelete = "";
 if($connOk){
     $prenotazioni=showReservations($connessione, $prenotazioni);
-}
-else{
-    $prenotazioni .= "<tr><td colspan='7'>Non é al momento possibile visualizzare le prenotazioni</td></tr>";
-}
-
-if(isset($_POST['deleteP'])){
-    $i = count($_POST)-1;
-    if(isset($_POST) && $i>0){
-        $deleted=0;
-        foreach ($_POST as $key => $value) {
-            if($key!="deleteP"){
-                list($username,$dataPrenotazione,$oraPrenotazione)=explode(",",$value);
-                $isDeleted = $connessione->deletePrenotazioni($username, $dataPrenotazione, $oraPrenotazione);
-                if($isDeleted){
-                    $deleted++;
+    if(isset($_POST['deleteP'])){
+        $i = count($_POST)-1;
+        if(isset($_POST) && $i>0){
+            $deleted=0;
+            foreach ($_POST as $key => $value) {
+                if($key!="deleteP"){
+                    list($username,$dataPrenotazione,$oraPrenotazione)=explode(",",$value);
+                    $isDeleted = $connessione->deletePrenotazioni($username, $dataPrenotazione, $oraPrenotazione);
+                    if($isDeleted){
+                        $deleted++;
+                    }
                 }
             }
-        }
-        $prenotazioni = "";
-        $prenotazioni=showReservations($connessione, $prenotazioni);
-        if ($i == $deleted) {
-          $esitoDelete = "<p class='conferma'>Le prenotazioni selezionate sono state eliminate correttamente!</p>";
+            $prenotazioni = "";
+            $prenotazioni=showReservations($connessione, $prenotazioni);
+            if ($i == $deleted) {
+              $esitoDelete = "<p class='conferma'>Le prenotazioni selezionate sono state eliminate correttamente!</p>";
+            } else {
+              $esitoDelete = "<p class='errore'>Alcune prenotazioni non sono state eliminate!</p>";
+            }
         } else {
-          $esitoDelete = "<p class='errore'>Alcune prenotazioni non sono state eliminate!</p>";
+            $esitoDelete = "<p class='errore'>Non è stata selezionata alcuna prenotazione! </p>";
         }
-    } else {
-        $esitoDelete = "<p class='errore'>Non è stata selezionata alcuna prenotazione! </p>";
     }
+}
+else{
+    http_response_code(500);
+    die();
 }
 
 $pagina_HTML=str_replace("<listaPrenotazioni />", $prenotazioni, $pagina_HTML);

@@ -27,7 +27,8 @@ if($connOk){
     }
 } 
 else {
-    $clienti = "<p>Non è possbile caricare la lista dei clienti.</p>";
+    http_response_code(500);
+    die();
 }
 $pagina_HTML = str_replace("<clientiIscritti />", $clienti, $pagina_HTML);
 echo $pagina_HTML;
