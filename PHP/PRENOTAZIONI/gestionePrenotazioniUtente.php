@@ -84,7 +84,7 @@ if($connOk){
         $prenotazioni .= "<tr><td colspan='4'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
-    http_response_code(500);
+    header("Location: ../AMMINISTRAZIONE/500.php");
     die();
 }
 

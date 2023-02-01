@@ -35,7 +35,7 @@ if($connOk){
     }
 } 
 else {
-    http_response_code(500);
+    header("Location: ../AMMINISTRAZIONE/500.php");
     die();
 }
 

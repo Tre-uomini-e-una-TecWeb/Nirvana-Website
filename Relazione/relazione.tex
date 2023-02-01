@@ -169,6 +169,7 @@ Il sito dovrà contenere informazioni riguardo i trattamenti disponibili e i mac
 Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che necessita di essere confermato o meno dal centro stesso. Le prenotazioni possono anche inserite, oltre che confermate o smentite, anche dal centro stesso.\\
 É fondamentale che il sito garantisca accessibilitá, in modo da permettere a chiunque di poter essere utilizzato, e usabilitá, separando struttura, presentazione e comportamento.\\
 Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.\\
+\newpage
 \section{Analisi}
 \subsection{Studio dell'utenza finale}
 \label{analisi:utenza}
@@ -305,6 +306,7 @@ L'amministratore può visualizzare la lsita dei clienti registrati al sito dalla
 La lista viene mostrata in forma tabellare per motivi di ordine, ogni riga mostra le informazioni di un cliente, al fine di avvisarlo nel caso venga modificata una sua prenotazione.
 
 %nuova sezione
+\newpage
 \section{Progettazione}
 \subsection{Obiettivi}
 L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email.\\
@@ -363,7 +365,7 @@ Per permettere questa distinzione, nel database sono inseriti solo i dati degli 
 É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
 Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità. Oppure, nel momento in cui saranno presenti piú utenti con funzioni di amministratore non sará necessario effettuare modifiche ad altre parti del sito, ma sará solo necessario inserire la persona nel database con Privilegi=true.
 
-
+\newpage
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
@@ -475,6 +477,7 @@ Di seguito due  esempi di stampa della stessa pagina:
 \end{figure}
 
 %nuova sezione
+\newpage
 \section{Implementazione}
 \subsection{HTML}
 Il progetto è stato realizzato tramite il linguaggio \textit{HTML5} ma si è resa possibile la compatibilità con browser più datati seguendo le linee guida del corso di Tecnologie Web e quelle del \textit{W3C}.
@@ -503,18 +506,37 @@ Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazio
 
 \subsection{PHP} % Matteo e Nicola
 Il linguaggio PHP è stato utilizzato per lo sviluppo della parte di comportamento server-side del sito web. \\
+Ne é stata necessaria l'implementazione in quanto le pagine relative all'area personale e alla prenotazione devono specializzarsi in base al tipo di utenza, ovvero deve essere possibile distinguere la pagina riservata all'utente autenticato rispetto alla pagina riservata all'amministratore.\\
 La versione del linguaggio scelta dal gruppo è la 8.1 dato che la versione 8.0 non è più supportata dal giorno 26 Novembre 2022 (fino al 26 Novembre 2023 saranno effettuati aggiornamenti puramente relativi alla sicurezza).
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=\textwidth]{./graphics/php-support.pdf}}
 	\caption{\href{https://www.php.net/supported-versions.php}{https://www.php.net/supported-versions.php} al 30 Gennaio 2023}
 \end{figure}
-
-\subsubsection{Autenticazione}
-\paragraph*{Login}
-\paragraph*{Logout}
-
+Di seguito si elencano gli usi per i quali si é implementato del codice in PHP.
 \subsubsection{Connessione}
+Ancor prima di effettuare l'autenticazione o una prenotazione, é necessario effettuare il collegamento al database (illustrato al punto 3.3 di questa relazione).\\
+Cio avviene tramite una pagina di connessione, che non viene mostrata all'utente, ma contiene tutte le informazioni necessarie per collegarsi.\\
+In particolare, questo file contiene l'indirizzo dove risiede il database, il nome del database stesso e le credenziali. Inoltre, contiene le funzioni necessarie per leggere, inserire, modificare e rimuove i dati dal database.
+\subsubsection{Autenticazione}
+La sezione di autenticazione si divide in due pagine, \textbf{login} e \textbf{logout}. Nella pagina di login viene offerta anche la \textbf{registrazione}.
+\paragraph*{Registrazione e Login}
+La pagina dedicata alla registrazione e al login é sostanzialmente formata da due form.\\
+Nella prima form, quella dedicata alla \textbf{registrazione}, viene inserito un utente nel database, il quale potrá effettuare l'accesso e usufruire del servizio di prenotazione.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/registrazione.png}}
+	\caption{Form di registrazione}
+\end{figure}
+La seconda form, relativa al \textbf{login}, permette l'accesso inserendo il proprio nome utente e la password, entrando cosí nell'area personale e potendo effettuare delle prenotazioni.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/accesso.png}}
+	\caption{Form di Login}
+\end{figure}
+\paragraph*{Logout}
+La pagina di \textbf{logout}, non mostrata all'utente, si preoccupa di eliminare la sessione esistente e di ritornare al menú principale.
+
 
 \subsubsection{Area personale}
 \paragraph*{Area personale}
@@ -598,17 +620,21 @@ Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attribu
 \end{itemize}
  
 %nuova sezione
+\newpage
 \section{Validazione}
 
 %nuova sezione
+\newpage
 \section{Fase di Test}
 
 %nuova sezione
+\newpage
 \section{Strumenti}
 A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
 Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo.
 \subsection{Strumenti di sviluppo}
 \subsection{Strumenti di test}
+\newpage
 \section{Suddivisione del lavoro}
 Per garantire una buona suddivisione del carico di lavoro che il progetto ha inevitabilmente richiesto, si é suddiviso il lavoro tra i membri del gruppo in questo modo:
 \begin{itemize}
