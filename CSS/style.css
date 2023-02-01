@@ -109,7 +109,6 @@ header h1{
     width: 91%;
     width: -webkit-fill-available;
     width: -moz-available;
-    width: fill-available;
     border: 1px solid black;
 }
 
@@ -119,7 +118,7 @@ header h1{
     width: 91%;
     width: -webkit-fill-available;
     width: -moz-available;
-    width: fill-available;
+    
     border: 1px solid black;
     
 }
@@ -267,13 +266,13 @@ main table{
     width: 33.9%;
     width: -webkit-fill-available;
     width: -moz-available;
-    width: fill-available;
+    
     margin: auto;
     border: 1px solid white;
 }
 
 @media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+{ @supports (-webkit-appearance:none) and (stroke:rgba(0,0,0,0)) {
 ul#menuList.menuCont { 
 width:33.9%; 
 }
