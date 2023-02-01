@@ -109,7 +109,6 @@ header h1{
     width: 91%;
     width: -webkit-fill-available;
     width: -moz-available;
-    width: fill-available;
     border: 1px solid black;
 }
 
@@ -273,7 +272,7 @@ main table{
 }
 
 @media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+{ @supports (-webkit-appearance:none) and (stroke:rgba(0,0,0,0)) {
 ul#menuList.menuCont { 
 width:33.9%; 
 }
