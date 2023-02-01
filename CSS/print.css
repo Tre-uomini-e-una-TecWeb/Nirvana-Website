@@ -88,6 +88,7 @@ footer{
 }
 
 .item-footer {
+    flex: 1em;
     margin: 1em 1em ;
     white-space: nowrap;
     max-width: 100%;
