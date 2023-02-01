@@ -695,12 +695,33 @@ A supporto dello sviluppatore, é necessario che siano presenti degli strumenti 
 Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo. Infine, alcuni strumenti sono stati utilizzati sia per la fase di sviluppo sia per la fase di test, e quindi si includono in una terza categoria che include le precedenti.
 \subsection{Strumenti di sviluppo}
 \subsubsection*{Lighthouse}
+Lighthouse é un tool automatico, creato da Google, per la misura di qualitá di un sito, valutandone:
+\begin{itemize}
+	\item performance
+	\item accessibilitá
+	\item applicazione delle best practices
+	\item S.E.O.
+\end{itemize}
+con una valutazione da 0 a 100.\\
+Questo strumento, completamente open source, é integrato tra gli strumenti per sviluppatori nei browser basati su Chromium.\\
+Con queste premesse, Lighthouse si é rivelato un ottimo strumento di aiuto allo sviluppo del sito, pur essendo limitato nella valutazione (utilizza solo test automatici).
+
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/lighthouse.png}}
+	\fbox{\includegraphics[scale=0.6]{./graphics/lighthouse.png}}
 	\caption{Schermata iniziale di Lighthouse}
 \end{figure}
 \subsubsection*{Silktide}
+Silktide, sviluppato dall'omonima azienda, é un'estensione per browser che permette di simulare diverse disabilitá, come:
+\begin{itemize}
+	\item Dislessia
+	\item Discromatopsia
+	\item Miopia
+	\item Perdita di visione periferica o centrale
+	\item Cecitá totale
+\end{itemize}
+In particolare, integra uno screen reader per simulare la cecitá totale, utile per identificare bottoni o elementi senza descrizione.\\
+Sebbene non possa sostituire uno screen reader reale come NVDA o OCRA, é risultato interessante il suo utilizzo specie per lo sviluppo di avvisi indipendenti dal colore.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=\textwidth]{./graphics/silktide.png}}
@@ -708,12 +729,19 @@ Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizz
 \end{figure}
 \subsection{Strumenti di test}
 \subsubsection*{NVDA}
+NVDA, acronimo di NonVisual Desktop Access, è uno screen reader sviluppato per Windows.\\
+Essendo gratuito, risulta largamente piú diffuso di screen readers come JAWS (a pagamento) o OCRA (disponibile gratuitamente su Linux).\\
+É quindi sembrato il candidato ideale per testare la navigazione del sito da parte di un utente con disabilitá visive estremamente importanti.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[scale=0.7]{./graphics/nvda.png}}
 	\caption{Logo di NVDA}
 \end{figure}
 \subsubsection*{Links}
+Links è un browser open source testuale con interfaccia a riga di comando.\\
+Disponendo di una semplice interfaccia grafica da terminale, può visualizzare pagine complesse (ha supporto all'HTML 4.0 parziale con tabelle e frame, supporto per molteplici set di caratteri), supporta terminali a colori e monocromatici, e permette lo scrolling orizzontale.\\
+Le sue caratteristiche sono risultate perfette per controllare che la navigazione del sito non fosse legata alla parte grafica o al comportamento, ma solamente alla struttura del sito stesso.
+
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=\textwidth]{./graphics/links.png}}
@@ -721,15 +749,33 @@ Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizz
 \end{figure}
 \subsection{Strumenti sia di test che di sviluppo}
 \subsubsection*{Visual Studio Code}
+Visual Studio Code è un editor di codice sorgente, sviluppato da Microsoft, che può essere usato con vari linguaggi di programmazione, tra cui la famiglia di linguaggi C, HTML e altri linguaggi web, tra cui PHP, Java, Ruby e molti altri.\\
+Essendo dotato di tantissime estensioni, VSCode ha permesso lo sviluppo dell'intero progetto, compresa questa relazione, utilizzando un unico editor di testo.\\
+In particolare, sono stati usate le seguenti estensioni:
+\begin{itemize}
+	\item \textbf{Live Server} per testare le pagine statiche (HTML/CSS), permettendo la ricarica automatica della pagina ad ogni salvataggio;
+	\item \textbf{PHP} per il supporto a PHP;
+	\item \textbf{LaTeX Workshop} per il supporto alla stesura della relazione.
+\end{itemize}
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[scale=0.06]{./graphics/vscode.png}}
 	\caption{Logo di VSCode}
 \end{figure}
 \subsubsection*{Xampp}
+XAMPP è una piattaforma software multipiattaforma e libera, costituita da Apache HTTP Server, il DBMS MariaDB (precedentemente MySQL) e tutti gli strumenti necessari per utilizzare i linguaggi di programmazione PHP e Perl.\\
+In particolare, XAMPP sta per:
+\begin{itemize}
+	\item X: x-platform (multipiattaforma)
+	\item A: Apache (il server web)
+	\item M: MariaDB (il database)
+	\item P: ProFTPD (il server ftp)
+	\item P: PHP o Perl (il linguaggio di programmazione)
+\end{itemize}
+Considerando che il server per il progetto utilizza sia Apache, sia MariaDB, sia PHP, si é ritenuto estremamente utile utilizzare XAMPP per sviluppare le parti relative alle pagine in PHP in locale.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/xampp.jpg}}
+	\fbox{\includegraphics[scale=0.4]{./graphics/xampp.jpg}}
 	\caption{Pannello di controllo di Xampp}
 \end{figure}
 \newpage
