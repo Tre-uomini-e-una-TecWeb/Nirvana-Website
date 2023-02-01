@@ -47,7 +47,7 @@ function showReservations($connessione, $prenotazioni){
                     $prenotazioni .= "In attesa";
             }
             $prenotazioni .= "</td>";
-            $prenotazioni .= "<td data-title='Eliminare:'> <input aria-label=\"Seleziona la prenotazione ".$i."\" type='checkbox' id='myCheckbox[]' name='".$i."' value='".$idPrenotazione."' > </td>";
+            $prenotazioni .= "<td data-title='Eliminare:'><input type='checkbox' id='myCheckbox[]' name='".$i."' value='".$idPrenotazione."' ><label class=\"hide print-invisible\" for='myCheckbox[]'>Seleziona la prenotazione ".$i."</label> </td>";
             $prenotazioni .= "</tr>";
         }
     }
