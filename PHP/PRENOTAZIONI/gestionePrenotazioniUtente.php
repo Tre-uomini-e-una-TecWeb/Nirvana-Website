@@ -84,7 +84,8 @@ if($connOk){
         $prenotazioni .= "<tr><td colspan='4'>Non ci sono prenotazioni da visualizzare.</td></tr>";
     }
 } else {
-    $prenotazioni="<div class='errore'><p>I nostri sistemi sono al momento non funzionanti, ci scusiamo per il disagio.</p></div>";
+    header("Location: ../AMMINISTRAZIONE/500.php");
+    die();
 }
 
 $pagina_HTML=str_replace("<esitoForm />", $esitoInserimento, $pagina_HTML);

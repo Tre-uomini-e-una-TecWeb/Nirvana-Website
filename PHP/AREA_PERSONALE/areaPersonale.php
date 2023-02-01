@@ -35,7 +35,8 @@ if($connOk){
     }
 } 
 else {
-    $modDati.='<p class=\'errore\'>Errore di connessione!</p>';
+    header("Location: ../AMMINISTRAZIONE/500.php");
+    die();
 }
 
 if(isset($_POST['modificaDati'])){

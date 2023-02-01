@@ -169,6 +169,7 @@ Il sito dovrà contenere informazioni riguardo i trattamenti disponibili e i mac
 Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che necessita di essere confermato o meno dal centro stesso. Le prenotazioni possono anche inserite, oltre che confermate o smentite, anche dal centro stesso.\\
 É fondamentale che il sito garantisca accessibilitá, in modo da permettere a chiunque di poter essere utilizzato, e usabilitá, separando struttura, presentazione e comportamento.\\
 Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.\\
+\newpage
 \section{Analisi}
 \subsection{Studio dell'utenza finale}
 \label{analisi:utenza}
@@ -305,6 +306,7 @@ L'amministratore può visualizzare la lsita dei clienti registrati al sito dalla
 La lista viene mostrata in forma tabellare per motivi di ordine, ogni riga mostra le informazioni di un cliente, al fine di avvisarlo nel caso venga modificata una sua prenotazione.
 
 %nuova sezione
+\newpage
 \section{Progettazione}
 \subsection{Obiettivi}
 L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email.\\
@@ -363,7 +365,7 @@ Per permettere questa distinzione, nel database sono inseriti solo i dati degli 
 É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
 Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità. Oppure, nel momento in cui saranno presenti piú utenti con funzioni di amministratore non sará necessario effettuare modifiche ad altre parti del sito, ma sará solo necessario inserire la persona nel database con Privilegi=true.
 
-
+\newpage
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
@@ -475,6 +477,7 @@ Di seguito due  esempi di stampa della stessa pagina:
 \end{figure}
 
 %nuova sezione
+\newpage
 \section{Implementazione}
 \subsection{HTML}
 Il progetto è stato realizzato tramite il linguaggio \textit{HTML5} ma si è resa possibile la compatibilità con browser più datati seguendo le linee guida del corso di Tecnologie Web e quelle del \textit{W3C}.
@@ -487,6 +490,47 @@ Per quanto concerne i \textit{tag}:
 	\item si è controllata la chiusura di tutti i \textit{tag};
 	\item i \textit{metatag} presenti nella sezione \textit{head} dei file \textit{.html} aiutano il sito nel ranking di ricerca e sono di fondamentale importanza per incrementare l'accessibilità.
 \end{itemize}
+
+\subsubsection{Amministrazione}
+Tramite l'HTML si é fornita un'implementazione per le pagine classiche di errore.\\
+Gli errori individuati sono i seguenti codici:
+\begin{itemize}
+	\item 401
+	\item 403
+	\item 404
+	\item 500
+\end{itemize}
+La spiegazione di come vengono riconosciuti questi errori viene delegata all'anonima sezione nella parte in PHP.
+\paragraph*{Errore 401}
+Questa pagina mostra la necessitá di autenticarsi per poter accedere a determinate pagine.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/401.png}}
+	\caption{Schermata dell'errore 401}
+\end{figure}
+\paragraph*{Errore 403}
+Questa pagina indica la non possibilitá di accedere a determinate pagine, poiché non propriamente autorizzati.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/403.png}}
+	\caption{Schermata dell'errore 403}
+\end{figure}
+\paragraph*{Errore 404}
+Questa pagina indica la mancanza del file cercato dall'utente.\\
+Essendo questo un errore potenzialmente piú frequente tra gli errori di tipo 4xx, é apparso opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/404.png}}
+	\caption{Schermata dell'errore 404}
+\end{figure}
+\paragraph*{Errore 500}
+Questa pagina viene mostrata quando il server é momentaneamente irraggiungibile.\\
+Essendo questo un errore che compromette le funzionalitá del sito, si é ritenuto opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/500.png}}
+	\caption{Schermata dell'errore 500}
+\end{figure}
 
 \subsection{CSS}
 La modellazione del layout del sito è stata implementata tramite CSS3.\\
@@ -503,23 +547,53 @@ Grazie ad alcune accortezze, tramite flexbox, è stata possibile l'implementazio
 
 \subsection{PHP} % Matteo e Nicola
 Il linguaggio PHP è stato utilizzato per lo sviluppo della parte di comportamento server-side del sito web. \\
+Ne é stata necessaria l'implementazione in quanto le pagine relative all'area personale e alla prenotazione devono specializzarsi in base al tipo di utenza, ovvero deve essere possibile distinguere la pagina riservata all'utente autenticato rispetto alla pagina riservata all'amministratore.\\
 La versione del linguaggio scelta dal gruppo è la 8.1 dato che la versione 8.0 non è più supportata dal giorno 26 Novembre 2022 (fino al 26 Novembre 2023 saranno effettuati aggiornamenti puramente relativi alla sicurezza).
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[width=\textwidth]{./graphics/php-support.pdf}}
 	\caption{\href{https://www.php.net/supported-versions.php}{https://www.php.net/supported-versions.php} al 30 Gennaio 2023}
 \end{figure}
-
-\subsubsection{Autenticazione}
-\paragraph*{Login}
-\paragraph*{Logout}
-
+Di seguito si elencano gli usi per i quali si é implementato del codice in PHP.
 \subsubsection{Connessione}
+Ancor prima di effettuare l'autenticazione o una prenotazione, é necessario effettuare il collegamento al database (illustrato al punto 3.3 di questa relazione).\\
+Cio avviene tramite una pagina di connessione, che non viene mostrata all'utente, ma contiene tutte le informazioni necessarie per collegarsi.\\
+In particolare, questo file contiene l'indirizzo dove risiede il database, il nome del database stesso e le credenziali. Inoltre, contiene le funzioni necessarie per leggere, inserire, modificare e rimuove i dati dal database.
+\subsubsection{Autenticazione}
+La sezione di autenticazione si divide in due pagine, \textbf{login} e \textbf{logout}. Nella pagina di login viene offerta anche la \textbf{registrazione}.
+\paragraph*{Registrazione e Login}
+La pagina dedicata alla registrazione e al login é sostanzialmente formata da due form.\\
+Nella prima form, quella dedicata alla \textbf{registrazione}, viene inserito un utente nel database, il quale potrá effettuare l'accesso e usufruire del servizio di prenotazione.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/registrazione.png}}
+	\caption{Form di registrazione}
+\end{figure}
+La seconda form, relativa al \textbf{login}, permette l'accesso inserendo il proprio nome utente e la password, entrando cosí nell'area personale e potendo effettuare delle prenotazioni.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/accesso.png}}
+	\caption{Form di Login}
+\end{figure}
+\paragraph*{Logout}
+La pagina di \textbf{logout}, non mostrata all'utente, si preoccupa di eliminare la sessione esistente e di ritornare al menú principale.
+
 
 \subsubsection{Area personale}
 \paragraph*{Area personale}
+L'area personale contiene tutte le informazioni relative all'utente, e offre anche la possibilitá di modificarli.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/areaPersonale.png}}
+	\caption{Area personale, vista dall'utente "User"}
+\end{figure}
 \paragraph*{Elenco clienti}
-
+La pagina Elenco Clienti mostra, in forma tabellare, gli utenti iscritti alla piattaforma. É visibile solo all'amministratore, in quanto é necessaria per avere un contatto con i clienti.
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/elencoClienti.png}}
+	\caption{Elenco dei clienti}
+\end{figure}
 \subsubsection{Prenotazioni}
 \label{prenotazioni:valida}
 Con il termine \textbf{\textit{prenotazione valida}} utilizzato nei paragrafi seguenti si intende una prenotazione avente data-ora \textit{posteriore} rispetto alla data-ora in cui la prenotazione è presa in analisi: se un utente registrato vuole richiedere una prenotazione, essa deve essere valida e, per essere valida, deve avere data-ora \textit{successiva} alla data-ora in cui avviene la richiesta di prenotazione.
@@ -569,11 +643,20 @@ La logica seguita dalla pagina è la seguente: l'amministratore ha la possibilit
 Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf{Data di prenotazione} e \textbf{Orario di prenotazione} ed essa costituisce l'identificativo di ogni prenotazione (vedi sottosezione \hyperref[subsec:database]{\underline{database}}); il valore delle checkboxes viene recuperato tramite apposita funzione \textit{PHP} ed è usato per eliminare la relativa prenotazione.
 
 \subsubsection{Amministrazione}
+Di seguito si elencano i meccanismi che portano al verificarsi di un determinato errore, e alla visualizzazione della pagina relativa (elencate nella sezione HTML).
 \paragraph*{Errore 401}
+L'errore 401 si verifica quando un utente generico tenta di accedere ad una pagina che richiede l'autenticazione.
 \paragraph*{Errore 403}
+L'errore 403 si verifica quando un utente autenticato o l'amministratore tentano di accedere ad una pagina non riservata a loro, e quindi gli si nega l'accesso.
 \paragraph*{Errore 404}
+L'errore 404 avviene alla ricerca di un contenuto non presente nel server. L'azione é effettuata dal server stesso, non appoggiandosi a PHP.
 \paragraph*{Errore 500}
+L'errore 500 avviene quando il server non é raggiungibile, e pertanto non é possibile effettuare le operazioni riguardanti l'accesso, la modifica dei dati e la prenotazione.
 \subsection{SQL}	% Nicola
+Per il salvataggio dei dati, si é ritenuto opportuno l'utilizzo di SQL tramite \textit{MariaDB}.
+Di conseguenza, per le interazioni con il database si é utilizzata la libreria mysqli di PHP.
+Nel capitolo 3.3 viene descritto il database che l'applicazione utilizza per il salvataggio dei dati.
+
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
 Nel sito é usato per cambiare dinamicamente le classi degli elementi HTML ed il tipo di input nei vari form e tabelle.\\
@@ -598,17 +681,58 @@ Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attribu
 \end{itemize}
  
 %nuova sezione
+\newpage
 \section{Validazione}
 
 %nuova sezione
+\newpage
 \section{Fase di Test}
 
 %nuova sezione
+\newpage
 \section{Strumenti}
 A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
-Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo.
+Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo. Infine, alcuni strumenti sono stati utilizzati sia per la fase di sviluppo sia per la fase di test, e quindi si includono in una terza categoria che include le precedenti.
 \subsection{Strumenti di sviluppo}
+\subsubsection*{Lighthouse}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/lighthouse.png}}
+	\caption{Schermata iniziale di Lighthouse}
+\end{figure}
+\subsubsection*{Silktide}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/silktide.png}}
+	\caption{Schermata iniziale di Silktide}
+\end{figure}
 \subsection{Strumenti di test}
+\subsubsection*{NVDA}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[scale=0.7]{./graphics/nvda.png}}
+	\caption{Logo di NVDA}
+\end{figure}
+\subsubsection*{Links}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/links.png}}
+	\caption{Pagina principale del sito vista da Links}
+\end{figure}
+\subsection{Strumenti sia di test che di sviluppo}
+\subsubsection*{Visual Studio Code}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[scale=0.06]{./graphics/vscode.png}}
+	\caption{Logo di VSCode}
+\end{figure}
+\subsubsection*{Xampp}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=\textwidth]{./graphics/xampp.jpg}}
+	\caption{Pannello di controllo di Xampp}
+\end{figure}
+\newpage
 \section{Suddivisione del lavoro}
 Per garantire una buona suddivisione del carico di lavoro che il progetto ha inevitabilmente richiesto, si é suddiviso il lavoro tra i membri del gruppo in questo modo:
 \begin{itemize}
@@ -642,11 +766,10 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 	\item Nicola Baesso:
 	\begin{itemize}
 		\item HTML: sviluppo delle seguenti pagine: ;
-		\item CSS:
-		\item Javascript:
+		\item CSS: settaggio variabili colori principali, modifiche al colore dei placeholder;
+		\item Javascript: funzioni per la trasformazione da campi testo a campi data/ora e conseguente ritorno a campo testo;
 		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
-		\item Immagini:
-		\item Relazione:
+		\item Relazione: sezione casi d'uso, sottosezione Database, sezione PHP, sezione Strumenti.
 	\end{itemize} 
 \end{itemize}
 

@@ -82,8 +82,8 @@ if($connOk){
     }
 } 
 else {
-    $clienti = "<p class='errore'>Non è possibile caricare la lista dei clienti.</p>";
-    $prenotazioni = "<tr><td colspan='6'>Non è possibile caricare la lista delle prenotazioni.</td></tr>";
+    header("Location: ../AMMINISTRAZIONE/500.php");
+    die();
 }
 
 if(isset($_POST['submit'])){
