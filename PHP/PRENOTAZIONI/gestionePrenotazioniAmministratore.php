@@ -210,11 +210,11 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
         $actual_date=date("Y-m-d");
         if (!$toSkip && !preg_match("/\d{4}-\d{1,2}-\d{1,2}/",$nuovaData)){
-            $errModficaPren.='<p>Data per la prenotazione non valida: formato non valido!</p>';
+            $errModficaPren.='<p class=\"errore\">Data per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
         }
         elseif($actual_date>$nuovaData){
-            $errModficaPren.='<p class=\'errore\'>Data per la prenotazione modificata non valida (inserita data passata)!</p>';
+            $errModficaPren.='<p class=\"errore\">Data per la prenotazione modificata non valida (inserita data passata)!</p>';
             $toSkip = true;
         }
 
@@ -223,15 +223,15 @@ if(isset($_POST['modificaPrenotazioni'])){
         }
         $actual_time=date("H:i");
         if (!$toSkip && !preg_match("/\d{2}:\d{2}/",$nuovoOrario)){
-            $errModficaPren.='<p>Ora per la prenotazione non valida: formato non valido!</p>';
+            $errModficaPren.='<p class=\"errore\">Ora per la prenotazione non valida: formato non valido!</p>';
             $toSkip = true;
         } elseif($actual_date==$nuovaData && $actual_time>$nuovoOrario){
-            $errPrenotazione.='<p class=\'errore\'>Data-ora per la prenotazione modificata non valida (inserita data-ora passata)!</p>';
+            $errPrenotazione.='<p class=\"errore\">Data-ora per la prenotazione modificata non valida (inserita data-ora passata)!</p>';
             $canMakeRes = false;
         }
 
         if(!$toSkip && ($nuovoOrario<"09:00" || $nuovoOrario >"19:00")){
-            $errModficaPren.='<p>Orario non valido: il centro é chiuso nell\'orario inserito!</p>';
+            $errModficaPren.='<p class=\"errore\">Orario non valido: il centro é chiuso nell\'orario inserito!</p>';
             $toSkip = true;
         }
         if(!$toSkip){
@@ -255,7 +255,7 @@ if(isset($_POST['modificaPrenotazioni'])){
     else{
         $esitoModifica.="<p id=\"confermaModifica\">Prenotazioni aggiornate con successo: ".$aggiornate." su ".$numPrenotazioniDaVerificare."</p>";
         if($stateError){
-            $errModficaPren .= "<p class='errore'>Alcune prenotazioni necessitano di approvazione!</p>";
+            $errModficaPren .= "<p class=\"errore\">Alcune prenotazioni necessitano di approvazione!</p>";
         }
         if($errModficaPren){
             $esitoModifica .= $errModficaPren;

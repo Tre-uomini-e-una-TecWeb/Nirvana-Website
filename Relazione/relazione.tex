@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass{article}
 
 %opening
 \usepackage{graphbox}	% permette di modificare i margini
@@ -71,7 +71,7 @@
 	}
 
 	\lfoot{ %piè di pagina a sx
-		Relazione Progetto Tecnologie Web
+		Progetto di Tecnologie Web
 	}
 	\rfoot{Pagina \thepage{} di \pageref{LastPage}} %es: pag: 4 di 10
 	
@@ -80,8 +80,6 @@
 	\renewcommand{\footrulewidth}{0.3pt}
 }
 \pagestyle{plain}
-
-%\usepackage{calc} %introduce la notazione infissa per le op. aritmetiche interne a LaTeX
 
 \usepackage[utf8]{inputenc}
 %\usepackage{cm-super}
@@ -95,10 +93,8 @@
 \usepackage{graphicx}       %permette di inserire delle immagini
 \usepackage{caption}        %numerazione figure e loro descrizione testuale
 \usepackage{subcaption}     %sottofigure numerabili
-\usepackage{float}  %permette di inserire un # qualsiasi di figure fluttuanti
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{rotating} %permette di ruotare le immagini
-%\usepackage{changepage} %utile se c'è bisogno di aggiustare margini per centrare figure
 
 \usepackage{listings} %permette di inserire degli spezzoni di codice
 
@@ -106,18 +102,12 @@
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{graphs}
 \usetikzlibrary{arrows}
-%\usepackage{tikz-uml} %serve per disgnare l'UML, fantastica guida:
-%https://perso.ensta-paristech.fr/~kielbasi/tikzuml/var/files/doc/tikzumlmanual.pdf
-%download package: http://perso.ensta-paristech.fr/~kielbasi/tikzuml/
 
 %package per le tabelle
 \usepackage{booktabs} %permette di poter usare delle liste nelle tabelle
 \usepackage{tabularx} 
 \usepackage{longtable} %una tabella può continuare su più pagine
 \usepackage{multirow} %utile per visualizzare una cella su più righe
-%\usepackage{multicolumn} %cella su più colonne
-%\usepackage[table]{xcolor} %rende disponibile l'utilizzo di un colore per lo sfondo
-%delle celle di una tabella
 
 %crea una cella per le tabelle in grado di andare a capo con \newline
 %https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
@@ -168,8 +158,7 @@ Il centro estetico Nirvana vuole implementare un sito Internet al fine di poter 
 Il sito dovrà contenere informazioni riguardo i trattamenti disponibili e i macchinari utilizzati per essi, nonchè informazioni sulle consulenze e ogni informazione relativa a dove si trova il centro e quali orari di apertura osserva.\\
 Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che necessita di essere confermato o meno dal centro stesso. Le prenotazioni possono anche inserite, oltre che confermate o smentite, anche dal centro stesso.\\
 É fondamentale che il sito garantisca accessibilitá, in modo da permettere a chiunque di poter essere utilizzato, e usabilitá, separando struttura, presentazione e comportamento.\\
-Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.\\
-\newpage
+Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.
 \section{Analisi}
 \subsection{Studio dell'utenza finale}
 \label{analisi:utenza}
@@ -306,7 +295,6 @@ L'amministratore può visualizzare la lsita dei clienti registrati al sito dalla
 La lista viene mostrata in forma tabellare per motivi di ordine, ogni riga mostra le informazioni di un cliente, al fine di avvisarlo nel caso venga modificata una sua prenotazione.
 
 %nuova sezione
-\newpage
 \section{Progettazione}
 \subsection{Obiettivi}
 L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email.\\
@@ -387,13 +375,13 @@ Il foglio di stile per dispositivi desktop definisce in primis la struttura comu
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/top-common.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/top-common.pdf}}
 	\caption{Intestazione delle pagine comprensiva di logo, breadcrumb e menù}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/bottom-common.pdf}}
+	\fbox{\includegraphics[scale=0.4]{./graphics/bottom-common.pdf}}
 	\caption{Footer delle pagine}
 \end{figure}
 
@@ -406,19 +394,19 @@ In questo foglio di stile viene definita anche la struttura grafica specifica pe
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/plain-page.pdf}}
+	\fbox{\includegraphics[scale=0.4]{./graphics/plain-page.pdf}}
 	\caption{Pagine semplici}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/card-page.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/card-page.pdf}}
 	\caption{Pagine con carte}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/dual-page.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/dual-page.pdf}}
 	\caption{Pagine di gestione}
 \end{figure}
 
@@ -505,14 +493,14 @@ La spiegazione di come vengono riconosciuti questi errori viene delegata all'ano
 Questa pagina mostra la necessitá di autenticarsi per poter accedere a determinate pagine.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/401.png}}
+	\fbox{\includegraphics[scale=0.5]{./graphics/401.png}}
 	\caption{Schermata dell'errore 401}
 \end{figure}
 \paragraph*{Errore 403}
 Questa pagina indica la non possibilitá di accedere a determinate pagine, poiché non propriamente autorizzati.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/403.png}}
+	\fbox{\includegraphics[scale=0.34]{./graphics/403.png}}
 	\caption{Schermata dell'errore 403}
 \end{figure}
 \paragraph*{Errore 404}
@@ -520,7 +508,7 @@ Questa pagina indica la mancanza del file cercato dall'utente.\\
 Essendo questo un errore potenzialmente piú frequente tra gli errori di tipo 4xx, é apparso opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/404.png}}
+	\fbox{\includegraphics[scale=0.36]{./graphics/404.png}}
 	\caption{Schermata dell'errore 404}
 \end{figure}
 \paragraph*{Errore 500}
@@ -528,7 +516,7 @@ Questa pagina viene mostrata quando il server é momentaneamente irraggiungibile
 Essendo questo un errore che compromette le funzionalitá del sito, si é ritenuto opportuno creare una pagina leggermente umoristica al fine di non trasmettere sensazioni negative all'utente.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/500.png}}
+	\fbox{\includegraphics[scale=0.5]{./graphics/500.png}}
 	\caption{Schermata dell'errore 500}
 \end{figure}
 
@@ -551,7 +539,7 @@ Ne é stata necessaria l'implementazione in quanto le pagine relative all'area p
 La versione del linguaggio scelta dal gruppo è la 8.1 dato che la versione 8.0 non è più supportata dal giorno 26 Novembre 2022 (fino al 26 Novembre 2023 saranno effettuati aggiornamenti puramente relativi alla sicurezza).
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/php-support.pdf}}
+	\fbox{\includegraphics[scale=0.47]{./graphics/php-support.pdf}}
 	\caption{\href{https://www.php.net/supported-versions.php}{https://www.php.net/supported-versions.php} al 30 Gennaio 2023}
 \end{figure}
 Di seguito si elencano gli usi per i quali si é implementato del codice in PHP.
@@ -566,13 +554,13 @@ La pagina dedicata alla registrazione e al login é sostanzialmente formata da d
 Nella prima form, quella dedicata alla \textbf{registrazione}, viene inserito un utente nel database, il quale potrá effettuare l'accesso e usufruire del servizio di prenotazione.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/registrazione.png}}
+	\fbox{\includegraphics[scale=0.56]{./graphics/registrazione.png}}
 	\caption{Form di registrazione}
 \end{figure}
 La seconda form, relativa al \textbf{login}, permette l'accesso inserendo il proprio nome utente e la password, entrando cosí nell'area personale e potendo effettuare delle prenotazioni.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/accesso.png}}
+	\fbox{\includegraphics[scale=0.65]{./graphics/accesso.png}}
 	\caption{Form di Login}
 \end{figure}
 \paragraph*{Logout}
@@ -584,14 +572,14 @@ La pagina di \textbf{logout}, non mostrata all'utente, si preoccupa di eliminare
 L'area personale contiene tutte le informazioni relative all'utente, e offre anche la possibilitá di modificarli.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/areaPersonale.png}}
+	\fbox{\includegraphics[scale=0.3]{./graphics/areaPersonale.png}}
 	\caption{Area personale, vista dall'utente "User"}
 \end{figure}
 \paragraph*{Elenco clienti}
 La pagina Elenco Clienti mostra, in forma tabellare, gli utenti iscritti alla piattaforma. É visibile solo all'amministratore, in quanto é necessaria per avere un contatto con i clienti.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/elencoClienti.png}}
+	\fbox{\includegraphics[scale=0.44]{./graphics/elencoClienti.png}}
 	\caption{Elenco dei clienti}
 \end{figure}
 \subsubsection{Prenotazioni}
@@ -607,7 +595,7 @@ La pagina di gestione delle prenotazioni, per l'utente registrato, si divide in 
 La richiesta di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "In fase di approvazione": un utente con privilegi di \textit{amministrazione} dovrà occuparsi di accettare o rifiutare la prenotazione e tale cambiamento di stato sarà visualizzabile dall'utente registrato nella relativa tabella.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/userReservations.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/userReservations.pdf}}
 	\caption{Pagina di gestione prenotazioni utente}
 \end{figure}
 
@@ -620,23 +608,23 @@ La pagina di gestione delle prenotazioni, per l'utente amministratore, si divide
 L'inserimento di una prenotazione consiste nell'aggiungere una prenotazione \hyperref[prenotazioni:valida]{\underline{valida}} alla base di dati con stato "accettato" per un utente registrato: questo è fatto in quanto la fase di approvazione è inclusa nella fase di richiesta della prenotazione se viene effettuata da un amministratore (che dovrebbe altrimenti approvare la propria richiesta di prenotazione).
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/insertReservations.pdf}}
+	\fbox{\includegraphics[scale=0.55]{./graphics/insertReservations.pdf}}
 	\caption{Inserimento prenotazioni lato amministrativo}
 \end{figure}
 La conferma o meno di una prenotazione avviene tramite un form organizzato in forma tabellare dal quale l'amministratore può anche modificare la data-ora della richiesta (si pensi a situazioni di richieste multiple sovrapposte temporalmente).
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/adminReservations.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/adminReservations.pdf}}
 	\caption{Gestione prenotazioni lato amministrativo}
 \end{figure}
 
 \paragraph*{Eliminazione prenotazioni}
-Si è deciso di separare l'operazione di eliminazione delle prenotazioni dalla pagina di \textit{Gestione delle prenotazioni lato amministratore} per dividere le operazioni \textbf{CRUD} in più pagine, evitando un sovraccarico cognitivo da parte dell'utente amministratore (dovuto alla presenza di troppe informazioni in un'unica pagina). \\
+Si è deciso di separare l'operazione di eliminazione delle prenotazioni dalla pagina di \textit{Gestione delle prenotazioni lato amministratore} per dividere le operazioni \textbf{CRUD} in più pagine, evitando un sovraccarico cognitivo da parte dell'utente amministratore (dovuto alla presenza di troppe informazioni in un'unica pagina).\\
 La logica seguita dalla pagina è la seguente: l'amministratore ha la possibilità di visualizzare ogni prenotazione considerata \hyperref[prenotazioni:valida]{\underline{valida}} tramite una tabella e può eseguire un'\textit{eliminazione multipla} selezionando una \textbf{checkbox} che si trova nella stessa riga della tabella della prenotazione da eliminare. \\
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/delete.pdf}}
+	\fbox{\includegraphics[scale=0.39]{./graphics/delete.pdf}}
 	\caption{Tabella di eliminazione prenotazioni}
 \end{figure}
 
@@ -681,15 +669,37 @@ Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attribu
 \end{itemize}
  
 %nuova sezione
-\newpage
 \section{Validazione}
+Un sito valido significa un sito che rispetta determinati standard, il che porta vantaggi come:
+\begin{itemize}
+	\item piú accessibilitá: un sito valido viene letto con piú facilitá da uno screen reader;
+	\item piú compatibilitá: seguire lo standard porta ad una riduzione delle differenze di visualizzazione da un browser all'altro;
+	\item posizionamento piú alto nelle ricerche: codice valido viene visto in maniera decisamente positiva dai motori di ricerca
+\end{itemize}
+Risulta quindi indispensabile assicurarsi al 100\% che le pagine siano tutte sintatticamente valide.\\
+Per assicurare questo fatto, si é ricorso all'utilizzo di tre strumenti indispensabili:
+\begin{itemize}
+	\item \href{https://validator.w3.org/}{W3C Markup Validation Service}: per il controllo della struttura del sito, aka della parte in HTML;
+	\item \href{https://jigsaw.w3.org/css-validator/}{W3C CSS Validation Service}: per il controllo della presentazione, aka della parte in CSS;
+	\item \href{https://www.totalvalidator.com/}{Total Validator}: validatore per la parte in HTML, adatto per l'HTML5
+\end{itemize}
+É risultato necessario effettuare la validazione della parte in HTML da parte di due strumenti, poiché il sito fornito dalla W3C ha ancora un supporto sperimentale alla validazione di pagine create in HTML5, che é lo standard adottato per questo progetto.
+
 
 %nuova sezione
 \newpage
 \section{Fase di Test}
-
+Come per ogni prodotto software, anche per i siti web é necessario stabilire dei test in modo da verificare la funzionalitá di un sito.\\
+A maggior ragione, bisogna assicurarsi che il sito sia fruibile da piú dispositivi possibili e in piú modalitá possiibili.\\
+Ovviamente questo progetto non fa eccezione, e per tale scopo si sono create le seguenti macro-aree di test:
+\begin{itemize}
+	\item Browser Desktop: verificare che browser come Chrome, Firefox, Safari e Opera permettano l'utilizzo del sito senza problematiche a livello grafico o comportamentale;
+	\item Browser Mobile: verificare che il sito sia fruibile mediante uno smartphone o un dispositivo mobile;
+	\item Screen Readers: verificare che il sito sia fruibile anche senza guardarlo (!), solamente "ascoltando" le informazioni che il sito stesso rivela;
+	\item Navigazione da tastiera: verificare che i contenuti possano essere utilizzati anche solo con la tastiera (ció si include, almeno in parte, con l'utilizzo di uno screen reader)
+\end{itemize}
+Nella prossima sezione vengono elencati anche gli strumenti di test, adatti a garantire la funzionalitá del sito.
 %nuova sezione
-\newpage
 \section{Strumenti}
 A supporto dello sviluppatore, é necessario che siano presenti degli strumenti per guidarlo in uno sviluppo efficiente e in un testing accurato.\\
 Vengono sottolineate due categorie di strumenti poiché alcuni strumenti utilizzati non sono adatti per una fase di test, ma risultano estremamente utili come aiuto allo sviluppo. Infine, alcuni strumenti sono stati utilizzati sia per la fase di sviluppo sia per la fase di test, e quindi si includono in una terza categoria che include le precedenti.
@@ -724,7 +734,7 @@ In particolare, integra uno screen reader per simulare la cecitá totale, utile 
 Sebbene non possa sostituire uno screen reader reale come NVDA o OCRA, é risultato interessante il suo utilizzo specie per lo sviluppo di avvisi indipendenti dal colore.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/silktide.png}}
+	\fbox{\includegraphics[scale=0.69]{./graphics/silktide.png}}
 	\caption{Schermata iniziale di Silktide}
 \end{figure}
 \subsection{Strumenti di test}
@@ -734,7 +744,7 @@ Essendo gratuito, risulta largamente piú diffuso di screen readers come JAWS (a
 É quindi sembrato il candidato ideale per testare la navigazione del sito da parte di un utente con disabilitá visive estremamente importanti.
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[scale=0.7]{./graphics/nvda.png}}
+	\fbox{\includegraphics[scale=0.65]{./graphics/nvda.png}}
 	\caption{Logo di NVDA}
 \end{figure}
 \subsubsection*{Links}
@@ -744,12 +754,12 @@ Le sue caratteristiche sono risultate perfette per controllare che la navigazion
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/links.png}}
+	\fbox{\includegraphics[scale=0.35]{./graphics/links.png}}
 	\caption{Pagina principale del sito vista da Links}
 \end{figure}
 \subsection{Strumenti sia di test che di sviluppo}
 \subsubsection*{Visual Studio Code}
-Visual Studio Code è un editor di codice sorgente, sviluppato da Microsoft, che può essere usato con vari linguaggi di programmazione, tra cui la famiglia di linguaggi C, HTML e altri linguaggi web, tra cui PHP, Java, Ruby e molti altri.\\
+Visual Studio Code è un editor di codice sorgente, sviluppato da Microsoft, che può essere usato con vari linguaggi di programmazione, tra cui HTML e altri linguaggi web come PHP, Java, Ruby e molti altri.\\
 Essendo dotato di tantissime estensioni, VSCode ha permesso lo sviluppo dell'intero progetto, compresa questa relazione, utilizzando un unico editor di testo.\\
 In particolare, sono stati usate le seguenti estensioni:
 \begin{itemize}
@@ -778,7 +788,6 @@ Considerando che il server per il progetto utilizza sia Apache, sia MariaDB, sia
 	\fbox{\includegraphics[scale=0.4]{./graphics/xampp.jpg}}
 	\caption{Pannello di controllo di Xampp}
 \end{figure}
-\newpage
 \section{Suddivisione del lavoro}
 Per garantire una buona suddivisione del carico di lavoro che il progetto ha inevitabilmente richiesto, si é suddiviso il lavoro tra i membri del gruppo in questo modo:
 \begin{itemize}
@@ -790,6 +799,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item PHP: backend relativo al prenotazione utente, e realizzazione della pagina di logout;
 		\item Immagini: acquisizione immagini di sfondo per i bottoni;
 		\item Relazione: sottosezione JavaScript.
+		\item Test:
 	\end{itemize}
 	\item Matteo Cusin:
 	\begin{itemize}
@@ -799,6 +809,7 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item PHP: backend relativo all'eliminazione delle prenotazioni;
 		\item Immagini: compressione delle immagini utilizzate ed eliminazione delle immagini non utilizzate;
 		\item Relazione: sezione progettazione (senza la sottosezione \textit{database}), sviluppo condiviso sezione presentazione desktop, sviluppo sezione presentazione mobile.
+		\item Test:
 	\end{itemize} 
 	\item Annalisa Egidi:
 	\begin{itemize}
@@ -807,16 +818,19 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item Javascript: funzione per mostrare in chiaro la password;
 		\item PHP: /**/
 		\item Immagini: ricerca e modifica coordinata delle immagini, implementazione codice per l'utilizzo delle stesse;
-		\item Relazione: sezione progettazione, sviluppo condiviso sezione presentazione desktop, sottosezione relativa al foglio di stile per la stampa. 
+		\item Relazione: sezione progettazione, sviluppo condiviso sezione presentazione desktop, sottosezione relativa al foglio di stile per la stampa.
+		\item Test: 
 	\end{itemize} 
 	\item Nicola Baesso:
 	\begin{itemize}
-		\item HTML: sviluppo delle seguenti pagine: ;
+		\item HTML: sviluppo delle seguenti pagine: Trattamenti Corpo, Gestione Prenotazioni-Amministratore, Elenco Clienti, 401, 403, 500;
 		\item CSS: settaggio variabili colori principali, modifiche al colore dei placeholder;
 		\item Javascript: funzioni per la trasformazione da campi testo a campi data/ora e conseguente ritorno a campo testo;
 		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
 		\item Relazione: sezione casi d'uso, sottosezione Database, sezione PHP, sezione Strumenti.
+		\item Test: Google Chrome (Linux e Windows), Brave Browser (Linux e Windows), NVDA (Windows), Mi Browser (Mobile), Links (Linux)
 	\end{itemize} 
 \end{itemize}
+La suddivisione del lavoro é avvenuta tramite riunioni settimanali, inoltre ogni modifica é stata notificata attraverso un gruppo Telegram, che ha permesso un ottimo livello di coordinazione all'interno del gruppo.
 
 \end{document}
