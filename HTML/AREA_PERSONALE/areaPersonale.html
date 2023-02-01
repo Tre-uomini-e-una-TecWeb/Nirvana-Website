@@ -9,10 +9,10 @@
     <meta name="author" content="Lisien Skenderi, Nicola Baesso, Matteo Cusin, Annalisa Egidi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="screen" href="../../CSS/style.css">
-    <link rel="stylesheet" media="handheld, screen and (max-width:1150px), only screen and (max-device-width:1150px)" href="../../CSS/mobile.css" />
-    <link rel="stylesheet" media="handheld, screen and (min-width:1900px), only screen and (min-device-width:1900px)" href="../../CSS/wide-screen.css" />
+    <link rel="stylesheet" media="screen and (max-width:1150px)" href="../../CSS/mobile.css" />
+    <link rel="stylesheet" media="screen and (min-width:1900px)" href="../../CSS/wide-screen.css" />
     <link rel="stylesheet" media="print" href="../../CSS/print.css" />
-    <script type="text/javascript" src="../../JS/javascript.js"></script>
+    <script src="../../JS/javascript.js"></script>
 </head>
 <body onload="PageLoad()" id="areaPersonale">
     <header id="cima">
@@ -45,19 +45,19 @@
                 <h2>Informazioni personali</h2>
                 <form id="datiUtente" method="post" action="areaPersonale.php">
                     <label id="usernamePersonalPageLabel" for="usernamePersonalPage">Username:</label>
-                    <label id="usernamePersonalPage"><usernameUtente /></label>
+                    <input type="text" id="usernamePersonalPage" value="<usernameUtente />" readonly>
                     <label for="namePersonalPage" id="namePersonalPageLabel"> Nome: </label>
-                    <input type="text" id="namePersonalPage" name="newName" placeholder="<nomeUtente />" aria-placeholder="<nomeUtente />">
+                    <input type="text" id="namePersonalPage" name="newName" placeholder="<nomeUtente />">
                     <label for="surnamePersonalPage" id="surnamePersonalPageLabel"> Cognome: </label>
-                    <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />" aria-placeholder="<cognomeUtente />">
+                    <input type="text" id="surnamePersonalPage" name="newSurname" placeholder="<cognomeUtente />">
                     <label for="birthPersonalPage" id="birthPersonalPageLabel">Data di nascita:</label>
-                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate('birthPersonalPage')" placeholder="<dataNascitaUtente />" aria-placeholder="<dataNascitaUtente />">
+                    <input type="text" id="birthPersonalPage" name="newBirth" pattern="\d{4}-\d{1,2}-\d{1,2}" onfocus="makeDate('birthPersonalPage')" placeholder="<dataNascitaUtente />">
                     <label lang="en" for="emailPersonalPage" id="emailPersonalPageLabel">Email:</label>
-                    <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />" aria-placeholder="<mailUtente />">
+                    <input type="email" id="emailPersonalPage" name="newEmail" placeholder="<mailUtente />">
                     <label for="phonePersonalPage" id="phonePersonalPageLabel"> Numero di telefono (10 numeri):</label>
-                    <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />" aria-placeholder="<telefonoUtente />">
+                    <input type="tel" id="phonePersonalPage" name="newPhone" pattern="[0-9]{10}" placeholder="<telefonoUtente />">
                     <esitoModificaDati />
-                    <input class="print-invisible" id="updatePersonalPage" type="submit" name="modificaDati" value="Modifica dati" aria-valuetext="Modifica dati">
+                    <input class="print-invisible" id="updatePersonalPage" type="submit" name="modificaDati" value="Modifica dati">
                 </form>
             </section>
             <div id="separator"></div>

@@ -49,7 +49,7 @@ header {
     margin-bottom: 6em;
 }
 
-@media screen and (max-width:940px), only screen and (max-device-width:940px) {
+@media screen and (max-width:940px){
 
     header, main{
         font-size: 1.1em;
@@ -162,7 +162,7 @@ header {
         margin-bottom: 4em;
     }
 
-    ul:not(.contenitore-footer):not(.contenitore_carte) >li{
+    ul:not(.contenitore-footer):not(.contenitore_carte):not(#menuList) >li{
         text-align: left;
     }
 
