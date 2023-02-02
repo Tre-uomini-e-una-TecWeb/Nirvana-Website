@@ -156,7 +156,7 @@
 \section{Introduzione}
 Il centro estetico Nirvana vuole implementare un sito Internet al fine di poter fornire informazioni riguardo al centro stesso.\\
 Il sito dovrà contenere informazioni riguardo i trattamenti disponibili e i macchinari utilizzati per essi, nonchè informazioni sulle consulenze e ogni informazione relativa a dove si trova il centro e quali orari di apertura osserva.\\
-Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che necessita di essere confermato o meno dal centro stesso. Le prenotazioni possono anche inserite, oltre che confermate o smentite, anche dal centro stesso.\\
+Inoltre, permette agli utenti di richiedere una consulenza o un trattamento, che necessita di essere confermato o meno dal centro stesso. Le prenotazioni possono anche essere inserite dal centro stesso.\\
 É fondamentale che il sito garantisca accessibilitá, in modo da permettere a chiunque di poter essere utilizzato, e usabilitá, separando struttura, presentazione e comportamento.\\
 Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evitando al piú possibile il disorientamento e prevedendo il giusto supporto per ritornare all'interno del sito stesso.
 \section{Analisi}
@@ -164,7 +164,12 @@ Si vuole infine garantire una navigazione fluida tra i contenuti del sito, evita
 \label{analisi:utenza}
 Il sito vuole fornire informazioni riguardanti i possibili trattamenti che il centro estetico Nirvana offre, garantendo una navigazione fluida e con il minor numero di operazioni possibili.\\
 Pertanto gli utilizzatori del sito sono visitatori casuali, clienti da breve o lungo tempo del centro e la responsabile del centro assieme ai propri dipendenti.
-Si possono dunque distinguere tre categorie di utenti: l'utente generico, il cliente, che per semplicitá indichiamo come utente autenticato, e i gestori del centro, che assumono il ruolo piú generale dell'amministratore.\\
+Si possono dunque distinguere tre categorie di utenti:
+\begin{itemize}
+	\item l'utente generico;
+	\item il cliente, che per semplicitá indichiamo come utente autenticato;
+	\item la responsabile del centro e i dipendenti del centro stesso, che per fini di progetto vengono identificati unicamente come l'amministratore.
+\end{itemize}
 Gli utenti autenticati hanno il diritto di accedere ad aree riservate del sito, mentre gli amministratori possono anche accedere alle funzionalitá avanzate del sito. Entrambe le categorie possono essere definite come utenti interni.\\
 L'utente finale é principalmente un utente posto tra l'utente generico e l'utente autenticato, ovvero un utente che a prescindere non conosce il linguaggio tecnico utilizzato, é dunque necessario che il sito abbia un linguaggio informale e semplice, in modo tale che sia comprensibile dalla maggior parte delle persone.
 \subsection{Casi d'uso}
@@ -254,7 +259,8 @@ L'utente autenticato può effettuare una nuova richiesta di prenotazione nella p
 
 \paragraph{Visualizzazione richieste di prenotazione in "Gestione Prenotazione - Utente"}\mbox{}\\
 L'utente autenticato può visualizzare le prenotazioni richieste e il loro relativo stato nella pagina \textit{Gestione Prenotazione - Utente}, raggiungibile dalla voce "Prenotazioni" sia dall'apposito menú che dalla pagina principale.\\
-Nell'apposita sezione "Gestisci prenotazioni" é presente una tabella, riassuntiva delle prenotazioni richieste. Le prenotazioni che vengono visualizzate sono hanno tutte data uguale o superiore a quella odierna.
+Nell'apposita sezione "Gestisci prenotazioni" é presente una tabella, riassuntiva delle prenotazioni richieste.\\ 
+Le prenotazioni che vengono visualizzate sono relative al solo utente e hanno tutte data uguale o superiore a quella odierna.
 
 \paragraph{Logout "Area personale"}\mbox{}\\
 L'utente autenticato può uscire dalla propria \textit{Area Personale} attraverso l'apposita voce nel menú utente.\\
@@ -300,16 +306,16 @@ La lista viene mostrata in forma tabellare per motivi di ordine, ogni riga mostr
 L'interfaccia del sito si pone l'obiettivo di esporre alla possibile clientela quelli che sono i servizi del centro estetico, in modo chiaro ed accessibile, dando anche l'opportunità al visitatore di mettersi in contatto con il personale telefonicamente o tramite email.\\
 Ai clienti registrati si vuole dare inoltre la possibilità di richiedere una prenotazione tramite il sito stesso, attraverso la pagina "Prenotazioni". \\
 Per quanto riguarda il lato amministrativo dell'attività, il sito vuole permettere una facile gestione delle richieste di prenotazione attraverso un'apposita dashboard suddivisa in una serie di pagine distinte. \\
-
+Dunque, per lo sviluppo del sito si sono posti i seguenti obiettivi:
 	\begin{itemize}
 		\item \textbf{Accessibilità:} si è deciso di assegnare uno stile comune a tutte le pagine in modo da facilitare l'orientamento e minimizzare il sovraccarico cognitivo durante la navigazione. \\
 			Il sito è stato progettato in modo da consentire ad un pubblico quanto più ampio possibile di accedere ai servizi ed alle informazioni per mezzo dei seguenti accorgimenti:
 			\begin{itemize}
 				\item Le spiegazioni dei trattamenti offerti e dei macchinari utilizzati nel centro estetico sono rese sempre accessibili attraverso l'utilizzo della regola CSS \textit{color}: quando una scritta non deve essere visibile tramite il display, la sua opacità è resa pari a zero (non è quindi nascosta agli screen-readers);
 				\item I contrasti tra colori attigui rispettano il livello di conformità alle WCAG detto AA;
-				\item La presenza di un bottone che consenta di evitare lo scrolling verticale se si necessitasse di ritornare all'intestazione di una pagina; 
-				\item La presenza di un bottone per le azioni di login e gestione delle prenotazioni che rimanga in una zona facilmente raggiungibile dall'utente che utilizza device mobili: tale utente tende a dedicare attenzione solo parzialmente al dispositivo e quindi predilige azioni comode e veloci (swipe, tap, double tap, ecc.); 						
-				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope}: tramite essi può essere fornita una descrizione della tabella migliore agli screen-readers e, in generale, ai dispositivi che usano modalità di visualizzazione dei dati alternative.
+				\item La presenza di un bottone consente di evitare lo scrolling verticale se si necessitasse di ritornare all'intestazione di una pagina; 
+				\item La presenza di un bottone per le azioni di login e gestione delle prenotazioni rimane in una zona facilmente raggiungibile dall'utente che utilizza device mobili: tale utente tende a dedicare attenzione solo parzialmente al dispositivo e quindi predilige azioni comode e veloci (swipe, tap, double tap, ecc.);
+				\item Le tabelle separano la parte di contenuto dalla parte di header tramite i tag semantici \textit{<thead>},\textit{<th>} e \textit{<tbody>} e l'attributo \textit{scope}: tramite essi può essere fornita una descrizione della tabella piú "digeribile" dagli screen-readers e, in generale, dai dispositivi che usano modalità di visualizzazione dei dati alternative.
 			\end{itemize}
 			\item \textbf{Adattabilità:} l'utilizzo di \textit{Responsive Design} tramite \textbf{media queries} rende accessibile il sito web da parte di dispositivi eterogenei per forma e funzionalità, ridimensionato i contenuti all'occorrenza;
 			\item \textbf{Usabilità:} le informazioni riportate nel sito web utilizzano una struttura sintattica semplice, volta alla chiarezza espositiva ed ad una consultazione rapida, per fornire le informazioni essenziali in modo diretto.		
@@ -324,7 +330,7 @@ La progettazione del sito si è concentrata sui seguenti punti:
 				\item \textbf{Consulenze:} tale sezione si compone di una sola pagina e descrive le modalità di analisi della pelle e del corpo del cliente per accertare l'idoneità e la necessità di sottoporlo ai trattamenti;
 				\item \textbf{Prenotazioni:} questa sezione è accessibile solamente da utenti autenticati ed espone contenuti diversi in base al tipo di utente autenticato:
 					\begin{itemize}
-						\item \textit{Amministratore:} gli utenti con privilegi di "amministrazione" possono visualizzare l'elenco completo dei clienti registrati al sito, tutte le richieste di prenotazione effettuate e possono eliminare, inserire ed approvare prenotazioni (eventualmente cambiandono orario e data);
+						\item \textit{Amministratore:} gli utenti con privilegi di "amministrazione" possono visualizzare l'elenco completo dei clienti registrati al sito e tutte le richieste di prenotazione effettuate, inoltre possono eliminare, inserire ed approvare/rifiutare le prenotazioni (eventualmente cambiandono orario e data);
 						\item \textit{Utente:} gli utenti senza privilegi di "amministrazione" possono effettuare delle prenotazioni e visualizzarne lo storico.  
 					\end{itemize}
 			\end{enumerate} 
@@ -344,16 +350,15 @@ In fase di progettazione, si é pensato di usare un database minimale, essendo i
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[width=\textwidth]{./graphics/er.png}}
+	\fbox{\includegraphics[scale=0.7]{./graphics/er.png}}
 	\caption{Diagramma ER del database}
 \end{figure}
 
 Nella parte di analisi si sono elencate tre figure: l'utente generico, l'utente autenticato e l'amministratore.\\
 Per permettere questa distinzione, nel database sono inseriti solo i dati degli utenti registrati e dell'amministratore, in modo da poterne determinarne i privilegi, e conseguentemente le pagine visualizzabili o meno.\\
 É inoltre necessario l'utilizzo delle due tabelle in quanto le pagine Area Personale e le relative pagine per la prenotazione necessitano di essere create dinamicamente, altrimenti risulterebbero vuote.\\
-Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità. Oppure, nel momento in cui saranno presenti piú utenti con funzioni di amministratore non sará necessario effettuare modifiche ad altre parti del sito, ma sará solo necessario inserire la persona nel database con Privilegi=true.
+Quindi, il database é stato progetto in maniera da salvare il numero minimo di informazioni necessarie per una gestione ottimale del sito, mantenendo comunque una predisposizione alla sua evolvibilitá. Se per esempio si volesse inserire un'entitá per rappresentare i trattamenti, ció permetterebbe di effettuare una minuscola modifica alla tabella Prenotazioni, senza intaccarne la funzionalità. Oppure, nel momento in cui saranno presenti piú utenti con funzioni di amministratore non sará necessario effettuare modifiche ad altre parti del sito, ma sará solo necessario inserire la persona nel database con il campo Privilegi impostato correttamente.
 
-\newpage
 \section{Presentazione}
 Il sito permette 4 modalità di visualizzazione:
 \begin{itemize}
@@ -406,7 +411,7 @@ In questo foglio di stile viene definita anche la struttura grafica specifica pe
 
 \begin{figure}[H]
 	\centering
-	\fbox{\includegraphics[scale=0.39]{./graphics/dual-page.pdf}}
+	\fbox{\includegraphics[scale=0.3]{./graphics/areaPersonale.png}}%la pagina visualizzata era una versione vecchia, ho inserito la prima pagina conforme alla descrizione
 	\caption{Pagine di gestione}
 \end{figure}
 
@@ -433,8 +438,6 @@ Tramite \textit{media query} che si attiva quando la larghezza a disposizione pe
 	\caption{Breadcrumb, bottone e menù}
 \end{figure}
 
-%TODO Annalisa
-\newpage
 \subsection{Wide-screen}
 Si elencano di seguito le principali variazioni rispetto al corrispondente foglio di stile per desktop generici:
 \begin{itemize}
@@ -443,7 +446,11 @@ Si elencano di seguito le principali variazioni rispetto al corrispondente fogli
 	\item media queries: vengono prese in considerazione specifiche media queries (rispettivamente a 1120px e 1500px), tramite le stesse si hanno effetti collaterali voluti che riprendono lo stile di visualizzazione da mobile.\\
 	Si esplicita solo sinteticamente qualche esempio per evitare di essere ridondanti e ripetitivi:  tabelle, bottone utente, utilizzo della \textit{mini-breadcrumb}, etc.; per maggiori dettagli riguardo ai cambiamenti di stile in visualizzazione mobile si rimanda alla sezione \hyperref[presentazione:mobile]{\underline{Mobile}}.
 \end{itemize}
-
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[scale=0.23]{./graphics/wideScreen.png}}
+	\caption{Esempio di visualizzazione di una pagina in uno schermo wide-screen}
+\end{figure}
 \subsection{Print}
 Il file relativo alla stampa è stato implementato in modo tale da rimuovere le funzionalità interattive quali link, bottoni, breadcrumb e sezione menù.\\
 Per facilitare la leggibilità delle informazioni in modalità cartacea, quelle che nei file .html sono classificate come carte, vengono visualizzate sottoforma di semplice testo.\\
@@ -465,12 +472,11 @@ Di seguito due  esempi di stampa della stessa pagina:
 \end{figure}
 
 %nuova sezione
-\newpage
 \section{Implementazione}
 \subsection{HTML}
 Il progetto è stato realizzato tramite il linguaggio \textit{HTML5} ma si è resa possibile la compatibilità con browser più datati seguendo le linee guida del corso di Tecnologie Web e quelle del \textit{W3C}.
 Si è utilizzato \textit{HTML5} piuttosto che \textit{XHTML} in quanto il pubblico cui è destinato il sito web sarà indicativamente di età compresa fra i 16 ed i 60; si presume che la clientela si distribuirà in modo omogeneo in questa fascia d'età, avente quindi a disposizione motori di ricerca tendenzialmente più recenti.\\
-I file \textit{.html} si presentano con l'obbiettivo di mantenere struttura, presentazione e contenuto il più possibile separati fra loro.
+I file \textit{.html} si presentano con l'obiettivo di mantenere struttura, presentazione e contenuto il più possibile separati fra loro.
 
 Per quanto concerne i \textit{tag}:
 \begin{itemize}
@@ -481,7 +487,7 @@ Per quanto concerne i \textit{tag}:
 
 \subsubsection{Amministrazione}
 Tramite l'HTML si é fornita un'implementazione per le pagine classiche di errore.\\
-Gli errori individuati sono i seguenti codici:
+Gli errori individuati corrispondono ai seguenti codici:
 \begin{itemize}
 	\item 401
 	\item 403
@@ -490,14 +496,16 @@ Gli errori individuati sono i seguenti codici:
 \end{itemize}
 La spiegazione di come vengono riconosciuti questi errori viene delegata all'anonima sezione nella parte in PHP.
 \paragraph*{Errore 401}
-Questa pagina mostra la necessitá di autenticarsi per poter accedere a determinate pagine.
+Questa pagina mostra la necessitá di autenticarsi per poter accedere a determinate pagine.\\
+Per questo errore si é ritenuto opportuno mostrare una semplice riga informativa.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[scale=0.5]{./graphics/401.png}}
 	\caption{Schermata dell'errore 401}
 \end{figure}
 \paragraph*{Errore 403}
-Questa pagina indica la non possibilitá di accedere a determinate pagine, poiché non propriamente autorizzati.
+Questa pagina indica la non possibilitá di accedere a determinate pagine, poiché non propriamente autorizzati.\\
+Anche per questo errore si é ritenuto opportuno mostrare una semplice riga informativa.
 \begin{figure}[H]
 	\centering
 	\fbox{\includegraphics[scale=0.34]{./graphics/403.png}}
@@ -633,17 +641,18 @@ Ogni checkbox ha, come valore associato, la tripla \textbf{Nome Utente}, \textbf
 \subsubsection{Amministrazione}
 Di seguito si elencano i meccanismi che portano al verificarsi di un determinato errore, e alla visualizzazione della pagina relativa (elencate nella sezione HTML).
 \paragraph*{Errore 401}
-L'errore 401 si verifica quando un utente generico tenta di accedere ad una pagina che richiede l'autenticazione.
+L'errore 401 si verifica quando un utente generico tenta di accedere ad una pagina che richiede l'autenticazione. Ció implica la visualizzazione della pagina, che indica di andare alla pagina di autenticazione/registrazione.
 \paragraph*{Errore 403}
 L'errore 403 si verifica quando un utente autenticato o l'amministratore tentano di accedere ad una pagina non riservata a loro, e quindi gli si nega l'accesso.
 \paragraph*{Errore 404}
-L'errore 404 avviene alla ricerca di un contenuto non presente nel server. L'azione é effettuata dal server stesso, non appoggiandosi a PHP.
+L'errore 404 avviene alla ricerca di un contenuto non presente nel server. L'azione é effettuata dal server stesso.
 \paragraph*{Errore 500}
 L'errore 500 avviene quando il server non é raggiungibile, e pertanto non é possibile effettuare le operazioni riguardanti l'accesso, la modifica dei dati e la prenotazione.
 \subsection{SQL}	% Nicola
-Per il salvataggio dei dati, si é ritenuto opportuno l'utilizzo di SQL tramite \textit{MariaDB}.
-Di conseguenza, per le interazioni con il database si é utilizzata la libreria mysqli di PHP.
-Nel capitolo 3.3 viene descritto il database che l'applicazione utilizza per il salvataggio dei dati.
+Per il salvataggio dei dati, si é ritenuto opportuno l'utilizzo di SQL tramite \textit{MariaDB}.\\
+Di conseguenza, per le interazioni con il database si é utilizzata la libreria mysqli di PHP.\\
+Nel capitolo 3.3 viene descritto il database che l'applicazione utilizza per il salvataggio dei dati.\\
+Si puó notare come le prenotazioni vengano estratte solo se la data é maggiore o uguale a quella odierna, in quanto non viene mostrato lo storico di tutte le prenotazioni, ma solo quelle attive (indipendentemente dallo stato).
 
 \subsection{JavaScript} %Lisien
 \textit{JavaScript} é un linguaggio che viene eseguito dal lato utente, tramite il browser; è utilizzato per dare un determinato comportamento ai siti web tramite l'invocazione di funzioni in seguito all'occorrenza di eventi.\\
@@ -672,9 +681,9 @@ Vi sono infine altre funzioni che si occupano di cambiare il valore dell'attribu
 \section{Validazione}
 Un sito valido significa un sito che rispetta determinati standard, il che porta vantaggi come:
 \begin{itemize}
-	\item piú accessibilitá: un sito valido viene letto con piú facilitá da uno screen reader;
-	\item piú compatibilitá: seguire lo standard porta ad una riduzione delle differenze di visualizzazione da un browser all'altro;
-	\item posizionamento piú alto nelle ricerche: codice valido viene visto in maniera decisamente positiva dai motori di ricerca
+	\item \textbf{piú accessibilitá}: un sito valido viene letto con piú facilitá da uno screen reader;
+	\item \textbf{piú compatibilitá}: seguire lo standard porta ad una riduzione delle differenze di visualizzazione da un browser all'altro;
+	\item \textbf{posizionamento piú alto nelle ricerche}: codice valido viene visto in maniera decisamente positiva dai motori di ricerca
 \end{itemize}
 Risulta quindi indispensabile assicurarsi al 100\% che le pagine siano tutte sintatticamente valide.\\
 Per assicurare questo fatto, si é ricorso all'utilizzo di tre strumenti indispensabili:
@@ -683,11 +692,10 @@ Per assicurare questo fatto, si é ricorso all'utilizzo di tre strumenti indispe
 	\item \href{https://jigsaw.w3.org/css-validator/}{W3C CSS Validation Service}: per il controllo della presentazione, aka della parte in CSS;
 	\item \href{https://www.totalvalidator.com/}{Total Validator}: validatore per la parte in HTML, adatto per l'HTML5
 \end{itemize}
-É risultato necessario effettuare la validazione della parte in HTML da parte di due strumenti, poiché il sito fornito dalla W3C ha ancora un supporto sperimentale alla validazione di pagine create in HTML5, che é lo standard adottato per questo progetto.
+É risultato necessario effettuare la validazione della parte in HTML da due strumenti differenti poiché il sito fornito dalla W3C ha ancora un supporto sperimentale (ovvero con risultati che possono variare nel tempo) alla validazione di pagine create in HTML5, che é lo standard adottato per questo progetto, e quindi la validazioen con un secondo strumento é stato usato al fine di garantire la validitá in maniera assoluta.
 
 
 %nuova sezione
-\newpage
 \section{Fase di Test}
 Come per ogni prodotto software, anche per i siti web é necessario stabilire dei test in modo da verificare la funzionalitá di un sito.\\
 A maggior ragione, bisogna assicurarsi che il sito sia fruibile da piú dispositivi possibili e in piú modalitá possiibili.\\
@@ -793,13 +801,12 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 \begin{itemize}
 	\item Lisien Skenderi: 
 	\begin{itemize}
-		\item HTML: sviluppo delle seguenti pagine: Index, Consulenze, Gestione Prenotazioni - Cliente;
+		\item HTML: sviluppo delle pagine Index, Consulenze, Gestione Prenotazioni - Cliente;
 		\item CSS:  elaborazione coordinata del file style.css con particolare attenzione alle sezioni header, breadcrumb e le altre navigazione;
 		\item Javascript: sviluppo delle funzioni per il menú principale, il menú utente ed il bottone per l'auto-scroll;
-		\item PHP: backend relativo al prenotazione utente, e realizzazione della pagina di logout;
+		\item PHP: backend relativo alla pagina di prenotazione lato utente, e realizzazione della pagina di logout;
 		\item Immagini: acquisizione immagini di sfondo per i bottoni;
 		\item Relazione: sottosezione JavaScript.
-		\item Test:
 	\end{itemize}
 	\item Matteo Cusin:
 	\begin{itemize}
@@ -820,16 +827,16 @@ Per garantire una buona suddivisione del carico di lavoro che il progetto ha ine
 		\item PHP: controllo funzioni per creazione tabelle con lo scopo di mantenere l'accessibilità del sito;
 		\item Immagini: ricerca e modifica delle immagini, implementazione codice per l'utilizzo delle stesse;
 		\item Relazione: sezione progettazione, sottosezione \textit{HTML} e sottosezione \textit{CSS}, sviluppo presentazione Desktop, sottosezione Wide-screen e sottosezione relativa al foglio di stile per la stampa e collaborazione per la sottosezione Obiettivi;
-		\item Test: test su Safari Desktop (macOS), Safari Mobile (iOS), Microsoft Edge (Windowa), Google Chrome Desktop (macOS e Windows), Google Chrome Mobile (iOS).
+		\item Test: Safari Desktop (macOS), Safari Mobile (iOS), Microsoft Edge (Windows), Google Chrome Desktop (macOS e Windows), Google Chrome Mobile (iOS).
 	\end{itemize} 
 	\item Nicola Baesso:
 	\begin{itemize}
-		\item HTML: sviluppo delle seguenti pagine: Trattamenti Corpo, Gestione Prenotazioni-Amministratore, Elenco Clienti, 401, 403, 500;
+		\item HTML: sviluppo delle pagine Trattamenti Corpo, Gestione Prenotazioni lato Amministratore, Elenco Clienti, 401, 403, 500;
 		\item CSS: settaggio variabili colori principali, modifiche al colore dei placeholder;
 		\item Javascript: funzioni per la trasformazione da campi testo a campi data/ora e conseguente ritorno a campo testo;
 		\item PHP: backend dei form di login e registrazione, backend prenotazioni lato amministratore e cliente;
 		\item Relazione: sezione casi d'uso, sottosezione Database, sezione PHP, sezione Strumenti.
-		\item Test: Google Chrome (Linux e Windows), Brave Browser (Linux e Windows), NVDA (Windows), Mi Browser (Mobile), Links (Linux)
+		\item Test: Google Chrome (Linux, Windows e Android), Brave Browser (Linux e Windows), NVDA (Windows), Mi Browser (Mobile), Links (Linux)
 	\end{itemize} 
 \end{itemize}
 La suddivisione del lavoro é avvenuta tramite riunioni settimanali, inoltre ogni modifica é stata notificata attraverso un gruppo Telegram, che ha permesso un ottimo livello di coordinazione all'interno del gruppo.
