@@ -47,6 +47,27 @@
             <li>Analisi della pelle (per le consulenze relative a trattamenti al viso), mirata a comprendere il livello di idratazione <span lang="en"><abbr title="Natural Moisturzing Factor">NMF</abbr></span>, la dilatazione dei pori,le imperfezioni, le macchie melaniche o ematiche e la presenza di rughe.</li>
             <li>Termografia (per le consulenze relative a trattamenti al corpo), mirata all’individuazione e la prevenzione di infiammazioni cellulitiche</li>
         </ul>
+
+        <section id="consulenze_Section">
+            <h2>Richiedi la tua consulenza</h2>
+            <p>Tramite il form sottostante potrai richiedere la tua consulenza personalizzata. Uno dei nostri collaboratori ti risponderà alla mail che ci fornirai per darti dettagli riguardo a giorno e orario proposto.</p>
+            <form id="consulenze_Form" method="post" action="../../PHP/CONSULENZE/consulenze.php">
+                <!-- Nome -->
+                <label id="nameConsulenze_Label" for="name">Nome:</label>
+                <input id="nameConsulenze_Input" type="text" placeholder="Il tuo nome" required>
+                <!-- Email -->
+                <label id="emailConsulenze_Label" for="email" lang="en">Email:</label>
+                <input id="emailConsulenze_Input" type="email" placeholder="Formato: indirizzo@provider.dominio" required>
+                <!-- Text area -->
+                <label id="textareaConsulenze_Label" for="textareaConsulenze_Input" >Scrivici:</label>
+                <textarea id="textareaConsulenze_Input" placeholder="Scrivi qui..."></textarea>
+    
+                <!-- Submit input -->
+                <input id="consulenze_Button" type="submit" name="" value="Richiedi la tua consulenza" class="print-invisible">
+            </form>
+        
+        </section>
+
     </main>
     <nav class="print-invisible">
         <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>
