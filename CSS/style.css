@@ -936,7 +936,7 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     padding-bottom: 0.5em;
 }
 
-input, select, #usernamePersonalPage{
+input, select, #usernamePersonalPage, textarea{
     text-align: center;
     font-size: 0.9em;
 }
