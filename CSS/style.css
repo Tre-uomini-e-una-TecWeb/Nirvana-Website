@@ -477,14 +477,14 @@ footer a:visited{
    
 }
 
-.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente, #tabellaConsulenzeAmministratore{
     margin: 0 auto;
    
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
+.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th, #tabellaConsulenzeAmministratore tr th{
     border: 2px black solid;
 }
 
@@ -492,7 +492,7 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){background-color: #ffeede;}
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd), #tabellaConsulenzeAmministratore tr:nth-child(odd){background-color: #ffeede;}
 
 .item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
@@ -503,7 +503,7 @@ caption{
     font-size: 1em;
 }
 
-#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td {
+#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaConsulenzeAmministratore th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td, #tabellaConsulenzeAmministratore td {
     padding: 0.3em;
 }
 
@@ -926,7 +926,7 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     background-color: var(--goodAction);
 }
 
-#wrongReservationLink, #reservationsLink, #reservations, #warningRegistrazione, #deleteReservations{
+#wrongReservationLink, #reservationsLink, #reservations, #warningRegistrazione, #deleteReservations, #deleteConsultations{
     text-align: center;
     margin-top: 1em;
 }
@@ -958,13 +958,13 @@ input, select, #usernamePersonalPage, textarea{
     margin-bottom: 4em;
 }
 
-#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
+#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin: 0 auto;
     height: 100%;
     width: 100%;
 }
 
-#tabellaPrenotazioniAmministratore{
+#tabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -1057,6 +1057,10 @@ input, select, #usernamePersonalPage, textarea{
     width: 40vw;
 }
 
+#adminPage{
+    margin-top: 4.5em;
+}
+
 #consulenze_Button{
     font-size: 0.9em;
     padding: 0.5em;
@@ -1081,7 +1085,7 @@ input[type="checkbox"]{
     text-align: center;
 }
 
-#descrtabellaPrenotazioniAmministratore{
+#descrtabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin-bottom: 1em;
 }
 
