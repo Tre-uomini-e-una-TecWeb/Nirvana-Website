@@ -25,7 +25,7 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <nav>
+    <nav id="largeMenu">
         <div class="breadcrumb" id="big_breadcrumb">
             <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &#62;&#62; Gestione Prenotazioni</p> 
         </div>
@@ -35,6 +35,7 @@
         <div id="menu">
             <button aria-haspopup="menu" aria-label="Menù principale" onclick="menuButton()" class="buttonMenu">Menù</button>
             <ul id="menuList" class="menuCont">
+                <li><a href="../../PHP/CONSULENZE/gestioneConsulenzeAmministratore.php">Gestione Consulenze</a></li>
                 <li class="noLinkMenu">Prenotazioni</li>
                 <li><a href="../../PHP/PRENOTAZIONI/eliminazionePrenotazioniAmministratore.php"> Eliminazione Prenotazioni </a></li>
                 <li><a href="../../PHP/AREA_PERSONALE/elencoClienti.php"> Elenco clienti </a></li>
@@ -42,7 +43,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="adminPage">
         <section id="gestionePrenotazioneAdmin">
             <h2>Inserisci Prenotazione</h2>
             <p id="wrongReservationLink">Inserita in maniera errata una prenotazione? Vai alla <a href="eliminazionePrenotazioniAmministratore.php">pagina di eliminazione prenotazioni</a>!</p>
@@ -94,10 +95,6 @@
                         <option value="pedicureSemipermanente">Pedicure con semipermanente</option>
                         <option value="pedicureCurativa">Pedicure curativa</option>
                     </optgroup>
-                    <optgroup label="Consulenze">
-                        <option value="consulenzaViso">Consulenza viso</option>
-                        <option value="consulenzaCorpo">Consulenza corpo</option>
-                    </optgroup>
                 </select>
                 <esitoForm />
                 <input class="print-invisible" type="submit" id="confirmButton" name="submit" value="Conferma dati" aria-label="Conferma dati">
@@ -106,6 +103,7 @@
         <section id="visualizzazionePrenotazione">
             <h2>Gestisci prenotazioni</h2>
             <p class="centrato">Ricordati di <a href="../AREA_PERSONALE/elencoClienti.php">contattare i clienti</a> per ogni prenotazione modificata!</p>
+            <p class="centrato"> Per gestire le consulenze, <a href="../../PHP/CONSULENZE/gestioneConsulenzeAmministratore.php">clicca qui!</a></p>
             <br>
             <div id="prenotazioniAmministratore">
                 <form id="reservations" action="gestionePrenotazioniAmministratore.php" method="post">

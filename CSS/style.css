@@ -477,14 +477,14 @@ footer a:visited{
    
 }
 
-.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente{
+.item-footer table, #tabellaPrenotazioniAmministratore, #tabellaPrenotazioniUtente, #tabellaConsulenzeAmministratore{
     margin: 0 auto;
    
     border-left:hidden;
     border-right: hidden;
 }
 
-.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th{
+.item-footer table tr th, #tabellaPrenotazioniAmministratore tr th, #tabClienti  tr th, #tabellaPrenotazioniUtente  tr th, #tabellaConsulenzeAmministratore tr th{
     border: 2px black solid;
 }
 
@@ -492,7 +492,7 @@ footer a:visited{
     background-color: #ffe0c1;
 }
 
-#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd){background-color: #ffeede;}
+#tabellaPrenotazioniAmministratore tr:nth-child(odd), #tabClienti  tr:nth-child(odd),#tabellaPrenotazioniUtente  tr:nth-child(odd), #tabellaConsulenzeAmministratore tr:nth-child(odd){background-color: #ffeede;}
 
 .item-footer table th, .item-footer table td, #tabClienti  th,  #tabClienti  td {
     padding: 0.5em 1.5em 0.5em 1.5em;
@@ -503,7 +503,7 @@ caption{
     font-size: 1em;
 }
 
-#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td {
+#tabellaPrenotazioniAmministratore th, #tabellaPrenotazioniUtente  th, #tabellaConsulenzeAmministratore th, #tabellaPrenotazioniAmministratore td, #tabellaPrenotazioniUtente  td, #tabellaConsulenzeAmministratore td {
     padding: 0.3em;
 }
 
@@ -859,13 +859,13 @@ caption{
     border-right: 1px solid black;
 }
 
-#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw{
+#signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{
     display: grid;
     padding: 2em 2em 0em 2em;
     row-gap: 0.5em;
 }
 
-form input, #customers , #serviceAdmin, #service{
+form input, #customers , #serviceAdmin, #service, form textarea{
     border-radius: 0.5em;
     border:1px solid black;
     background-color: var(--formInput);
@@ -873,11 +873,17 @@ form input, #customers , #serviceAdmin, #service{
     text-align:center;
 }
 
-form input:hover, #customers:hover , #serviceAdmin:hover, #service:hover{
+form textarea{
+    text-align: left;
+    resize: none;
+    height: 6em;
+}
+
+form input:hover, #customers:hover , #serviceAdmin:hover, #service:hover, form textarea:hover{
     background-color: var(--inputHover);
 }
 
-form input:active, #customers:active , #serviceAdmin:active, #service:active{
+form input:active, #customers:active , #serviceAdmin:active, #service:active, form textarea:active{
     background-color: var(--formInput);
 }
 
@@ -920,7 +926,7 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     background-color: var(--goodAction);
 }
 
-#wrongReservationLink, #reservationsLink, #reservations, #warningRegistrazione, #deleteReservations{
+#wrongReservationLink, #reservationsLink, #reservations, #warningRegistrazione, #deleteReservations, #deleteConsultations{
     text-align: center;
     margin-top: 1em;
 }
@@ -930,7 +936,7 @@ form label:not(#usernamePersonalPage):not(.showPasswordCheckbox) {
     padding-bottom: 0.5em;
 }
 
-input, select, #usernamePersonalPage{
+input, select, #usernamePersonalPage, textarea{
     text-align: center;
     font-size: 0.9em;
 }
@@ -952,18 +958,18 @@ input, select, #usernamePersonalPage{
     margin-bottom: 4em;
 }
 
-#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore{
+#tabellaPrenotazioniUtente, #tabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin: 0 auto;
     height: 100%;
     width: 100%;
 }
 
-#tabellaPrenotazioniAmministratore{
+#tabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin-top: 1em;
     margin-bottom: 1em;
 }
 
-#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel, #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel{
+#nameLabel, #surnameLabel, #birthLabel, #emailLabel, #phoneLabel, #userLabel, #passwordPers1Label, #passwordPers2Label, #utenteLabel, #password1Label, #password2Label, #dateLabel, #hourLabel, #serviceLabel, #customersAdminLabel, #dateAdminLabel, #hourAdminLabel, #serviceAdminLabel, #namePersonalPageLabel, #surnamePersonalPageLabel, #birthPersonalPageLabel, #emailPersonalPageLabel, #phonePersonalPageLabel, #usernamePersonalPageLabel, #nameConsulenze_Label, #emailConsulenze_Label, #textareaConsulenze_Label{
     grid-column: 1;
     margin-bottom: 0.5em;
     margin-right: 1em;
@@ -971,6 +977,10 @@ input, select, #usernamePersonalPage{
 
 #mostraPswR, #mostraPswA, #updateButton, #mostraPsw1, #mostraPsw2, .errore, .conferma, #loginHelpMessage, #warningRegistrazione, #registerButton, #accessButton, #updatePersonalPage, #userReservationButton, #confirmButton{
     grid-column: 1/3;
+}
+
+#consulenze_Button {
+    grid-column: 1/4;
 }
 
 .print-errorText{
@@ -982,15 +992,20 @@ input, select, #usernamePersonalPage{
     margin-bottom: 0.5em;
 }
 
-#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel, #usernamePersonalPage, #usernamePersonalPageLabel{
+#nameConsulenze_Input, #emailConsulenze_Input, #textareaConsulenze_Input {
+    grid-column: 2/4;
+    margin-bottom: 0.5em;
+}
+
+#name, #nameLabel, #usernameLogin, #utenteLabel, #dateLabel, #date, #passwordPers1, #passwordPers1Label, #customers, #customersAdminLabel, #usernamePersonalPage, #usernamePersonalPageLabel, #nameConsulenze_Label, #nameConsulenze_Input{
     grid-row: 1;
 }
 
-#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel, #namePersonalPage, #namePersonalPageLabel{
+#surname, #surnameLabel, #mostraPsw1, #hourLabel, #hour, #password2, #password2Label, #dateAdmin, #dateAdminLabel, #namePersonalPage, #namePersonalPageLabel, #emailConsulenze_Label, #emailConsulenze_Input{
     grid-row: 2;
 }
 
-#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel, #surnamePersonalPage, #surnamePersonalPageLabel{
+#birth, #birthLabel, #mostraPswA, #serviceLabel, #service, #passwordPers2, #passwordPers2Label, #hourAdmin, #hourAdminLabel, #surnamePersonalPage, #surnamePersonalPageLabel, #textareaConsulenze_Label, #textareaConsulenze_Input{
     grid-row: 3;
 }
 
@@ -1012,6 +1027,11 @@ input, select, #usernamePersonalPage{
 
 #mostraPswR{
     grid-row: 8;
+}
+
+#textareaConsulenze_Label{
+    padding-bottom: 0.5em;
+    align-self: baseline;
 }
 
 #mostraPswR, #mostraPswA, #mostraPsw1, #mostraPsw2{
@@ -1037,6 +1057,18 @@ input, select, #usernamePersonalPage{
     width: 40vw;
 }
 
+#adminPage{
+    margin-top: 4.5em;
+}
+
+#consulenze_Button{
+    font-size: 0.9em;
+    padding: 0.5em;
+    place-self: center;
+    width: 40vw;
+    cursor: pointer;
+}
+
 #adminDeleteButton{
     width: 50vw;
     margin-bottom: 1em;
@@ -1053,7 +1085,7 @@ input[type="checkbox"]{
     text-align: center;
 }
 
-#descrtabellaPrenotazioniAmministratore{
+#descrtabellaPrenotazioniAmministratore, #tabellaConsulenzeAmministratore{
     margin-bottom: 1em;
 }
 

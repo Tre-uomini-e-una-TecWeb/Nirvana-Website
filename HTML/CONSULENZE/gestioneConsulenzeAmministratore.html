@@ -2,19 +2,18 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Consulenze - Centro Estetico Nirvana</title>
+    <title>Eliminazione Prenotazioni - Centro Estetico Nirvana</title>
     <link rel="shortcut icon" type="image/icon" href="../../IMG/icon.png">
-    <meta name="description" content="Questa pagina e' dedicata al centro estetico Nirvana. Nel sito sono descritti i trattamenti per il viso e per il corpo, le consulenze offerte nonché la possibilitá di prenotare un trattamento o una consulenza." />
-    <meta name="keywords" content="consulenze estetiche, Centro estetico Nirvana, centro estetico, trattamenti viso, trattamenti corpo, massaggi, depilazioni" />
-    <meta name="author" content="Lisien Skenderi, Nicola Baesso, Matteo Cusin, Annalisa Egidi">
+    <meta name="description" content="Questa pagina è dedicata all'eliminazione delle prenotazioni da parte dell'amministratore del centro estetico Nirvana." />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" media="screen" href="../../CSS/style.css">
+    <link rel="stylesheet" media="screen" href="../../CSS/style.css" />
     <link rel="stylesheet" media="screen and (max-width:1150px)" href="../../CSS/mobile.css" />
     <link rel="stylesheet" media="screen and (min-width:1900px)" href="../../CSS/wide-screen.css" />
     <link rel="stylesheet" media="print" href="../../CSS/print.css" />
     <script src="../../JS/javascript.js"></script>
 </head>
-<body onload="PageLoad(); utentMen()">
+<body onload="PageLoad()">
     <header id="cima">
         <h1>Centro Estetico Nirvana</h1>
         <nav id="top-right" class="menuLogMob">
@@ -26,48 +25,49 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <nav>
-        <div class="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt;&gt; Consulenze</p> 
+    <nav id="largeMenu">
+        <div class="breadcrumb" id="big_breadcrumb">
+            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &gt;&gt;<a href="../../PHP/gestionePrenotazioni.php"> Gestione Prenotazioni</a> &gt;&gt; Gestione Consulenze</p>
+        </div>
+        <div class="breadcrumb print-invisible" id="mini_breadcrumb">
+            <p>Livello superiore: <a href="../../PHP/gestionePrenotazioni.php">Gestione Prenotazioni</a></p> 
         </div>
         <div id="menu">
-            <button aria-haspopup="menu" aria-label="Menù principale" onclick="menuButton()" class="buttonMenu">I nostri servizi</button>
+            <button aria-haspopup="menu" aria-label="Menù principale" onclick="menuButton()" class="buttonMenu">Menù</button>
             <ul id="menuList" class="menuCont">
-                <li><a href="../../HTML/TRATTAMENTI/trattamentiMacchinari.html"> Trattamenti &amp; Macchinari </a></li>
-                <li class="noLinkMenu">Consulenze</li>
-                <li><a href="../../PHP/gestionePrenotazioni.php"> Prenotazioni</a></li>
-
+                <li class="noLinkMenu">Gestione Consulenze</li>
+                <li><a href="../../PHP/PRENOTAZIONI/gestionePrenotazioniAmministratore.php">Prenotazioni</a></li>
+                <li><a href="../../PHP/PRENOTAZIONI/eliminazionePrenotazioniAmministratore.php">Eliminazione Prenotazioni</a></li>
+                <li><a href="../../PHP/AREA_PERSONALE/elencoClienti.php">Elenco clienti</a></li>
             </ul>
         </div>
     </nav>
-    <main>
-        <h2>Consulenze</h2>
-        <p>Le consulenze riguardano il viso e il corpo. In entrambi i casi si prevede una scheda tecnica del cliente, dove sono contenute le informazioni e i trattamenti previsti, poi si aggiunge:</p>
-        <ul class="bulletNone">
-            <li>Analisi della pelle (per le consulenze relative a trattamenti al viso), mirata a comprendere il livello di idratazione <span lang="en"><abbr title="Natural Moisturzing Factor">NMF</abbr></span>, la dilatazione dei pori,le imperfezioni, le macchie melaniche o ematiche e la presenza di rughe.</li>
-            <li>Termografia (per le consulenze relative a trattamenti al corpo), mirata all’individuazione e la prevenzione di infiammazioni cellulitiche</li>
-        </ul>
 
-        <section id="consulenze_Section">
-            <h2>Richiedi la tua consulenza</h2>
-            <p>Tramite il form sottostante potrai richiedere la tua consulenza personalizzata. Uno dei nostri collaboratori risponderà alla mail fornita per comunicarti alcuni dettagli riguardo al giorno ed all'orario proposto.</p>
-            <form id="consulenze_Form" method="post" action="../../PHP/CONSULENZE/consulenze.php">
-                <!-- Nome -->
-                <label id="nameConsulenze_Label" for="name">Nome:</label>
-                <input id="nameConsulenze_Input" type="text" placeholder="Il tuo nome" required>
-                <!-- Email -->
-                <label id="emailConsulenze_Label" for="email" lang="en">Email:</label>
-                <input id="emailConsulenze_Input" type="email" placeholder="Formato: indirizzo@provider.dominio" required>
-                <!-- Text area -->
-                <label id="textareaConsulenze_Label" for="textareaConsulenze_Input" >Scrivici:</label>
-                <textarea id="textareaConsulenze_Input" placeholder="Scrivi qui..."></textarea>
-    
-                <!-- Submit input -->
-                <input id="consulenze_Button" type="submit" name="" value="Invia" class="print-invisible">
+    <main id="adminPage">
+        <h2>Gestione Consulenze</h2>
+        <div id="consulenzeAmministratore">
+            <p id="reservationsLink">Torna alla <a href="gestionePrenotazioniAmministratore.php">pagina di gestione prenotazioni</a> per inserire nuove prenotazioni o controllare quelle esistenti!</p>
+            <p class="centrato">Ricordati di eliminare le richieste di consulenza, una volta prese in carico.</p>
+            <form method="post" action="gestioneConsulenzeAmministratore.php" id="deleteConsultations">
+                <p id="sumCon" class="hide print-invisible">Tabella che contiene le richieste di consulenza da prendere in carico.</p>
+                <table id="tabellaConsulenzeAmministratore" aria-describedby="sumCon">
+                    <caption>Consulenze attive</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col" lang="en">Email</th>
+                            <th scope="col">Messaggio</th>
+                            <th scope="col">Eliminare</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <listaConsulenze />
+                    </tbody>
+                </table>
+                <esitoDelete />
+                <input class="print-invisible" type="submit" name="deleteP" value="Elimina consulenze" id="adminDeleteButton" />
             </form>
-        
-        </section>
-
+        </div>
     </main>
     <nav class="print-invisible">
         <button onclick="goUp()" id="goUp" class="goUpNonVis"></button>

@@ -25,7 +25,7 @@
             <button aria-haspopup="menu" aria-label="Menù area personale" onclick="userMenu()" class="userMenu"></button>
         </nav>
     </header>
-    <nav>
+    <nav id="largeMenu">
         <ul class="print-invisible" id="loginMenu">
             <li><a href="../../PHP/AREA_PERSONALE/areaPersonale.php">Area Personale</a></li>
             <li class="LogIn"><span lang="en"><a href="../../PHP/AREA_PERSONALE/login.php">Log In</a></span></li>
@@ -40,6 +40,7 @@
         <div id="menu">
             <button aria-haspopup="menu" aria-label="Menù principale" onclick="menuButton()" class="buttonMenu">Menù</button>
             <ul id="menuList" class="menuCont">
+                <li><a href="../../PHP/CONSULENZE/gestioneConsulenzeAmministratore.php">Gestione Consulenze</a></li>
                 <li><a href="../../PHP/PRENOTAZIONI/gestionePrenotazioniAmministratore.php">Prenotazioni</a></li>
                 <li><a href="../../PHP/PRENOTAZIONI/eliminazionePrenotazioniAmministratore.php"> Eliminazione Prenotazioni </a></li>
                 <li class="noLinkMenu">Elenco clienti</li>
@@ -47,7 +48,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="adminPage">
         <section id="visualizzazioneClienti">
             <h2>Clienti iscritti</h2>
             <p id="sumPren" class="hide print-invisible">Tabella che contiene tutte le informazioni relative ai clienti.</p>
