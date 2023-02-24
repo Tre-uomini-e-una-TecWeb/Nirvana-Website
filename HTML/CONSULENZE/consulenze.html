@@ -28,7 +28,7 @@
     </header>
     <nav>
         <div class="breadcrumb">
-            <p>Ti trovi in: <a href="../INDEX/index.html"><span lang="en">Home</span></a> &gt;&gt; Consulenze</p> 
+            <p>Ti trovi in: <a href="../../index.php"><span lang="en">Home</span></a> &gt;&gt; Consulenze</p> 
         </div>
         <div id="menu">
             <button aria-haspopup="menu" aria-label="Menù principale" onclick="menuButton()" class="buttonMenu">I nostri servizi</button>
@@ -53,19 +53,19 @@
             <p>Tramite il form sottostante potrai richiedere la tua consulenza personalizzata. Uno dei nostri collaboratori risponderà alla mail fornita per comunicarti alcuni dettagli riguardo al giorno ed all'orario proposto.</p>
             <form id="consulenze_Form" method="post" action="../../PHP/CONSULENZE/consulenze.php">
                 <!-- Nome -->
-                <label id="nameConsulenze_Label" for="name">Nome:</label>
-                <input id="nameConsulenze_Input" type="text" placeholder="Il tuo nome" required>
+                <label id="nameConsulenze_Label" for="nameConsulenze_Input">Nome:</label>
+                <input id="nameConsulenze_Input" name="name" type="text" placeholder="Il tuo nome" required>
                 <!-- Email -->
-                <label id="emailConsulenze_Label" for="email" lang="en">Email:</label>
-                <input id="emailConsulenze_Input" type="email" placeholder="Formato: indirizzo@provider.dominio" required>
+                <label id="emailConsulenze_Label" for="emailConsulenze_Input" lang="en">Email:</label>
+                <input id="emailConsulenze_Input" type="email" name="email" placeholder="Formato: indirizzo@provider.dominio" required>
                 <!-- Text area -->
-                <label id="textareaConsulenze_Label" for="textareaConsulenze_Input" >Scrivici:</label>
-                <textarea id="textareaConsulenze_Input" placeholder="Scrivi qui..."></textarea>
+                <label id="textareaConsulenze_Label" for="textareaConsulenze_Input" >Messaggio:</label>
+                <textarea id="textareaConsulenze_Input" name="message" placeholder="Il tuo messaggio"></textarea>
     
                 <!-- Submit input -->
-                <input id="consulenze_Button" type="submit" name="" value="Invia" class="print-invisible">
+                <input id="consulenze_Button" type="submit" name="submit" value="Invia" class="print-invisible">
             </form>
-        
+            <esitoMessaggio />
         </section>
 
     </main>

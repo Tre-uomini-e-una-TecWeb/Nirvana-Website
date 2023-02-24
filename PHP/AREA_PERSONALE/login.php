@@ -102,7 +102,7 @@ if($connOk){
                 $esitoRegistrazione = $errRegistrazione;
             }
             else{
-                $esitoRegistrazione = "<p class=\"errore\">Lo <span lang='en'>username scelto non è disponibile!</p>";
+                $esitoRegistrazione = "<p class=\"errore\">Lo <span lang='en'>username</span> scelto non è disponibile!</p>";
             }
         }
     }

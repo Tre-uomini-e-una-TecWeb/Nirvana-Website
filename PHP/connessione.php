@@ -81,6 +81,17 @@ class DBAccess{
         }
     }
 
+    public function insertNewMessage($nome,$email,$messaggio){
+        $query="INSERT INTO Messaggi (Nome, Email, Messaggio) VALUES ('$nome','$email','$messaggio')";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function modificaPrenotazione($nD,$nO,$nS,$user,$vD,$vO){
         if($nS!=""){
             if($nD=="" || $nS=="R"){
