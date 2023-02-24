@@ -16,6 +16,7 @@ class DBAccess{
             return true;
         }
     }
+    
     public function getUtenti(){
         $query="SELECT * FROM Utenti WHERE Privilegi=false ORDER BY Username ASC";
         $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
@@ -72,6 +73,18 @@ class DBAccess{
         $dataOraStringa.=$hour.":".$min;
         
         $query="INSERT INTO Prenotazioni (Utente, DataOra, Trattamento, Stato) VALUES ('$cliente','$dataOraStringa','$trattamento','P')";
+        $query_result=mysqli_query($this->connection,$query);
+        if($query_result){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function insertNewMessage($nome,$email,$messaggio){
+        $messaggio=mysqli_real_escape_string($this->connection,$messaggio);
+        $query="INSERT INTO Messaggi (Nome, Email, Messaggio) VALUES ('$nome','$email','$messaggio')";
         $query_result=mysqli_query($this->connection,$query);
         if($query_result){
             return true;
