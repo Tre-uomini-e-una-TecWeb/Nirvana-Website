@@ -33,6 +33,22 @@ class DBAccess{
         }
     }
 
+    public function getMessaggi(){
+        $query="SELECT * FROM Messaggi";
+        $query_result=mysqli_query($this->connection,$query) or die("Errore in openDBConnection: ".mysqli_error($this->connection));
+        if(mysqli_num_rows($query_result)==0){
+            return null;
+        }
+        else{
+            $result=array();
+            while($row=mysqli_fetch_assoc($query_result)){
+                array_push($result,$row);
+            }
+            $query_result->free();
+            return $result;
+        }
+    }
+
     public function checkUtente($user){
         $user = mysqli_real_escape_string($this->connection, $user);
         $query="SELECT * FROM Utenti WHERE Username='".$user."'";
