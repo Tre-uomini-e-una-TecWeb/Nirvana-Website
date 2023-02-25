@@ -17,7 +17,7 @@ function caricaMessaggi($connection,$validConnection){
         if($queryResult != null){
             foreach($queryResult as $messaggio){
                 $msg.="<tr>";
-                $msg.="<td>".$messaggio['Nome']."<td data-title='Email:'><a href=\"mailto:".$messaggio['Email']."\">".$messaggio['Email']."</a></td><td>".$messaggio['Messaggio']."</td>"."<td data-title='Eliminare:'><input type='checkbox' id='myCheckbox[]' name='Id[]' value='".$messaggio['Id']."' ><label class=\"hide print-invisible\" for='myCheckbox[]'>Seleziona la prenotazione ".$messaggio['Id']."</label></td>";
+                $msg.="<td data-title='' class='header'>".$messaggio['Nome']."<td data-title='Email:'><a href=\"mailto:".$messaggio['Email']."\">".$messaggio['Email']."</a></td><td>".$messaggio['Messaggio']."</td>"."<td data-title='Eliminare:'><input type='checkbox' id='myCheckbox[]' name='Id[]' value='".$messaggio['Id']."' ><label class=\"hide print-invisible\" for='myCheckbox[]'>Seleziona la prenotazione ".$messaggio['Id']."</label></td>";
                 $msg.="</tr>";
             }
         }
