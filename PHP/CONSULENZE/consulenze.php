@@ -17,22 +17,22 @@ if(isset($_POST['submit'])){
         $canInsert=true;
         $name=pulisciInput($_POST['name']);
         if (preg_match("/\d/",$name)){
-            $errMessaggio.='<p class=\'errore\'>Nome non valido: non possono esserci numeri!</p>';
+            $errMessaggio.='<p class=\'erroreConsulenza\'>Nome non valido: non possono esserci numeri!</p>';
             $canInsert = false;
         }
         $email=pulisciInput($_POST['email']);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errMessaggio .= "<p class=\'errore\'>Email non valida: formato non corretto!</p>";
+            $errMessaggio .= "<p class=\"erroreConsulenza\">Email non valida: formato non corretto!</p>";
             $canInsert = false;
         }
         $message=pulisciInput($_POST['message']);
         if($canInsert){
             $query_result=$connessione->insertNewMessage($name,$email,$message);
             if($query_result){
-                $esitoMessaggio = "<p class=\"conferma\">Messaggio inviato con successo!</p>";
+                $esitoMessaggio = "<p class=\"confermaConsulenza\">Messaggio inviato con successo!</p>";
             }
             else{
-                $esitoMessaggio = "<p class=\"errore\">Impossibile inviare il messaggio. Controlla i dati inseriti e riprova.</p>";
+                $esitoMessaggio = "<p class=\"erroreConsulenza\">Impossibile inviare il messaggio. Controlla i dati inseriti e riprova.</p>";
             }
         }
         else{

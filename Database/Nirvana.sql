@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `Messaggi`
 --
 
+DROP TABLE IF EXISTS `Messaggi`;
+
 CREATE TABLE `Messaggi` (
   `Id` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
@@ -39,6 +41,7 @@ CREATE TABLE `Messaggi` (
 --
 -- Struttura della tabella `Prenotazioni`
 --
+DROP TABLE IF EXISTS `Prenotazioni`;
 
 CREATE TABLE `Prenotazioni` (
   `Utente` varchar(30) NOT NULL,
@@ -84,6 +87,8 @@ INSERT INTO `Prenotazioni` (`Utente`, `DataOra`, `Trattamento`, `Stato`) VALUES
 --
 -- Struttura della tabella `Utenti`
 --
+
+DROP TABLE IF EXISTS `Utenti`;
 
 CREATE TABLE `Utenti` (
   `Username` varchar(30) NOT NULL,
