@@ -16,9 +16,6 @@ nav:not(#top-right) {
 }
 
 
-
-
-
 header {
     padding: 0em;
     margin: 0em;
@@ -118,7 +115,7 @@ header {
         margin-right: 1em;
     }
 
-    #signup input, #login input, #datiUtente input, #changePsw input, #consulenze_Form input, #consulenze_Form textarea{
+    #signup input, #login input, #datiUtente input, #changePsw input, #consulenze_Form input, #consulenze_Form textarea, .erroreConsulenza, .errore{
         margin-right: 1em;
     }
 
