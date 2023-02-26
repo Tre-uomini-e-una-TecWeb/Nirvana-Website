@@ -30,7 +30,6 @@ function caricaMessaggi($connection,$validConnection){
     }
     return $msg;
 }
-ini_set('display_errors',1);
 require_once "../connessione.php";
 use DB\DBAccess;
 $connessione=new DBAccess();
