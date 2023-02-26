@@ -20,12 +20,20 @@ if(isset($_POST['submit'])){
             $errMessaggio.='<p class=\'erroreConsulenza\'>Nome non valido: non possono esserci numeri!</p>';
             $canInsert = false;
         }
+        if ((strlen($name)!=0)){
+            $errMessaggio.='<p class=\'erroreConsulenza\'>Nome non puó essere vuoto!</p>';
+            $canInsert = false;
+        }
         $email=pulisciInput($_POST['email']);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errMessaggio .= "<p class=\"erroreConsulenza\">Email non valida: formato non corretto!</p>";
             $canInsert = false;
         }
         $message=pulisciInput($_POST['message']);
+        if(strlen($message)<50){
+            $errMessaggio .= "<p class=\"erroreConsulenza\">Messaggio non valido: sono stati inseriti meno di 50 caratteri!</p>";
+            $canInsert = false;
+        }
         if($canInsert){
             $query_result=$connessione->insertNewMessage($name,$email,$message);
             if($query_result){
