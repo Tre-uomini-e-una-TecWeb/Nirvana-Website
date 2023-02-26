@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
             $errMessaggio.='<p class=\'erroreConsulenza\'>Nome non valido: non possono esserci numeri!</p>';
             $canInsert = false;
         }
-        if ((strlen($name)!=0)){
+        if ((strlen($name)==0)){
             $errMessaggio.='<p class=\'erroreConsulenza\'>Nome non puó essere vuoto!</p>';
             $canInsert = false;
         }
