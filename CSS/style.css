@@ -839,6 +839,146 @@ caption{
     background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco60.jpeg");
 }
 
+#trattamenti, #trattamenti2{
+    background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari.jpeg") ;
+}
+
+#trattamenti:hover, #trattamenti:active {
+    background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari-zoom.jpeg") ;
+}
+
+#trattamenti2:hover{
+    background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari-opaco60.jpeg") ;
+}
+
+#consulenze, #consulenze2{
+    background-image:url("../IMG/INDEX/CONSULENZE/consulenze.jpeg") ;
+}
+
+#consulenze:hover, #consulenze:active{
+    background-image:url("../IMG/INDEX/CONSULENZE/consulenze-zoom.jpeg") ;
+}
+
+#consulenze2:hover{
+    background-image:url("../IMG/INDEX/CONSULENZE/consulenze-opaco60.jpeg") ;
+}
+
+#prenotazione, #prenotazione2{
+    background-image:url("../IMG/INDEX/CALENDARIO/calendario.jpeg") ;
+}
+
+#prenotazione:hover, #prenotazione:active{
+    background-image:url("../IMG/INDEX/CALENDARIO/calendario-zoom.jpeg") ;
+}
+
+#prenotazione2:hover{
+    background-image:url("../IMG/INDEX/CALENDARIO/calendario-opaco60.jpeg") ;
+}
+
+#viso, #viso2{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso.jpeg") ;
+}
+
+#viso:hover, #viso:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso-zoom.jpeg") ;
+}
+
+#viso2:hover{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso-opaco60.jpeg") ;
+}
+
+#corpo, #corpo2{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo.jpeg") ;
+}
+
+#corpo:hover, #corpo:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-zoom.jpeg") ;
+}
+
+#corpo2:hover{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-opaco60.jpeg") ;
+}
+
+#macchinari, #macchinari2{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari.jpeg") ;
+}
+
+#macchinari:hover, #macchinari:active{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari-zoom.jpeg") ;
+}
+
+#macchinari2:hover{
+    background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari-opaco60.jpeg") ;
+}
+
+#epilazione, #epilazione2{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione.jpeg") ;
+}
+
+#epilazione:hover, #epilazione:active{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione-zoom.jpeg") ;
+}
+
+#epilazione2:hover{
+    background-image:url("../IMG/CORPO/EPILAZIONE/epilazione-opaco60.jpeg") ;
+}
+
+#massaggio, #massaggio2{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio.jpeg") ;
+}
+
+#massaggio:hover, #messaggio:active{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio-zoom.jpeg") ;
+}
+
+#massaggio2:hover{
+    background-image:url("../IMG/CORPO/MASSAGGIO/massaggio-opaco60.jpeg") ;
+}
+
+#manicurePedicure, #manicurePedicure2{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure.jpeg") ;
+}
+
+#manicurePedicure:hover, #manicurePedicure:active{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure-zoom.jpeg") ;
+}
+
+#manicurePedicure2:hover{
+    background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure-opaco60.jpeg") ;
+}
+
+#icon{
+    background-image:url("../../IMG/icon.png");
+}
+
+#icon:hover{
+    background-image:url("../../IMG/icon-opaco60.png");
+}
+
+#logo{
+    background-image:url("../../IMG/header.png");
+}
+
+#logo:hover{
+    background-image:url("../../IMG/header-opaco60.png");
+}
+
+#upArrow{
+    background-image:url("../../IMG/pngwing.com.png");
+}
+
+#upArrow:hover{
+    background-image:url("../../IMG/pngwing.com-opaco60.png");
+}
+
+#user{
+    background-image:url("../../IMG/user.png");
+}
+
+#user:hover{
+    background-image:url("../../IMG/user-opaco60.png");
+}
+
 #lettino404{
     background-image: url("../IMG/404/lettino.png");
     background-repeat: no-repeat;
