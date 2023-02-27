@@ -948,35 +948,35 @@ caption{
 }
 
 #icon{
-    background-image:url("../../IMG/icon.png");
+    background-image:url("../IMG/icon.png");
 }
 
 #icon:hover{
-    background-image:url("../../IMG/icon-opaco60.png");
+    background-image:url("../IMG/icon-opaco60.png");
 }
 
 #logo{
-    background-image:url("../../IMG/header.png");
+    background-image:url("../IMG/header.png");
 }
 
 #logo:hover{
-    background-image:url("../../IMG/header-opaco60.png");
+    background-image:url("../IMG/header-opaco60.png");
 }
 
 #upArrow{
-    background-image:url("../../IMG/pngwing.com.png");
+    background-image:url("../IMG/pngwing.com.png");
 }
 
 #upArrow:hover{
-    background-image:url("../../IMG/pngwing.com-opaco60.png");
+    background-image:url("../IMG/pngwing.com-opaco60.png");
 }
 
 #user{
-    background-image:url("../../IMG/user.png");
+    background-image:url("../IMG/user.png");
 }
 
 #user:hover{
-    background-image:url("../../IMG/user-opaco60.png");
+    background-image:url("../IMG/user-opaco60.png");
 }
 
 #lettino404{
