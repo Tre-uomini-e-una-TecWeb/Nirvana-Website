@@ -1018,7 +1018,9 @@ caption{
     text-decoration: none;
 }
 
-.creditsImageLink:hover
+.creditsImageLink:hover{
+    
+}
 
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{
     display: grid;
