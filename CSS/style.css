@@ -1018,6 +1018,10 @@ caption{
     text-decoration: none;
 }
 
+.creditsImageLink:hover{
+    text-decoration: underline;
+}
+
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{
     display: grid;
     padding: 2em 2em 0em 2em;
