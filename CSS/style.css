@@ -414,6 +414,10 @@ th, td{
     color: rgba(0,0,0,0);
 }
 
+.cartaCredits{               
+    word-break: break-all;
+}
+
 .carta li, .bulletNone{
     margin-left: 1em;
 }
@@ -986,6 +990,17 @@ caption{
     background-position: center;
 }
 
+#lettino404_2{
+    background-image: url("../IMG/404/lettino.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#lettino404_2:hover{
+    background-image: url("../IMG/404/lettino-opaco60.png");
+}
+
 #contain {
     display: flex;
    
@@ -997,6 +1012,10 @@ caption{
 
 #separator{
     border-right: 1px solid black;
+}
+
+.creditsImageLink{
+    text-decoration: none;
 }
 
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{

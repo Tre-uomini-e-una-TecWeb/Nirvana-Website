@@ -346,6 +346,66 @@ header {
     #curativa{
         background-image: url("../IMG/CORPO/MANICURE_PEDICURE/CURATIVA/curativa-opaco60.jpeg");
     }
+
+    #macchinari2{
+        background-image:url("../IMG/TRATTAMENTI_MACCHINARI/MACCHINARI/macchinari-opaco60.jpeg") ;
+    }
+
+    #prenotazione2{
+        background-image:url("../IMG/INDEX/CALENDARIO/calendario-opaco60.jpeg") ;
+    }
+
+    #consulenze2{
+        background-image:url("../IMG/INDEX/CONSULENZE/consulenze-opaco60.jpeg") ;
+    }
+
+    #corpo2{
+        background-image:url("../IMG/TRATTAMENTI_MACCHINARI/CORPO/Corpo-opaco60.jpeg") ;
+    }
+
+    #epilazione2{
+        background-image:url("../IMG/CORPO/EPILAZIONE/epilazione-opaco60.jpeg") ;
+    }
+
+    #manicurePedicure2{
+        background-image:url("../IMG/CORPO/MANICURE_PEDICURE/manicure-opaco60.jpeg") ;
+    }
+
+    #viso2{
+        background-image:url("../IMG/TRATTAMENTI_MACCHINARI/VISO/Viso-opaco60.jpeg") ;
+    }
+
+    #massaggio2{
+        background-image:url("../IMG/CORPO/MASSAGGIO/massaggio-opaco60.jpeg") ;
+    }
+
+    #trattamenti2{
+        background-image:url("../IMG/INDEX/TRATTAMENTI_MACCHINARI/trattamentiMacchinari-opaco60.jpeg") ;
+    }
+
+    #icon{
+        background-image:url("../IMG/icon-opaco60.png");
+    }
+
+    #logo{
+        background-image:url("../IMG/header-opaco60.png");
+    }
+
+    #upArrow{
+        background-image:url("../IMG/pngwing.com-opaco60.png");
+    }
+
+    #user{
+        background-image:url("../IMG/user-opaco60.png");
+    }
+
+    #lettino404_2{
+        background-image: url("../IMG/404/lettino-opaco60.png");
+    }
+
+    .creditsImageLink{
+        text-decoration: underline;
+    }
 }
 
 #largeMenu #menu{
