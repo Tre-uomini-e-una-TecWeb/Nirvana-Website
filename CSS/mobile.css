@@ -402,6 +402,10 @@ header {
     #lettino404_2{
         background-image: url("../IMG/404/lettino-opaco60.png");
     }
+
+    .creditsImageLink{
+        text-decoration: underline;
+    }
 }
 
 #largeMenu #menu{
