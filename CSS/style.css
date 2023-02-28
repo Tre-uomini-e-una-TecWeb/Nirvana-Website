@@ -1019,7 +1019,7 @@ caption{
 }
 
 .creditsImageLink:hover{
-    
+    text-decoration: underline;
 }
 
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{
