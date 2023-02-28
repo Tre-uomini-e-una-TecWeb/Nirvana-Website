@@ -414,6 +414,17 @@ th, td{
     color: rgba(0,0,0,0);
 }
 
+.cartaCredits{
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -webkit-pre-wrap;          /* Chrome & Safari */ 
+    white-space: -pre-wrap;                 /* Opera 4-6 */
+    white-space: -o-pre-wrap;               /* Opera 7 */
+    white-space: pre-wrap;                  /* CSS3 */
+    word-wrap: break-word;                  /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
+
 .carta li, .bulletNone{
     margin-left: 1em;
 }
@@ -986,6 +997,17 @@ caption{
     background-position: center;
 }
 
+#lettino404_2{
+    background-image: url("../IMG/404/lettino.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#lettino404_2:hover{
+    background-image: url("../IMG/404/lettino-opaco60.png");
+}
+
 #contain {
     display: flex;
    
@@ -997,6 +1019,10 @@ caption{
 
 #separator{
     border-right: 1px solid black;
+}
+
+.creditsImageLink{
+    text-decoration: none;
 }
 
 #signup, #login, #changePsw, #insertRes, #datiUtente, #changePsw, #consulenze_Form{
