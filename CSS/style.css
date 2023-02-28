@@ -971,7 +971,12 @@ caption{
     background-image:url("../IMG/pngwing.com.png");
 }
 
-#upArrow:hover{
+
+#upArrow2{
+    background-image:url("../IMG/pngwing2.com.png");
+}
+
+#upArrow2:hover{
     background-image:url("../IMG/pngwing.com-opaco60.png");
 }
 
